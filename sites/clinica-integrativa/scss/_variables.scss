@@ -1,17 +1,56 @@
-// Paleta — terracota, nude, verde-sálvia e creme
-$color-cream: #faf6f0;
-$color-nude: #e9ddd0;
-$color-nude-dark: #dbccba;
-$color-terracotta: #bf6a4d;
-$color-terracotta-dark: #9e5540;
-$color-sage: #93a583;
-$color-sage-dark: #6f7f5e;
-$color-gold: #c9a24d;
+// Paleta — fiel ao design aprovado (terracota, sálvia, creme, nude e tinta)
+$color-terracotta-50: #fbf1ed;
+$color-terracotta-100: #f5ddd0;
+$color-terracotta-200: #ebbba4;
+$color-terracotta-300: #e09977;
+$color-terracotta-400: #d67e52;
+$color-terracotta-500: #c66b3d;
+$color-terracotta-600: #a85530;
+$color-terracotta-700: #864026;
+$color-terracotta-800: #653320;
+$color-terracotta-900: #4a2517;
 
-$color-text: #3a2f28;
-$color-text-muted: #7d6f63;
+$color-sage-50: #f3f5f1;
+$color-sage-100: #e3e9dc;
+$color-sage-200: #c8d4ba;
+$color-sage-300: #a8be94;
+$color-sage-400: #8da976;
+$color-sage-500: #739160;
+$color-sage-600: #5c764b;
+$color-sage-700: #495d3b;
+$color-sage-800: #38492e;
+$color-sage-900: #293421;
+
+$color-cream-50: #fdfbf7;
+$color-cream-100: #faf4ea;
+$color-cream-200: #f4e8d3;
+$color-cream-300: #ebd7b5;
+$color-cream-400: #e0c294;
+$color-cream-500: #d4ab73;
+
+$color-nude-100: #f5eae0;
+$color-nude-200: #e8d5c3;
+$color-nude-300: #d9bca1;
+$color-nude-400: #c9a380;
+$color-nude-500: #b88a60;
+
+$color-ink-700: #3d3530;
+$color-ink-800: #2a2420;
+$color-ink-900: #1a1614;
+
 $color-white: #ffffff;
 $color-whatsapp: #25d366;
+
+// Aliases curtos usados nos parciais
+$color-terracotta: $color-terracotta-500;
+$color-terracotta-dark: $color-terracotta-600;
+$color-sage: $color-sage-600;
+$color-sage-dark: $color-sage-700;
+$color-cream: $color-cream-50;
+$color-nude: $color-nude-200;
+
+$color-text: $color-ink-800;
+$color-text-muted: rgba($color-ink-700, 0.7);
 
 // Tokens padrão consumidos por _theme-bootstrap.scss
 $color-primary: $color-terracotta;
@@ -19,16 +58,17 @@ $color-secondary: $color-sage;
 $color-bg: $color-cream;
 
 // Tipografia
-$font-heading: 'Fraunces', serif;
-$font-base: 'Karla', system-ui, -apple-system, sans-serif;
+$font-heading: 'Cormorant Garamond', Georgia, serif;
+$font-base: 'Jost', system-ui, -apple-system, sans-serif;
 
 // Espaçamentos
 $spacing-unit: 8px;
 
 // Bordas / sombras
 $radius-lg: 20px;
-$shadow-soft: 0 20px 45px -22px rgba(58, 47, 40, 0.16);
-$shadow-lift: 0 30px 60px -25px rgba(191, 106, 77, 0.28);
+$shadow-soft: 0 20px 45px -22px rgba(26, 22, 20, 0.16);
+$shadow-lift: 0 30px 60px -25px rgba(198, 107, 61, 0.25);
+$shadow-header: 0 1px 20px rgba(42, 36, 32, 0.06);
 
 // Breakpoints (usados pelo Bootstrap container-max-widths)
 $bp-sm: 576px;
@@ -38,3 +78,8 @@ $bp-xl: 1280px;
 
 // Transições
 $transition-base: 0.3s ease;
+
+// Reveal-on-scroll — distância e easing fiéis ao design aprovado
+$reveal-distance: 40px;
+$reveal-duration: 0.9s;
+$reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);

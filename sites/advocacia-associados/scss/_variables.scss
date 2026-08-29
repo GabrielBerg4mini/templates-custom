@@ -1,13 +1,39 @@
-// Paleta — azul-marinho profundo, dourado e branco
-$color-navy: #0d1930;
-$color-navy-light: #16223e;
-$color-navy-lighter: #1f2d4d;
-$color-gold: #c5a253;
-$color-gold-light: #ddc07f;
-$color-gold-dark: #a3813a;
+// Paleta — escala navy 50-950 e gold 50-900, fiel ao design de referência
+// (Bolt.new: navy profundo + dourado, tipografia serifada + Inter).
+$color-navy-50: #f0f4f8;
+$color-navy-100: #d9e2ec;
+$color-navy-200: #bcccdc;
+$color-navy-300: #9fb3c8;
+$color-navy-400: #7e96b5;
+$color-navy-500: #5e7896;
+$color-navy-600: #486581;
+$color-navy-700: #324d6b;
+$color-navy-800: #1e3a5f;
+$color-navy-900: #0f2540;
+$color-navy-950: #081628;
 
-$color-text: #eef1f6;
-$color-text-muted: #a9b2c7;
+$color-gold-50: #fbf8ef;
+$color-gold-100: #f5edd5;
+$color-gold-200: #ebd9a8;
+$color-gold-300: #e0c47c;
+$color-gold-400: #d4af37;
+$color-gold-500: #c9a227;
+$color-gold-600: #a8851e;
+$color-gold-700: #876818;
+$color-gold-800: #6a4f17;
+$color-gold-900: #564016;
+
+// Aliases — mantêm os nomes já consumidos pelo restante do site,
+// agora apontando para os tons corretos da escala acima.
+$color-navy: $color-navy-950;
+$color-navy-light: $color-navy-900;
+$color-navy-lighter: $color-navy-800;
+$color-gold: $color-gold-400;
+$color-gold-light: $color-gold-300;
+$color-gold-dark: $color-gold-600;
+
+$color-text: $color-navy-100;
+$color-text-muted: $color-navy-300;
 $color-white: #ffffff;
 $color-whatsapp: #25d366;
 
@@ -16,8 +42,8 @@ $color-primary: $color-gold;
 $color-secondary: $color-navy-lighter;
 $color-bg: $color-navy;
 
-// Tipografia
-$font-heading: 'Merriweather', serif;
+// Tipografia — serifada (títulos) + Inter (corpo)
+$font-heading: 'Cormorant Garamond', Georgia, serif;
 $font-base: 'Inter', system-ui, -apple-system, sans-serif;
 
 // Espaçamentos
@@ -26,7 +52,8 @@ $spacing-unit: 8px;
 // Bordas / sombras
 $radius-lg: 16px;
 $shadow-soft: 0 20px 45px -20px rgba(0, 0, 0, 0.55);
-$shadow-lift: 0 30px 70px -25px rgba(197, 162, 83, 0.25);
+$shadow-lift: 0 30px 70px -25px rgba($color-gold-500, 0.3);
+$shadow-gold: 0 20px 40px -12px rgba($color-gold-500, 0.35);
 
 // Breakpoints (usados pelo Bootstrap container-max-widths)
 $bp-sm: 576px;

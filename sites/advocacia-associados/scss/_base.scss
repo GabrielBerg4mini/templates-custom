@@ -7,14 +7,150 @@ html {
   scroll-behavior: smooth;
 }
 
+// A navbar é fixa e transparente sobre o hero (como no design de
+// referência), então as âncoras de navegação precisam de espaço
+// para não ficar escondidas atrás dela ao rolar direto para a seção.
+#inicio,
+#areas,
+#escritorio,
+#contato {
+  scroll-margin-top: 90px;
+}
+
+// Scrollbar customizada (fiel ao design de referência)
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: v.$color-navy-950;
+}
+::-webkit-scrollbar-thumb {
+  background: v.$color-navy-800;
+  border-radius: 5px;
+
+  &:hover {
+    background: v.$color-navy-700;
+  }
+}
+
+// -----------------------------------------------------------------
+// Animações de entrada — recriam fadeUp / fadeIn / scaleIn do design
+// de referência como @keyframes simples, sem dependência de JS.
+// -----------------------------------------------------------------
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes softBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes softPing {
+  75%,
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+// Reveal-on-scroll — o JS só alterna a classe .is-visible;
+// o "quando"/"como" mora inteiramente aqui. --reveal-delay é
+// setado inline por item para reproduzir o stagger do design
+// de referência (ex.: style="--reveal-delay: .1s").
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition-delay: var(--reveal-delay, 0s);
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// -----------------------------------------------------------------
+// Utilitários de texto/superfície
+// -----------------------------------------------------------------
+.gold-gradient-text {
+  background: linear-gradient(90deg, v.$color-gold-300, v.$color-gold-400 45%, v.$color-gold-600);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass {
+  background: rgba(v.$color-navy-950, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
 .eyebrow {
   font-family: v.$font-base;
   font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: v.$color-gold;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0;
+}
+
+.eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+
+  &--center {
+    justify-content: center;
+  }
+}
+
+.eyebrow-line {
+  display: inline-block;
+  height: 1px;
+  width: 32px;
+  background: v.$color-gold;
+  flex-shrink: 0;
+
+  &--lg {
+    width: 48px;
+  }
 }
 
 .section-heading {
@@ -27,34 +163,81 @@ html {
   }
 
   h2 {
-    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-family: v.$font-heading;
+    font-weight: 600;
+    font-size: clamp(1.9rem, 3.2vw, 2.75rem);
+    color: v.$color-white;
   }
 
   &__text {
     color: v.$color-text-muted;
+    margin-top: 1rem;
     margin-bottom: 0;
+  }
+}
+
+// Botões — pílula dourada (o design de referência usa rounded-full
+// em todos os CTAs, então essas duas classes recebem raio próprio,
+// diferente do $border-radius mais sóbrio usado pelos cards).
+.btn-gold,
+.btn-outline-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border-radius: 50rem;
+  padding: 0.85rem 1.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease, transform 0.3s ease;
+
+  i {
+    font-size: 1.05em;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:hover i {
+    transform: scale(1.12);
+  }
+
+  // Variante compacta — usada no CTA da navbar (o design de referência
+  // usa um botão menor ali do que no hero/rodapé).
+  &--sm {
+    padding: 0.55rem 1.25rem;
+    font-size: 0.85rem;
   }
 }
 
 .btn-gold {
   background: v.$color-gold;
   border: none;
-  color: v.$color-navy;
-  font-weight: 600;
+  color: v.$color-navy-950;
+  box-shadow: v.$shadow-gold;
 
   &:hover {
     background: v.$color-gold-light;
-    color: v.$color-navy;
+    color: v.$color-navy-950;
+    box-shadow: 0 24px 48px -12px rgba(v.$color-gold-500, 0.45);
+    transform: translateY(-2px);
   }
 }
 
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+.btn-outline-gold {
+  background: transparent;
+  border: 1px solid rgba(v.$color-navy-300, 0.3);
+  color: v.$color-white;
 
-  &.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+  &:hover {
+    border-color: v.$color-gold;
+    color: v.$color-gold-light;
   }
 }

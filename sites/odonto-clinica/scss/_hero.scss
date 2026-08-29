@@ -1,43 +1,102 @@
-@use 'variables' as v;
+@use "variables" as v;
+@use "mixins" as m;
+
+// Flutuação suave dos cartões sobre a foto do hero — timing exato do
+// keyframe "float" do design de referência (4s ease-in-out, -10px).
+@keyframes float-badge {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 
 .hero {
   position: relative;
   overflow: hidden;
-  background: radial-gradient(circle at 88% 12%, rgba(58, 168, 220, 0.14), transparent 55%),
-              radial-gradient(circle at 8% 92%, rgba(43, 189, 148, 0.16), transparent 50%);
+  // Header fixo sobrepõe o hero — compensa aqui, não no body. As utilities
+  // do Bootstrap (py-5/py-lg-6) foram removidas da tag: elas saem com
+  // !important e sempre venciam qualquer valor definido aqui. Agora o
+  // espaçamento vertical do hero é 100% controlado por esta regra.
+  padding-top: 84px;
+  padding-bottom: 3rem;
+
+  @include m.breakpoint(lg) {
+    padding-top: 6rem;
+    padding-bottom: 4.5rem;
+  }
+  background: linear-gradient(
+    180deg,
+    v.$mint-50 0%,
+    rgba(239, 248, 254, 0.6) 55%,
+    v.$color-white 100%
+  );
+
+  // Blobs decorativos — equivalentes aos círculos desfocados do design de referência.
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(70px);
+    pointer-events: none;
+  }
+
+  &::before {
+    top: -6rem;
+    right: -6rem;
+    width: 24rem;
+    height: 24rem;
+    background: rgba(184, 236, 220, 0.4); // mint-200 / 40%
+  }
+
+  &::after {
+    top: 10rem;
+    left: -6rem;
+    width: 20rem;
+    height: 20rem;
+    background: rgba(191, 226, 249, 0.4); // sky-200 / 40%
+  }
 
   h1 {
-    max-width: 17ch;
+    max-width: 18ch;
   }
 
   &__subtitle {
     color: v.$color-text-muted;
     font-size: 1.05rem;
     max-width: 48ch;
+
+    strong {
+      color: v.$color-text;
+      font-weight: 700;
+    }
   }
 
   &__badges {
-    li {
-      font-size: 0.82rem;
-      color: v.$color-text-muted;
-      padding-left: 1rem;
-      position: relative;
-
-      &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0.5em;
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: v.$color-mint-accent;
-      }
-    }
+    row-gap: 0.75rem;
   }
 
   &__media {
     position: relative;
+
+    // Blob decorativo atrás da foto — profundidade sem precisar de mais uma imagem.
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -6% -10%;
+      background: radial-gradient(
+        circle,
+        rgba(58, 168, 220, 0.16),
+        rgba(43, 189, 148, 0.12) 60%,
+        transparent 75%
+      );
+      border-radius: 40% 60% 55% 45% / 50% 45% 55% 50%;
+      z-index: -1;
+    }
 
     img {
       box-shadow: v.$shadow-lift;
@@ -48,21 +107,78 @@
 
   &__media-badge {
     position: absolute;
-    bottom: -1rem;
-    left: -1rem;
     line-height: 1.2;
+    animation: float-badge 4s ease-in-out infinite;
+
+    .stars {
+      display: flex;
+      gap: 2px;
+      color: v.$color-gold;
+      font-size: 0.7rem;
+      margin-bottom: 0.3rem;
+    }
 
     strong {
       font-family: v.$font-heading;
-      font-size: 1.5rem;
-      color: v.$color-mint-dark;
+      font-size: 1rem;
+      font-weight: 700;
+      color: v.$color-text;
+      display: block;
     }
 
     span {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: v.$color-text-muted;
-      max-width: 14ch;
+      max-width: 15ch;
       display: block;
     }
+
+    &--rating {
+      top: 1rem;
+      left: -1.25rem;
+      padding: 0.75rem 1rem !important;
+      animation-delay: 0s;
+    }
+
+    &--tech {
+      bottom: 1.25rem;
+      right: -1rem;
+      background: v.$color-mint-dark;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.5rem 1rem 0.5rem 0.5rem !important;
+      animation-delay: 1s;
+
+      strong,
+      span {
+        color: v.$color-white;
+      }
+
+      strong {
+        font-size: 0.95rem;
+      }
+
+      span {
+        font-size: 0.68rem;
+        color: rgba(255, 255, 255, 0.85);
+      }
+    }
   }
+}
+
+// Chip do "3D" dentro do badge de tecnologia — quadrado destacado
+// separado do texto, em vez de ícone solto.
+.tech-badge-chip {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 0.6rem;
+  background: rgba(255, 255, 255, 0.18);
+  color: v.$color-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
 }

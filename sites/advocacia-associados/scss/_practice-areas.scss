@@ -3,35 +3,92 @@
 // Grid vem do Bootstrap (.row-cols-*); aqui só o acabamento do .card.
 
 .practice-card {
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background: rgba(v.$color-navy-900, 0.4);
+  border-color: rgba(v.$color-navy-700, 0.5) !important;
+  transition: transform 0.5s ease, border-color 0.5s ease, background-color 0.5s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background: rgba(v.$color-gold, 0);
+    filter: blur(48px);
+    transition: background-color 0.5s ease;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background: linear-gradient(90deg, v.$color-gold-400, v.$color-gold-600);
+    transition: width 0.5s ease;
+  }
 
   &:hover {
-    transform: translateY(-4px);
-    border-color: rgba(197, 162, 83, 0.4) !important;
+    transform: translateY(-8px);
+    border-color: rgba(v.$color-gold, 0.5) !important;
+    background: rgba(v.$color-navy-900, 0.8);
+
+    &::before {
+      background: rgba(v.$color-gold, 0.1);
+    }
+
+    &::after {
+      width: 100%;
+    }
+
+    .practice-card__icon {
+      border-color: v.$color-gold;
+      background: rgba(v.$color-gold, 0.1);
+
+      i {
+        transform: scale(1.1);
+      }
+    }
   }
 
   &__icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: rgba(197, 162, 83, 0.12);
+    position: relative;
+    width: 64px;
+    height: 64px;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(v.$color-gold, 0.3);
+    background: rgba(v.$color-navy-950, 0.5);
     color: v.$color-gold;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: border-color 0.5s ease, background-color 0.5s ease;
 
     i {
-      font-size: 24px;
+      font-size: 30px;
+      transition: transform 0.5s ease;
     }
   }
 
   h3 {
-    font-size: 1.1rem;
+    position: relative;
+    font-family: v.$font-heading;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: v.$color-white;
   }
 
   p {
+    position: relative;
     color: v.$color-text-muted;
     font-size: 0.9rem;
+    line-height: 1.6;
     margin-bottom: 0;
   }
 }

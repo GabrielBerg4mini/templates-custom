@@ -3,20 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Advocacia &amp; Associados — Soluções Jurídicas Estratégicas</title>
-  <meta name="description" content="Escritório de advocacia especializado em Direito de Família, Empresarial, Trabalhista e Imobiliário. Consulta sigilosa e atendimento imediato." />
+  <title>Advocacia &amp; Associados | Soluções Jurídicas Estratégicas</title>
+  <meta name="description" content="Escritório de advocacia com mais de 15 anos de experiência. Soluções jurídicas estratégicas para proteger seus direitos e seu patrimônio." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
 
   <!-- HEADER -->
-  <nav class="navbar navbar-expand-lg sticky-top">
+  <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand" href="#inicio">Advocacia <span>&amp; Associados</span></a>
+      <a class="navbar-brand" href="#inicio">
+        <span class="brand-badge"><i class="bi bi-bank2"></i></span>
+        <span class="d-flex flex-column lh-1">
+          <span class="brand-name">Advocacia <span>&amp;</span> Associados</span>
+          <span class="brand-tagline">Advocacia Tributária</span>
+        </span>
+      </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
         aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menu">
@@ -30,7 +36,8 @@
           <li class="nav-item"><a class="nav-link" href="#escritorio">O Escritório</a></li>
           <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
           <li class="nav-item">
-            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-gold btn-sm ms-lg-2">
+            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn-gold btn-gold--sm ms-lg-2">
+              <i class="bi bi-telephone"></i>
               Falar com Advogado
             </a>
           </li>
@@ -42,112 +49,163 @@
   <main>
     <!-- HERO -->
     <section class="hero" id="inicio">
+      <div class="hero__bg">
+        <img src="https://images.pexels.com/photos/6077091/pexels-photo-6077091.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Escritório de advocacia" />
+      </div>
+
       <div class="container">
-        <div class="row">
-          <div class="col-lg-8" data-reveal>
-            <p class="eyebrow">Advocacia estratégica</p>
-            <h1 class="fw-bold">Soluções jurídicas estratégicas para proteger seus direitos e seu patrimônio</h1>
-            <p class="hero__subtitle">
-              Atendimento imediato e consulta sigilosa, com uma equipe experiente que atua com precisão
-              técnica em cada etapa — da orientação inicial à resolução definitiva do seu caso.
-            </p>
-            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-gold btn-lg mt-3">
-              <i class="bi bi-whatsapp icon"></i>
+        <div class="hero__content">
+          <div class="hero__eyebrow-row">
+            <span class="eyebrow-line eyebrow-line--lg"></span>
+            <span class="eyebrow">Há mais de 15 anos protegendo direitos</span>
+          </div>
+
+          <h1>
+            Soluções jurídicas estratégicas para proteger seus
+            <span class="gold-gradient-text">direitos</span> e seu
+            <span class="gold-gradient-text">patrimônio</span>
+          </h1>
+
+          <p class="hero__subtitle">
+            Atendimento ágil e consultas 100% confidenciais. Nossa equipe de especialistas
+            oferece orientação jurídica precisa para decisões que exigem confiança e estratégia.
+          </p>
+
+          <div class="hero__cta-row">
+            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn-gold">
+              <i class="bi bi-whatsapp"></i>
               Consulta Sigilosa no WhatsApp
             </a>
-            <ul class="hero__trust list-unstyled">
-              <li>Sigilo profissional garantido</li>
-              <li>Resposta em até 24h</li>
-              <li>Primeira orientação sem custo</li>
-            </ul>
+            <a href="#areas" class="btn-outline-gold">
+              Conhecer Áreas de Atuação
+            </a>
+          </div>
+
+          <div class="hero__trust">
+            <div class="hero__trust-item">
+              <i class="bi bi-shield-check"></i>
+              <span>Sigilo Profissional Absoluto</span>
+            </div>
+            <div class="hero__trust-item">
+              <i class="bi bi-clock"></i>
+              <span>Resposta em até 2 horas</span>
+            </div>
           </div>
         </div>
       </div>
+
+      <a href="#areas" class="hero__scroll-hint">
+        <span>Role para baixo</span>
+        <i class="bi bi-chevron-down"></i>
+      </a>
     </section>
 
     <!-- PRACTICE AREAS -->
     <section class="practice-areas py-5 py-lg-6" id="areas">
       <div class="container">
         <div class="section-heading section-heading--center" data-reveal>
-          <p class="eyebrow">Áreas de Atuação</p>
-          <h2>Onde podemos ajudar você</h2>
+          <div class="eyebrow-row eyebrow-row--center">
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow">Nossas Especialidades</span>
+            <span class="eyebrow-line"></span>
+          </div>
+          <h2>Áreas de Atuação</h2>
+          <p class="section-heading__text">
+            Atuação especializada em diferentes vertentes do direito, com soluções
+            personalizadas para cada caso.
+          </p>
         </div>
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
-          <div class="col" data-reveal>
+          <div class="col" data-reveal style="--reveal-delay: 0s">
             <article class="practice-card card border h-100 p-4">
               <div class="practice-card__icon mb-3">
-                <i class="bi bi-house-heart"></i>
+                <i class="bi bi-people"></i>
               </div>
               <h3>Direito de Família</h3>
-              <p>Divórcio, guarda, pensão alimentícia e planejamento sucessório com discrição e cuidado.</p>
+              <p>Divórcio consensual, guarda de filhos, pensão alimentícia, inventário e partilha de bens com sensibilidade e estratégia.</p>
             </article>
           </div>
 
-          <div class="col" data-reveal>
+          <div class="col" data-reveal style="--reveal-delay: .1s">
+            <article class="practice-card card border h-100 p-4">
+              <div class="practice-card__icon mb-3">
+                <i class="bi bi-buildings"></i>
+              </div>
+              <h3>Direito Empresarial</h3>
+              <p>Constituição de empresas, contratos societários, recuperação judicial, fusões e aquisições, compliance e governança.</p>
+            </article>
+          </div>
+
+          <div class="col" data-reveal style="--reveal-delay: .2s">
             <article class="practice-card card border h-100 p-4">
               <div class="practice-card__icon mb-3">
                 <i class="bi bi-briefcase"></i>
               </div>
-              <h3>Empresarial</h3>
-              <p>Contratos, societário e compliance para proteger a operação e o crescimento do seu negócio.</p>
+              <h3>Direito Trabalhista</h3>
+              <p>Defesa em ações trabalhistas, acordos, rescisões, verbas trabalhistas, assessoria preventiva e contenciosa.</p>
             </article>
           </div>
 
-          <div class="col" data-reveal>
+          <div class="col" data-reveal style="--reveal-delay: .3s">
             <article class="practice-card card border h-100 p-4">
               <div class="practice-card__icon mb-3">
-                <i class="bi bi-clipboard-check"></i>
+                <i class="bi bi-house-door"></i>
               </div>
-              <h3>Trabalhista</h3>
-              <p>Defesa de direitos e negociações trabalhistas para empregados e empregadores.</p>
-            </article>
-          </div>
-
-          <div class="col" data-reveal>
-            <article class="practice-card card border h-100 p-4">
-              <div class="practice-card__icon mb-3">
-                <i class="bi bi-building"></i>
-              </div>
-              <h3>Imobiliário</h3>
-              <p>Due diligence, contratos de compra e venda e regularização de imóveis.</p>
+              <h3>Direito Imobiliário</h3>
+              <p>Compra e venda de imóveis, regularização de propriedade, locação, despejo, usucapião e disputas possessórias.</p>
             </article>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- DIFFERENTIALS -->
-    <section class="differentials py-5">
+    <!-- DIFFERENTIALS / STATS -->
+    <section class="differentials py-5 py-lg-6" id="escritorio">
       <div class="container">
-        <div class="row row-cols-1 row-cols-sm-3 g-4">
-          <div class="col" data-reveal>
+        <div class="section-heading section-heading--center" data-reveal>
+          <div class="eyebrow-row eyebrow-row--center">
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow">Por que nos escolher</span>
+            <span class="eyebrow-line"></span>
+          </div>
+          <h2>Nossos Diferenciais</h2>
+          <p class="section-heading__text">
+            Compromisso com resultados, transparência e dedicação integral a cada cliente.
+          </p>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col" data-reveal style="--reveal-delay: 0s">
             <div class="stat-callout">
               <div class="stat-callout__icon">
-                <i class="bi bi-clock-history"></i>
+                <i class="bi bi-clock"></i>
               </div>
-              <strong>Atendimento</strong>
-              <span>Imediato, 7 dias por semana</span>
+              <strong>Imediato</strong>
+              <p class="stat-callout__label mb-0">Atendimento</p>
+              <p>Resposta ágil em até 2 horas, sem filas nem espera.</p>
             </div>
           </div>
 
-          <div class="col" data-reveal>
+          <div class="col" data-reveal style="--reveal-delay: .15s">
             <div class="stat-callout">
               <div class="stat-callout__icon">
                 <i class="bi bi-award"></i>
               </div>
-              <strong>+15 Anos</strong>
-              <span>De experiência consolidada</span>
+              <strong>+15</strong>
+              <p class="stat-callout__label mb-0">Anos de Experiência</p>
+              <p>Mais de uma década atuando com excelência jurídica.</p>
             </div>
           </div>
 
-          <div class="col" data-reveal>
+          <div class="col" data-reveal style="--reveal-delay: .3s">
             <div class="stat-callout">
               <div class="stat-callout__icon">
-                <i class="bi bi-shield-check"></i>
+                <i class="bi bi-check-circle"></i>
               </div>
-              <strong>Casos de Sucesso</strong>
-              <span>Centenas de causas resolvidas</span>
+              <strong>+2.500</strong>
+              <p class="stat-callout__label mb-0">Casos de Sucesso</p>
+              <p>Histórico comprovado de resultados favoráveis.</p>
             </div>
           </div>
         </div>
@@ -155,39 +213,74 @@
     </section>
 
     <!-- LAWYERS -->
-    <section class="lawyers py-5 py-lg-6" id="escritorio">
+    <section class="lawyers py-5 py-lg-6">
       <div class="container">
         <div class="section-heading section-heading--center" data-reveal>
-          <p class="eyebrow">O Escritório</p>
-          <h2>Sócios responsáveis pelo escritório</h2>
+          <div class="eyebrow-row eyebrow-row--center">
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow">Nossa Equipe</span>
+            <span class="eyebrow-line"></span>
+          </div>
+          <h2>Advogados Sêniores</h2>
+          <p class="section-heading__text">
+            Profissionais altamente qualificados, com registro ativo na OAB e ampla
+            experiência em suas áreas de especialização.
+          </p>
         </div>
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
-          <div class="col" data-reveal>
-            <div class="lawyer-card">
-              <img src="https://images.pexels.com/photos/29995605/pexels-photo-29995605.jpeg?auto=compress&cs=tinysrgb&w=480" alt="Retrato do Dr. Ricardo Almeida" class="img-fluid rounded lawyer-card__photo mb-3" width="480" height="480" />
-              <h3>Dr. Ricardo Almeida</h3>
-              <p class="lawyer-card__role">Sócio Fundador</p>
-              <p class="lawyer-card__oab">OAB/SP 123.456</p>
-            </div>
+          <div class="col" data-reveal style="--reveal-delay: 0s">
+            <article class="lawyer-card">
+              <div class="lawyer-card__photo">
+                <img src="https://images.pexels.com/photos/37148308/pexels-photo-37148308.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Retrato do Dr. Ricardo Mendes" />
+                <span class="lawyer-card__oab">OAB/SP 123.456</span>
+              </div>
+              <div class="lawyer-card__info">
+                <h3>Dr. Ricardo Mendes</h3>
+                <p class="lawyer-card__role">Sócio Fundador</p>
+                <p class="lawyer-card__specialty">Direito Empresarial &amp; Tributário</p>
+                <div class="lawyer-card__social">
+                  <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                  <a href="#" aria-label="E-mail"><i class="bi bi-envelope"></i></a>
+                </div>
+              </div>
+            </article>
           </div>
 
-          <div class="col" data-reveal>
-            <div class="lawyer-card">
-              <img src="https://images.pexels.com/photos/36733305/pexels-photo-36733305.jpeg?auto=compress&cs=tinysrgb&w=480" alt="Retrato da Dra. Beatriz Nunes" class="img-fluid rounded lawyer-card__photo mb-3" width="480" height="480" />
-              <h3>Dra. Beatriz Nunes</h3>
-              <p class="lawyer-card__role">Sócia — Direito de Família</p>
-              <p class="lawyer-card__oab">OAB/SP 234.567</p>
-            </div>
+          <div class="col" data-reveal style="--reveal-delay: .15s">
+            <article class="lawyer-card">
+              <div class="lawyer-card__photo">
+                <img src="https://images.pexels.com/photos/26728094/pexels-photo-26728094.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Retrato da Dra. Helena Costa" />
+                <span class="lawyer-card__oab">OAB/SP 234.567</span>
+              </div>
+              <div class="lawyer-card__info">
+                <h3>Dra. Helena Costa</h3>
+                <p class="lawyer-card__role">Sócia Sênior</p>
+                <p class="lawyer-card__specialty">Direito de Família &amp; Sucessões</p>
+                <div class="lawyer-card__social">
+                  <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                  <a href="#" aria-label="E-mail"><i class="bi bi-envelope"></i></a>
+                </div>
+              </div>
+            </article>
           </div>
 
-          <div class="col" data-reveal>
-            <div class="lawyer-card">
-              <img src="https://images.pexels.com/photos/28426646/pexels-photo-28426646.jpeg?auto=compress&cs=tinysrgb&w=480" alt="Retrato do Dr. Marcelo Teixeira" class="img-fluid rounded lawyer-card__photo mb-3" width="480" height="480" />
-              <h3>Dr. Marcelo Teixeira</h3>
-              <p class="lawyer-card__role">Sócio — Empresarial</p>
-              <p class="lawyer-card__oab">OAB/SP 345.678</p>
-            </div>
+          <div class="col" data-reveal style="--reveal-delay: .3s">
+            <article class="lawyer-card">
+              <div class="lawyer-card__photo">
+                <img src="https://images.pexels.com/photos/17049771/pexels-photo-17049771.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Retrato do Dr. Fernando Alves" />
+                <span class="lawyer-card__oab">OAB/SP 345.678</span>
+              </div>
+              <div class="lawyer-card__info">
+                <h3>Dr. Fernando Alves</h3>
+                <p class="lawyer-card__role">Advogado Sênior</p>
+                <p class="lawyer-card__specialty">Direito Trabalhista</p>
+                <div class="lawyer-card__social">
+                  <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                  <a href="#" aria-label="E-mail"><i class="bi bi-envelope"></i></a>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </div>
@@ -195,38 +288,62 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer pt-5" id="contato">
-    <div class="container">
+  <footer class="site-footer" id="contato">
+    <div class="container py-5">
       <div class="site-footer__grid row gy-5 pb-5">
-        <div class="col-md-4">
-          <a href="#inicio" class="navbar-brand d-inline-block mb-3">Advocacia <span>&amp; Associados</span></a>
-          <ul class="contact-list list-unstyled">
-            <li>
-              <i class="bi bi-geo-alt icon"></i>
-              <span>Av. Paulista, 1000 — 12º andar, São Paulo, SP</span>
-            </li>
-            <li>
-              <i class="bi bi-envelope icon"></i>
-              <span>contato@advocaciaassociados.com.br</span>
-            </li>
-            <li>
-              <i class="bi bi-telephone icon"></i>
-              <span>+55 (11) 0000-0000</span>
-            </li>
-          </ul>
+        <div class="col-lg-6" data-reveal>
+          <div class="eyebrow-row">
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow">Fale Conosco</span>
+          </div>
+          <h2 class="fw-semibold">Entre em Contato</h2>
+          <p class="site-footer__lead">
+            Agende uma consulta sigilosa. Nossa equipe está pronta para oferecer a
+            orientação jurídica que você precisa.
+          </p>
+
+          <div class="contact-info">
+            <div class="contact-info__item">
+              <div class="contact-info__icon"><i class="bi bi-geo-alt"></i></div>
+              <div>
+                <p class="contact-info__label mb-0">Endereço</p>
+                <p class="contact-info__value">Av. Paulista, 1.500 — 12º andar<br />Bela Vista, São Paulo — SP, 01310-100</p>
+              </div>
+            </div>
+            <div class="contact-info__item">
+              <div class="contact-info__icon"><i class="bi bi-telephone"></i></div>
+              <div>
+                <p class="contact-info__label mb-0">Telefone</p>
+                <p class="contact-info__value">+55 (11) 3000-0000</p>
+              </div>
+            </div>
+            <div class="contact-info__item">
+              <div class="contact-info__icon"><i class="bi bi-envelope"></i></div>
+              <div>
+                <p class="contact-info__label mb-0">E-mail</p>
+                <p class="contact-info__value">contato@advocaciaassociados.com.br</p>
+              </div>
+            </div>
+            <div class="contact-info__item">
+              <div class="contact-info__icon"><i class="bi bi-clock"></i></div>
+              <div>
+                <p class="contact-info__label mb-0">Horário de Atendimento</p>
+                <p class="contact-info__value">Segunda a Sexta: 9h às 18h<br />Sábado: 9h às 13h</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn-gold mt-4">
+            <i class="bi bi-whatsapp"></i>
+            Consulta Sigilosa no WhatsApp
+          </a>
         </div>
 
-        <div class="col-md-4">
-          <h4>Horário</h4>
-          <p>Segunda a sexta, 09h às 19h.<br />Atendimento de urgência 24h via WhatsApp.</p>
-        </div>
-
-        <div class="col-md-4">
-          <h4>Localização</h4>
-          <div class="map-widget rounded">
+        <div class="col-lg-6" data-reveal style="--reveal-delay: .15s">
+          <div class="map-widget">
             <iframe
-              title="Mapa de localização do escritório"
-              src="https://www.google.com/maps?q=Avenida+Paulista,+São+Paulo&output=embed"
+              title="Localização do escritório"
+              src="https://www.google.com/maps?q=Avenida+Paulista+1500+São+Paulo&output=embed"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
@@ -234,20 +351,38 @@
         </div>
       </div>
 
-      <div class="site-footer__bottom py-4">
-        <p class="disclaimer mb-2">
-          Este site tem caráter informativo e não constitui consulta jurídica. O envio de mensagens não
-          estabelece relação advogado-cliente. Seus dados são tratados com privacidade e segurança, em
-          conformidade com a LGPD (Lei nº 13.709/2018).
-        </p>
-        <p class="mb-0">&copy; 2026 Advocacia &amp; Associados. Todos os direitos reservados.</p>
+      <div class="footer-bottom pt-4">
+        <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-4">
+          <a href="#inicio" class="footer-brand">
+            <span class="footer-brand__badge"><i class="bi bi-bank2"></i></span>
+            <span class="footer-brand__name">Advocacia <span>&amp;</span> Associados</span>
+          </a>
+          <p class="disclaimer text-center text-md-end mb-0">
+            Este site está em conformidade com a Lei Geral de Proteção de Dados
+            (LGPD — Lei nº 13.709/2018). As informações aqui contidas não substituem
+            a consulta jurídica personalizada.
+          </p>
+        </div>
+
+        <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 mt-4 pt-4" style="border-top: 1px solid rgba(255,255,255,.06)">
+          <p class="mb-0">&copy; <span id="copyright-year">2026</span> Advocacia &amp; Associados. Todos os direitos reservados. CNPJ: 00.000.000/0001-00</p>
+          <div class="footer-bottom__legal">
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Uso</a>
+            <a href="#">LGPD</a>
+          </div>
+        </div>
       </div>
     </div>
   </footer>
 
   <!-- FLOATING WHATSAPP BUTTON -->
   <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
-    <i class="bi bi-whatsapp icon"></i>
+    <span class="whatsapp-float__label">Fale conosco agora</span>
+    <span class="whatsapp-float__button">
+      <i class="bi bi-whatsapp"></i>
+      <span class="whatsapp-float__badge"></span>
+    </span>
   </a>
 
   <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>

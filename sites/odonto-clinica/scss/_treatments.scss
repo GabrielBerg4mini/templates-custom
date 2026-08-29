@@ -1,36 +1,98 @@
 @use 'variables' as v;
 
 .treatment-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.75rem !important;
+  transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+
+  // Brilho sutil no fundo ao passar o mouse — mesmo efeito do gradiente
+  // "from-mint-50 to-transparent" que aparece no hover do design de referência.
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, v.$color-mint 0%, transparent 65%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
 
   &:hover {
     transform: translateY(-6px);
     box-shadow: v.$shadow-lift !important;
-    border-color: rgba(43, 189, 148, 0.35) !important;
+    border-color: v.$mint-200 !important;
+
+    &::before {
+      opacity: 1;
+    }
+
+    .treatment-card__icon {
+      background: v.$color-cta-green;
+      color: v.$color-white;
+    }
+
+    .treatment-card__link .icon {
+      transform: translateX(3px);
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  &__badge {
+    background: v.$color-sky;
+    color: v.$sky-700;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: none;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    white-space: nowrap;
   }
 
   &__icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    border-radius: 1.1rem;
     background: v.$color-mint;
     color: v.$color-mint-dark;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
 
     i {
-      font-size: 26px;
+      font-size: 30px;
     }
   }
 
   h3 {
+    margin-top: 1.5rem;
     font-size: 1.1rem;
   }
 
   p {
     color: v.$color-text-muted;
     font-size: 0.9rem;
-    margin-bottom: 0;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: v.$color-mint-dark;
+    margin-top: 1.25rem;
+
+    .icon {
+      font-size: 0.8rem;
+      transition: transform v.$transition-base;
+    }
   }
 }

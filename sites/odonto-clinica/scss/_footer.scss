@@ -1,5 +1,46 @@
 @use 'variables' as v;
 
+.emergency-bar {
+  background: v.$color-urgent-light;
+  padding-block: 1rem;
+
+  &__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(226, 87, 76, 0.15);
+    color: v.$color-urgent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  strong {
+    display: block;
+    font-size: 0.95rem;
+    color: v.$color-text;
+  }
+
+  span {
+    font-size: 0.8rem;
+    color: v.$color-text-muted;
+  }
+}
+
+.btn-urgent {
+  background: v.$color-urgent;
+  color: v.$color-white;
+  font-weight: 600;
+  border: none;
+
+  &:hover {
+    background: v.$color-urgent-dark;
+    color: v.$color-white;
+  }
+}
+
 .site-footer {
   background: v.$color-text;
   color: rgba(255, 255, 255, 0.75);
@@ -20,6 +61,10 @@
   &__grid {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
+
+  &__nav li {
+    margin-bottom: 0.6rem;
+  }
 }
 
 .contact-list li {
@@ -32,16 +77,4 @@
     color: v.$color-mint-accent;
     flex-shrink: 0;
   }
-}
-
-.emergency-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(43, 189, 148, 0.15);
-  border: 1px solid rgba(43, 189, 148, 0.35);
-  border-radius: 999px;
-  padding: 0.5rem 1rem;
-  font-size: 0.85rem;
-  color: v.$color-mint-accent;
 }

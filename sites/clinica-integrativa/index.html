@@ -3,41 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clínica Integrativa — Estética e Bem-Estar Holístico</title>
+  <title>Clínica Integrativa — Estética Natural e Bem-Estar</title>
   <meta name="description" content="Clínica integrativa de estética e bem-estar, com tratamentos faciais, corporais e spa & detox guiados por uma abordagem natural e personalizada." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500;1,600&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
 
   <!-- HEADER -->
-  <nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container">
+  <nav class="navbar navbar-expand-lg fixed-top" id="siteNav">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a class="navbar-brand" href="#top">Clínica <span class="navbar-brand__accent">Integrativa</span></a>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
         aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menu">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav align-items-lg-center gap-lg-4">
+      <div class="collapse navbar-collapse flex-grow-0" id="mainNav">
+        <ul class="navbar-nav align-items-lg-center gap-lg-4 mx-lg-4">
           <li class="nav-item"><a class="nav-link" href="#conceito">Conceito</a></li>
           <li class="nav-item"><a class="nav-link" href="#tratamentos">Tratamentos</a></li>
           <li class="nav-item"><a class="nav-link" href="#espaco">Espaço</a></li>
           <li class="nav-item"><a class="nav-link" href="#agendamento">Agendamento</a></li>
           <li class="nav-item d-lg-none">
-            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-terracotta btn-sm rounded-pill mt-2">
+            <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20um%20hor%C3%A1rio%20na%20Cl%C3%ADnica%20Integrativa." target="_blank" rel="noopener" class="btn btn-sage rounded-pill mt-3 w-100">
               Reservar Horário
             </a>
           </li>
         </ul>
       </div>
 
-      <a class="navbar-brand" href="#inicio">Clínica Integrativa</a>
-
-      <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-terracotta btn-sm rounded-pill navbar-cta d-none d-lg-inline-flex">
+      <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20um%20hor%C3%A1rio%20na%20Cl%C3%ADnica%20Integrativa." target="_blank" rel="noopener" class="btn btn-outline-sage btn-sm rounded-pill navbar-cta d-none d-lg-inline-flex">
         Reservar Horário
       </a>
     </div>
@@ -45,31 +45,59 @@
 
   <main>
     <!-- HERO -->
-    <section class="hero py-5 py-lg-6" id="inicio">
+    <section class="hero" id="top">
       <div class="container">
         <div class="row align-items-center gy-5">
-          <div class="col-lg-7" data-reveal>
-            <p class="eyebrow">Estética integrativa &amp; bem-estar</p>
-            <h1 class="display-5">Cuidado integral para a sua pele e bem-estar</h1>
+          <div class="col-lg-5">
+            <p class="eyebrow hero__eyebrow">Estética Natural &amp; Bem-Estar</p>
+            <h1 class="hero__title">
+              Cuidado integral para a sua <em class="text-terracotta">pele</em> e <em class="text-sage">bem-estar</em>
+            </h1>
             <p class="hero__subtitle">
-              Uma abordagem natural e personalizada, que une estética facial e corporal, terapias de
-              equilíbrio e produtos orgânicos — pensada para o seu ritmo e para os resultados que você busca.
+              Protocolos personalizados de estética natural, combinando tecnologia
+              avançada e ativos orgânicos para revelar a beleza única de cada pele.
             </p>
-            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-terracotta btn-lg rounded-pill mt-3">
-              <i class="bi bi-whatsapp icon"></i>
-              Agendar pelo WhatsApp
-            </a>
+            <div class="hero__actions d-flex flex-column flex-sm-row align-items-sm-center gap-3 gap-sm-4 mt-4">
+              <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20um%20hor%C3%A1rio%20na%20Cl%C3%ADnica%20Integrativa." target="_blank" rel="noopener" class="btn btn-sage btn-lg rounded-pill">
+                <i class="bi bi-whatsapp icon"></i>
+                Agendar pelo WhatsApp
+                <i class="bi bi-arrow-right icon"></i>
+              </a>
+              <a href="#tratamentos" class="hero__link">Ver tratamentos</a>
+            </div>
+
+            <div class="hero__stats d-flex gap-5">
+              <div>
+                <strong class="text-terracotta">12+</strong>
+                <span>Anos de experiência</span>
+              </div>
+              <div>
+                <strong class="text-sage">5k+</strong>
+                <span>Clientes satisfeitas</span>
+              </div>
+              <div>
+                <strong class="text-nude">100%</strong>
+                <span>Produtos orgânicos</span>
+              </div>
+            </div>
           </div>
 
-          <div class="col-lg-5" data-reveal>
-            <div class="hero__media position-relative mx-auto" style="max-width: 380px;">
-              <img src="https://images.pexels.com/photos/35546238/pexels-photo-35546238.jpeg?auto=compress&cs=tinysrgb&w=720"
-                alt="Ambiente sereno da clínica, com luz natural"
-                class="img-fluid rounded-4 w-100" width="720" height="900" />
-              <div class="hero__media-tag rounded-4 px-3 py-2">
-                <strong class="d-block">Espaço</strong>
-                <span class="small">luz natural &amp; silêncio</span>
+          <div class="col-lg-7">
+            <div class="hero__media">
+              <div class="hero__media-frame">
+                <img src="https://images.pexels.com/photos/7233271/pexels-photo-7233271.jpeg?auto=compress&cs=tinysrgb&w=1400"
+                  alt="Ambiente sereno da clínica com luz natural" loading="eager" width="1400" height="620" />
               </div>
+
+              <div class="hero__card">
+                <span class="hero__card-icon"><i class="bi bi-stars"></i></span>
+                <div>
+                  <strong>Atendimento Exclusivo</strong>
+                  <span>Sessões individuais</span>
+                </div>
+              </div>
+
+              <span class="hero__badge">Estética Consciente</span>
             </div>
           </div>
         </div>
@@ -79,73 +107,174 @@
     <!-- FEATURED SERVICES -->
     <section class="services py-5 py-lg-6" id="tratamentos">
       <div class="container">
-        <div class="section-heading" data-reveal>
-          <p class="eyebrow">Tratamentos em destaque</p>
-          <h2>Feito sob medida para o seu bem-estar</h2>
+        <div class="services-heading section-heading mb-5" data-reveal>
+          <div>
+            <p class="eyebrow">Tratamentos</p>
+            <h2>Protocolos pensados <br /><em>para cada necessidade</em></h2>
+          </div>
+          <div class="services-nav">
+            <button type="button" data-scroll="left" aria-label="Anterior"><i class="bi bi-chevron-left"></i></button>
+            <button type="button" data-scroll="right" aria-label="Próximo"><i class="bi bi-chevron-right"></i></button>
+          </div>
         </div>
+      </div>
 
-        <div class="services-scroll" data-reveal>
-          <article class="service-card card shadow-sm">
-            <img src="https://images.pexels.com/photos/30809943/pexels-photo-30809943.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Tratamento de estética facial" class="card-img-top" />
-            <div class="card-body service-card__body">
-              <span class="badge badge-gold rounded-pill mb-2">Mais procurado</span>
-              <h3>Estética Facial</h3>
-              <p>Protocolos personalizados para viço, firmeza e equilíbrio da pele do rosto.</p>
-            </div>
-          </article>
+      <div class="services-scroll no-scrollbar px-3 px-lg-5" data-reveal data-scroll-container>
+        <article class="service-card card shadow-sm">
+          <div class="service-card__image">
+            <img src="https://images.pexels.com/photos/32078961/pexels-photo-32078961.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Estética Facial" />
+            <span class="service-card__badge">Mais Procurado</span>
+          </div>
+          <div class="service-card__body">
+            <h3>Estética Facial</h3>
+            <p>Protocolos personalizados de limpeza profunda, peeling orgânico e revitalização com luz LED para uma pele luminosa e saudável.</p>
+            <ul class="service-card__tags">
+              <li>Limpeza de Pele</li>
+              <li>Peeling Orgânico</li>
+              <li>LED Terapia</li>
+              <li>Microagulhamento</li>
+            </ul>
+            <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20um%20hor%C3%A1rio%20na%20Cl%C3%ADnica%20Integrativa." target="_blank" rel="noopener" class="service-card__link">
+              Agendar este tratamento <i class="bi bi-arrow-up-right icon"></i>
+            </a>
+          </div>
+        </article>
 
-          <article class="service-card card shadow-sm">
-            <img src="https://images.pexels.com/photos/38407786/pexels-photo-38407786.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Tratamento de harmonização corporal" class="card-img-top" />
-            <div class="card-body service-card__body">
-              <span class="badge badge-gold rounded-pill mb-2">Exclusivo</span>
-              <h3>Harmonização Corporal</h3>
-              <p>Contorno, firmeza e bem-estar corporal com técnicas naturais e não invasivas.</p>
-            </div>
-          </article>
+        <article class="service-card card shadow-sm">
+          <div class="service-card__image">
+            <img src="https://images.pexels.com/photos/4599377/pexels-photo-4599377.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Harmonização Corporal" />
+            <span class="service-card__badge">Premium</span>
+          </div>
+          <div class="service-card__body">
+            <h3>Harmonização Corporal</h3>
+            <p>Massagem modeladora, drenagem linfática e radiofrequência não invasiva para remodelar o contorno e ativar a circulação.</p>
+            <ul class="service-card__tags">
+              <li>Drenagem Linfática</li>
+              <li>Massagem Modeladora</li>
+              <li>Radiofrequência</li>
+              <li>Criolipólise</li>
+            </ul>
+            <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20um%20hor%C3%A1rio%20na%20Cl%C3%ADnica%20Integrativa." target="_blank" rel="noopener" class="service-card__link">
+              Agendar este tratamento <i class="bi bi-arrow-up-right icon"></i>
+            </a>
+          </div>
+        </article>
 
-          <article class="service-card card shadow-sm">
-            <img src="https://images.pexels.com/photos/35495081/pexels-photo-35495081.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sala de spa e detox" class="card-img-top" />
-            <div class="card-body service-card__body">
-              <span class="badge badge-gold rounded-pill mb-2">Novo</span>
-              <h3>Spa &amp; Detox</h3>
-              <p>Rituais de relaxamento e desintoxicação para equilíbrio do corpo e da mente.</p>
-            </div>
-          </article>
-        </div>
+        <article class="service-card card shadow-sm">
+          <div class="service-card__image">
+            <img src="https://images.pexels.com/photos/20258256/pexels-photo-20258256.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Spa & Detox" />
+            <span class="service-card__badge">Novo</span>
+          </div>
+          <div class="service-card__body">
+            <h3>Spa &amp; Detox</h3>
+            <p>Rituais de relaxamento com óleos essenciais, infusões detox e terapia de respiração para equilibrar corpo e mente.</p>
+            <ul class="service-card__tags">
+              <li>Óleos Essenciais</li>
+              <li>Infusões Detox</li>
+              <li>Aromaterapia</li>
+              <li>Respiração Guiada</li>
+            </ul>
+            <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20um%20hor%C3%A1rio%20na%20Cl%C3%ADnica%20Integrativa." target="_blank" rel="noopener" class="service-card__link">
+              Agendar este tratamento <i class="bi bi-arrow-up-right icon"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="service-card card shadow-sm">
+          <div class="service-card__image">
+            <img src="https://images.pexels.com/photos/6076146/pexels-photo-6076146.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Acupuntura Estética" />
+            <span class="service-card__badge">Exclusivo</span>
+          </div>
+          <div class="service-card__body">
+            <h3>Acupuntura Estética</h3>
+            <p>Estímulo natural de colágeno e microcirculação através da acupuntura facial, para viço e firmeza sem procedimentos invasivos.</p>
+            <ul class="service-card__tags">
+              <li>Acupuntura Facial</li>
+              <li>Ventosaterapia</li>
+              <li>Auriculoterapia</li>
+              <li>Colagenoterapia</li>
+            </ul>
+            <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20um%20hor%C3%A1rio%20na%20Cl%C3%ADnica%20Integrativa." target="_blank" rel="noopener" class="service-card__link">
+              Agendar este tratamento <i class="bi bi-arrow-up-right icon"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="service-card card shadow-sm">
+          <div class="service-card__image">
+            <img src="https://images.pexels.com/photos/36593691/pexels-photo-36593691.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Massagem Terapêutica" />
+            <span class="service-card__badge">Bem-Estar</span>
+          </div>
+          <div class="service-card__body">
+            <h3>Massagem Terapêutica</h3>
+            <p>Técnicas manuais que aliviam tensões, melhoram a circulação e promovem relaxamento profundo do corpo e da mente.</p>
+            <ul class="service-card__tags">
+              <li>Shiatsu</li>
+              <li>Pedras Quentes</li>
+              <li>Liberação Miofascial</li>
+              <li>Reflexologia</li>
+            </ul>
+            <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20um%20hor%C3%A1rio%20na%20Cl%C3%ADnica%20Integrativa." target="_blank" rel="noopener" class="service-card__link">
+              Agendar este tratamento <i class="bi bi-arrow-up-right icon"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="service-card card shadow-sm">
+          <div class="service-card__image">
+            <img src="https://images.pexels.com/photos/36327500/pexels-photo-36327500.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Ritual Ayurvédico" />
+            <span class="service-card__badge">Terapêutico</span>
+          </div>
+          <div class="service-card__body">
+            <h3>Ritual Ayurvédico</h3>
+            <p>Uma jornada sensorial inspirada na medicina ayurvédica, com óleos quentes e técnicas milenares para equilíbrio energético.</p>
+            <ul class="service-card__tags">
+              <li>Óleos Quentes</li>
+              <li>Shirodhara</li>
+              <li>Pontos Marma</li>
+              <li>Equilíbrio Energético</li>
+            </ul>
+            <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20um%20hor%C3%A1rio%20na%20Cl%C3%ADnica%20Integrativa." target="_blank" rel="noopener" class="service-card__link">
+              Agendar este tratamento <i class="bi bi-arrow-up-right icon"></i>
+            </a>
+          </div>
+        </article>
       </div>
     </section>
 
     <!-- DIFFERENTIALS -->
     <section class="differentials py-5 py-lg-6" id="conceito">
       <div class="container">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="section-heading section-heading--center mx-auto" data-reveal>
+          <p class="eyebrow">Por que nos escolher</p>
+          <h2>Uma experiência que cuida <br /><em>de cada detalhe</em></h2>
+        </div>
+
+        <div class="row row-cols-1 row-cols-lg-3 g-5">
           <div class="col" data-reveal>
             <div class="differential">
-              <div class="differential__icon">
-                <i class="bi bi-heart-pulse"></i>
-              </div>
+              <div class="differential__icon"><i class="bi bi-stars"></i></div>
               <h3>Tecnologia Sem Dor</h3>
-              <p>Equipamentos de última geração para sessões confortáveis, sem desconforto.</p>
+              <p>Aparelhos de última geração com protocolos confortáveis que respeitam a sensibilidade de cada pele — sem agulhas, sem trauma.</p>
+              <div class="differential__rule"></div>
             </div>
           </div>
 
           <div class="col" data-reveal>
             <div class="differential">
-              <div class="differential__icon">
-                <i class="bi bi-star-fill"></i>
-              </div>
+              <div class="differential__icon"><i class="bi bi-hearts"></i></div>
               <h3>Atendimento Exclusivo</h3>
-              <p>Horários reservados e planos de cuidado individuais, sem pressa.</p>
+              <p>Sessões individuais com tempo integral da especialista, plano de cuidado sob medida e acompanhamento contínuo dos resultados.</p>
+              <div class="differential__rule"></div>
             </div>
           </div>
 
           <div class="col" data-reveal>
             <div class="differential">
-              <div class="differential__icon">
-                <i class="bi bi-leaf-fill"></i>
-              </div>
+              <div class="differential__icon"><i class="bi bi-leaf-fill"></i></div>
               <h3>Produtos Orgânicos</h3>
-              <p>Ativos naturais e formulações limpas em cada etapa do tratamento.</p>
+              <p>Cosméticos veganos com ativos botânicos certificados, livres de parabenos e testados dermatologicamente para resultados seguros.</p>
+              <div class="differential__rule"></div>
             </div>
           </div>
         </div>
@@ -153,70 +282,135 @@
     </section>
 
     <!-- GALLERY -->
-    <section class="gallery py-5 py-lg-6" id="espaco">
+    <section class="gallery py-5 py-lg-6">
       <div class="container">
-        <div class="section-heading section-heading--center" data-reveal>
-          <p class="eyebrow">Resultados</p>
-          <h2>Transformações discretas, cuidado constante</h2>
-          <p class="section-heading__text">Uma amostra dos resultados acompanhados de perto, com respeito ao tempo de cada paciente.</p>
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Resultados &amp; Galeria</p>
+          <h2>Beleza natural com <em>transparência</em></h2>
+          <p class="section-heading__text mt-3">
+            Resultados sutis que valorizam a individualidade. Cada tratamento é
+            documentado com o consentimento das nossas clientes para inspirar confiança.
+          </p>
         </div>
 
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-          <div class="col" data-reveal>
-            <article class="gallery-item card">
-              <div class="gallery-item__pair">
-                <div class="gallery-item__frame">
-                  <img src="https://images.pexels.com/photos/36763373/pexels-photo-36763373.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Antes do tratamento facial" />
-                  <span>Antes</span>
-                </div>
-                <div class="gallery-item__frame">
-                  <img src="https://images.pexels.com/photos/34775447/pexels-photo-34775447.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Depois do tratamento facial" />
-                  <span>Depois</span>
-                </div>
+        <div class="gallery-grid" data-reveal>
+          <figure class="gallery-item gallery-item--lg">
+            <img src="https://images.pexels.com/photos/3762756/pexels-photo-3762756.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Pele radiante e natural após tratamento facial" loading="lazy" />
+            <figcaption>Resultado Facial</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.pexels.com/photos/4841534/pexels-photo-4841534.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Produtos orgânicos para skincare" loading="lazy" />
+            <figcaption>Cosméticos Orgânicos</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.pexels.com/photos/9335967/pexels-photo-9335967.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Massagem facial relaxante no spa" loading="lazy" />
+            <figcaption>Massagem Facial</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.pexels.com/photos/6899554/pexels-photo-6899554.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Ambiente do consultório de estética" loading="lazy" />
+            <figcaption>Nosso Espaço</figcaption>
+          </figure>
+          <figure class="gallery-item gallery-item--wide">
+            <img src="https://images.pexels.com/photos/18120173/pexels-photo-18120173.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Tratamento de pedras quentes no spa" loading="lazy" />
+            <figcaption>Spa &amp; Relaxamento</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPACE -->
+    <section class="space py-5 py-lg-6" id="espaco">
+      <div class="container">
+        <div class="row align-items-center gy-5 gy-lg-0">
+          <div class="col-lg-6" data-reveal>
+            <div class="section-heading mb-4">
+              <p class="eyebrow">Nosso Espaço</p>
+              <h2>Um refúgio de <em>calma e cuidado</em></h2>
+              <p class="section-heading__text mt-3">
+                Cada ambiente da Clínica Integrativa foi idealizado para acolher.
+                Texturas naturais, luz difusa e aromas botânicos criam a atmosfera
+                perfeita para o seu momento de pausa e renovação.
+              </p>
+            </div>
+
+            <div class="space-features mt-4">
+              <div class="space-feature">
+                <span class="space-feature__icon"><i class="bi bi-circle-half"></i></span>
+                <span>Salas individuais climatizadas</span>
               </div>
-              <div class="gallery-item__caption">
-                <h3>Estética Facial</h3>
-                <span>8 semanas de protocolo</span>
+              <div class="space-feature">
+                <span class="space-feature__icon"><i class="bi bi-flower1"></i></span>
+                <span>Produtos orgânicos certificados</span>
               </div>
-            </article>
+              <div class="space-feature">
+                <span class="space-feature__icon"><i class="bi bi-gem"></i></span>
+                <span>Equipamentos de última geração</span>
+              </div>
+              <div class="space-feature">
+                <span class="space-feature__icon"><i class="bi bi-music-note-beamed"></i></span>
+                <span>Aromaterapia e música ambiente</span>
+              </div>
+            </div>
           </div>
 
-          <div class="col" data-reveal>
-            <article class="gallery-item card">
-              <div class="gallery-item__pair">
-                <div class="gallery-item__frame">
-                  <img src="https://images.pexels.com/photos/36763373/pexels-photo-36763373.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Antes da harmonização corporal" />
-                  <span>Antes</span>
-                </div>
-                <div class="gallery-item__frame">
-                  <img src="https://images.pexels.com/photos/34775447/pexels-photo-34775447.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Depois da harmonização corporal" />
-                  <span>Depois</span>
-                </div>
+          <div class="col-lg-6" data-reveal>
+            <div class="space-gallery">
+              <div class="space-gallery__item space-gallery__item--lg">
+                <img src="https://images.pexels.com/photos/5619463/pexels-photo-5619463.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Sala de tratamento equipada da clínica" loading="lazy" />
               </div>
-              <div class="gallery-item__caption">
-                <h3>Harmonização Corporal</h3>
-                <span>12 semanas de protocolo</span>
+              <div class="space-gallery__item space-gallery__item--offset">
+                <img src="https://images.pexels.com/photos/6899542/pexels-photo-6899542.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Recepção e ambiente do spa" loading="lazy" />
               </div>
-            </article>
+              <div class="space-gallery__item">
+                <img src="https://images.pexels.com/photos/11024140/pexels-photo-11024140.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Sala de laser e equipamentos modernos" loading="lazy" />
+              </div>
+              <div class="space-gallery__item space-gallery__item--offset">
+                <img src="https://images.pexels.com/photos/10521232/pexels-photo-10521232.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Macromassagem e ambiente sereno" loading="lazy" />
+              </div>
+            </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="col" data-reveal>
-            <article class="gallery-item card">
-              <div class="gallery-item__pair">
-                <div class="gallery-item__frame">
-                  <img src="https://images.pexels.com/photos/36763373/pexels-photo-36763373.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Antes do protocolo de spa e detox" />
-                  <span>Antes</span>
-                </div>
-                <div class="gallery-item__frame">
-                  <img src="https://images.pexels.com/photos/34775447/pexels-photo-34775447.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Depois do protocolo de spa e detox" />
-                  <span>Depois</span>
-                </div>
-              </div>
-              <div class="gallery-item__caption">
-                <h3>Spa &amp; Detox</h3>
-                <span>4 semanas de protocolo</span>
-              </div>
-            </article>
+    <!-- BOOKING -->
+    <section class="booking py-5 py-lg-6" id="agendamento">
+      <div class="container text-center" style="max-width: 720px;" data-reveal>
+        <div class="section-heading section-heading--center">
+          <p class="eyebrow">Agendamento</p>
+          <h2>Reserve seu momento de <em>cuidado</em></h2>
+          <p class="section-heading__text mt-3">
+            Entre em contato pelo WhatsApp para uma conversa inicial. Nossa equipe
+            vai ajudar a encontrar o protocolo ideal para a sua pele e bem-estar.
+          </p>
+        </div>
+
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20um%20hor%C3%A1rio%20na%20Cl%C3%ADnica%20Integrativa." target="_blank" rel="noopener" class="btn btn-sage btn-lg rounded-pill mt-4">
+          <i class="bi bi-whatsapp icon"></i>
+          Agendar pelo WhatsApp
+        </a>
+
+        <div class="row row-cols-1 row-cols-sm-3 g-4 mt-5">
+          <div class="col">
+            <div class="booking-info">
+              <span class="booking-info__icon"><i class="bi bi-geo-alt"></i></span>
+              <strong>Endereço</strong>
+              <p>Rua das Oliveiras, 120<br />Jardins, São Paulo</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="booking-info">
+              <span class="booking-info__icon booking-info__icon--sage"><i class="bi bi-clock"></i></span>
+              <strong>Horários</strong>
+              <p>Seg–Sex: 9h às 19h<br />Sáb: 9h às 14h</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="booking-info">
+              <span class="booking-info__icon booking-info__icon--nude"><i class="bi bi-telephone"></i></span>
+              <strong>Contato</strong>
+              <p>(11) 99999-9999<br />contato@clinicaintegrativa.com.br</p>
+            </div>
           </div>
         </div>
       </div>
@@ -224,50 +418,70 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer pt-5" id="agendamento">
+  <footer class="site-footer">
     <div class="container">
-      <div class="site-footer__grid row gy-5 pb-5">
-        <div class="col-md-4">
-          <a href="#inicio" class="navbar-brand d-inline-block mb-3">Clínica Integrativa</a>
-          <ul class="contact-list list-unstyled">
-            <li>
-              <i class="bi bi-geo-alt icon"></i>
-              <span>Rua das Acácias, 88 — São Paulo, SP</span>
-            </li>
+      <div class="site-footer__grid row gy-5">
+        <div class="col-lg-4">
+          <a href="#top" class="navbar-brand d-inline-block mb-0">Clínica <span class="navbar-brand__accent">Integrativa</span></a>
+          <p class="site-footer__desc mt-3">
+            Estética natural e bem-estar com tecnologia sem dor, atendimento
+            exclusivo e produtos orgânicos.
+          </p>
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20um%20hor%C3%A1rio%20na%20Cl%C3%ADnica%20Integrativa." target="_blank" rel="noopener" class="site-footer__address">
+            <i class="bi bi-geo-alt icon"></i>
+            Rua das Oliveiras, 120 — Jardins, São Paulo
+          </a>
+        </div>
+
+        <div class="col-lg-3">
+          <p class="site-footer__label">Navegação</p>
+          <ul>
+            <li><a href="#conceito">Conceito</a></li>
+            <li><a href="#tratamentos">Tratamentos</a></li>
+            <li><a href="#espaco">Espaço</a></li>
+            <li><a href="#agendamento">Agendamento</a></li>
           </ul>
         </div>
 
-        <div class="col-md-4">
-          <h4>Horário</h4>
-          <p>Terça a sábado, 09h às 18h.<br />Agendamento prévio obrigatório.</p>
-        </div>
-
-        <div class="col-md-4">
-          <h4>Instagram</h4>
+        <div class="col-lg-5">
+          <p class="instagram-label site-footer__label mb-3">
+            <i class="bi bi-instagram icon"></i>
+            @clinicaintegrativa
+          </p>
           <div class="instagram-grid">
             <a href="#" target="_blank" rel="noopener" aria-label="Ver publicação no Instagram">
-              <img src="https://images.pexels.com/photos/30809943/pexels-photo-30809943.jpeg?auto=compress&cs=tinysrgb&w=300" alt="" loading="lazy" />
+              <img src="https://images.pexels.com/photos/4841273/pexels-photo-4841273.jpeg?auto=compress&cs=tinysrgb&w=400" alt="" loading="lazy" />
             </a>
             <a href="#" target="_blank" rel="noopener" aria-label="Ver publicação no Instagram">
-              <img src="https://images.pexels.com/photos/38407786/pexels-photo-38407786.jpeg?auto=compress&cs=tinysrgb&w=300" alt="" loading="lazy" />
+              <img src="https://images.pexels.com/photos/3192/woman-girl-beauty-mask.jpg?auto=compress&cs=tinysrgb&w=400" alt="" loading="lazy" />
             </a>
             <a href="#" target="_blank" rel="noopener" aria-label="Ver publicação no Instagram">
-              <img src="https://images.pexels.com/photos/35546238/pexels-photo-35546238.jpeg?auto=compress&cs=tinysrgb&w=300" alt="" loading="lazy" />
+              <img src="https://images.pexels.com/photos/36228288/pexels-photo-36228288.jpeg?auto=compress&cs=tinysrgb&w=400" alt="" loading="lazy" />
+            </a>
+            <a href="#" target="_blank" rel="noopener" aria-label="Ver publicação no Instagram">
+              <img src="https://images.pexels.com/photos/18441533/pexels-photo-18441533.jpeg?auto=compress&cs=tinysrgb&w=400" alt="" loading="lazy" />
+            </a>
+            <a href="#" target="_blank" rel="noopener" aria-label="Ver publicação no Instagram">
+              <img src="https://images.pexels.com/photos/28482020/pexels-photo-28482020.jpeg?auto=compress&cs=tinysrgb&w=400" alt="" loading="lazy" />
+            </a>
+            <a href="#" target="_blank" rel="noopener" aria-label="Ver publicação no Instagram">
+              <img src="https://images.pexels.com/photos/3881089/pexels-photo-3881089.jpeg?auto=compress&cs=tinysrgb&w=400" alt="" loading="lazy" />
             </a>
           </div>
         </div>
       </div>
 
-      <div class="site-footer__bottom py-4">
-        <p class="lgpd mb-2">Seus dados são tratados com privacidade e segurança, em conformidade com a LGPD (Lei nº 13.709/2018).</p>
+      <div class="site-footer__bottom">
         <p class="mb-0">&copy; 2026 Clínica Integrativa. Todos os direitos reservados.</p>
+        <span><i class="bi bi-shield-check icon"></i> LGPD: seus dados estão seguros conosco</span>
       </div>
     </div>
   </footer>
 
   <!-- FLOATING WHATSAPP BUTTON -->
-  <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
+  <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20um%20hor%C3%A1rio%20na%20Cl%C3%ADnica%20Integrativa." target="_blank" rel="noopener" class="whatsapp-float" id="whatsappFloat" aria-label="Fale conosco no WhatsApp">
     <i class="bi bi-whatsapp icon"></i>
+    <span class="whatsapp-float__ping"></span>
   </a>
 
   <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>

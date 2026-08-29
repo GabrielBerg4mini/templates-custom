@@ -1,36 +1,82 @@
 @use 'variables' as v;
 
 .differentials {
-  background: v.$color-navy-light;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    v.$color-navy-950,
+    rgba(v.$color-navy-900, 0.3),
+    v.$color-navy-950
+  );
 }
 
 .stat-callout {
+  position: relative;
   text-align: center;
+  height: 100%;
+  padding: 2.5rem 2rem;
+  border-radius: v.$radius-lg;
+  border: 1px solid rgba(v.$color-navy-700, 0.5);
+  background: linear-gradient(to bottom, rgba(v.$color-navy-900, 0.6), rgba(v.$color-navy-950, 0.6));
+  transition: transform 0.5s ease, border-color 0.5s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(v.$color-gold, 0.4);
+
+    .stat-callout__icon {
+      border-color: v.$color-gold;
+      box-shadow: v.$shadow-gold;
+
+      i {
+        transform: scale(1.1);
+      }
+    }
+  }
 
   &__icon {
-    width: 48px;
-    height: 48px;
+    width: 80px;
+    height: 80px;
     margin-inline: auto;
+    margin-bottom: 1.5rem;
+    border-radius: 50%;
+    border: 1px solid rgba(v.$color-gold, 0.3);
+    background: rgba(v.$color-navy-950, 0.5);
     color: v.$color-gold;
-    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.5s ease, box-shadow 0.5s ease;
 
     i {
-      font-size: 48px;
+      font-size: 40px;
+      transition: transform 0.5s ease;
     }
   }
 
   strong {
     display: block;
     font-family: v.$font-heading;
-    font-size: 1.9rem;
+    font-weight: 600;
+    font-size: 2.75rem;
     color: v.$color-white;
     line-height: 1.1;
   }
 
-  span {
+  &__label {
+    margin-top: 0.5rem;
     font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: v.$color-gold;
+  }
+
+  p {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
     color: v.$color-text-muted;
   }
 }

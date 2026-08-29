@@ -1,27 +1,109 @@
 @use 'variables' as v;
 
 .lawyer-card {
-  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: v.$radius-lg;
+  border: 1px solid rgba(v.$color-navy-700, 0.5);
+  background: rgba(v.$color-navy-900, 0.4);
+  transition: transform 0.5s ease, border-color 0.5s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    border-color: rgba(v.$color-gold, 0.4);
+
+    .lawyer-card__photo img {
+      transform: scale(1.05);
+    }
+  }
 
   &__photo {
-    aspect-ratio: 1;
-    object-fit: cover;
-    box-shadow: v.$shadow-soft;
+    position: relative;
+    height: 22rem;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      transition: transform 0.7s ease;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, v.$color-navy-950, rgba(v.$color-navy-950, 0.2) 60%, transparent);
+    }
+  }
+
+  &__oab {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1;
+    padding: 0.3rem 0.85rem;
+    border-radius: 50rem;
+    border: 1px solid rgba(v.$color-gold, 0.4);
+    background: rgba(v.$color-navy-950, 0.8);
+    backdrop-filter: blur(4px);
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: v.$color-gold-light;
+  }
+
+  &__info {
+    position: relative;
+    margin-top: -4rem;
+    padding: 1.5rem;
   }
 
   h3 {
-    font-size: 1.1rem;
+    font-family: v.$font-heading;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: v.$color-white;
     margin-bottom: 0.15rem;
   }
 
   &__role {
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
     color: v.$color-gold;
-    font-size: 0.85rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
-  &__oab {
-    font-size: 0.78rem;
+  &__specialty {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
     color: v.$color-text-muted;
+  }
+
+  &__social {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(v.$color-navy-700, 0.5);
+
+    a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid v.$color-navy-600;
+      color: v.$color-navy-300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        border-color: v.$color-gold;
+        color: v.$color-gold;
+      }
+    }
   }
 }

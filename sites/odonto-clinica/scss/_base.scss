@@ -7,14 +7,53 @@ html {
   scroll-behavior: smooth;
 }
 
+::selection {
+  background: v.$color-mint;
+  color: v.$mint-900;
+}
+
+// Entrada da dobra inicial (hero) ao carregar a página — equivalente ao
+// keyframe "fade-up" do design de referência (0.7s, easing customizado).
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up-in {
+  opacity: 0;
+  animation: fade-up 0.7s v.$ease-reveal forwards;
+
+  &--delay {
+    animation-delay: 150ms;
+  }
+}
+
+// Eyebrow como "chip" (pill com fundo) em vez de texto solto —
+// é o detalhe que mais rápido tira a cara de wireframe genérico.
 .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-family: v.$font-base;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: v.$color-mint-dark;
-  margin-bottom: 0.75rem;
+  background: v.$color-mint;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+
+  .icon {
+    font-size: 0.85rem;
+  }
 }
 
 .section-heading {
@@ -36,6 +75,32 @@ html {
   }
 }
 
+.text-accent {
+  color: v.$color-mint-dark;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: rgba(43, 189, 148, 0.55);
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.16em;
+}
+
+// Todos os botões: sombra suave em repouso, sombra "elevada" no hover e
+// leve encolhimento no clique — replica o padrão comum a
+// btn-primary/btn-whatsapp/btn-outline do design de referência.
+.btn {
+  box-shadow: v.$shadow-soft;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease,
+    box-shadow 0.3s ease, transform 0.15s ease;
+
+  &:hover {
+    box-shadow: v.$shadow-lift;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
 .btn-cta {
   background: v.$color-cta-green;
   border: none;
@@ -48,14 +113,84 @@ html {
   }
 }
 
+// Botão dedicado às chamadas para o WhatsApp — verde da marca do
+// WhatsApp, distinto do verde-menta usado no CTA principal.
+.btn-whatsapp {
+  background: v.$color-whatsapp;
+  border: none;
+  color: v.$color-white;
+  font-weight: 600;
+
+  &:hover {
+    background: #1fb855;
+    color: v.$color-white;
+  }
+}
+
+.btn-outline-cta {
+  border: 1.5px solid v.$mint-200;
+  color: v.$mint-700;
+  font-weight: 600;
+  background: v.$color-white;
+  box-shadow: none;
+
+  .icon {
+    transition: transform v.$transition-base;
+  }
+
+  &:hover {
+    border-color: v.$mint-400;
+    background: v.$color-mint;
+    color: v.$mint-700;
+    box-shadow: none;
+
+    .icon {
+      transform: translateX(3px);
+    }
+  }
+}
+
 .bg-mint {
   background: v.$color-mint;
 }
 
+// Chip de confiança (ícone + texto) usado no hero — troca o antigo
+// bullet-point simples por algo com mais peso visual.
+.trust-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: v.$color-text;
+  font-weight: 500;
+
+  &__icon {
+    flex-shrink: 0;
+    color: v.$color-mint-dark;
+    font-size: 1rem;
+  }
+}
+
+// Círculo de iniciais para avatares (depoimentos)
+.avatar-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: v.$color-mint;
+  color: v.$color-mint-dark;
+  font-family: v.$font-heading;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
 [data-reveal] {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(28px);
+  transition: opacity 0.7s v.$ease-reveal, transform 0.7s v.$ease-reveal;
 
   &.is-visible {
     opacity: 1;

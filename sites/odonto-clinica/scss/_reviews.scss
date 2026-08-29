@@ -2,57 +2,100 @@
 
 .reviews-summary {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 1.25rem;
+  justify-content: center;
+  gap: 1rem 1.25rem;
   background: v.$color-white;
   border-radius: 1.25rem;
   box-shadow: v.$shadow-soft;
-  padding: 1.5rem 2rem;
+  padding: 1.25rem 1.5rem;
   margin-inline: auto;
   margin-bottom: 3rem;
-  max-width: fit-content;
+  max-width: 100%;
+  width: fit-content;
+
+  &__google-icon {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+  }
+
+  &__label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: v.$color-text;
+  }
+
+  &__sub {
+    font-size: 0.78rem;
+    color: v.$color-text-muted;
+  }
+
+  &__divider {
+    width: 1px;
+    align-self: stretch;
+    background: rgba(22, 35, 42, 0.08);
+  }
 
   &__score {
     font-family: v.$font-heading;
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: 700;
     color: v.$color-text;
     line-height: 1;
   }
 
   .stars {
-    color: #f5b400;
+    color: v.$color-gold;
     letter-spacing: 2px;
     font-size: 1rem;
     margin-bottom: 0.15rem;
   }
 
   &__count {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: v.$color-text-muted;
   }
 }
 
 .review-card {
   height: 100%;
+  position: relative;
+
+  &__quote {
+    color: v.$mint-300;
+    font-size: 1.6rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
 
   .stars {
-    color: #f5b400;
+    color: v.$color-gold;
     letter-spacing: 2px;
     font-size: 1rem;
   }
 
   blockquote {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     color: v.$color-text;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
   }
 
   &__name {
     font-weight: 600;
+    margin-bottom: 0;
+    font-size: 0.9rem;
   }
 
   &__meta {
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     color: v.$color-text-muted;
   }
 }

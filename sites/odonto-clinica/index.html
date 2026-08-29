@@ -7,7 +7,7 @@
   <meta name="description" content="Clínica odontológica moderna com Invisalign, implantes, lentes de contato e clareamento. Agende sua avaliação pelo WhatsApp." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="css/main.css" />
@@ -15,9 +15,12 @@
 <body>
 
   <!-- HEADER -->
-  <nav class="navbar navbar-expand-lg sticky-top">
+  <nav class="navbar navbar-expand-lg" id="siteNav">
     <div class="container">
-      <a class="navbar-brand" href="#inicio">Odonto <span>Clínica</span></a>
+      <a class="navbar-brand" href="#inicio">
+        <span class="navbar-brand__mark"><i class="bi bi-emoji-smile-fill"></i></span>
+        Odonto<span>Clínica</span>
+      </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
         aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menu">
@@ -25,13 +28,18 @@
       </button>
 
       <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
           <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
           <li class="nav-item"><a class="nav-link" href="#tratamentos">Tratamentos</a></li>
           <li class="nav-item"><a class="nav-link" href="#clinica">A Clínica</a></li>
           <li class="nav-item"><a class="nav-link" href="#avaliacoes">Avaliações</a></li>
           <li class="nav-item">
-            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-cta btn-sm rounded-pill ms-lg-2">
+            <span class="navbar-phone d-none d-lg-flex align-items-center gap-1 mx-3">
+              <i class="bi bi-telephone-fill"></i> (11) 3333-4444
+            </span>
+          </li>
+          <li class="nav-item">
+            <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Odonto%20Cl%C3%ADnica." target="_blank" rel="noopener" class="btn btn-cta btn-sm rounded-pill ms-lg-2">
               Agendar Avaliação
             </a>
           </li>
@@ -42,35 +50,61 @@
 
   <main>
     <!-- HERO -->
-    <section class="hero py-5 py-lg-6" id="inicio">
+    <section class="hero" id="inicio">
       <div class="container">
         <div class="row align-items-center gy-5">
-          <div class="col-lg-6" data-reveal>
-            <p class="eyebrow">Odontologia digital &amp; estética</p>
-            <h1 class="display-5 fw-bold">Conquiste o sorriso perfeito com odontologia digital e sem dor</h1>
+          <div class="col-lg-6 fade-up-in">
+            <p class="eyebrow"><i class="bi bi-stars icon"></i> Odontologia Digital</p>
+            <h1 class="display-5 fw-bold">Conquiste o sorriso perfeito com <span class="text-accent">odontologia digital</span> e sem dor</h1>
             <p class="hero__subtitle">
-              Alinhadores invisíveis, implantes de última geração e odontologia estética guiados por
-              escaneamento 3D — planejamento preciso, conforto real e resultados que você acompanha em cada etapa.
+              Especialistas em <strong>Invisalign</strong>, <strong>implantes</strong> e <strong>dentística estética</strong>.
+              Tecnologia de ponta para um tratamento confortável, preciso e com resultados naturais.
             </p>
-            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-cta btn-lg rounded-pill my-3">
-              <i class="bi bi-whatsapp icon"></i>
-              Agendar Consulta via WhatsApp
-            </a>
-            <ul class="hero__badges list-unstyled d-flex flex-wrap gap-3 mt-2">
-              <li>Escaneamento 3D sem moldagem</li>
-              <li>Ambiente acolhedor</li>
-              <li>Parcelamento facilitado</li>
-            </ul>
+            <div class="d-flex flex-wrap gap-3 my-3">
+              <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Odonto%20Cl%C3%ADnica." target="_blank" rel="noopener" class="btn btn-whatsapp rounded-pill">
+                <i class="bi bi-whatsapp icon"></i>
+                Agendar Consulta via WhatsApp
+              </a>
+              <a href="#tratamentos" class="btn btn-outline-cta rounded-pill">
+                Ver Tratamentos
+                <i class="bi bi-arrow-right icon"></i>
+              </a>
+            </div>
+            <div class="hero__badges d-flex flex-wrap gap-3 mt-2">
+              <span class="trust-chip">
+                <span class="trust-chip__icon"><i class="bi bi-shield-check"></i></span>
+                Sem dor
+              </span>
+              <span class="trust-chip">
+                <span class="trust-chip__icon"><i class="bi bi-shield-check"></i></span>
+                Tecnologia 3D
+              </span>
+              <span class="trust-chip">
+                <span class="trust-chip__icon"><i class="bi bi-shield-check"></i></span>
+                Atendimento humanizado
+              </span>
+            </div>
           </div>
 
-          <div class="col-lg-6" data-reveal>
+          <div class="col-lg-6 fade-up-in fade-up-in--delay">
             <div class="hero__media position-relative mx-auto" style="max-width: 420px;">
               <img src="https://images.pexels.com/photos/31863054/pexels-photo-31863054.jpeg?auto=compress&cs=tinysrgb&w=1100"
                 alt="Pessoa sorrindo com dentes saudáveis e brancos"
                 class="img-fluid rounded-4 w-100" width="720" height="820" />
-              <div class="hero__media-badge bg-white rounded-4 shadow-sm px-3 py-2">
-                <strong class="d-block">5.0</strong>
-                <span>avaliação média no Google</span>
+
+              <div class="hero__media-badge hero__media-badge--rating bg-white rounded-4 shadow-sm">
+                <div class="stars" aria-hidden="true">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <strong>5.0 no Google</strong>
+                <span>+1.200 avaliações</span>
+              </div>
+
+              <div class="hero__media-badge hero__media-badge--tech rounded-4 shadow-sm">
+                <div>
+                  <strong>3D</strong>
+                  <span>Scanner Intraoral</span>
+                </div>
               </div>
             </div>
           </div>
@@ -82,48 +116,62 @@
     <section class="treatments py-5 py-lg-6 bg-mint" id="tratamentos">
       <div class="container">
         <div class="section-heading section-heading--center" data-reveal>
-          <p class="eyebrow">Tratamentos</p>
-          <h2>Tudo para o seu sorriso em um só lugar</h2>
+          <p class="eyebrow">Nossos Tratamentos</p>
+          <h2>Soluções completas para o seu sorriso</h2>
+          <p class="section-heading__text">Da estética à reabilitação, oferecemos os tratamentos mais modernos da odontologia com tecnologia digital e conforto em primeiro lugar.</p>
         </div>
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
-          <div class="col" data-reveal>
+          <div class="col" data-reveal style="transition-delay: 0ms;">
             <article class="treatment-card card border-0 shadow-sm h-100 p-4">
-              <div class="treatment-card__icon mb-3">
-                <i class="bi bi-emoji-smile"></i>
+              <div class="treatment-card__top">
+                <div class="treatment-card__icon">
+                  <i class="bi bi-emoji-smile"></i>
+                </div>
+                <span class="treatment-card__badge">Mais procurado</span>
               </div>
               <h3>Invisalign / Alinhadores</h3>
-              <p>Alinhamento invisível e confortável, com planejamento digital de ponta a ponta.</p>
+              <p>Alinhadores transparentes sob medida que corrigem o sorriso de forma discreta e confortável, sem brackets.</p>
+              <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20interesse%20em%20Invisalign%20%2F%20Alinhadores." target="_blank" rel="noopener" class="treatment-card__link">Saiba mais <i class="bi bi-arrow-right icon"></i></a>
             </article>
           </div>
 
-          <div class="col" data-reveal>
+          <div class="col" data-reveal style="transition-delay: 90ms;">
             <article class="treatment-card card border-0 shadow-sm h-100 p-4">
-              <div class="treatment-card__icon mb-3">
-                <i class="bi bi-activity"></i>
+              <div class="treatment-card__top">
+                <div class="treatment-card__icon">
+                  <i class="bi bi-activity"></i>
+                </div>
               </div>
               <h3>Implantes Dentários</h3>
-              <p>Reabilitação com implantes de alta precisão guiados por escaneamento 3D.</p>
+              <p>Reabilitação completa com implantes de titânio de alta precisão, devolvendo função e estética em uma única sessão.</p>
+              <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20interesse%20em%20Implantes%20Dent%C3%A1rios." target="_blank" rel="noopener" class="treatment-card__link">Saiba mais <i class="bi bi-arrow-right icon"></i></a>
             </article>
           </div>
 
-          <div class="col" data-reveal>
+          <div class="col" data-reveal style="transition-delay: 180ms;">
             <article class="treatment-card card border-0 shadow-sm h-100 p-4">
-              <div class="treatment-card__icon mb-3">
-                <i class="bi bi-gem"></i>
+              <div class="treatment-card__top">
+                <div class="treatment-card__icon">
+                  <i class="bi bi-gem"></i>
+                </div>
               </div>
               <h3>Lentes de Contato</h3>
-              <p>Lentes ultrafinas que corrigem forma e cor sem desgastar o dente natural.</p>
+              <p>Facetas de porcelana ultrafinas que transformam o sorriso com naturalidade, sem desgaste do dente natural.</p>
+              <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20interesse%20em%20Lentes%20de%20Contato." target="_blank" rel="noopener" class="treatment-card__link">Saiba mais <i class="bi bi-arrow-right icon"></i></a>
             </article>
           </div>
 
-          <div class="col" data-reveal>
+          <div class="col" data-reveal style="transition-delay: 270ms;">
             <article class="treatment-card card border-0 shadow-sm h-100 p-4">
-              <div class="treatment-card__icon mb-3">
-                <i class="bi bi-brightness-high-fill"></i>
+              <div class="treatment-card__top">
+                <div class="treatment-card__icon">
+                  <i class="bi bi-brightness-high-fill"></i>
+                </div>
               </div>
               <h3>Clareamento</h3>
-              <p>Clareamento a laser com gel de última geração, resultado visível na primeira sessão.</p>
+              <p>Clareamento dental profissional a laser, seguro e eficaz, com resultados visíveis já na primeira sessão.</p>
+              <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20interesse%20em%20Clareamento." target="_blank" rel="noopener" class="treatment-card__link">Saiba mais <i class="bi bi-arrow-right icon"></i></a>
             </article>
           </div>
         </div>
@@ -134,8 +182,33 @@
     <section class="technology py-5 py-lg-6" id="clinica">
       <div class="container">
         <div class="section-heading section-heading--center" data-reveal>
-          <p class="eyebrow">A Clínica</p>
-          <h2>Tecnologia e conforto em cada detalhe</h2>
+          <p class="eyebrow">A Clínica &amp; Tecnologia</p>
+          <h2>Tecnologia de ponta a serviço do seu sorriso</h2>
+          <p class="section-heading__text">Conheça nossa infraestrutura equipada com os mais modernos recursos da odontologia digital para garantir precisão, segurança e conforto.</p>
+        </div>
+
+        <div class="tech-highlights" data-reveal>
+          <div class="tech-highlight">
+            <span class="tech-highlight__icon"><i class="bi bi-badge-3d"></i></span>
+            <div>
+              <h4>Scanner 3D</h4>
+              <span>Digitalização intraoral sem moldagens</span>
+            </div>
+          </div>
+          <div class="tech-highlight">
+            <span class="tech-highlight__icon"><i class="bi bi-camera-fill"></i></span>
+            <div>
+              <h4>Câmera Digital</h4>
+              <span>Diagnóstico visual em tempo real</span>
+            </div>
+          </div>
+          <div class="tech-highlight">
+            <span class="tech-highlight__icon"><i class="bi bi-house-heart"></i></span>
+            <div>
+              <h4>Conforto Total</h4>
+              <span>Ambientes climatizados e acolhedores</span>
+            </div>
+          </div>
         </div>
 
         <div class="swiper tech-swiper" data-slides-per-view="2" data-reveal>
@@ -143,9 +216,21 @@
 
             <div class="swiper-slide">
               <div class="tech-card rounded-4">
-                <img src="https://images.pexels.com/photos/9951391/pexels-photo-9951391.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Scanner intraoral 3D" />
+                <img src="https://images.pexels.com/photos/305567/pexels-photo-305567.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Sala de tratamento digital, climatizada e confortável" />
+                <span class="tech-card__tag">Conforto</span>
                 <div class="tech-card__caption">
-                  <span>Escaneamento</span>
+                  <span>Conforto</span>
+                  <h3>Sala de Tratamento Digital</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="tech-card rounded-4">
+                <img src="https://images.pexels.com/photos/7789651/pexels-photo-7789651.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Scanner intraoral 3D em uso" />
+                <span class="tech-card__tag">Tecnologia 3D</span>
+                <div class="tech-card__caption">
+                  <span>Tecnologia 3D</span>
                   <h3>Scanner Intraoral 3D</h3>
                 </div>
               </div>
@@ -153,7 +238,8 @@
 
             <div class="swiper-slide">
               <div class="tech-card rounded-4">
-                <img src="https://images.pexels.com/photos/7789704/pexels-photo-7789704.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Câmera intraoral digital" />
+                <img src="https://images.pexels.com/photos/6809648/pexels-photo-6809648.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Câmera intraoral digital para diagnóstico" />
+                <span class="tech-card__tag">Diagnóstico</span>
                 <div class="tech-card__caption">
                   <span>Diagnóstico</span>
                   <h3>Câmera Intraoral Digital</h3>
@@ -163,20 +249,11 @@
 
             <div class="swiper-slide">
               <div class="tech-card rounded-4">
-                <img src="https://images.pexels.com/photos/7422520/pexels-photo-7422520.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sala de atendimento confortável" />
+                <img src="https://images.pexels.com/photos/69686/pexels-photo-69686.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Recepção e sala de espera acolhedora da clínica" />
+                <span class="tech-card__tag">Acolhimento</span>
                 <div class="tech-card__caption">
-                  <span>Ambiente</span>
-                  <h3>Salas Climatizadas</h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="tech-card rounded-4">
-                <img src="https://images.pexels.com/photos/38055773/pexels-photo-38055773.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Recepção da clínica" />
-                <div class="tech-card__caption">
-                  <span>Ambiente</span>
-                  <h3>Recepção Acolhedora</h3>
+                  <span>Acolhimento</span>
+                  <h3>Recepção e Sala de Espera</h3>
                 </div>
               </div>
             </div>
@@ -194,42 +271,123 @@
       <div class="container">
         <div class="section-heading section-heading--center" data-reveal>
           <p class="eyebrow">Avaliações</p>
-          <h2>O que nossos pacientes dizem</h2>
+          <h2>Pacientes que transformaram seus sorrisos</h2>
+          <p class="section-heading__text">Mais de 1.200 avaliações reais no Google com nota máxima. A satisfação dos nossos pacientes é o nosso maior orgulho.</p>
         </div>
 
         <div class="reviews-summary" data-reveal>
-          <span class="reviews-summary__score">5.0</span>
+          <svg class="reviews-summary__google-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#4285F4" d="M22.5 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.9a5 5 0 0 1-2.2 3.3v2.7h3.6c2.1-2 3.2-4.9 3.2-7.9Z" />
+            <path fill="#34A853" d="M12 23c2.9 0 5.4-1 7.2-2.6l-3.6-2.7c-1 .7-2.3 1.1-3.6 1.1-2.8 0-5.1-1.9-6-4.4H2.3v2.8A11 11 0 0 0 12 23Z" />
+            <path fill="#FBBC05" d="M6 14.4a6.6 6.6 0 0 1 0-4.2V7.4H2.3a11 11 0 0 0 0 9.8L6 14.4Z" />
+            <path fill="#EA4335" d="M12 5.5c1.6 0 3 .5 4.1 1.6l3.1-3.1A11 11 0 0 0 2.3 7.4L6 10.2C6.9 7.7 9.2 5.5 12 5.5Z" />
+          </svg>
           <div>
-            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
-            <span class="reviews-summary__count">+230 avaliações no Google</span>
+            <div class="reviews-summary__label">Avaliações no Google</div>
+            <div class="reviews-summary__sub">Odonto Clínica</div>
+          </div>
+          <div class="reviews-summary__divider"></div>
+          <div class="d-flex align-items-center gap-2">
+            <div>
+              <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+              <span class="reviews-summary__count">5.0 · 1.247 avaliações</span>
+            </div>
+            <span class="reviews-summary__score">5.0</span>
           </div>
         </div>
 
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-          <div class="col" data-reveal>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+          <div class="col" data-reveal style="transition-delay: 0ms;">
             <div class="review-card card border-0 shadow-sm p-4">
-              <div class="stars mb-2" aria-label="5 de 5 estrelas">★★★★★</div>
-              <blockquote class="mb-3">"Fiz o Invisalign e o resultado superou minhas expectativas. Equipe super atenciosa em cada consulta."</blockquote>
-              <p class="review-card__name mb-0">Camila R.</p>
-              <p class="review-card__meta">Avaliação no Google · Invisalign</p>
+              <i class="bi bi-quote review-card__quote"></i>
+              <blockquote class="mb-3">Fiz Invisalign e o resultado superou todas as minhas expectativas. Atendimento impecável, equipe atenciosa e tecnologia de ponta. Recomendo de olhos fechados!</blockquote>
+              <div class="stars mb-3" aria-label="5 de 5 estrelas">★★★★★</div>
+              <div class="review-card__author">
+                <span class="avatar-circle">MC</span>
+                <div>
+                  <p class="review-card__name">Mariana Costa</p>
+                  <p class="review-card__meta mb-0">Há 2 semanas</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="col" data-reveal>
+          <div class="col" data-reveal style="transition-delay: 80ms;">
             <div class="review-card card border-0 shadow-sm p-4">
-              <div class="stars mb-2" aria-label="5 de 5 estrelas">★★★★★</div>
-              <blockquote class="mb-3">"Implante feito sem dor nenhuma, com todo o planejamento explicado no escaneamento 3D antes de começar."</blockquote>
-              <p class="review-card__name mb-0">Rodrigo T.</p>
-              <p class="review-card__meta">Avaliação no Google · Implante</p>
+              <i class="bi bi-quote review-card__quote"></i>
+              <blockquote class="mb-3">Implante dentário sem dor e com resultado natural. A clínica é moderna, limpa e a equipe transmite muita segurança. Vale cada centavo.</blockquote>
+              <div class="stars mb-3" aria-label="5 de 5 estrelas">★★★★★</div>
+              <div class="review-card__author">
+                <span class="avatar-circle">RO</span>
+                <div>
+                  <p class="review-card__name">Rafael Oliveira</p>
+                  <p class="review-card__meta mb-0">Há 1 mês</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="col" data-reveal>
+          <div class="col" data-reveal style="transition-delay: 160ms;">
             <div class="review-card card border-0 shadow-sm p-4">
-              <div class="stars mb-2" aria-label="5 de 5 estrelas">★★★★★</div>
-              <blockquote class="mb-3">"Clareamento rápido e o consultório é lindo, super confortável. Recomendo demais!"</blockquote>
-              <p class="review-card__name mb-0">Larissa M.</p>
-              <p class="review-card__meta">Avaliação no Google · Clareamento</p>
+              <i class="bi bi-quote review-card__quote"></i>
+              <blockquote class="mb-3">Lentes de contato ficaram perfeitas! A Dra. entendeu exatamente o que eu queria. Profissionalismo do início ao fim do tratamento.</blockquote>
+              <div class="stars mb-3" aria-label="5 de 5 estrelas">★★★★★</div>
+              <div class="review-card__author">
+                <span class="avatar-circle">JF</span>
+                <div>
+                  <p class="review-card__name">Juliana Ferreira</p>
+                  <p class="review-card__meta mb-0">Há 3 semanas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col" data-reveal style="transition-delay: 240ms;">
+            <div class="review-card card border-0 shadow-sm p-4">
+              <i class="bi bi-quote review-card__quote"></i>
+              <blockquote class="mb-3">Clareamento a laser em uma única sessão. Meu sorriso ficou vários tons mais claro. Atendimento pontual e ambiente muito acolhedor.</blockquote>
+              <div class="stars mb-3" aria-label="5 de 5 estrelas">★★★★★</div>
+              <div class="review-card__author">
+                <span class="avatar-circle">CM</span>
+                <div>
+                  <p class="review-card__name">Carlos Mendes</p>
+                  <p class="review-card__meta mb-0">Há 1 semana</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="py-5">
+      <div class="container">
+        <div class="stats-banner" data-reveal>
+          <div class="row row-cols-2 row-cols-md-4 g-4">
+            <div class="col">
+              <div class="stat-item">
+                <strong>15+</strong>
+                <span>Anos de experiência</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="stat-item">
+                <strong>8.000+</strong>
+                <span>Sorrisos transformados</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="stat-item">
+                <strong>4.9</strong>
+                <span>Avaliação no Google</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="stat-item">
+                <strong>20+</strong>
+                <span>Especialistas</span>
+              </div>
             </div>
           </div>
         </div>
@@ -238,52 +396,89 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer pt-5">
-    <div class="container">
+  <footer class="site-footer pt-0">
+    <div class="emergency-bar">
+      <div class="container d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div class="d-flex align-items-center gap-3">
+          <span class="emergency-bar__icon"><i class="bi bi-telephone-fill"></i></span>
+          <div>
+            <strong>Linha de Emergência 24h</strong>
+            <span>Atendimento odontológico de urgência</span>
+          </div>
+        </div>
+        <a href="tel:+5511999990000" class="btn btn-urgent rounded-pill">
+          <i class="bi bi-telephone-fill icon"></i> (11) 99999-0000
+        </a>
+      </div>
+    </div>
+
+    <div class="container pt-5">
       <div class="site-footer__grid row gy-5 pb-5">
-        <div class="col-md-4">
-          <a href="#inicio" class="navbar-brand d-inline-block mb-3">Odonto <span>Clínica</span></a>
-          <p class="mb-3">Odontologia digital, moderna e sem dor — do check-up ao sorriso dos seus sonhos.</p>
-          <span class="emergency-badge">
-            <i class="bi bi-clock-history"></i>
-            Urgência 24h: (11) 0000-0000
-          </span>
+        <div class="col-md-6 col-lg-3">
+          <a href="#inicio" class="navbar-brand d-inline-flex mb-3">
+            <span class="navbar-brand__mark"><i class="bi bi-emoji-smile-fill"></i></span>
+            Odonto<span>Clínica</span>
+          </a>
+          <p class="mb-3">Odontologia digital de alta performance. Transformamos sorrisos com tecnologia, conforto e atendimento humanizado.</p>
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Odonto%20Cl%C3%ADnica." target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm rounded-pill">
+            <i class="bi bi-whatsapp icon"></i> Falar no WhatsApp
+          </a>
         </div>
 
-        <div class="col-md-4">
-          <h4>Horário</h4>
-          <ul class="contact-list list-unstyled">
-            <li><span>Segunda a sexta · 08h às 20h</span></li>
-            <li><span>Sábado · 08h às 14h</span></li>
-          </ul>
-          <h4 class="mt-4">Contato</h4>
-          <ul class="contact-list list-unstyled">
-            <li>
-              <i class="bi bi-telephone icon"></i>
-              <span>(11) 0000-0000</span>
-            </li>
+        <div class="col-md-6 col-lg-3">
+          <h4>Navegação</h4>
+          <ul class="site-footer__nav list-unstyled">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#tratamentos">Tratamentos</a></li>
+            <li><a href="#clinica">A Clínica</a></li>
+            <li><a href="#avaliacoes">Avaliações</a></li>
           </ul>
         </div>
 
-        <div class="col-md-4">
-          <h4>Localização</h4>
-          <p>Rua dos Sorrisos, 200 — São Paulo, SP</p>
-          <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Paulista+São+Paulo" target="_blank" rel="noopener" class="btn btn-outline-light btn-sm rounded-pill">
-            Ver no mapa
+        <div class="col-md-6 col-lg-3">
+          <h4>Horários</h4>
+          <ul class="contact-list list-unstyled">
+            <li><i class="bi bi-clock icon"></i><span>Segunda — Sexta &nbsp; 08h — 19h</span></li>
+            <li><i class="bi bi-clock icon"></i><span>Sábado &nbsp; 08h — 13h</span></li>
+            <li><i class="bi bi-clock icon"></i><span>Domingo &nbsp; Fechado</span></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <h4>Contato</h4>
+          <ul class="contact-list list-unstyled">
+            <li><i class="bi bi-geo-alt icon"></i><span>Av. Paulista, 1.500 — Bela Vista, São Paulo/SP</span></li>
+            <li><i class="bi bi-telephone icon"></i><span>(11) 3333-4444</span></li>
+            <li><i class="bi bi-envelope icon"></i><span>contato@odontoclinica.com.br</span></li>
+          </ul>
+          <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Paulista+São+Paulo" target="_blank" rel="noopener" class="btn btn-outline-light btn-sm rounded-pill mt-2">
+            <i class="bi bi-geo-alt icon"></i> Ver no Mapa
           </a>
         </div>
       </div>
 
       <div class="site-footer__bottom d-flex flex-column flex-md-row justify-content-between gap-2 py-4">
         <p class="mb-0">&copy; 2026 Odonto Clínica. Todos os direitos reservados.</p>
+        <p class="mb-0">CNPJ 00.000.000/0001-00 · CRO/SP 00000</p>
       </div>
     </div>
   </footer>
 
   <!-- FLOATING WHATSAPP BUTTON -->
-  <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
-    <i class="bi bi-whatsapp icon"></i>
-  </a>
+  <div class="whatsapp-float-wrap" id="whatsappFloat">
+    <div class="whatsapp-tooltip" id="whatsappTooltip">
+      <div class="whatsapp-tooltip__bubble">
+        <button type="button" class="whatsapp-tooltip__close" id="whatsappTooltipClose" aria-label="Fechar">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        <strong>Olá! Posso ajudar? 😊</strong>
+        <span>Tire suas dúvidas e agende sua avaliação.</span>
+      </div>
+    </div>
+    <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Odonto%20Cl%C3%ADnica." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
+      <i class="bi bi-whatsapp icon"></i>
+    </a>
+  </div>
 
   <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
   <script src="vendor/swiper/swiper-bundle.min.js"></script>

@@ -7,14 +7,49 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: v.$color-cream-50;
+}
+
+::selection {
+  background-color: v.$color-sage-200;
+  color: v.$color-ink-900;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: v.$color-cream-100;
+}
+
+::-webkit-scrollbar-thumb {
+  background: v.$color-nude-400;
+  border-radius: 4px;
+
+  &:hover {
+    background: v.$color-nude-500;
+  }
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .eyebrow {
   font-family: v.$font-base;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: v.$color-terracotta;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .section-heading {
@@ -27,44 +62,69 @@ html {
   }
 
   h2 {
-    font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+    font-weight: 300;
+    line-height: 1.2;
+    font-size: clamp(1.9rem, 3.4vw, 2.75rem);
+
+    em {
+      font-style: italic;
+      color: v.$color-sage;
+    }
   }
 
   &__text {
     color: v.$color-text-muted;
+    font-weight: 300;
     margin-bottom: 0;
   }
 }
 
-.btn-terracotta {
-  background: v.$color-terracotta;
+// Cores de destaque reutilizadas em estatísticas e trechos em itálico
+.text-terracotta {
+  color: v.$color-terracotta !important;
+}
+
+.text-sage {
+  color: v.$color-sage !important;
+}
+
+.text-nude {
+  color: v.$color-nude-400 !important;
+}
+
+// Botões — variantes sobre o .btn do Bootstrap
+.btn-sage {
+  background: v.$color-sage;
   border: none;
-  color: v.$color-white;
+  color: v.$color-cream-50;
   font-weight: 500;
 
-  &:hover {
-    background: v.$color-terracotta-dark;
-    color: v.$color-white;
+  &:hover,
+  &:focus {
+    background: v.$color-sage-dark;
+    color: v.$color-cream-50;
   }
 }
 
-.bg-nude {
-  background: v.$color-nude;
+.btn-outline-sage {
+  background: transparent;
+  border: 1px solid v.$color-sage-300;
+  color: v.$color-sage-700;
+  font-weight: 300;
+
+  &:hover,
+  &:focus {
+    background: v.$color-sage;
+    border-color: v.$color-sage;
+    color: v.$color-cream-50;
+  }
 }
 
-.badge-gold {
-  background: rgba(201, 162, 77, 0.15);
-  color: v.$color-gold;
-  font-weight: 500;
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
+// Reveal-on-scroll — distância e easing fiéis ao design aprovado
 [data-reveal] {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(v.$reveal-distance);
+  transition: opacity v.$reveal-duration v.$reveal-ease, transform v.$reveal-duration v.$reveal-ease;
 
   &.is-visible {
     opacity: 1;

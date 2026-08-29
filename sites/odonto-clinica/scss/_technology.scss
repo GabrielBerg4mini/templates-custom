@@ -1,5 +1,47 @@
 @use 'variables' as v;
 
+// Chips rápidos acima do carrossel (Scanner 3D / Câmera Digital / Conforto Total)
+.tech-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+
+  .tech-highlight {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: v.$color-white;
+    border: 1px solid rgba(22, 35, 42, 0.08);
+    border-radius: 1rem;
+    padding: 0.75rem 1.1rem;
+    box-shadow: v.$shadow-soft;
+
+    &__icon {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: 0.7rem;
+      background: v.$color-mint;
+      color: v.$color-mint-dark;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    h4 {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    span {
+      font-size: 0.75rem;
+      color: v.$color-text-muted;
+    }
+  }
+}
+
 // O carrossel (arraste, paginação, setas) é o Swiper — aqui só o visual do slide.
 
 .tech-swiper {
@@ -9,16 +51,36 @@
     height: auto;
   }
 
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: v.$ink-200;
+    opacity: 1;
+    transition: width 0.3s ease, background-color 0.3s ease;
+  }
+
   .swiper-pagination-bullet-active {
+    width: 32px;
+    border-radius: 999px;
     background: v.$color-mint-dark;
   }
 
+  // Setas flutuantes sobre a imagem, em círculo branco com sombra.
   .swiper-button-prev,
   .swiper-button-next {
-    color: v.$color-mint-dark;
+    width: 42px;
+    height: 42px;
+    background: v.$color-white;
+    border-radius: 50%;
+    box-shadow: v.$shadow-soft;
+    color: v.$color-text;
 
     &::after {
-      font-size: 1.1rem;
+      font-size: 1rem;
+    }
+
+    &:hover {
+      color: v.$color-mint-dark;
     }
   }
 }
@@ -33,6 +95,20 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  &__tag {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: v.$color-mint-dark;
+    color: v.$color-white;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
   }
 
   &__caption {

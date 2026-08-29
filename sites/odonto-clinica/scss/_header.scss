@@ -1,28 +1,96 @@
 @use 'variables' as v;
 
 .navbar {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(22, 35, 42, 0.06);
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 1030;
+  background: transparent;
+  border-bottom: 1px solid transparent;
   padding-block: 1rem;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+  // Estado "rolado" — replica o useScrolled(40) do design de referência:
+  // fundo transparente no topo, vira branco desfocado + sombra ao rolar.
+  &.is-scrolled {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom-color: rgba(22, 35, 42, 0.08);
+    box-shadow: v.$shadow-soft;
+  }
+}
+
+// A navbar é fixa e transparente sobre o hero (como no design de referência),
+// então só as âncoras de navegação precisam de espaço para não ficar
+// escondidas atrás dela ao rolar direto para a seção.
+#inicio,
+#tratamentos,
+#clinica,
+#avaliacoes {
+  scroll-margin-top: 100px;
 }
 
 .navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   font-family: v.$font-heading;
   font-size: 1.35rem;
   font-weight: 700;
   color: v.$color-text;
 
   span {
-    color: v.$color-sky-accent;
+    color: v.$color-mint-dark;
+  }
+
+  &__mark {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, v.$mint-400 0%, v.$mint-600 100%);
+    box-shadow: v.$shadow-soft;
+    color: v.$color-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+  }
+}
+
+.navbar-phone {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: v.$color-text;
+
+  i {
+    color: v.$color-mint-dark;
   }
 }
 
 .nav-link {
   font-size: 0.92rem;
+  font-weight: 600;
   color: v.$color-text;
+  border-radius: 999px;
+  padding-inline: 1rem !important;
+  transition: background-color 0.2s ease, color 0.2s ease;
 
   &:hover {
+    background: v.$color-mint;
     color: v.$color-mint-dark;
+  }
+}
+
+.navbar-toggler {
+  width: 44px;
+  height: 44px;
+  border-radius: 0.85rem;
+  border: 1px solid v.$ink-200;
+  padding: 0;
+
+  &:focus {
+    box-shadow: v.$shadow-glow;
   }
 }

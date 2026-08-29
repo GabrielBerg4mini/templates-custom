@@ -29,7 +29,7 @@ $enable-negative-margins: true;
 
 // Superfícies um tom mais claras que o fundo, para os cards não
 // "sumirem" no azul-marinho — e bordas sutis em vez de pretas.
-$card-bg: v.$color-navy-light;
+$card-bg: rgba(v.$color-navy-900, 0.4);
 $border-color: rgba(255, 255, 255, 0.08);
 $body-secondary-color: v.$color-text-muted;
 

@@ -1,34 +1,79 @@
-// Paleta — branco, verde-menta claro e azul-céu, com CTA em verde vivo
+// Paleta extraída 1:1 do design de referência (Bolt): escalas mint / sky / ink.
 $color-white: #ffffff;
-$color-mint: #eaf7f2;
-$color-mint-accent: #2bbd94;
-$color-mint-dark: #1f9c7a;
-$color-sky: #eaf6fc;
-$color-sky-accent: #3aa8dc;
-$color-sky-dark: #2c86b3;
-$color-cta-green: #22c55e;
-$color-cta-green-dark: #17a34a;
 
-$color-text: #16232a;
-$color-text-muted: #5b6b70;
+// Mint (verde-menta) — cor de marca e CTA
+$mint-50: #f0fbf8;
+$mint-100: #dcf6ee;
+$mint-200: #b8ecdc;
+$mint-300: #86dcc4;
+$mint-400: #4dc4a6;
+$mint-500: #2aa88c;
+$mint-600: #1e8a72;
+$mint-700: #1c6e5e;
+$mint-800: #1a584d;
+$mint-900: #174840;
+
+// Sky (azul-céu) — cor secundária de apoio
+$sky-50: #eff8fe;
+$sky-100: #dbeffc;
+$sky-200: #bfe2f9;
+$sky-300: #93cff4;
+$sky-400: #60b3ec;
+$sky-500: #3b97df;
+$sky-600: #2878c9;
+$sky-700: #2261a4;
+$sky-800: #235388;
+$sky-900: #224871;
+
+// Ink (neutros) — textos e fundos escuros
+$ink-50: #f6f8f9;
+$ink-100: #eaeff1;
+$ink-200: #d2dcdf;
+$ink-300: #afc0c5;
+$ink-400: #869ca3;
+$ink-500: #677f86;
+$ink-600: #52666c;
+$ink-700: #435358;
+$ink-800: #3a464b;
+$ink-900: #343d41;
+
+// Aliases — nomes já consumidos pelo resto do SCSS do site, agora
+// apontando para os tons corretos da paleta de referência.
+$color-mint: $mint-50;
+$color-mint-accent: $mint-400;
+$color-mint-dark: $mint-600;
+$color-sky: $sky-50;
+$color-sky-accent: $sky-500;
+$color-sky-dark: $sky-700;
+$color-cta-green: $mint-500;
+$color-cta-green-dark: $mint-600;
+
+$color-text: $ink-900;
+$color-text-muted: $ink-500;
 $color-whatsapp: #25d366;
+$color-urgent: #e2574c;
+$color-urgent-dark: #c8453b;
+$color-urgent-light: #fbeae8;
+$color-gold: #fbbf24;
 
 // Tokens padrão consumidos por _theme-bootstrap.scss
 $color-primary: $color-cta-green;
 $color-secondary: $color-sky-accent;
 $color-bg: $color-white;
 
-// Tipografia
-$font-heading: 'Quicksand', system-ui, sans-serif;
+// Tipografia — Plus Jakarta Sans (títulos/display) + Inter (corpo)
+$font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
 $font-base: 'Inter', system-ui, -apple-system, sans-serif;
 
 // Espaçamentos
 $spacing-unit: 8px;
 
-// Bordas / sombras — visual leve e acolhedor, bem arredondado
+// Bordas / sombras — valores extraídos do tailwind.config.js de referência
+// (boxShadow.soft / .card / .glow), visual leve e acolhedor, bem arredondado.
 $radius-lg: 24px;
-$shadow-soft: 0 20px 45px -22px rgba(22, 35, 42, 0.15);
-$shadow-lift: 0 30px 60px -25px rgba(43, 189, 148, 0.3);
+$shadow-soft: 0 4px 24px -8px rgba(26, 88, 77, 0.12);
+$shadow-lift: 0 12px 40px -12px rgba(26, 88, 77, 0.18);
+$shadow-glow: 0 0 0 4px rgba(42, 168, 140, 0.12);
 
 // Breakpoints (usados pelo Bootstrap container-max-widths)
 $bp-sm: 576px;
@@ -36,5 +81,6 @@ $bp-md: 768px;
 $bp-lg: 1024px;
 $bp-xl: 1280px;
 
-// Transições
+// Transições — easing padrão do reveal-on-scroll e das animações flutuantes
 $transition-base: 0.3s ease;
+$ease-reveal: cubic-bezier(0.16, 1, 0.3, 1);
