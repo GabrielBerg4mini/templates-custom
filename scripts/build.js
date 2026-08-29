@@ -39,6 +39,18 @@ const VENDOR_FILES = [
     src: path.join(rootDir, 'node_modules/swiper/swiper-bundle.min.css'),
     dest: path.join('vendor', 'swiper', 'swiper-bundle.min.css'),
   },
+  {
+    src: path.join(rootDir, 'node_modules/bootstrap-icons/font/bootstrap-icons.min.css'),
+    dest: path.join('vendor', 'bootstrap-icons', 'bootstrap-icons.min.css'),
+  },
+  {
+    src: path.join(rootDir, 'node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff'),
+    dest: path.join('vendor', 'bootstrap-icons', 'fonts', 'bootstrap-icons.woff'),
+  },
+  {
+    src: path.join(rootDir, 'node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2'),
+    dest: path.join('vendor', 'bootstrap-icons', 'fonts', 'bootstrap-icons.woff2'),
+  },
 ];
 
 function copyVendorAssets() {
@@ -49,7 +61,7 @@ function copyVendorAssets() {
       fs.copyFileSync(file.src, destPath);
     }
   }
-  console.log(`[vendor] bootstrap.bundle.min.js + swiper-bundle copiados para: ${siteDirs.join(', ')}`);
+  console.log(`[vendor] bootstrap.bundle.min.js + swiper-bundle + bootstrap-icons copiados para: ${siteDirs.join(', ')}`);
 }
 
 copyVendorAssets();

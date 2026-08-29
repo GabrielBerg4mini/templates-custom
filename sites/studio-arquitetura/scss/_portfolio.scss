@@ -64,9 +64,8 @@
     transform: scale(0.85);
     transition: opacity 0.3s ease, transform 0.3s ease;
 
-    svg {
-      width: 16px;
-      height: 16px;
+    i {
+      font-size: 16px;
     }
   }
 

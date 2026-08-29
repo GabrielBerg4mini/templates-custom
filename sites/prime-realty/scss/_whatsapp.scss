@@ -17,9 +17,7 @@
   transition: transform v.$transition-base;
 
   .icon {
-    width: 28px;
-    height: 28px;
-    fill: currentColor;
+    font-size: 28px;
   }
 
   &::before {
