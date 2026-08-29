@@ -1,0 +1,59 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.process-steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+
+  @include m.breakpoint(lg) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: 8%;
+      right: 8%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201, 162, 77, 0.4) 15%, rgba(201, 162, 77, 0.4) 85%, transparent);
+    }
+  }
+}
+
+.process-step {
+  position: relative;
+
+  &__number {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: v.$color-graphite-light;
+    border: 1px solid rgba(201, 162, 77, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: v.$color-gold;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: v.$color-text-muted;
+    font-size: 0.92rem;
+    max-width: 32ch;
+  }
+}

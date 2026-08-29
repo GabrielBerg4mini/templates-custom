@@ -1,0 +1,38 @@
+// Paleta — verde-sálvia suave, nude quente e off-white
+$color-offwhite: #faf8f4;
+$color-nude: #ecdfd2;
+$color-nude-dark: #d9c5b2;
+$color-sage: #93a87e;
+$color-sage-dark: #6f8259;
+$color-sage-light: #dbe4d1;
+
+$color-text: #3a3630;
+$color-text-muted: #7a7468;
+$color-white: #ffffff;
+$color-whatsapp: #25d366;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-sage;
+$color-secondary: $color-nude-dark;
+$color-bg: $color-offwhite;
+
+// Tipografia
+$font-heading: 'Nunito', system-ui, sans-serif;
+$font-base: 'Mulish', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas / sombras — bem arredondado, acolhedor e calmo
+$radius-lg: 28px;
+$shadow-soft: 0 20px 45px -22px rgba(58, 54, 48, 0.15);
+$shadow-lift: 0 30px 60px -25px rgba(147, 168, 126, 0.3);
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.3s ease;

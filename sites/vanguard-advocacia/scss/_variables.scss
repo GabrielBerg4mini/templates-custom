@@ -1,0 +1,38 @@
+// Paleta — cinza-ardósia escuro, aço escovado e branco
+$color-slate: #1a1d23;
+$color-slate-light: #242830;
+$color-slate-lighter: #2f353f;
+$color-steel: #9aa5b1;
+$color-steel-light: #ccd3da;
+$color-steel-dark: #626c78;
+
+$color-text: #f2f4f6;
+$color-text-muted: #9aa3ad;
+$color-white: #ffffff;
+$color-whatsapp: #25d366;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-steel;
+$color-secondary: $color-slate-lighter;
+$color-bg: $color-slate;
+
+// Tipografia
+$font-heading: 'IBM Plex Sans', system-ui, sans-serif;
+$font-base: 'Inter', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas / sombras — cantos curtos, visual técnico e seguro
+$radius-lg: 10px;
+$shadow-soft: 0 20px 45px -22px rgba(0, 0, 0, 0.6);
+$shadow-lift: 0 30px 65px -25px rgba(154, 165, 177, 0.2);
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.3s ease;

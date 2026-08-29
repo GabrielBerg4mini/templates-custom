@@ -1,0 +1,32 @@
+@use 'variables' as v;
+
+.about {
+  background: v.$color-graphite-light;
+
+  &__media img {
+    box-shadow: v.$shadow-soft;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+
+  &__stats {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  &__stat {
+    strong {
+      display: block;
+      font-family: v.$font-heading;
+      font-size: 2.2rem;
+      color: v.$color-gold;
+      line-height: 1;
+    }
+
+    span {
+      font-size: 0.8rem;
+      color: v.$color-text-muted;
+    }
+  }
+}

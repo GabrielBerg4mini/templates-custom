@@ -1,0 +1,32 @@
+@use 'variables' as v;
+
+// A navbar do Bootstrap já resolve grid, colapso mobile e acessibilidade.
+// Aqui só o acabamento visual da marca.
+
+.navbar {
+  background: rgba(255, 250, 243, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(169, 130, 79, 0.15);
+  padding-block: 1rem;
+}
+
+.navbar-brand {
+  font-family: v.$font-heading;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: v.$color-text;
+
+  span {
+    color: v.$color-rose-gold-dark;
+    font-style: italic;
+  }
+}
+
+.nav-link {
+  font-size: 0.92rem;
+  color: v.$color-text;
+
+  &:hover {
+    color: v.$color-rose-gold-dark;
+  }
+}

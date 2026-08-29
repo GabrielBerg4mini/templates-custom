@@ -1,0 +1,40 @@
+@use 'variables' as v;
+
+.broker {
+  &__media img {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    box-shadow: v.$shadow-soft;
+  }
+
+  &__role {
+    color: v.$color-champagne;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__creci {
+    font-size: 0.8rem;
+    color: v.$color-text-muted;
+  }
+
+  &__contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+
+      svg {
+        width: 18px;
+        height: 18px;
+        color: v.$color-champagne;
+      }
+    }
+  }
+}

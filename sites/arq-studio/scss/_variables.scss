@@ -1,0 +1,38 @@
+// Paleta — off-white cru, preto fosco e madeira quente
+$color-offwhite: #f6f4ef;
+$color-offwhite-dark: #ece7dd;
+$color-black: #17160f;
+$color-black-soft: #2a281f;
+$color-wood: #a9785a;
+$color-wood-light: #d9c2a8;
+
+$color-text: $color-black;
+$color-text-muted: #6b675f;
+$color-white: #ffffff;
+$color-whatsapp: #25d366;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-black;
+$color-secondary: $color-wood;
+$color-bg: $color-offwhite;
+
+// Tipografia
+$font-heading: 'Archivo', system-ui, sans-serif;
+$font-base: 'Work Sans', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas / sombras — cantos quase retos, visual escandinavo cru
+$radius-lg: 6px;
+$shadow-soft: 0 20px 45px -25px rgba(23, 22, 15, 0.25);
+$shadow-lift: 0 30px 60px -25px rgba(23, 22, 15, 0.35);
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.3s ease;

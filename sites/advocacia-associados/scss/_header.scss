@@ -1,0 +1,29 @@
+@use 'variables' as v;
+
+.navbar {
+  background: rgba(13, 25, 48, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-block: 1.1rem;
+}
+
+.navbar-brand {
+  font-family: v.$font-heading;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: v.$color-text;
+
+  span {
+    color: v.$color-gold;
+  }
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  color: v.$color-text-muted;
+
+  &:hover,
+  &.active {
+    color: v.$color-text;
+  }
+}

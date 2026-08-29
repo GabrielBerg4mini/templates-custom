@@ -1,0 +1,36 @@
+// Paleta — creme off-white e carvão profundo
+$color-cream: #f6f3ec;
+$color-cream-dark: #ece6d9;
+$color-charcoal: #26241f;
+$color-charcoal-light: #46443c;
+$color-white: #ffffff;
+
+$color-text: $color-charcoal;
+$color-text-muted: #6f6b60;
+$color-whatsapp: #25d366;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-charcoal;
+$color-secondary: $color-charcoal-light;
+$color-bg: $color-cream;
+
+// Tipografia
+$font-heading: 'Cormorant Garamond', serif;
+$font-base: 'Manrope', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas / sombras — cantos curtos, visual editorial e limpo
+$radius-lg: 0.4rem;
+$shadow-soft: 0 20px 45px -25px rgba(38, 36, 31, 0.25);
+$shadow-lift: 0 30px 60px -25px rgba(38, 36, 31, 0.32);
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.3s ease;

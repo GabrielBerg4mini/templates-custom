@@ -1,0 +1,42 @@
+// Paleta — preto fosco e verde-limão neon
+$color-black: #0a0a0a;
+$color-black-light: #161616;
+$color-black-lighter: #201f1f;
+$color-lime: #c9ff45;
+$color-lime-dark: #9fd62b;
+$color-lime-soft: rgba(201, 255, 69, 0.12);
+
+$color-text: #f5f5f0;
+$color-text-muted: #8f8f89;
+$color-whatsapp: #25d366;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-lime;
+$color-secondary: $color-black-lighter;
+$color-bg: $color-black;
+
+// Tipografia
+$font-heading: 'Anton', system-ui, sans-serif;
+$font-base: 'Inter', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas / sombras — vidro fosco + brilho neon
+$radius-lg: 20px;
+$shadow-soft: 0 20px 45px -22px rgba(0, 0, 0, 0.7);
+$shadow-glow: 0 0 55px -12px rgba(201, 255, 69, 0.35);
+
+// Glassmorphism
+$glass-bg: rgba(255, 255, 255, 0.04);
+$glass-border: rgba(255, 255, 255, 0.1);
+$glass-blur: 18px;
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.3s ease;

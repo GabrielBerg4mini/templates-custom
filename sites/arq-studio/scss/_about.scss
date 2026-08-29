@@ -1,0 +1,29 @@
+@use 'variables' as v;
+
+.about {
+  background: v.$color-black;
+  color: v.$color-offwhite;
+
+  &__media img {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    filter: grayscale(1) contrast(1.1);
+  }
+
+  h2 {
+    color: v.$color-offwhite;
+  }
+
+  &__quote {
+    font-family: v.$font-heading;
+    font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+    font-weight: 500;
+    line-height: 1.35;
+    color: v.$color-offwhite;
+  }
+
+  &__role {
+    color: v.$color-wood-light;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,28 @@
+@use 'variables' as v;
+
+.about {
+  background: v.$color-beige;
+
+  &__media img {
+    box-shadow: v.$shadow-soft;
+    aspect-ratio: 560 / 680;
+    object-fit: cover;
+  }
+
+  &__role {
+    color: v.$color-rose-gold-dark;
+    font-weight: 500;
+  }
+}
+
+.badges {
+  li {
+    background: v.$color-white;
+    box-shadow: v.$shadow-soft;
+
+    .icon {
+      color: v.$color-gold-dark;
+      fill: currentColor;
+    }
+  }
+}

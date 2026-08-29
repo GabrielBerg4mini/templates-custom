@@ -1,0 +1,25 @@
+@use 'variables' as v;
+
+.numbers-banner {
+  background: v.$color-slate-light;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.number-stat {
+  text-align: center;
+
+  strong {
+    display: block;
+    font-family: v.$font-heading;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 700;
+    color: v.$color-white;
+    line-height: 1.1;
+  }
+
+  span {
+    font-size: 0.85rem;
+    color: v.$color-text-muted;
+  }
+}

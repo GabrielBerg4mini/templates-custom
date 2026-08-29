@@ -1,0 +1,39 @@
+@use 'variables' as v;
+
+.differentials {
+  background: v.$color-navy-light;
+  border-top: 1px solid v.$glass-border;
+  border-bottom: 1px solid v.$glass-border;
+}
+
+.differential {
+  text-align: center;
+
+  &__icon {
+    width: 52px;
+    height: 52px;
+    margin-inline: auto;
+    border-radius: 50%;
+    background: rgba(217, 192, 143, 0.12);
+    color: v.$color-champagne;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  p {
+    color: v.$color-text-muted;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+}

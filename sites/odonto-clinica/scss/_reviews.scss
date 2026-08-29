@@ -1,0 +1,58 @@
+@use 'variables' as v;
+
+.reviews-summary {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: v.$color-white;
+  border-radius: 1.25rem;
+  box-shadow: v.$shadow-soft;
+  padding: 1.5rem 2rem;
+  margin-inline: auto;
+  margin-bottom: 3rem;
+  max-width: fit-content;
+
+  &__score {
+    font-family: v.$font-heading;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: v.$color-text;
+    line-height: 1;
+  }
+
+  .stars {
+    color: #f5b400;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    margin-bottom: 0.15rem;
+  }
+
+  &__count {
+    font-size: 0.8rem;
+    color: v.$color-text-muted;
+  }
+}
+
+.review-card {
+  height: 100%;
+
+  .stars {
+    color: #f5b400;
+    letter-spacing: 2px;
+    font-size: 1rem;
+  }
+
+  blockquote {
+    font-size: 0.95rem;
+    color: v.$color-text;
+  }
+
+  &__name {
+    font-weight: 600;
+  }
+
+  &__meta {
+    font-size: 0.78rem;
+    color: v.$color-text-muted;
+  }
+}

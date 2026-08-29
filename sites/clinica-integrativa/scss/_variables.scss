@@ -1,0 +1,40 @@
+// Paleta — terracota, nude, verde-sálvia e creme
+$color-cream: #faf6f0;
+$color-nude: #e9ddd0;
+$color-nude-dark: #dbccba;
+$color-terracotta: #bf6a4d;
+$color-terracotta-dark: #9e5540;
+$color-sage: #93a583;
+$color-sage-dark: #6f7f5e;
+$color-gold: #c9a24d;
+
+$color-text: #3a2f28;
+$color-text-muted: #7d6f63;
+$color-white: #ffffff;
+$color-whatsapp: #25d366;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-terracotta;
+$color-secondary: $color-sage;
+$color-bg: $color-cream;
+
+// Tipografia
+$font-heading: 'Fraunces', serif;
+$font-base: 'Karla', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas / sombras
+$radius-lg: 20px;
+$shadow-soft: 0 20px 45px -22px rgba(58, 47, 40, 0.16);
+$shadow-lift: 0 30px 60px -25px rgba(191, 106, 77, 0.28);
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.3s ease;

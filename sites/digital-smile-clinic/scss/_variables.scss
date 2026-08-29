@@ -1,0 +1,43 @@
+// Paleta — branco, azul-marinho profundo e ciano vibrante
+$color-white: #ffffff;
+$color-navy: #0a1128;
+$color-navy-light: #121a3a;
+$color-navy-lighter: #1b2550;
+$color-cyan: #22d3ee;
+$color-cyan-dark: #0ea5b8;
+$color-cyan-light: #7ee6f7;
+
+$color-text: #eef3fb;
+$color-text-muted: #93a0bd;
+$color-whatsapp: #25d366;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-cyan;
+$color-secondary: $color-navy-lighter;
+$color-bg: $color-navy;
+
+// Tipografia
+$font-heading: 'Sora', system-ui, sans-serif;
+$font-base: 'Inter', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas / sombras — vidro fosco, brilho suave em ciano
+$radius-lg: 20px;
+$shadow-soft: 0 20px 45px -22px rgba(0, 0, 0, 0.5);
+$shadow-glow: 0 0 60px -15px rgba(34, 211, 238, 0.35);
+
+// Glassmorphism
+$glass-bg: rgba(255, 255, 255, 0.05);
+$glass-border: rgba(255, 255, 255, 0.12);
+$glass-blur: 18px;
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.3s ease;

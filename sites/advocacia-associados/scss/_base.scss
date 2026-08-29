@@ -1,0 +1,60 @@
+@use 'variables' as v;
+
+// O Bootstrap (via _theme-bootstrap.scss) cuida do reset, tipografia,
+// grid, links e imagens. Aqui só os utilitários que faltam.
+
+html {
+  scroll-behavior: smooth;
+}
+
+.eyebrow {
+  font-family: v.$font-base;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: v.$color-gold;
+  margin-bottom: 0.75rem;
+}
+
+.section-heading {
+  max-width: 640px;
+  margin-bottom: 3.5rem;
+
+  &--center {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+  }
+
+  &__text {
+    color: v.$color-text-muted;
+    margin-bottom: 0;
+  }
+}
+
+.btn-gold {
+  background: v.$color-gold;
+  border: none;
+  color: v.$color-navy;
+  font-weight: 600;
+
+  &:hover {
+    background: v.$color-gold-light;
+    color: v.$color-navy;
+  }
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

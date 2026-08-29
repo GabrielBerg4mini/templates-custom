@@ -1,0 +1,30 @@
+@use 'variables' as v;
+
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: flex-end;
+  background-image:
+    linear-gradient(0deg, v.$color-cream 0%, rgba(38, 36, 31, 0.15) 40%, rgba(38, 36, 31, 0.05) 60%),
+    url('https://placehold.co/1920x1200/ece6d9/46443c?text=Retrato+editorial');
+  background-size: cover;
+  background-position: center 20%;
+
+  &__content {
+    padding-bottom: 3.5rem;
+  }
+
+  h1 {
+    max-width: 16ch;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-style: italic;
+    line-height: 1.1;
+  }
+
+  &__subtitle {
+    color: v.$color-charcoal-light;
+    font-size: 1.05rem;
+    max-width: 46ch;
+  }
+}

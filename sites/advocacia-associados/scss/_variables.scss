@@ -1,0 +1,38 @@
+// Paleta — azul-marinho profundo, dourado e branco
+$color-navy: #0d1930;
+$color-navy-light: #16223e;
+$color-navy-lighter: #1f2d4d;
+$color-gold: #c5a253;
+$color-gold-light: #ddc07f;
+$color-gold-dark: #a3813a;
+
+$color-text: #eef1f6;
+$color-text-muted: #a9b2c7;
+$color-white: #ffffff;
+$color-whatsapp: #25d366;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-gold;
+$color-secondary: $color-navy-lighter;
+$color-bg: $color-navy;
+
+// Tipografia
+$font-heading: 'Merriweather', serif;
+$font-base: 'Inter', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas / sombras
+$radius-lg: 16px;
+$shadow-soft: 0 20px 45px -20px rgba(0, 0, 0, 0.55);
+$shadow-lift: 0 30px 70px -25px rgba(197, 162, 83, 0.25);
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.3s ease;

@@ -1,0 +1,45 @@
+@use 'variables' as v;
+
+.how-step {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-radius: 1.25rem;
+  transition: background 0.35s ease, transform 0.35s ease;
+
+  &:hover {
+    background: v.$color-white;
+    transform: translateY(-4px);
+    box-shadow: v.$shadow-soft;
+
+    .how-step__number {
+      background: v.$color-sage;
+      color: v.$color-white;
+    }
+  }
+
+  &__number {
+    width: 48px;
+    height: 48px;
+    margin-inline: auto;
+    border-radius: 50%;
+    background: v.$color-sage-light;
+    color: v.$color-sage-dark;
+    font-family: v.$font-heading;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    transition: background 0.35s ease, color 0.35s ease;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  p {
+    color: v.$color-text-muted;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+}

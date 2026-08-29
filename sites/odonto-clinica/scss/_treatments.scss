@@ -1,0 +1,37 @@
+@use 'variables' as v;
+
+.treatment-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: v.$shadow-lift !important;
+    border-color: rgba(43, 189, 148, 0.35) !important;
+  }
+
+  &__icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: v.$color-mint;
+    color: v.$color-mint-dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  p {
+    color: v.$color-text-muted;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+}

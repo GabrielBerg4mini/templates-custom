@@ -1,0 +1,58 @@
+@use 'variables' as v;
+
+// O Bootstrap (via _theme-bootstrap.scss) cuida do reset, tipografia,
+// grid, links e imagens. Aqui só os utilitários que faltam.
+
+html {
+  scroll-behavior: smooth;
+}
+
+.eyebrow {
+  font-family: v.$font-base;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: v.$color-gold-dark;
+  margin-bottom: 0.75rem;
+}
+
+.section-heading {
+  max-width: 640px;
+  margin-inline: auto;
+  text-align: center;
+  margin-bottom: 3.5rem;
+
+  h2 {
+    font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  }
+
+  &__text {
+    color: v.$color-text-muted;
+    margin-bottom: 0;
+  }
+}
+
+// CTA com gradiente — variante extra por cima do .btn-primary do Bootstrap
+.btn-gradient {
+  background: linear-gradient(135deg, v.$color-rose-gold, v.$color-gold-dark);
+  border: none;
+  color: v.$color-white;
+  box-shadow: v.$shadow-lift;
+
+  &:hover {
+    color: v.$color-white;
+    transform: translateY(-2px);
+  }
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

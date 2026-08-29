@@ -1,0 +1,50 @@
+@use 'variables' as v;
+
+// Rolagem horizontal só com CSS (scroll-snap) — sem JS.
+
+.process-scroll {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+  margin-bottom: -1rem;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(38, 36, 31, 0.15);
+    border-radius: 999px;
+  }
+}
+
+.process-step {
+  flex: 0 0 auto;
+  width: min(320px, 78vw);
+  scroll-snap-align: start;
+  border-left: 1px solid rgba(38, 36, 31, 0.15);
+  padding-left: 1.5rem;
+
+  &__number {
+    font-family: v.$font-heading;
+    font-style: italic;
+    font-size: 2.2rem;
+    color: v.$color-text-muted;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: v.$color-text-muted;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+}

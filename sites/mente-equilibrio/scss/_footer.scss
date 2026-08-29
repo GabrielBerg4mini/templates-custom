@@ -1,0 +1,40 @@
+@use 'variables' as v;
+
+.site-footer {
+  background: v.$color-text;
+  color: rgba(250, 248, 244, 0.75);
+
+  h4 {
+    color: v.$color-offwhite;
+    font-size: 1rem;
+  }
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: v.$color-sage-light;
+    }
+  }
+
+  &__grid {
+    border-bottom: 1px solid rgba(250, 248, 244, 0.12);
+  }
+
+  .lgpd {
+    color: rgba(250, 248, 244, 0.55);
+    max-width: 46ch;
+  }
+}
+
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(147, 168, 126, 0.15);
+  border: 1px solid rgba(147, 168, 126, 0.35);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  color: v.$color-sage-light;
+}

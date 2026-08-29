@@ -1,0 +1,34 @@
+@use 'variables' as v;
+
+.about {
+  background: v.$color-black-light;
+
+  &__media img {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    filter: contrast(1.1) grayscale(0.3);
+  }
+
+  &__bio {
+    font-size: 1.05rem;
+    color: v.$color-text-muted;
+  }
+
+  &__certs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+
+    li {
+      background: v.$glass-bg;
+      border: 1px solid v.$glass-border;
+      border-radius: 999px;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.78rem;
+      color: v.$color-lime;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+  }
+}

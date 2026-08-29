@@ -1,0 +1,93 @@
+@use 'variables' as v;
+
+// O arraste, paginação e setas são do Swiper — aqui só o visual do card.
+
+.properties-swiper {
+  padding-bottom: 3rem;
+
+  .swiper-slide {
+    height: auto;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: v.$color-champagne;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: v.$color-champagne;
+
+    &::after {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.property-card {
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: v.$shadow-glow !important;
+    border-color: rgba(217, 192, 143, 0.4) !important;
+  }
+
+  &__media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__price {
+    position: absolute;
+    top: 0.85rem;
+    left: 0.85rem;
+    background: rgba(13, 23, 48, 0.8);
+    color: v.$color-champagne;
+    font-family: v.$font-heading;
+    font-size: 0.95rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+  }
+
+  &__body {
+    padding: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  &__location {
+    font-size: 0.8rem;
+    color: v.$color-text-muted;
+    margin-bottom: 0.75rem;
+  }
+
+  &__specs {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: v.$color-text-muted;
+    margin-bottom: 1rem;
+
+    span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    svg {
+      width: 15px;
+      height: 15px;
+      color: v.$color-champagne;
+    }
+  }
+}

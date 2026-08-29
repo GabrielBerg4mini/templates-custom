@@ -1,0 +1,18 @@
+{
+  "name": "ideias-templates",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Coleção de templates de sites por nicho, cada um em sites/<nome>, com compilação SCSS automatizada.",
+  "scripts": {
+    "new-site": "node scripts/new-site.js",
+    "watch": "node scripts/build.js watch",
+    "build": "node scripts/build.js build"
+  },
+  "devDependencies": {
+    "sass": "^1.77.8"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "swiper": "^14.2.0"
+  }
+}

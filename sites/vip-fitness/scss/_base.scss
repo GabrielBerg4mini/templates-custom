@@ -1,0 +1,75 @@
+@use 'variables' as v;
+
+// O Bootstrap (via _theme-bootstrap.scss) cuida do reset, tipografia,
+// grid, links e imagens. Aqui só os utilitários que faltam.
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.eyebrow {
+  font-family: v.$font-base;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: v.$color-lime;
+  margin-bottom: 0.75rem;
+}
+
+.section-heading {
+  max-width: 640px;
+  margin-bottom: 3rem;
+
+  &--center {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  }
+
+  &__text {
+    color: v.$color-text-muted;
+    text-transform: none;
+    margin-bottom: 0;
+  }
+}
+
+.card {
+  backdrop-filter: blur(v.$glass-blur);
+}
+
+.btn-lime {
+  background: v.$color-lime;
+  border: none;
+  color: v.$color-black;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  transition: transform v.$transition-base, box-shadow v.$transition-base, background v.$transition-base;
+
+  &:hover {
+    background: v.$color-lime-dark;
+    color: v.$color-black;
+    transform: translateY(-2px);
+    box-shadow: v.$shadow-glow;
+  }
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

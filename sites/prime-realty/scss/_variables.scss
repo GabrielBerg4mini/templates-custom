@@ -1,0 +1,43 @@
+// Paleta — azul-marinho profundo e dourado champanhe
+$color-navy: #0d1730;
+$color-navy-light: #16213f;
+$color-navy-lighter: #202d52;
+$color-champagne: #d9c08f;
+$color-champagne-light: #ecdcb8;
+$color-champagne-dark: #b89a66;
+
+$color-text: #eef1f7;
+$color-text-muted: #9aa4bd;
+$color-white: #ffffff;
+$color-whatsapp: #25d366;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-champagne;
+$color-secondary: $color-navy-lighter;
+$color-bg: $color-navy;
+
+// Tipografia
+$font-heading: 'Spectral', serif;
+$font-base: 'Inter', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas / sombras — vidro fosco com brilho dourado
+$radius-lg: 18px;
+$shadow-soft: 0 20px 45px -22px rgba(0, 0, 0, 0.55);
+$shadow-glow: 0 0 55px -15px rgba(217, 192, 143, 0.3);
+
+// Glassmorphism
+$glass-bg: rgba(255, 255, 255, 0.05);
+$glass-border: rgba(217, 192, 143, 0.18);
+$glass-blur: 18px;
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.3s ease;

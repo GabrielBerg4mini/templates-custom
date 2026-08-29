@@ -1,0 +1,33 @@
+@use 'variables' as v;
+
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  padding-top: 7rem;
+  background-image:
+    linear-gradient(180deg, rgba(10, 10, 10, 0.55) 0%, rgba(10, 10, 10, 0.8) 65%, v.$color-black 100%),
+    url('https://placehold.co/1920x1200/161616/c9ff45?text=Academia+privativa');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  @media (max-width: 991px) {
+    // background-attachment:fixed é instável em navegadores mobile —
+    // volta ao scroll normal abaixo do breakpoint lg.
+    background-attachment: scroll;
+  }
+
+  h1 {
+    max-width: 17ch;
+    font-size: clamp(2.3rem, 4.6vw, 3.8rem);
+    line-height: 1.05;
+  }
+
+  &__subtitle {
+    color: v.$color-text-muted;
+    font-size: 1.05rem;
+    max-width: 48ch;
+  }
+}

@@ -1,0 +1,55 @@
+@use 'variables' as v;
+
+.site-footer {
+  background: v.$color-navy;
+  color: v.$color-text-muted;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  h4 {
+    color: v.$color-text;
+    font-size: 1rem;
+  }
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: v.$color-gold;
+    }
+  }
+
+  &__grid {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .disclaimer {
+    font-size: 0.78rem;
+    color: rgba(169, 178, 199, 0.7);
+    max-width: 70ch;
+  }
+}
+
+.contact-list li {
+  display: flex;
+  gap: 0.6rem;
+  font-size: 0.92rem;
+  margin-bottom: 0.75rem;
+
+  .icon {
+    color: v.$color-gold;
+    flex-shrink: 0;
+  }
+}
+
+.map-widget {
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  box-shadow: v.$shadow-soft;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: grayscale(0.3) contrast(1.05);
+  }
+}

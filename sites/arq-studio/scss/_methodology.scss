@@ -1,0 +1,50 @@
+@use 'variables' as v;
+
+.methodology-list {
+  max-width: 720px;
+}
+
+.methodology-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1.5rem;
+  position: relative;
+  padding-bottom: 2.5rem;
+
+  &:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    top: 3rem;
+    left: 1.15rem;
+    width: 1px;
+    height: calc(100% - 2.5rem);
+    background: rgba(23, 22, 15, 0.15);
+  }
+
+  &__number {
+    font-family: v.$font-heading;
+    font-size: 1.1rem;
+    font-weight: 700;
+    width: 2.3rem;
+    height: 2.3rem;
+    border: 1px solid v.$color-black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: v.$color-offwhite;
+    position: relative;
+    z-index: 1;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  p {
+    color: v.$color-text-muted;
+    margin-bottom: 0;
+    max-width: 48ch;
+  }
+}

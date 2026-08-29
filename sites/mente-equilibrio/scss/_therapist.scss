@@ -1,0 +1,26 @@
+@use 'variables' as v;
+
+.therapist {
+  background: v.$color-nude;
+
+  &__media img {
+    box-shadow: v.$shadow-soft;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+
+  &__crp {
+    font-size: 0.85rem;
+    color: v.$color-text-muted;
+    margin-bottom: 1.25rem;
+  }
+
+  &__quote {
+    font-family: v.$font-heading;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: v.$color-sage-dark;
+    border-left: 3px solid v.$color-sage;
+    padding-left: 1.25rem;
+  }
+}

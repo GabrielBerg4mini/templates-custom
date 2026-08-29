@@ -1,0 +1,46 @@
+@use 'variables' as v;
+
+// O carrossel (arraste, paginação, setas) é o Swiper — aqui só o visual do card.
+
+.testimonial-swiper {
+  padding-bottom: 3rem;
+
+  .swiper-slide {
+    height: auto;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: v.$color-rose-gold-dark;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: v.$color-gold-dark;
+
+    &::after {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.testimonial-card {
+  height: 100%;
+  box-shadow: v.$shadow-soft;
+
+  .stars {
+    color: v.$color-gold;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+  }
+
+  blockquote {
+    font-family: v.$font-heading;
+    font-size: 1.2rem;
+    font-style: italic;
+  }
+
+  &__tag {
+    font-size: 0.78rem;
+    color: v.$color-text-muted;
+  }
+}

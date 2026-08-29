@@ -1,0 +1,39 @@
+// Paleta — bege quente, dourado suave e rosé gold
+$color-beige: #f8f2e9;
+$color-beige-dark: #ede0cd;
+$color-cream: #fffaf3;
+$color-gold: #c9a876;
+$color-gold-dark: #a9824f;
+$color-rose-gold: #c68f8a;
+$color-rose-gold-dark: #b06e6a;
+
+$color-text: #33281f;
+$color-text-muted: #7c6c5d;
+$color-white: #ffffff;
+$color-whatsapp: #25d366;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-rose-gold-dark;
+$color-secondary: $color-gold-dark;
+$color-bg: $color-cream;
+
+// Tipografia
+$font-heading: 'Playfair Display', serif;
+$font-base: 'Jost', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas / sombras
+$radius-lg: 28px;
+$shadow-soft: 0 20px 45px -20px rgba(51, 40, 31, 0.18);
+$shadow-lift: 0 30px 60px -25px rgba(169, 130, 79, 0.35);
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.3s ease;

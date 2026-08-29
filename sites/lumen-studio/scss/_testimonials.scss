@@ -1,0 +1,50 @@
+@use 'variables' as v;
+
+// O carrossel (arraste, paginação, setas) é o Swiper — aqui só o visual do slide.
+
+.testimonial-swiper {
+  max-width: 720px;
+  margin-inline: auto;
+  padding-bottom: 3rem;
+
+  .swiper-pagination-bullet-active {
+    background: v.$color-charcoal;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: v.$color-charcoal;
+
+    &::after {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.testimonial-slide {
+  text-align: center;
+
+  .stars {
+    color: v.$color-charcoal;
+    letter-spacing: 3px;
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  blockquote {
+    font-family: v.$font-heading;
+    font-style: italic;
+    font-size: clamp(1.3rem, 2.6vw, 1.8rem);
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+  }
+
+  &__name {
+    font-weight: 600;
+  }
+
+  &__meta {
+    font-size: 0.8rem;
+    color: v.$color-text-muted;
+  }
+}

@@ -1,0 +1,58 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: v.$color-cream;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -8%;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(147, 165, 131, 0.22), transparent 70%);
+  }
+
+  h1 {
+    max-width: 15ch;
+  }
+
+  &__subtitle {
+    color: v.$color-text-muted;
+    font-size: 1.05rem;
+    max-width: 42ch;
+  }
+
+  &__media {
+    position: relative;
+
+    img {
+      box-shadow: v.$shadow-lift;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    // Assimetria: a imagem "sobe" em relação ao texto em telas grandes.
+    @include m.breakpoint(lg) {
+      margin-top: -2.5rem;
+    }
+  }
+
+  &__media-tag {
+    position: absolute;
+    bottom: 1.25rem;
+    left: -1.25rem;
+    background: v.$color-white;
+    box-shadow: v.$shadow-soft;
+
+    strong {
+      font-family: v.$font-heading;
+      font-style: italic;
+      color: v.$color-terracotta;
+    }
+  }
+}

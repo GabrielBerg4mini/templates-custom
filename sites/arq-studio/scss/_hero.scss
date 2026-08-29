@@ -1,0 +1,31 @@
+@use 'variables' as v;
+
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: flex-end;
+  background-image:
+    linear-gradient(0deg, v.$color-offwhite 0%, rgba(23, 22, 15, 0.25) 38%, rgba(23, 22, 15, 0.05) 60%),
+    url('https://placehold.co/1920x1200/ece7dd/a9785a?text=Sala+de+estar+minimalista');
+  background-size: cover;
+  background-position: center;
+
+  &__content {
+    padding-bottom: 3.5rem;
+  }
+
+  h1 {
+    max-width: 18ch;
+    font-size: clamp(2.4rem, 5.2vw, 4.2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+
+  &__subtitle {
+    color: v.$color-black-soft;
+    font-size: 1.05rem;
+    max-width: 46ch;
+  }
+}
