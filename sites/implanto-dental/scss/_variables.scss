@@ -1,0 +1,44 @@
+// IMPLANTO Odontologia — direção O2 "Precision Dental"
+// Branco + grafite + verde profundo como acento técnico único.
+// Sem pastel, sem gradiente, sem dourado/luxo — precisão e método.
+
+// Cores base
+$color-white: #ffffff;
+$color-bg-soft: #f4f5f3; // superfície neutra levemente esverdeada, não pastel
+$color-ink: #2b2e31; // grafite — texto e UI escura
+$color-ink-soft: #5b6066; // texto secundário
+$color-ink-faint: #6e7376; // texto terciário / legendas (AA: 4.8:1 sobre branco)
+
+// Verde profundo — único acento cromático do site
+$color-green: #1b4332;
+$color-green-dark: #12301f;
+$color-green-tint: #e7eee9; // superfície técnica clara (não pastel: só um tom de fundo)
+
+// Linhas — elemento estrutural recorrente da direção
+$color-line: #dcdfda;
+$color-line-strong: rgba(43, 46, 49, 0.22);
+
+// Estado utilitário (WhatsApp usa o verde institucional do WhatsApp
+// apenas no ícone/CTA de contato — não faz parte da paleta de marca)
+$color-whatsapp: #25d366;
+
+// Tipografia — uma única família para tudo, IBM Plex Mono só para
+// rótulos/números técnicos pontuais.
+$font-base: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+$font-heading: $font-base;
+$font-mono: 'IBM Plex Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Breakpoints
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Container
+$container-max-width: 1200px;
+
+// Sombra discreta — usada com moderação (a direção prioriza linhas a sombra)
+$shadow-technical: 0 1px 2px rgba(43, 46, 49, 0.06), 0 12px 32px rgba(43, 46, 49, 0.07);

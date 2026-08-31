@@ -1,0 +1,51 @@
+// Paleta — "Dark Counsel" (A3): preto quase-preto, off-white quente e
+// bronze/cobre como único acento. Sem navy, sem aço, sem dourado — para se
+// diferenciar da paleta de vanguard-advocacia (aço/ardósia) e
+// studio-arquitetura (grafite/dourado) já existentes no repositório.
+$color-black: #121110;
+$color-black-elevated: #1a1815; // superfície um tom acima do fundo (divisores, cards raros)
+$color-offwhite: #f3eee6;
+$color-offwhite-muted: rgba(243, 238, 230, 0.64);
+$color-offwhite-faint: rgba(243, 238, 230, 0.55);
+$color-border-hairline: rgba(243, 238, 230, 0.14);
+
+// Bronze/cobre — único acento. Nunca em fundo de bloco grande, nunca em
+// gradiente, nunca com glow.
+$color-bronze: #a66a3d;
+$color-bronze-light: #c08a5e; // texto pequeno em bronze sobre fundo escuro (contraste AA)
+$color-bronze-dark: #8a5730; // texto pequeno em bronze sobre fundo claro (contraste AA)
+
+// Seção clara alternada (posicionamento / contato) — off-white como fundo,
+// texto quase-preto.
+$color-bg-light: $color-offwhite;
+$color-text-on-light: #23201b;
+$color-text-on-light-muted: rgba(35, 32, 27, 0.66);
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-bronze;
+$color-secondary: $color-black-elevated;
+$color-bg: $color-black;
+$color-text: $color-offwhite;
+
+// Tipografia — Newsreader (serif de display, 300/500, itálico editorial em
+// 300) para headlines; Inter (sans) para corpo, labels, navegação e botões.
+$font-display: 'Newsreader', 'Georgia', serif;
+$font-base: 'Inter', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas — direção pede pouca ou nenhuma curvatura (0–4px), nada de
+// cantos arredondados grandes.
+$radius-sm: 2px;
+$radius-md: 3px;
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições — motion mínimo
+$transition-base: 0.25s ease;
+$transition-slow: 0.45s cubic-bezier(0.16, 1, 0.3, 1);

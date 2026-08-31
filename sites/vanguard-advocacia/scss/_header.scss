@@ -1,34 +1,140 @@
 @use 'variables' as v;
 
 .navbar {
-  background: rgba(26, 29, 35, 0.85);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-block: 1.1rem;
-}
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 1050;
+  padding-block: 0;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease;
 
-.navbar-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-family: v.$font-heading;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: v.$color-text;
+  .container {
+    min-height: 5rem;
+  }
 
-  &__emblem {
-    font-size: 30px;
-    flex-shrink: 0;
-    color: v.$color-steel;
+  // Estado "rolado" — aplicado via JS quando scrollY > 24px (site-header.tsx)
+  &.navbar--scrolled {
+    background: rgba(23, 26, 31, 0.85);
+    border-bottom-color: v.$color-border-hairline;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
 }
 
-.nav-link {
-  font-size: 0.88rem;
-  color: v.$color-text-muted;
+// Logo / emblema
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
 
-  &:hover,
-  &.active {
+  &__emblem {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background-image: v.$gradient-steel-bg;
+    color: v.$color-steel-foreground;
+    font-size: 1.15rem;
+  }
+
+  &__wordmark {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  &__name {
+    font-family: v.$font-heading;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
     color: v.$color-text;
+  }
+
+  &__sub {
+    margin-top: 0.3rem;
+    font-family: v.$font-heading;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: v.$color-text-muted;
+  }
+}
+
+.navbar-nav {
+  .nav-link {
+    position: relative;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: v.$color-text-muted;
+    padding-block: 0.5rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0.15rem;
+      width: 0;
+      height: 1px;
+      background: v.$color-steel;
+      transition: width 0.3s ease;
+    }
+
+    &:hover,
+    &.active {
+      color: v.$color-text;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.navbar-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid v.$color-border-hairline;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: v.$radius-md;
+  padding: 0.6rem 1.15rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: v.$color-text;
+  transition: border-color v.$transition-base, background-color v.$transition-base;
+
+  .icon {
+    color: v.$color-steel;
+  }
+
+  &:hover {
+    color: v.$color-text;
+    border-color: v.$color-steel;
+    background: rgba(255, 255, 255, 0.07);
+  }
+}
+
+.navbar-toggler {
+  border-color: v.$color-border-hairline;
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(154, 165, 177, 0.25);
+  }
+}
+
+.navbar-collapse {
+  @media (max-width: 991.98px) {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid v.$color-border-hairline;
   }
 }

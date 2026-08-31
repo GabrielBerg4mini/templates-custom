@@ -1,10 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
   initRevealOnScroll();
   initSwipers();
+  initScrolledHeader();
+  initFooterYear();
 });
 
 // Bootstrap (navbar, collapse, etc.) já cuida de si mesmo via data-bs-*.
-// Aqui só ficam: reveal-on-scroll (Bootstrap não tem) e o init do Swiper.
+// Aqui só ficam: reveal-on-scroll e o header transparente->sólido no scroll
+// (Bootstrap não tem nenhum dos dois), o init do Swiper e o ano do rodapé.
+
+function initScrolledHeader() {
+  const navbar = document.getElementById('mainNavbar');
+  if (!navbar) return;
+
+  const onScroll = () => {
+    navbar.classList.toggle('navbar--scrolled', window.scrollY > 24);
+  };
+
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+}
+
+function initFooterYear() {
+  const el = document.getElementById('footer-year');
+  if (el) el.textContent = new Date().getFullYear();
+}
 
 function initRevealOnScroll() {
   const items = document.querySelectorAll('[data-reveal]');

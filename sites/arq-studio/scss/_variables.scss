@@ -1,32 +1,46 @@
-// Paleta — off-white cru, preto fosco e madeira quente
-$color-offwhite: #f6f4ef;
-$color-offwhite-dark: #ece7dd;
-$color-black: #17160f;
-$color-black-soft: #2a281f;
-$color-wood: #a9785a;
-$color-wood-light: #d9c2a8;
+// Paleta — tokens copiados 1:1 do design v0 (app/globals.css, bloco :root),
+// mantidos em oklch() para preservar fidelidade exata de cor.
+$color-bg: oklch(0.971 0.005 90); // --background — off-white cru
+$color-fg: oklch(0.19 0.004 60); // --foreground — preto quente, quase fosco
+$color-card: oklch(0.985 0.004 90); // --card
+$color-secondary: oklch(0.94 0.006 85); // --secondary / --muted
+$color-muted: oklch(0.94 0.006 85); // --muted
+$color-muted-fg: oklch(0.5 0.008 70); // --muted-foreground
+$color-accent: oklch(0.72 0.06 65); // --accent
+$color-wood: oklch(0.68 0.07 62); // --wood — madeira quente, cor de destaque
+$color-wood-fg: oklch(0.98 0.005 90); // --wood-foreground
+$color-border: oklch(0.88 0.008 80); // --border / --input
+$color-ring: oklch(0.68 0.07 62); // --ring
 
-$color-text: $color-black;
-$color-text-muted: #6b675f;
 $color-white: #ffffff;
-$color-whatsapp: #25d366;
+$color-black: $color-fg;
 
 // Tokens padrão consumidos por _theme-bootstrap.scss
-$color-primary: $color-black;
-$color-secondary: $color-wood;
-$color-bg: $color-offwhite;
+$color-primary: $color-fg;
+$color-bg-body: $color-bg;
+$color-text: $color-fg;
+$color-text-muted: $color-muted-fg;
 
-// Tipografia
-$font-heading: 'Archivo', system-ui, sans-serif;
-$font-base: 'Work Sans', system-ui, -apple-system, sans-serif;
+// Tipografia — Fraunces (serif, display, peso leve) + Inter (sans, texto)
+// conforme app/layout.tsx (next/font/google: Fraunces + Inter).
+$font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+$font-base: 'Inter', system-ui, -apple-system, sans-serif;
+$font-heading: $font-base; // headings padrão do Bootstrap usam a sans (h3, nav, etc.)
 
 // Espaçamentos
 $spacing-unit: 8px;
 
-// Bordas / sombras — cantos quase retos, visual escandinavo cru
-$radius-lg: 6px;
-$shadow-soft: 0 20px 45px -25px rgba(23, 22, 15, 0.25);
-$shadow-lift: 0 30px 60px -25px rgba(23, 22, 15, 0.35);
+// Bordas — raio base 0.625rem (--radius do v0), com as mesmas frações
+// usadas em @theme inline (radius-sm/md/lg/xl).
+$radius-base: 0.625rem;
+$radius-sm: $radius-base * 0.6; // 0.375rem — imagens (rounded-sm)
+$radius-md: $radius-base * 0.8;
+$radius-lg: $radius-base;
+$radius-xl: $radius-base * 1.4;
+$radius-pill: 999px; // botões rounded-full
+
+$shadow-soft: 0 20px 45px -25px rgba(0, 0, 0, 0.25);
+$shadow-lift: 0 30px 60px -25px rgba(0, 0, 0, 0.35);
 
 // Breakpoints (usados pelo Bootstrap container-max-widths)
 $bp-sm: 576px;
@@ -36,3 +50,4 @@ $bp-xl: 1280px;
 
 // Transições
 $transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;

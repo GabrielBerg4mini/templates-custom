@@ -1,0 +1,32 @@
+@use 'variables' as v;
+
+@mixin breakpoint($size) {
+  @if $size == sm {
+    @media (min-width: v.$bp-sm) { @content; }
+  } @else if $size == md {
+    @media (min-width: v.$bp-md) { @content; }
+  } @else if $size == lg {
+    @media (min-width: v.$bp-lg) { @content; }
+  } @else if $size == xl {
+    @media (min-width: v.$bp-xl) { @content; }
+  }
+}
+
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+// Forma orgânica discreta usada como única "assinatura" gráfica do site
+// (atrás da foto do hero). Uso deliberadamente restrito a 1-2 elementos
+// na página inteira — ver 01-design-dna.md.
+@mixin organic-blob($color, $size: 100%) {
+  content: '';
+  position: absolute;
+  width: $size;
+  height: $size;
+  background: $color;
+  border-radius: 62% 38% 55% 45% / 48% 45% 55% 52%;
+}

@@ -1,0 +1,55 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Retrato + texto, sem borda/sombra de card — tratamento editorial e
+// minimalista, consistente com a direção "Dark Counsel".
+.partner {
+  height: 100%;
+}
+
+.partner__photo-wrap {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.partner__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  @include m.photo-grayscale;
+  transition: transform v.$transition-slow;
+
+  .partner:hover & {
+    transform: scale(1.02);
+  }
+}
+
+.partner__body {
+  padding-top: 1.25rem;
+  border-top: 1px solid v.$color-border-hairline;
+  margin-top: 1.25rem;
+}
+
+.partner h3 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: v.$color-offwhite;
+  margin-bottom: 0.3rem;
+}
+
+.partner__role {
+  font-family: v.$font-base;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: v.$color-bronze-light;
+  margin-bottom: 0.75rem;
+}
+
+.partner__desc {
+  margin: 0;
+  font-family: v.$font-base;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: v.$color-offwhite-muted;
+}

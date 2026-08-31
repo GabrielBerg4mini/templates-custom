@@ -1,42 +1,78 @@
 @use 'variables' as v;
 
-// Grid vem do Bootstrap (.row-cols-*); aqui só o acabamento do módulo.
+// Grid vem do Bootstrap (.row-cols-*); aqui replicamos o efeito de "costura"
+// (seams de 1px entre módulos) e o acabamento de cada cartão.
+
+// Truque de "costura": o container tem a cor da borda hairline e aparece
+// nos vãos de 0.25rem (utilitário Bootstrap g-1) entre os módulos — como o
+// bg-border + gap-px do v0 original.
+.practice-grid {
+  border: 1px solid v.$color-border-hairline;
+  border-radius: v.$radius-lg;
+  overflow: hidden;
+  background: v.$color-border-hairline;
+}
 
 .practice-module {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  transition: border-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  height: 100%;
+  padding: 2rem;
+  background: v.$color-card;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
 
   &:hover {
-    transform: translateY(-3px);
-    border-color: rgba(154, 165, 177, 0.35) !important;
+    background: v.$color-secondary;
+
+    .practice-module__icon {
+      border-color: v.$color-steel;
+    }
+
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-image: v.$gradient-steel-bg;
+    transition: width 0.5s ease;
   }
 
   &__icon {
-    width: 42px;
-    height: 42px;
-    flex-shrink: 0;
-    border-radius: 0.4rem;
-    background: rgba(154, 165, 177, 0.1);
-    color: v.$color-steel;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: v.$radius-md;
+    border: 1px solid v.$color-border-hairline;
+    background: v.$color-bg;
+    color: v.$color-steel;
+    transition: border-color 0.3s ease;
 
     i {
-      font-size: 22px;
+      font-size: 1.35rem;
     }
   }
 
   h3 {
-    font-size: 1rem;
-    margin-bottom: 0.3rem;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: v.$color-text;
   }
 
   p {
-    color: v.$color-text-muted;
-    font-size: 0.85rem;
+    margin-top: 0.75rem;
     margin-bottom: 0;
+    color: v.$color-text-muted;
+    font-size: 0.9rem;
+    line-height: 1.6;
   }
 }

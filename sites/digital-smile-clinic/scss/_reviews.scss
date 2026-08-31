@@ -1,84 +1,226 @@
 @use 'variables' as v;
+@use 'mixins' as m;
 
-.reviews-swiper {
-  padding-bottom: 3rem;
+// Seção "Pacientes que sorriem de novo" — fundo navy cheio, carrossel
+// manual (sem Swiper) trocado via JS entre 3 depoimentos.
 
-  .swiper-slide {
-    height: auto;
-  }
+.reviews {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: v.$color-navy;
+}
 
-  .swiper-pagination-bullet-active {
-    background: v.$color-cyan;
-  }
+.reviews__blob {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: 30rem;
+  height: 30rem;
+  border-radius: 50%;
+  background: rgba(94, 224, 240, 0.2);
+  filter: blur(90px);
+}
 
-  .swiper-button-prev,
-  .swiper-button-next {
+.reviews__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+
+  .stars i {
     color: v.$color-cyan;
+    font-size: 0.85rem;
+  }
 
-    &::after {
+  span {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: v.$color-navy-foreground;
+  }
+}
+
+.reviews h2 {
+  color: v.$color-navy-foreground;
+}
+
+.review-slide {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+
+  &.is-active {
+    display: grid;
+  }
+
+  @include m.breakpoint(lg) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.review-video {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: v.$shadow-soft;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10, 22, 51, 0.7), transparent 60%);
+  }
+}
+
+.review-video__play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background: rgba(94, 224, 240, 0.9);
+    color: v.$color-cyan-foreground;
+    box-shadow: v.$shadow-glow;
+    font-size: 1.75rem;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover span {
+    transform: scale(1.06);
+  }
+}
+
+.review-video__caption {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  border-radius: 0.85rem;
+  padding: 0.5rem 1rem;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  &-name {
+    font-family: v.$font-heading;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: v.$color-navy-foreground;
+  }
+
+  &-role {
+    font-size: 0.72rem;
+    color: v.$color-cyan;
+  }
+}
+
+.review-text {
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+
+  i.bi-quote {
+    font-size: 2.25rem;
+    color: v.$color-cyan;
+  }
+
+  p {
+    margin-top: 1.25rem;
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: v.$color-navy-foreground;
+  }
+
+  .stars {
+    margin-top: 1.5rem;
+
+    i {
+      color: v.$color-cyan;
       font-size: 1.1rem;
     }
   }
 }
 
-.review-card {
-  height: 100%;
+.review-text__footer {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  &__video {
-    position: relative;
-    aspect-ratio: 16 / 10;
-    border-radius: 0.75rem;
-    overflow: hidden;
-    margin-bottom: 1rem;
+.review-dots {
+  display: flex;
+  gap: 0.5rem;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+  button {
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 999px;
+    border: 0;
+    background: rgba(255, 255, 255, 0.25);
+    transition: width 0.3s ease, background 0.3s ease;
+
+    &.is-active {
+      width: 2rem;
+      background: v.$color-cyan;
+    }
+
+    &:hover:not(.is-active) {
+      background: rgba(255, 255, 255, 0.4);
     }
   }
+}
 
-  &__play {
-    position: absolute;
-    inset: 0;
+.review-nav {
+  display: flex;
+  gap: 0.5rem;
+
+  button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(10, 17, 40, 0.35);
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+    color: v.$color-navy-foreground;
+    transition: background 0.3s ease, transform 0.3s ease;
 
-    span {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: rgba(34, 211, 238, 0.9);
-      color: v.$color-navy;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
 
-      i {
-        font-size: 18px;
+    &.review-nav__next {
+      background: v.$color-cyan;
+      color: v.$color-cyan-foreground;
+      border-color: transparent;
+
+      &:hover {
+        transform: translateY(-2px);
       }
     }
-  }
-
-  .stars {
-    color: v.$color-cyan;
-    letter-spacing: 2px;
-    font-size: 1rem;
-  }
-
-  blockquote {
-    font-size: 0.95rem;
-    color: v.$color-text;
-  }
-
-  &__name {
-    font-weight: 600;
-  }
-
-  &__meta {
-    font-size: 0.78rem;
-    color: v.$color-text-muted;
   }
 }

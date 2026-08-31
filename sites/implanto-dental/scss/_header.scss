@@ -1,0 +1,111 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.navbar {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 1030;
+  background: v.$color-white;
+  border-bottom: 1px solid transparent;
+  padding-block: 1.1rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+
+  &.is-scrolled {
+    border-bottom-color: v.$color-line;
+    box-shadow: 0 8px 24px rgba(43, 46, 49, 0.05);
+  }
+}
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: v.$font-heading;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: v.$color-ink;
+  line-height: 1;
+
+  &__mark {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border: 1.5px solid v.$color-ink;
+
+    // Marca gráfica geométrica — um "ponto de precisão" cruzado por uma
+    // linha, sem ícone de dente/tecnologia genérico.
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+    }
+
+    &::before {
+      left: 50%;
+      top: 6px;
+      bottom: 6px;
+      width: 1px;
+      background: v.$color-line-strong;
+      transform: translateX(-50%);
+    }
+
+    &::after {
+      width: 6px;
+      height: 6px;
+      left: 50%;
+      top: 50%;
+      background: v.$color-green;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__tag {
+    @include m.mono-label;
+    font-size: 0.6rem;
+    color: v.$color-ink-faint;
+    letter-spacing: 0.18em;
+  }
+}
+
+.navbar-phone {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: v.$color-ink;
+
+  i {
+    color: v.$color-green;
+  }
+}
+
+.nav-link {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: v.$color-ink-soft !important;
+  padding-inline: 1rem !important;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    color: v.$color-ink !important;
+    border-bottom-color: v.$color-green;
+  }
+}
+
+.navbar-toggler {
+  width: 42px;
+  height: 42px;
+  border: 1px solid v.$color-line;
+  border-radius: 2px;
+  padding: 0;
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(27, 67, 50, 0.25);
+  }
+}

@@ -1,42 +1,151 @@
 @use 'variables' as v;
 
 .site-footer {
-  background: v.$color-slate;
+  background: v.$color-card;
   color: v.$color-text-muted;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-
-  h4 {
-    color: v.$color-text;
-    font-size: 1rem;
-  }
+  border-top: 1px solid v.$color-border-hairline;
 
   a {
     color: inherit;
+    transition: color v.$transition-base;
 
     &:hover {
-      color: v.$color-steel;
+      color: v.$color-text;
     }
   }
 
-  &__grid {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  p {
+    margin-bottom: 0;
   }
 
-  .disclaimer {
-    font-size: 0.78rem;
-    color: rgba(154, 163, 173, 0.7);
-    max-width: 70ch;
+  &__about {
+    max-width: 24rem;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  &__heading {
+    font-family: v.$font-heading;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: v.$color-text;
+    margin-bottom: 1.25rem;
   }
 }
 
-.contact-list li {
+.footer-address {
+  margin-top: 1.5rem;
+  font-style: normal;
+
+  li {
+    margin-bottom: 0.85rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  li,
+  li > a {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+
+  .icon {
+    margin-top: 0.15rem;
+    color: v.$color-steel;
+    flex-shrink: 0;
+  }
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin-bottom: 0.75rem;
+  }
+
+  a {
+    font-size: 0.9rem;
+  }
+}
+
+// Especificidade "a.classe" (não só ".classe") para vencer a regra
+// `.site-footer a { color: inherit }` acima, que senão prevalece e faz o
+// texto herdar o cinza claro do rodapé — ilegível sobre estes fundos claros.
+a.footer-map-link {
   display: flex;
-  gap: 0.6rem;
-  font-size: 0.92rem;
-  margin-bottom: 0.75rem;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid v.$color-border-hairline;
+  border-radius: v.$radius-md;
+  background: v.$color-bg;
+  padding: 0.75rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: v.$color-text;
+  transition: border-color v.$transition-base;
+
+  &:hover {
+    color: v.$color-text;
+    border-color: v.$color-steel;
+  }
 
   .icon {
     color: v.$color-steel;
-    flex-shrink: 0;
+  }
+}
+
+a.footer-vip-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  border-radius: v.$radius-md;
+  background-image: v.$gradient-steel-bg;
+  padding: 0.75rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: v.$color-steel-foreground;
+
+  &:hover {
+    color: v.$color-steel-foreground;
+  }
+}
+
+.site-footer__bottom {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid v.$color-border-hairline;
+  font-size: 0.78rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+
+  &-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 1.5rem;
+  }
+
+  .lgpd-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    .icon {
+      color: v.$color-steel;
+    }
   }
 }

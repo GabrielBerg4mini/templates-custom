@@ -1,25 +1,77 @@
 @use 'variables' as v;
 
 .numbers-banner {
-  background: v.$color-slate-light;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  overflow: hidden;
+  background: v.$color-card;
+  border-top: 1px solid v.$color-border-hairline;
+  border-bottom: 1px solid v.$color-border-hairline;
+
+  // Textura diagonal sutil de "aço escovado" atrás dos números
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+      135deg,
+      oklch(0.8 0.01 240) 0px,
+      oklch(0.8 0.01 240) 1px,
+      transparent 1px,
+      transparent 14px
+    );
+  }
+
+  .row {
+    position: relative;
+    --bs-gutter-x: 0;
+  }
+
+  .col {
+    border-bottom: 1px solid v.$color-border-hairline;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+@media (min-width: v.$bp-sm) {
+  .numbers-banner .col {
+    border-bottom: none;
+    border-right: 1px solid v.$color-border-hairline;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
 }
 
 .number-stat {
   text-align: center;
+  padding-block: 2.5rem;
 
   strong {
     display: block;
     font-family: v.$font-heading;
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-size: clamp(2.25rem, 4vw, 3.5rem);
     font-weight: 700;
-    color: v.$color-white;
+    letter-spacing: -0.02em;
     line-height: 1.1;
+    background-image: v.$gradient-steel-text;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   span {
-    font-size: 0.85rem;
+    display: block;
+    max-width: 16rem;
+    margin-inline: auto;
+    margin-top: 1rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
     color: v.$color-text-muted;
   }
 }

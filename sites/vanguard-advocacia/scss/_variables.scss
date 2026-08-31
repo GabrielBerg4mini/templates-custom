@@ -1,32 +1,83 @@
-// Paleta — cinza-ardósia escuro, aço escovado e branco
-$color-slate: #1a1d23;
-$color-slate-light: #242830;
-$color-slate-lighter: #2f353f;
-$color-steel: #9aa5b1;
-$color-steel-light: #ccd3da;
-$color-steel-dark: #626c78;
+// Paleta — tokens extraídos 1:1 do design gerado no v0.dev (Tailwind v4 /
+// oklch). Copiados como oklch() para preservar fidelidade de cor exata.
 
-$color-text: #f2f4f6;
-$color-text-muted: #9aa3ad;
-$color-white: #ffffff;
-$color-whatsapp: #25d366;
+// Base cinza-ardósia escuro
+$color-bg: oklch(0.19 0.006 250);
+$color-text: oklch(0.98 0.002 250);
 
-// Tokens padrão consumidos por _theme-bootstrap.scss
-$color-primary: $color-steel;
-$color-secondary: $color-slate-lighter;
-$color-bg: $color-slate;
+// Superfícies elevadas (cards, popovers) — um tom mais claras que o fundo
+$color-card: oklch(0.23 0.007 250);
+$color-card-foreground: oklch(0.98 0.002 250);
+$color-popover: oklch(0.21 0.007 250);
 
-// Tipografia
-$font-heading: 'IBM Plex Sans', system-ui, sans-serif;
+// Branco nítido como superfície de ação primária
+$color-primary: oklch(0.97 0.002 250);
+$color-primary-foreground: oklch(0.2 0.006 250);
+
+$color-secondary: oklch(0.27 0.008 250);
+$color-secondary-foreground: oklch(0.98 0.002 250);
+
+$color-muted: oklch(0.25 0.007 250);
+$color-text-muted: oklch(0.72 0.008 250);
+
+// Aço escovado (accent / steel)
+$color-accent: oklch(0.72 0.012 240);
+$color-accent-foreground: oklch(0.18 0.006 250);
+$color-steel: oklch(0.78 0.014 235);
+$color-steel-foreground: oklch(0.18 0.006 250);
+
+$color-destructive: oklch(0.6 0.2 25);
+$color-border: oklch(1 0 0 / 10%);
+$color-border-hairline: oklch(1 0 0 / 12%);
+$color-input: oklch(1 0 0 / 14%);
+$color-ring: oklch(0.72 0.012 240);
+
+// Gradientes de aço escovado
+$gradient-steel-text: linear-gradient(
+  180deg,
+  oklch(0.94 0.006 240) 0%,
+  oklch(0.78 0.012 240) 45%,
+  oklch(0.6 0.01 245) 100%
+);
+$gradient-steel-bg: linear-gradient(
+  135deg,
+  oklch(0.82 0.012 240) 0%,
+  oklch(0.7 0.012 240) 40%,
+  oklch(0.86 0.01 240) 55%,
+  oklch(0.68 0.012 245) 100%
+);
+
+// Equivalentes sRGB (hex) das cores acima — usados SOMENTE para alimentar as
+// variáveis internas do Bootstrap ($primary, $secondary, $body-bg, $body-color
+// em _theme-bootstrap.scss). O Dart Sass não permite color.mix()/tint/shade
+// legados (usados internamente pelo Bootstrap para gerar tons "-subtle" etc.)
+// em cores oklch() nativas sem um $method explícito, então o Bootstrap
+// precisa de um valor sRGB "legado" aqui. Todo o CSS visível do site usa as
+// variáveis oklch() acima diretamente, preservando a fidelidade de cor do v0.
+$color-bg-hex: #121416;
+$color-text-hex: #f7f8fa;
+$color-secondary-hex: #24272a;
+$color-steel-hex: #afb9bf;
+$color-card-hex: #1a1d20;
+$color-text-muted-hex: #a1a5a9;
+$color-border-hairline-hex: rgba(255, 255, 255, 0.1);
+
+// Tipografia — Inter (texto) + Space Grotesk (display), via Google Fonts
+$font-heading: 'Space Grotesk', system-ui, sans-serif;
 $font-base: 'Inter', system-ui, -apple-system, sans-serif;
 
 // Espaçamentos
 $spacing-unit: 8px;
 
 // Bordas / sombras — cantos curtos, visual técnico e seguro
-$radius-lg: 10px;
+$radius: 0.5rem;
+$radius-sm: 0.3rem;
+$radius-md: 0.4rem;
+$radius-lg: 0.5rem;
+$radius-xl: 0.7rem;
 $shadow-soft: 0 20px 45px -22px rgba(0, 0, 0, 0.6);
 $shadow-lift: 0 30px 65px -25px rgba(154, 165, 177, 0.2);
+$shadow-float: 0 20px 45px -12px rgba(0, 0, 0, 0.5);
 
 // Breakpoints (usados pelo Bootstrap container-max-widths)
 $bp-sm: 576px;

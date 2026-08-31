@@ -1,0 +1,38 @@
+@use 'variables' as v;
+
+// Botão flutuante de WhatsApp — deliberadamente discreto (sem balão
+// animado, sem glow): um único ponto de contato funcional.
+.whatsapp-float {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 1040;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: v.$color-whatsapp;
+  color: v.$color-white !important;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  box-shadow: v.$shadow-technical;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    color: v.$color-white !important;
+    filter: brightness(0.95);
+  }
+
+  &:focus-visible {
+    outline: 2px solid v.$color-ink;
+    outline-offset: 3px;
+  }
+}

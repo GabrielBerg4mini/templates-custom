@@ -1,28 +1,44 @@
 // Sobrescreve variáveis do Bootstrap com os tokens do site (scss/_variables.scss)
 // antes de importar o Bootstrap, para herdar grid, botões, navbar e cards
 // já no tom de cada projeto — sem escrever esses componentes do zero.
+@use 'sass:color';
 @use 'variables' as v;
 
-$primary: v.$color-primary;
-$secondary: v.$color-secondary;
-$body-bg: v.$color-bg;
-$body-color: v.$color-text;
+// O Bootstrap ainda usa funções de cor "legadas" internamente (mix(),
+// shade-color(), tint-color()...), que não aceitam oklch() sem um $method
+// explícito. Convertemos aqui, uma única vez, para o espaço rgb legado —
+// os tokens oklch de _variables.scss continuam sendo a fonte da verdade e
+// são usados diretamente (sem conversão) em todas as partials do site.
+@function legacy($color) {
+  @return color.to-space($color, rgb);
+}
+
+$primary: legacy(v.$color-fg);
+$secondary: legacy(v.$color-wood);
+$body-bg: legacy(v.$color-bg-body);
+$body-color: legacy(v.$color-text);
 $font-family-base: v.$font-base;
 $headings-font-family: v.$font-heading;
-// Cantos quase retos — visual escandinavo, cru e editorial.
-$border-radius: 0.25rem;
-$border-radius-lg: 0.35rem;
-$border-radius-sm: 0.15rem;
+// No v0 apenas h1/h2/blockquote usam a serif + peso leve (definidos caso a
+// caso nas partials); os demais headings (h3, etc.) seguem a sans, medium.
+$headings-font-weight: 500;
+$link-color: legacy(v.$color-fg);
+$link-hover-color: legacy(v.$color-wood);
+$link-decoration: none;
+// Raio pequeno e consistente com o token --radius do v0 (0.625rem = --radius-lg).
+$border-radius: v.$radius-sm;
+$border-radius-lg: v.$radius-lg;
+$border-radius-sm: v.$radius-sm * 0.7;
 $grid-gutter-width: v.$spacing-unit * 4;
 
-// Container mais largo que o padrão do Bootstrap — layout com mais
-// respiro nas telas grandes, sem virar full-width (container-fluid).
+// Container alinhado ao max-w-7xl (1280px) do v0, com o mesmo respiro
+// lateral em telas grandes.
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1240px,
-  xxl: 1440px,
+  xl: 1200px,
+  xxl: 1280px,
 );
 $enable-shadows: false;
 $enable-negative-margins: true;

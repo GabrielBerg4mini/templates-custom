@@ -1,0 +1,76 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Tratamentos: lista técnica dividida por linhas, não grade de cards
+// idênticos. Cada linha é uma "entrada de protocolo" com código numérico.
+.treatments {
+  padding-block: 4.5rem;
+  background: v.$color-bg-soft;
+
+  @include m.breakpoint(lg) {
+    padding-block: 6.5rem;
+  }
+}
+
+.treatments-list {
+  border-top: 1px solid v.$color-line-strong;
+}
+
+.treatment-row {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 0.5rem 1.5rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid v.$color-line-strong;
+  align-items: start;
+
+  @include m.breakpoint(md) {
+    grid-template-columns: 4.5rem minmax(0, 16rem) 1fr auto;
+    gap: 1.75rem;
+    align-items: center;
+  }
+}
+
+.treatment-row__code {
+  font-family: v.$font-mono;
+  font-size: 0.85rem;
+  color: v.$color-green;
+  letter-spacing: 0.05em;
+}
+
+.treatment-row__title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: v.$color-ink;
+  margin: 0;
+}
+
+.treatment-row__text {
+  color: v.$color-ink-soft;
+  font-size: 0.94rem;
+  margin: 0.4rem 0 0;
+
+  @include m.breakpoint(md) {
+    margin-top: 0;
+  }
+}
+
+.treatment-row__link {
+  @include m.mono-label;
+  color: v.$color-ink;
+  white-space: nowrap;
+  margin-top: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-bottom: 1px solid transparent;
+
+  @include m.breakpoint(md) {
+    margin-top: 0;
+  }
+
+  &:hover {
+    color: v.$color-green;
+    border-bottom-color: v.$color-green;
+  }
+}

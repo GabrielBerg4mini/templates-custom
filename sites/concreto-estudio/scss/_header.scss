@@ -1,0 +1,96 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Header sólido e opaco — sem transparência, sem vidro, sem blur.
+// A direção brutalista pede massa, não translucidez.
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+  background: v.$color-concrete;
+  border-bottom: 3px solid v.$color-line;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-block: 1.1rem;
+  }
+}
+
+.site-header__brand {
+  @include m.display-black;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+  color: v.$color-ink;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+
+  span {
+    @include m.label-tag;
+    font-weight: 600;
+    color: v.$color-text-muted;
+    letter-spacing: 0.12em;
+  }
+}
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+
+  a {
+    @include m.label-tag;
+    color: v.$color-ink;
+    position: relative;
+    padding-bottom: 0.2rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: 0;
+      height: 2px;
+      background: v.$color-accent;
+      transition: right v.$transition-base;
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+      right: 0;
+    }
+  }
+}
+
+.site-header__cta {
+  flex: none;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.8rem;
+}
+
+.site-header .navbar-toggler {
+  border: 2px solid v.$color-ink;
+  border-radius: 0;
+  padding: 0.4rem 0.55rem;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+@media (max-width: v.$bp-md - 1) {
+  .site-header__nav-collapse {
+    background: v.$color-concrete;
+    border-bottom: 3px solid v.$color-line;
+    padding: 1.25rem 0 1.75rem;
+
+    .site-header__nav {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.1rem;
+    }
+  }
+}

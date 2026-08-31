@@ -1,0 +1,71 @@
+@use 'variables' as v;
+
+.site-footer {
+  padding-block: clamp(3.5rem, 6vw, 5.5rem) 2rem;
+  background: v.$color-black;
+  color: v.$color-offwhite-muted;
+  border-top: 1px solid v.$color-border-hairline;
+
+  a {
+    color: inherit;
+    transition: color v.$transition-base;
+
+    &:hover {
+      color: v.$color-offwhite;
+    }
+  }
+
+  .navbar-brand {
+    margin-bottom: 1.25rem;
+  }
+
+  &__about {
+    max-width: 24rem;
+    font-family: v.$font-base;
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  &__heading {
+    font-family: v.$font-base;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: v.$color-offwhite;
+    margin-bottom: 1.25rem;
+  }
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin-bottom: 0.75rem;
+  }
+
+  a {
+    font-size: 0.9rem;
+  }
+}
+
+.site-footer__bottom {
+  margin-top: 3.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid v.$color-border-hairline;
+  font-size: 0.78rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+
+  &-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 1.5rem;
+  }
+}

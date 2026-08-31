@@ -1,0 +1,133 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Processo clínico — o coração da direção O2: um diagrama de linha e
+// indicadores numéricos, nunca ícones de "tecnologia futurista".
+.process {
+  padding-block: 4.5rem;
+
+  @include m.breakpoint(lg) {
+    padding-block: 6.5rem;
+  }
+}
+
+.process-timeline {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.process-timeline__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+
+  @include m.breakpoint(lg) {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+}
+
+.process-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+
+  @include m.breakpoint(lg) {
+    flex-direction: column;
+    flex: 1;
+    padding-right: 1.25rem;
+  }
+}
+
+.process-step__node {
+  width: 2.375rem;
+  height: 2.375rem;
+  flex-shrink: 0;
+  border: 1.5px solid v.$color-green;
+  background: v.$color-white;
+  color: v.$color-green;
+  @include m.mono-label;
+  font-size: 0.78rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.process-step__body {
+  flex: 1;
+  padding-top: 0.2rem;
+
+  @include m.breakpoint(lg) {
+    padding-top: 1rem;
+  }
+}
+
+.process-step__code {
+  @include m.mono-label;
+  color: v.$color-ink-faint;
+  margin-bottom: 0.4rem;
+}
+
+.process-step__body h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.process-step__body p {
+  color: v.$color-ink-soft;
+  font-size: 0.92rem;
+  margin: 0;
+  max-width: 30ch;
+}
+
+// A linha que conecta os nós — desenha da origem até o fim ao entrar na
+// viewport (ver [data-line-draw] em _base.scss + IntersectionObserver em
+// js/main.js). Duas variantes: vertical no mobile, horizontal a partir
+// do breakpoint lg, alinhadas ao centro do nó (2.375rem / 2 = 1.1875rem).
+.process-timeline__line {
+  position: absolute;
+  background: v.$color-green;
+}
+
+.process-timeline__line--v {
+  left: 1.1875rem;
+  top: 1.1875rem;
+  bottom: 1.1875rem;
+  width: 2px;
+  transform: scaleY(0);
+  transform-origin: top;
+
+  &.is-visible {
+    transform: scaleY(1);
+  }
+
+  @include m.breakpoint(lg) {
+    display: none;
+  }
+}
+
+.process-timeline__line--h {
+  display: none;
+
+  @include m.breakpoint(lg) {
+    display: block;
+    top: 1.1875rem;
+    left: 1.1875rem;
+    right: 1.1875rem;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+
+    &.is-visible {
+      transform: scaleX(1);
+    }
+  }
+}

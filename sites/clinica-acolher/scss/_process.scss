@@ -1,0 +1,93 @@
+@use 'variables' as v;
+
+.process {
+  padding-block: clamp(4rem, 8vw, 6.5rem);
+  background: v.$color-cream-deep;
+}
+
+.timeline {
+  display: grid;
+  gap: 0;
+
+  &__item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 3.25rem 1fr;
+    gap: 1.25rem;
+    padding-bottom: 2.5rem;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 3.25rem;
+      left: 1.6rem;
+      bottom: 0;
+      width: 1px;
+      background: rgba(74, 66, 58, 0.16);
+    }
+
+    &:last-child::before {
+      display: none;
+    }
+  }
+
+  &__index {
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+    border: 1px solid v.$color-coral;
+    color: v.$color-coral-dark;
+    font-family: v.$font-heading;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: v.$color-cream-deep;
+    flex-shrink: 0;
+    z-index: 1;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+  }
+
+  p {
+    color: v.$color-text-muted;
+    max-width: 52ch;
+    margin: 0;
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.75rem;
+
+    &__item {
+      grid-template-columns: 1fr;
+      padding-bottom: 0;
+      display: block;
+    }
+
+    &__item::before {
+      top: 1.6rem;
+      left: 3.25rem;
+      right: -1.75rem;
+      bottom: auto;
+      width: auto;
+      height: 1px;
+    }
+
+    &__item:last-child::before {
+      display: none;
+    }
+
+    &__index {
+      margin-bottom: 1rem;
+    }
+  }
+}

@@ -1,31 +1,58 @@
 @use 'variables' as v;
+@use 'mixins' as m;
 
 .hero {
   position: relative;
-  min-height: 92vh;
-  display: flex;
-  align-items: flex-end;
-  background-image:
-    linear-gradient(0deg, v.$color-offwhite 0%, rgba(23, 22, 15, 0.25) 38%, rgba(23, 22, 15, 0.05) 60%),
-    url('https://images.pexels.com/photos/31903108/pexels-photo-31903108.jpeg?auto=compress&cs=tinysrgb&w=1920');
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
 
-  &__content {
-    padding-bottom: 3.5rem;
+  &__top {
+    padding-top: 9rem;
+    padding-bottom: 4rem;
+
+    @media (min-width: v.$bp-lg) {
+      padding-top: 11rem;
+    }
+  }
+
+  &__intro {
+    max-width: 56rem;
   }
 
   h1 {
+    @include m.serif-light;
     max-width: 18ch;
-    font-size: clamp(2.4rem, 5.2vw, 4.2rem);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    line-height: 1.05;
+    font-size: clamp(2.6rem, 5.2vw, 4.5rem);
+    line-height: 1.02;
+    color: v.$color-fg;
   }
 
   &__subtitle {
-    color: v.$color-black-soft;
-    font-size: 1.05rem;
-    max-width: 46ch;
+    margin-top: 2rem;
+    max-width: 42ch;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: v.$color-text-muted;
+  }
+
+  &__actions {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  &__media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: v.$radius-sm;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 }

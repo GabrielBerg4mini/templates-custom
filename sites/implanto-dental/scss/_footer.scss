@@ -1,0 +1,102 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.site-footer {
+  background: v.$color-ink;
+  color: rgba(255, 255, 255, 0.72);
+  padding-top: 4rem;
+
+  h4 {
+    color: v.$color-white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 1.1rem;
+  }
+
+  // Especificidade suficiente para vencer qualquer regra genérica de link
+  // e evitar texto ilegível sobre o fundo escuro (pitfall já mapeado).
+  a {
+    color: rgba(255, 255, 255, 0.72);
+
+    &:hover {
+      color: v.$color-white;
+    }
+  }
+}
+
+.site-footer__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: v.$font-heading;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: v.$color-white;
+  margin-bottom: 1rem;
+
+  &__mark {
+    width: 30px;
+    height: 30px;
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+    position: relative;
+    flex-shrink: 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: v.$color-green;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.site-footer__desc {
+  font-size: 0.9rem;
+  max-width: 30ch;
+  margin-bottom: 1.25rem;
+}
+
+.site-footer__nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin-bottom: 0.7rem;
+  }
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: flex;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .icon {
+    color: v.$color-green;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+  }
+}
+
+.site-footer__grid {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.site-footer__bottom {
+  font-size: 0.82rem;
+
+  p {
+    color: rgba(255, 255, 255, 0.55);
+  }
+}

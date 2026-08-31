@@ -7,19 +7,27 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: v.$font-base;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: v.$font-heading;
+}
+
 .eyebrow {
   font-family: v.$font-base;
-  font-size: 0.76rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: v.$color-steel;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.9rem;
 }
 
 .section-heading {
-  max-width: 680px;
-  margin-bottom: 3rem;
+  max-width: 640px;
+  margin-bottom: 3.25rem;
 
   &--center {
     margin-inline: auto;
@@ -27,7 +35,10 @@ html {
   }
 
   h2 {
-    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-size: clamp(1.7rem, 3vw, 2.25rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
   }
 
   &__text {
@@ -36,22 +47,71 @@ html {
   }
 }
 
+// Texto com gradiente de aço escovado (título de destaque do hero, números)
+.text-steel-gradient {
+  background-image: v.$gradient-steel-text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+// Fundo em gradiente de aço escovado (CTAs primários)
+.bg-steel-gradient {
+  background-image: v.$gradient-steel-bg;
+}
+
+// Borda "hairline" translúcida — usada em todo o layout no lugar de bordas pretas
+.border-hairline {
+  border-color: v.$color-border-hairline !important;
+}
+
 .btn-steel {
-  background: v.$color-steel;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background-image: v.$gradient-steel-bg;
   border: none;
-  color: v.$color-slate;
+  border-radius: v.$radius-md;
+  color: v.$color-steel-foreground;
   font-weight: 600;
+  padding: 0.9rem 1.6rem;
+  box-shadow: v.$shadow-float;
+  transition: transform v.$transition-base;
 
   &:hover {
-    background: v.$color-steel-light;
-    color: v.$color-slate;
+    color: v.$color-steel-foreground;
+    transform: translateY(-2px);
+  }
+
+  .icon {
+    font-size: 1.1em;
+  }
+}
+
+.btn-outline-hairline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 1px solid v.$color-border-hairline;
+  border-radius: v.$radius-md;
+  color: v.$color-text;
+  font-weight: 500;
+  padding: 0.9rem 1.5rem;
+  transition: border-color v.$transition-base;
+
+  &:hover {
+    color: v.$color-text;
+    border-color: v.$color-steel;
   }
 }
 
 [data-reveal] {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 
   &.is-visible {
     opacity: 1;

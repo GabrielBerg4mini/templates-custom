@@ -1,0 +1,72 @@
+@use 'variables' as v;
+
+// Divisor de seção com curva suave — segundo (e último) elemento orgânico
+// discreto da página, usado para suavizar a transição para a faixa escura
+// de agendamento. Ver 01-design-dna.md / mixins organic-blob.
+.booking {
+  position: relative;
+  background: v.$color-text;
+  color: v.$color-cream;
+  padding-block: clamp(4.5rem, 9vw, 7rem);
+
+  &__wave {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transform: translateY(-99%);
+    line-height: 0;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: clamp(40px, 6vw, 72px);
+    }
+  }
+
+  .section-heading__text {
+    color: rgba(247, 241, 230, 0.72);
+  }
+
+  h2 em {
+    color: v.$color-coral;
+    font-style: normal;
+  }
+}
+
+.booking-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1.75rem, 5vw, 3.5rem);
+  margin-top: clamp(2.5rem, 6vw, 3.5rem);
+  padding-top: 2rem;
+  border-top: 1px solid rgba(247, 241, 230, 0.16);
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    flex: 1 1 220px;
+  }
+
+  .icon {
+    color: v.$color-coral;
+    font-size: 1.15rem;
+    margin-top: 0.15rem;
+  }
+
+  strong {
+    display: block;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(247, 241, 230, 0.6);
+    margin-bottom: 0.3rem;
+  }
+
+  p {
+    margin: 0;
+    color: v.$color-cream;
+  }
+}

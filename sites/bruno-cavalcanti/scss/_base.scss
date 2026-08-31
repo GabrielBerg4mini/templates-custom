@@ -1,0 +1,187 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// O Bootstrap (via _theme-bootstrap.scss) já cuida do reset, tipografia
+// base, links, imagens e grid. Aqui ficam só os utilitários e padrões
+// tipográficos que a direção "Dark Counsel" exige e o Bootstrap não tem.
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: v.$font-base;
+}
+
+h1, h2, h3, h4 {
+  font-family: v.$font-display;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+// Toque editorial: itálico leve (peso 300) usado com moderação em palavras
+// de destaque dentro de headlines serifadas.
+em, .accent-italic {
+  font-family: v.$font-display;
+  font-weight: 300;
+  font-style: italic;
+  color: v.$color-bronze-light;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: v.$font-base;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  // Bronze claro por padrão (texto pequeno sobre fundo escuro — contraste AA).
+  color: v.$color-bronze-light;
+  margin-bottom: 1.25rem;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    background: currentColor;
+  }
+
+  // Seções de fundo claro (posicionamento / contato) — bronze escurecido
+  // para manter contraste AA em texto pequeno sobre off-white.
+  &--on-light {
+    color: v.$color-bronze-dark;
+  }
+}
+
+.section-heading {
+  max-width: 44rem;
+  margin-bottom: 3.5rem;
+
+  h2 {
+    font-size: clamp(1.9rem, 3.4vw, 2.75rem);
+    line-height: 1.18;
+    color: v.$color-offwhite;
+  }
+
+  &__text {
+    margin-top: 1.25rem;
+    margin-bottom: 0;
+    max-width: 38rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: v.$color-offwhite-muted;
+  }
+
+  // Modificador para as seções de fundo claro (posicionamento / contato)
+  &--on-light {
+    h2 { color: v.$color-text-on-light; }
+    .section-heading__text { color: v.$color-text-on-light-muted; }
+  }
+}
+
+.section-y {
+  padding-block: clamp(4.5rem, 8vw, 8rem);
+}
+
+// Botão-linha: CTA discreto e contextual, sem preenchimento nem glow — só
+// uma linha que se estende no hover. Especificidade "a.btn-line" para
+// sempre vencer regras genéricas de wrapper como ".site-footer a { color }".
+a.btn-line {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-bottom: 0.6rem;
+  font-family: v.$font-base;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: v.$color-offwhite;
+  border-bottom: 1px solid v.$color-border-hairline;
+  transition: color v.$transition-base, border-color v.$transition-base, gap v.$transition-base;
+
+  .icon {
+    color: v.$color-bronze;
+    transition: transform v.$transition-base;
+  }
+
+  &:hover {
+    color: v.$color-offwhite;
+    border-color: v.$color-bronze;
+    gap: 1.15rem;
+
+    .icon {
+      transform: translateX(3px);
+    }
+  }
+
+  &--on-light {
+    color: v.$color-text-on-light;
+    border-color: rgba(35, 32, 27, 0.22);
+
+    &:hover {
+      color: v.$color-text-on-light;
+      border-color: v.$color-bronze;
+    }
+  }
+
+  &--small {
+    padding-bottom: 0.3rem;
+    font-size: 0.8rem;
+  }
+}
+
+// Botão sólido — reservado para a única ação primária real do site (envio
+// de contato). Bronze usado em bloco pequeno (botão), nunca em seção inteira.
+a.btn-solid,
+button.btn-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.95rem 1.75rem;
+  background: v.$color-bronze;
+  border: 1px solid v.$color-bronze;
+  border-radius: v.$radius-sm;
+  font-family: v.$font-base;
+  font-size: 0.92rem;
+  font-weight: 600;
+  // Preto puro (não o quase-preto do tema) para garantir contraste AA do
+  // texto do botão sobre o bronze de base — v.$color-black fica em ~4.26:1.
+  color: #000;
+  transition: background-color v.$transition-base, border-color v.$transition-base;
+
+  &:hover {
+    color: #000;
+    background: v.$color-bronze-light;
+    border-color: v.$color-bronze-light;
+  }
+}
+
+// Reveal-on-scroll (aplicado via data-reveal + IntersectionObserver em
+// js/main.js). Deslocamento pequeno, 400ms — motion mínimo, sem parallax.
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

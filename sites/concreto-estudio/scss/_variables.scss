@@ -1,0 +1,46 @@
+// CONCRETO Estúdio — AR3 Material / Brutalist
+// Paleta fria e neutra: cinza-concreto, tinta quase-preta, branco puro
+// e um único acento funcional (laranja-segurança). Sem dourado, sem bege,
+// sem gradiente — contraste de massa, não de decoração.
+
+// Cores
+$color-concrete: #e9e8e4; // fundo padrão das seções claras
+$color-concrete-dim: #dedcd5; // painel levemente mais escuro, para alternar densidade
+$color-ink: #131313; // tinta quase-preta — texto e blocos escuros
+$color-white: #ffffff; // respiro puro
+$color-accent: #ff5a1f; // laranja-segurança — função, nunca decoração
+
+$color-text: $color-ink;
+$color-text-muted: rgba($color-ink, 0.62);
+$color-text-on-ink: $color-white;
+$color-text-on-ink-muted: rgba($color-white, 0.64);
+$color-line: rgba($color-ink, 0.85); // divisórias grossas sobre fundo claro
+$color-line-on-ink: rgba($color-white, 0.24); // divisórias sobre fundo escuro
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-ink;
+$color-secondary: $color-accent;
+$color-bg: $color-concrete;
+
+// Tipografia — Archivo 900 (Black) para display e números enormes;
+// Inter para corpo e UI. O contraste de peso entre as duas é o ponto
+// central da direção — não trocar de família a cada seção.
+$font-display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+$font-base: 'Inter', system-ui, -apple-system, sans-serif;
+$font-heading: $font-display;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas — brutalista: reto. Nada de raio global.
+$radius-base: 0;
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições — curtas e funcionais, sem suavidade decorativa
+$transition-fast: 150ms ease;
+$transition-base: 220ms ease;

@@ -1,37 +1,64 @@
-// Paleta — branco, azul-marinho profundo e ciano vibrante
-$color-white: #ffffff;
-$color-navy: #0a1128;
-$color-navy-light: #121a3a;
-$color-navy-lighter: #1b2550;
-$color-cyan: #22d3ee;
-$color-cyan-dark: #0ea5b8;
-$color-cyan-light: #7ee6f7;
+// Paleta — tokens extraídos 1:1 do design v0 (app/globals.css), em oklch().
+// Tema claro: fundo quase branco, texto/marca em azul-marinho, destaque ciano.
+$color-white: oklch(1 0 0);
+$color-background: oklch(0.99 0.004 230);
+$color-foreground: oklch(0.22 0.06 258);
 
-$color-text: #eef3fb;
-$color-text-muted: #93a0bd;
+$color-navy: oklch(0.26 0.08 258);
+$color-navy-foreground: oklch(0.99 0.004 230);
+
+$color-cyan: oklch(0.75 0.14 195);
+$color-cyan-foreground: oklch(0.2 0.06 258);
+
+$color-card: oklch(1 0 0);
+$color-secondary: oklch(0.96 0.02 220);
+$color-muted: oklch(0.96 0.015 225);
+$color-muted-foreground: oklch(0.52 0.03 250);
+$color-border: oklch(0.9 0.015 230);
+
+$color-text: $color-foreground;
+$color-text-muted: $color-muted-foreground;
 $color-whatsapp: #25d366;
 
-// Tokens padrão consumidos por _theme-bootstrap.scss
-$color-primary: $color-cyan;
-$color-secondary: $color-navy-lighter;
-$color-bg: $color-navy;
+// Equivalentes em sRGB hex dos tokens oklch acima — usados SOMENTE para
+// alimentar as variáveis internas do Bootstrap (_theme-bootstrap.scss).
+// O Sass legado do Bootstrap roda mix()/shade-color()/tint-color() sobre
+// essas variáveis em tempo de build, e essas funções ainda não aceitam
+// cores oklch (erro "you must provide a $method"). Todo o resto do site
+// usa as variáveis oklch acima diretamente, preservando a cor exata do v0.
+$color-navy-hex: #07234a;
+$color-navy-foreground-hex: #f9fcfe;
+$color-cyan-hex: #00c9c9;
+$color-background-hex: #f9fcfe;
+$color-foreground-hex: #071a36;
+$color-secondary-hex: #e4f5fb;
+$color-muted-foreground-hex: #5c6b7a;
+$color-border-hex: #d5e0e6;
 
-// Tipografia
-$font-heading: 'Sora', system-ui, sans-serif;
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-navy;
+$color-bg: $color-background;
+
+// Tipografia — Inter (texto) + Space Grotesk (títulos), como no v0 (next/font/google)
+$font-heading: 'Space Grotesk', system-ui, sans-serif;
 $font-base: 'Inter', system-ui, -apple-system, sans-serif;
 
 // Espaçamentos
 $spacing-unit: 8px;
 
-// Bordas / sombras — vidro fosco, brilho suave em ciano
+// Bordas / sombras
 $radius-lg: 20px;
-$shadow-soft: 0 20px 45px -22px rgba(0, 0, 0, 0.5);
-$shadow-glow: 0 0 60px -15px rgba(34, 211, 238, 0.35);
+$shadow-soft: 0 20px 45px -22px rgba(10, 22, 51, 0.15);
+$shadow-glow: 0 0 0 1px rgba(94, 224, 240, 0.3), 0 18px 50px -12px rgba(94, 224, 240, 0.45);
 
-// Glassmorphism
-$glass-bg: rgba(255, 255, 255, 0.05);
-$glass-border: rgba(255, 255, 255, 0.12);
-$glass-blur: 18px;
+// Glassmorphism — espelha as utility classes .glass / .glass-dark do globals.css
+$glass-bg: rgba(255, 255, 255, 0.65);
+$glass-border: rgba(10, 22, 51, 0.08);
+$glass-blur: 16px;
+
+$glass-dark-bg: rgba(20, 32, 66, 0.55);
+$glass-dark-border: rgba(255, 255, 255, 0.12);
+$glass-dark-blur: 18px;
 
 // Breakpoints (usados pelo Bootstrap container-max-widths)
 $bp-sm: 576px;

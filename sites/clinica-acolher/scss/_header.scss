@@ -1,0 +1,39 @@
+@use 'variables' as v;
+
+.navbar {
+  background: rgba(247, 241, 230, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(74, 66, 58, 0.08);
+  padding-block: 1rem;
+  transition: padding v.$transition-base;
+}
+
+.navbar-brand {
+  font-family: v.$font-heading;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: v.$color-text;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+
+  span {
+    color: v.$color-coral-dark;
+  }
+}
+
+.nav-link {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: v.$color-text;
+  padding-inline: 0.9rem;
+
+  &:hover,
+  &:focus-visible {
+    color: v.$color-coral-dark;
+  }
+}
+
+.nav-cta {
+  white-space: nowrap;
+}

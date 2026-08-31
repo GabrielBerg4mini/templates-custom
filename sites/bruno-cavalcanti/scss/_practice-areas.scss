@@ -1,0 +1,60 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Anti-card: lista editorial numerada com divisores finos, não grade de
+// cards com ícone+título+texto. Rótulo (índice + título) à esquerda,
+// descrição à direita — tratado como conteúdo editorial, não "produto".
+.practice-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid v.$color-border-hairline;
+}
+
+.practice-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem 3rem;
+  padding-block: 2rem;
+  border-bottom: 1px solid v.$color-border-hairline;
+  transition: padding-inline-start v.$transition-slow;
+
+  @include m.breakpoint(lg) {
+    grid-template-columns: 2.5rem minmax(0, 15rem) minmax(0, 1fr);
+    align-items: baseline;
+    gap: 1rem 3rem;
+  }
+
+  &:hover {
+    @include m.breakpoint(lg) {
+      padding-inline-start: 0.75rem;
+
+      .practice-item__index {
+        color: v.$color-bronze-light;
+      }
+    }
+  }
+}
+
+.practice-item__index {
+  font-family: v.$font-display;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: v.$color-offwhite-faint;
+  transition: color v.$transition-base;
+}
+
+.practice-item__title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: v.$color-offwhite;
+}
+
+.practice-item__desc {
+  margin: 0;
+  max-width: 44rem;
+  font-family: v.$font-base;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: v.$color-offwhite-muted;
+}

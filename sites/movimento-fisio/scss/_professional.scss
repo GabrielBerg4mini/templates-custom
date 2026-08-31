@@ -1,0 +1,61 @@
+@use 'variables' as v;
+
+.professional {
+  background: v.$color-white;
+  padding-block: clamp(4.5rem, 9vw, 7rem);
+
+  &__media {
+    position: relative;
+    clip-path: polygon(0 0, 92% 0, 100% 10%, 100% 100%, 0 100%);
+    aspect-ratio: 4 / 5;
+    max-width: 420px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  &__quote {
+    font-family: v.$font-heading;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    color: v.$color-black;
+    max-width: 44ch;
+    margin-block: 1.25rem 1.5rem;
+    padding-left: 1.1rem;
+    border-left: 3px solid v.$color-blue;
+  }
+
+  &__bio {
+    color: v.$color-text-muted;
+    max-width: 52ch;
+    margin-bottom: 1.5rem;
+  }
+
+  &__credentials {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.94rem;
+      color: v.$color-black;
+    }
+
+    .bi {
+      color: v.$color-blue;
+      margin-top: 0.2rem;
+      flex-shrink: 0;
+    }
+  }
+}

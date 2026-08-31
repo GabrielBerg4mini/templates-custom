@@ -1,0 +1,137 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Hero split: painel técnico (foto + legenda) à esquerda, headline e CTA
+// à direita — o inverso da composição "texto à esquerda, foto à direita"
+// usada nos outros dois sites de odontologia do catálogo.
+.hero {
+  position: relative;
+  // Header fixo sobrepõe o hero — compensa aqui, nunca com utilities
+  // py-* do Bootstrap (saem com !important e vencem qualquer valor daqui).
+  padding-top: 6.5rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid v.$color-line;
+
+  @include m.breakpoint(lg) {
+    padding-top: 8.5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.hero__panel {
+  position: relative;
+  border: 1px solid v.$color-line-strong;
+}
+
+.hero__panel-media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(0.15) contrast(1.02);
+  }
+}
+
+.hero__panel-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: v.$color-white;
+  border: 1px solid v.$color-ink;
+  padding: 0.4rem 0.7rem;
+  @include m.mono-label;
+  color: v.$color-ink;
+}
+
+.hero__panel-caption {
+  padding: 1.1rem 1.25rem;
+  border-top: 1px solid v.$color-line-strong;
+
+  p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: v.$color-ink-soft;
+  }
+
+  strong {
+    display: block;
+    @include m.mono-label;
+    color: v.$color-green;
+    margin-bottom: 0.4rem;
+  }
+}
+
+// Selo sobreposto com um indicador numérico — não é um ícone de
+// "tecnologia", é um número que remete ao protocolo clínico (ver #processo).
+.hero__panel-stat {
+  position: absolute;
+  right: -1px;
+  bottom: -1px;
+  background: v.$color-ink;
+  color: v.$color-white;
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  border: 1px solid v.$color-ink;
+
+  strong {
+    font-family: v.$font-heading;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  span {
+    @include m.mono-label;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 11ch;
+    line-height: 1.3;
+  }
+}
+
+.hero__content {
+  @include m.breakpoint(lg) {
+    padding-left: 1.5rem;
+  }
+}
+
+// Linha de precisão que "desenha" da esquerda para a direita ao carregar —
+// única interação de assinatura do hero (respeita prefers-reduced-motion
+// via a regra genérica de [data-line-draw] em _base.scss).
+.hero__rule {
+  height: 1px;
+  background: v.$color-green;
+  margin-bottom: 1.5rem;
+  max-width: 5rem;
+}
+
+.hero h1 {
+  max-width: 16ch;
+  font-size: clamp(2rem, 3.6vw + 1rem, 3.1rem);
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.hero__subtitle {
+  color: v.$color-ink-soft;
+  font-size: 1.05rem;
+  max-width: 54ch;
+  margin-bottom: 2rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero .stat-line {
+  max-width: 40rem;
+}

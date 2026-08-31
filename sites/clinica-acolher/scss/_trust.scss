@@ -1,0 +1,122 @@
+@use 'variables' as v;
+
+.trust {
+  padding-block: clamp(4rem, 8vw, 6.5rem);
+  position: relative;
+
+  &__grid {
+    display: grid;
+    gap: clamp(2.5rem, 6vw, 5rem);
+
+    @media (min-width: 992px) {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
+}
+
+.stats {
+  display: grid;
+  gap: 2rem;
+  align-content: start;
+}
+
+.stat {
+  border-top: 1px solid rgba(74, 66, 58, 0.14);
+  padding-top: 1.1rem;
+
+  strong {
+    display: block;
+    font-family: v.$font-heading;
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    font-weight: 700;
+    color: v.$color-text;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  span {
+    color: v.$color-text-muted;
+    max-width: 34ch;
+    display: block;
+  }
+}
+
+.testimonial {
+  position: relative;
+
+  &__mark {
+    font-size: 2rem;
+    color: v.$color-coral;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  &__track {
+    position: relative;
+    min-height: 11rem;
+  }
+
+  &__slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+      position: relative;
+    }
+  }
+
+  &__quote {
+    font-family: v.$font-heading;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.45;
+    color: v.$color-text;
+    max-width: 42ch;
+  }
+
+  &__author {
+    display: block;
+    margin-top: 1.25rem;
+    font-weight: 700;
+    color: v.$color-text;
+  }
+
+  &__role {
+    display: block;
+    font-size: 0.85rem;
+    color: v.$color-text-muted;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 1.75rem;
+
+    button {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: none;
+      padding: 0;
+      background: rgba(74, 66, 58, 0.22);
+      cursor: pointer;
+      transition: background v.$transition-base, transform v.$transition-base;
+
+      &.is-active {
+        background: v.$color-coral-dark;
+        transform: scale(1.3);
+      }
+
+      &:focus-visible {
+        outline: 2px solid v.$color-coral-dark;
+        outline-offset: 3px;
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@use 'variables' as v;
+
+@mixin breakpoint($size) {
+  @if $size == sm {
+    @media (min-width: v.$bp-sm) { @content; }
+  } @else if $size == md {
+    @media (min-width: v.$bp-md) { @content; }
+  } @else if $size == lg {
+    @media (min-width: v.$bp-lg) { @content; }
+  } @else if $size == xl {
+    @media (min-width: v.$bp-xl) { @content; }
+  }
+}
+
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+// Grotesk pesada — títulos e números enormes. Usada com moderação,
+// só onde a direção pede peso máximo (H1, H2, numeração de projeto).
+@mixin display-black {
+  font-family: v.$font-display;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 0.96;
+  text-transform: none;
+}
+
+// Rótulo técnico pequeno, todo em maiúsculas, usado no lugar de ícones
+// decorativos para marcar categoria/seção.
+@mixin label-tag {
+  font-family: v.$font-base;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}

@@ -1,0 +1,45 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Método em lista tipográfica — número enorme ao lado de cada etapa,
+// sem ícone e sem card. Divisórias grossas fazem o trabalho de separar.
+.process-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 3px solid v.$color-line;
+}
+
+.process-step {
+  display: grid;
+  grid-template-columns: minmax(4.5rem, 1fr) minmax(0, 3fr) minmax(0, 4fr);
+  align-items: baseline;
+  gap: 1rem 1.75rem;
+  padding-block: clamp(1.5rem, 3vw, 2.25rem);
+  border-bottom: 3px solid v.$color-line;
+}
+
+.process-step__number {
+  @include m.display-black;
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  color: v.$color-accent;
+}
+
+.process-step__title {
+  margin: 0;
+}
+
+.process-step__text {
+  color: v.$color-text-muted;
+  margin: 0;
+}
+
+@media (max-width: v.$bp-md - 1) {
+  .process-step {
+    grid-template-columns: 3.25rem 1fr;
+
+    .process-step__text {
+      grid-column: 2;
+    }
+  }
+}

@@ -1,50 +1,72 @@
 @use 'variables' as v;
+@use 'mixins' as m;
+
+.methodology {
+  background: v.$color-secondary;
+  border-top: 1px solid v.$color-border;
+  border-bottom: 1px solid v.$color-border;
+  padding-block: 6rem;
+
+  @media (min-width: v.$bp-lg) {
+    padding-block: 8rem;
+  }
+
+  &__intro {
+    @media (min-width: v.$bp-lg) {
+      position: sticky;
+      top: 8rem;
+      align-self: flex-start;
+    }
+
+    h2 {
+      @include m.serif-light;
+      font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+      line-height: 1.15;
+    }
+
+    p {
+      margin-top: 1.5rem;
+      max-width: 32ch;
+      color: v.$color-text-muted;
+      line-height: 1.6;
+    }
+  }
+}
 
 .methodology-list {
-  max-width: 720px;
+  display: flex;
+  flex-direction: column;
 }
 
 .methodology-step {
   display: grid;
   grid-template-columns: auto 1fr;
-  column-gap: 1.5rem;
-  position: relative;
-  padding-bottom: 2.5rem;
+  column-gap: 2rem;
+  border-top: 1px solid v.$color-border;
+  padding-block: 2.5rem;
 
-  &:not(:last-child)::before {
-    content: '';
-    position: absolute;
-    top: 3rem;
-    left: 1.15rem;
-    width: 1px;
-    height: calc(100% - 2.5rem);
-    background: rgba(23, 22, 15, 0.15);
+  &:first-child {
+    border-top: none;
+    padding-top: 0;
   }
 
   &__number {
-    font-family: v.$font-heading;
-    font-size: 1.1rem;
-    font-weight: 700;
-    width: 2.3rem;
-    height: 2.3rem;
-    border: 1px solid v.$color-black;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: v.$color-offwhite;
-    position: relative;
-    z-index: 1;
+    @include m.serif-light;
+    font-size: 1.5rem;
+    color: v.$color-wood;
   }
 
   h3 {
+    margin-bottom: 0.75rem;
     font-size: 1.2rem;
-    margin-bottom: 0.4rem;
+    font-weight: 500;
+    color: v.$color-fg;
   }
 
   p {
-    color: v.$color-text-muted;
-    margin-bottom: 0;
     max-width: 48ch;
+    margin-bottom: 0;
+    color: v.$color-text-muted;
+    line-height: 1.6;
   }
 }

@@ -1,0 +1,38 @@
+// Sobrescreve variáveis do Bootstrap com os tokens do site (scss/_variables.scss)
+// antes de importar o Bootstrap, para herdar grid, botões, navbar e cards
+// já no tom de cada projeto — sem escrever esses componentes do zero.
+@use 'variables' as v;
+
+$primary: v.$color-bronze;
+$secondary: v.$color-black-elevated;
+$body-bg: v.$color-black;
+$body-color: v.$color-offwhite;
+$font-family-base: v.$font-base;
+$headings-font-family: v.$font-display;
+
+// O design original (Tailwind) nunca sublinha links por padrão — sublinhado
+// só onde explicitamente adicionado via classe/CSS própria.
+$link-decoration: none;
+
+// Bordas quase retas — direção editorial, sem cantos orgânicos.
+$border-radius: v.$radius-md;
+$border-radius-lg: v.$radius-md;
+$border-radius-sm: v.$radius-sm;
+$grid-gutter-width: v.$spacing-unit * 4;
+
+// Container mais largo que o padrão do Bootstrap — grandes margens editoriais.
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1240px,
+  xxl: 1440px,
+);
+$enable-shadows: false;
+$enable-negative-margins: true;
+
+$card-bg: v.$color-black-elevated;
+$border-color: v.$color-border-hairline;
+$body-secondary-color: v.$color-offwhite-muted;
+
+@import 'bootstrap/scss/bootstrap';

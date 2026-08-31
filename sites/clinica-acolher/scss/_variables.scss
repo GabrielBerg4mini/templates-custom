@@ -1,0 +1,51 @@
+// Paleta — creme quente, marrom-acinzentado e coral empoeirado como
+// único acento. Direção C3 (Human Care): acolhimento sem infantilizar,
+// deliberadamente sem sage/verde (mente-equilibrio) e sem terracota (clinica-integrativa).
+$color-cream: #f7f1e6;
+$color-cream-deep: #efe4cf;
+$color-surface: #fffdf8;
+
+$color-text: #4a423a;
+$color-text-muted: rgba(74, 66, 58, 0.68);
+
+// Acento único: coral empoeirado. Versão clara para decoração (ícones,
+// traços, tinturas leves); versão escura para texto/botões com contraste AA.
+$color-coral: #d98b7a;
+$color-coral-dark: #a64f3f;
+$color-coral-darker: #8a3f32;
+$color-coral-tint: rgba(217, 139, 122, 0.14);
+
+$color-white: #ffffff;
+$color-whatsapp: #25d366;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-coral-dark;
+$color-secondary: $color-text;
+$color-bg: $color-cream;
+
+// Tipografia — uma família só (Figtree), humanista e amigável sem ser
+// infantil. Pesos 400/500 no corpo, 600/700 em títulos.
+$font-heading: 'Figtree', system-ui, -apple-system, sans-serif;
+$font-base: 'Figtree', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas — moderadas e confiantes, não "pill" nem retas: evita colidir
+// com o visual muito arredondado de mente-equilibrio e clinica-integrativa.
+$radius-sm: 0.4rem;
+$radius-md: 0.65rem;
+$radius-lg: 1rem;
+
+$shadow-soft: 0 20px 40px -24px rgba(74, 66, 58, 0.22);
+$shadow-lift: 0 26px 50px -22px rgba(74, 66, 58, 0.28);
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.25s ease;
+$transition-slow: 0.6s cubic-bezier(0.22, 1, 0.36, 1);

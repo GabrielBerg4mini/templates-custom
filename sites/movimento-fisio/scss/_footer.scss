@@ -1,0 +1,54 @@
+@use 'variables' as v;
+
+.site-footer {
+  background: v.$color-black;
+  color: rgba(255, 255, 255, 0.62);
+  padding-block: 3.5rem 2rem;
+
+  .navbar-brand {
+    color: v.$color-white;
+
+    span {
+      color: rgba(255, 255, 255, 0.55);
+    }
+  }
+
+  a {
+    color: inherit;
+
+    &:hover,
+    &:focus-visible {
+      color: v.$color-white;
+    }
+  }
+
+  &__grid {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 2.5rem;
+  }
+
+  &__note {
+    max-width: 56ch;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.85rem;
+  }
+}
+
+.social-links {
+  a {
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background v.$transition-base, border-color v.$transition-base, color v.$transition-base;
+
+    &:hover,
+    &:focus-visible {
+      background: v.$color-blue;
+      border-color: v.$color-blue;
+      color: v.$color-white;
+    }
+  }
+}

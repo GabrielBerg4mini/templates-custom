@@ -1,0 +1,26 @@
+@use 'variables' as v;
+
+@mixin breakpoint($size) {
+  @if $size == sm {
+    @media (min-width: v.$bp-sm) { @content; }
+  } @else if $size == md {
+    @media (min-width: v.$bp-md) { @content; }
+  } @else if $size == lg {
+    @media (min-width: v.$bp-lg) { @content; }
+  } @else if $size == xl {
+    @media (min-width: v.$bp-xl) { @content; }
+  }
+}
+
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+// Tratamento fotográfico obrigatório da direção A3: preto-e-branco aplicado
+// via CSS (nunca buscar fotos já P&B no Pexels), com leve contraste.
+@mixin photo-grayscale {
+  filter: grayscale(0.94) contrast(1.06);
+}

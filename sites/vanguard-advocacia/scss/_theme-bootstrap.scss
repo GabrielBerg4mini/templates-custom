@@ -3,16 +3,20 @@
 // já no tom de cada projeto — sem escrever esses componentes do zero.
 @use 'variables' as v;
 
-$primary: v.$color-primary;
-$secondary: v.$color-secondary;
-$body-bg: v.$color-bg;
-$body-color: v.$color-text;
+// Hex (não oklch) — ver nota em _variables.scss sobre color.mix() do Bootstrap.
+$primary: v.$color-steel-hex;
+$secondary: v.$color-secondary-hex;
+$body-bg: v.$color-bg-hex;
+$body-color: v.$color-text-hex;
 $font-family-base: v.$font-base;
 $headings-font-family: v.$font-heading;
-// Cantos curtos — visual técnico e seguro, não orgânico.
-$border-radius: 0.35rem;
-$border-radius-lg: 0.5rem;
-$border-radius-sm: 0.25rem;
+// Design original (Tailwind) nunca sublinha links — sublinhado só onde
+// explicitamente adicionado via classe/CSS própria.
+$link-decoration: none;
+// Cantos curtos — visual técnico e seguro, não orgânico (tokens do v0: radius 0.5rem).
+$border-radius: v.$radius-md;
+$border-radius-lg: v.$radius-lg;
+$border-radius-sm: v.$radius-sm;
 $grid-gutter-width: v.$spacing-unit * 4;
 
 // Container mais largo que o padrão do Bootstrap — layout com mais
@@ -29,8 +33,8 @@ $enable-negative-margins: true;
 
 // Superfícies um tom mais claras que o fundo, para os cards não
 // "sumirem" no cinza-ardósia — e bordas sutis em vez de pretas.
-$card-bg: v.$color-slate-light;
-$border-color: rgba(255, 255, 255, 0.08);
-$body-secondary-color: v.$color-text-muted;
+$card-bg: v.$color-card-hex;
+$border-color: v.$color-border-hairline-hex;
+$body-secondary-color: v.$color-text-muted-hex;
 
 @import 'bootstrap/scss/bootstrap';

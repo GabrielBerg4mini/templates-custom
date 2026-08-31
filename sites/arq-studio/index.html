@@ -3,107 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ARQ STUDIO — Arquitetura Residencial Atemporal</title>
-  <meta name="description" content="Estúdio de arquitetura contemporânea especializado em projetos residenciais sustentáveis de alto padrão." />
+  <title>ARQ STUDIO — Arquitetura atemporal</title>
+  <meta name="description" content="ARQ STUDIO projeta arquitetura residencial de alto padrão, sustentável e atemporal, para viver e trabalhar." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
 
   <!-- HEADER -->
-  <nav class="navbar navbar-expand-lg sticky-top">
+  <header class="site-header navbar navbar-expand-md" data-header id="topo">
     <div class="container">
-      <a class="navbar-brand" href="#inicio">ARQ STUDIO</a>
+      <a class="site-header__brand" href="#topo">ARQ<span class="text-wood">.</span>STUDIO</a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
         aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menu">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4">
-          <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#filosofia">Filosofia</a></li>
-          <li class="nav-item"><a class="nav-link" href="#processo">Processo</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-          <li class="nav-item">
-            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-outline-editorial btn-sm ms-lg-2">
-              Iniciar Projeto
-            </a>
-          </li>
-        </ul>
+      <div class="collapse navbar-collapse site-header__nav-collapse" id="mainNav">
+        <nav class="site-header__nav" aria-label="Navegação principal">
+          <a href="#projetos">Projetos</a>
+          <a href="#filosofia">Filosofia</a>
+          <a href="#processo">Processo</a>
+          <a href="#contato">Contato</a>
+        </nav>
       </div>
+
+      <a href="#contato" class="btn-pill-outline site-header__cta">Iniciar Projeto</a>
     </div>
-  </nav>
+  </header>
 
   <main>
     <!-- HERO -->
     <section class="hero" id="inicio">
-      <div class="container hero__content">
-        <div class="row">
-          <div class="col-lg-9" data-reveal>
-            <h1>Criamos arquitetura atemporal para viver e trabalhar</h1>
-            <p class="hero__subtitle">
-              Projetos residenciais de alto padrão com pegada sustentável — luz natural, materialidade
-              honesta e uma arquitetura que envelhece bem, ano após ano.
-            </p>
-            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-editorial btn-lg mt-3">
-              <i class="bi bi-whatsapp icon"></i>
-              Falar no WhatsApp
+      <div class="container hero__top">
+        <div class="hero__intro" data-reveal>
+          <p class="eyebrow"><span class="eyebrow__line" aria-hidden="true"></span>Estúdio de Arquitetura · Residencial de alto padrão</p>
+          <h1>Criamos arquitetura atemporal para viver e trabalhar</h1>
+          <p class="hero__subtitle">
+            Projetos residenciais sustentáveis e de alto padrão, desenhados com precisão
+            escandinava — luz natural, materiais nobres e espaços que envelhecem com beleza.
+          </p>
+          <div class="hero__actions">
+            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" class="btn-pill">
+              Falar no WhatsApp <span aria-hidden="true">→</span>
             </a>
+            <a href="#projetos" class="link-underline">Ver projetos</a>
           </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="hero__media" data-reveal>
+          <img src="img/hero-living-room.png" alt="Sala de estar minimalista escandinava banhada por luz natural" loading="eager" />
         </div>
       </div>
     </section>
 
     <!-- FEATURED PROJECTS -->
-    <section class="projects py-5 py-lg-6" id="projetos">
+    <section class="projects" id="projetos">
       <div class="container">
         <div class="section-heading" data-reveal>
-          <p class="eyebrow">Projetos</p>
-          <h2>Uma seleção de residências recentes</h2>
+          <div>
+            <p class="eyebrow"><span class="eyebrow__line" aria-hidden="true"></span>Projetos selecionados</p>
+            <h2>Obras que definem lugar</h2>
+          </div>
+          <a href="#contato" class="link-underline">Ver portfólio completo</a>
         </div>
 
-        <div class="row row-cols-1 row-cols-md-2 g-3">
+        <div class="row row-cols-1 row-cols-md-2 g-4" data-reveal-group>
           <div class="col" data-reveal>
-            <a href="#" class="project-item">
-              <img src="https://images.pexels.com/photos/33050276/pexels-photo-33050276.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Casa Cerrado — vista externa" />
-              <div class="project-item__overlay">
-                <span>Brasília, DF</span>
-                <h3>Casa Cerrado</h3>
+            <a href="#contato" class="project-card">
+              <div class="project-card__figure">
+                <img src="img/project-1.png" alt="Casa Mata — Serra da Mantiqueira, SP" />
+                <div class="project-card__overlay"></div>
+                <div class="project-card__caption">
+                  <p>Serra da Mantiqueira, SP · 2024</p>
+                  <h3>Casa Mata</h3>
+                </div>
               </div>
             </a>
           </div>
 
           <div class="col" data-reveal>
-            <a href="#" class="project-item">
-              <img src="https://images.pexels.com/photos/6615908/pexels-photo-6615908.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Studio Nogueira — interior" />
-              <div class="project-item__overlay">
-                <span>São Paulo, SP</span>
-                <h3>Studio Nogueira</h3>
-              </div>
-            </a>
-          </div>
-
-          <div class="col" data-reveal>
-            <a href="#" class="project-item">
-              <img src="https://images.pexels.com/photos/30211366/pexels-photo-30211366.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Casa Pátio — fachada" />
-              <div class="project-item__overlay">
-                <span>Itu, SP</span>
-                <h3>Casa Pátio</h3>
-              </div>
-            </a>
-          </div>
-
-          <div class="col" data-reveal>
-            <a href="#" class="project-item">
-              <img src="https://images.pexels.com/photos/7031595/pexels-photo-7031595.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Residência Alto — vista externa" />
-              <div class="project-item__overlay">
-                <span>Nova Lima, MG</span>
-                <h3>Residência Alto</h3>
+            <a href="#contato" class="project-card">
+              <div class="project-card__figure">
+                <img src="img/project-2.png" alt="Residência Pátio — Jardins, São Paulo" />
+                <div class="project-card__overlay"></div>
+                <div class="project-card__caption">
+                  <p>Jardins, São Paulo · 2023</p>
+                  <h3>Residência Pátio</h3>
+                </div>
               </div>
             </a>
           </div>
@@ -112,68 +105,87 @@
     </section>
 
     <!-- METHODOLOGY -->
-    <section class="methodology py-5 py-lg-6" id="processo">
+    <section class="methodology" id="processo">
       <div class="container">
         <div class="row gy-5">
-          <div class="col-lg-5" data-reveal>
-            <p class="eyebrow">Como trabalhamos</p>
-            <h2>Um processo claro, do briefing à obra pronta</h2>
+          <div class="col-lg-5">
+            <div class="methodology__intro" data-reveal>
+              <p class="eyebrow"><span class="eyebrow__line" aria-hidden="true"></span>Processo</p>
+              <h2>Um método, quatro etapas, zero surpresas</h2>
+              <p>
+                Da primeira conversa à entrega das chaves, cada fase é conduzida com transparência
+                e rigor técnico.
+              </p>
+            </div>
           </div>
 
-          <div class="col-lg-7" data-reveal>
-            <div class="methodology-list">
-              <div class="methodology-step">
-                <div class="methodology-step__number">1</div>
+          <div class="col-lg-7">
+            <ol class="methodology-list list-unstyled" data-reveal-group>
+              <li class="methodology-step" data-reveal>
+                <span class="methodology-step__number">01</span>
                 <div>
                   <h3>Briefing &amp; Conceito</h3>
-                  <p>Escuta ativa do modo de vida do cliente e definição do partido arquitetônico.</p>
+                  <p>Ouvimos como você vive. Traduzimos rotina, referências e terreno em um conceito arquitetônico claro.</p>
                 </div>
-              </div>
+              </li>
 
-              <div class="methodology-step">
-                <div class="methodology-step__number">2</div>
+              <li class="methodology-step" data-reveal>
+                <span class="methodology-step__number">02</span>
                 <div>
                   <h3>Modelagem 3D</h3>
-                  <p>Volumetria, luz e materialidade estudadas digitalmente antes de qualquer decisão final.</p>
+                  <p>Visualizamos cada ambiente em modelos tridimensionais realistas antes de qualquer decisão construtiva.</p>
                 </div>
-              </div>
+              </li>
 
-              <div class="methodology-step">
-                <div class="methodology-step__number">3</div>
+              <li class="methodology-step" data-reveal>
+                <span class="methodology-step__number">03</span>
                 <div>
                   <h3>Projeto Executivo</h3>
-                  <p>Detalhamento técnico completo para orçamento preciso e execução sem surpresas.</p>
+                  <p>Detalhamento técnico completo — estrutura, materiais e especificações prontos para a obra.</p>
                 </div>
-              </div>
+              </li>
 
-              <div class="methodology-step">
-                <div class="methodology-step__number">4</div>
+              <li class="methodology-step" data-reveal>
+                <span class="methodology-step__number">04</span>
                 <div>
                   <h3>Gestão de Obra</h3>
-                  <p>Acompanhamento em campo até a entrega, garantindo fidelidade ao projeto original.</p>
+                  <p>Acompanhamos a execução do início ao fim, garantindo fidelidade ao projeto e ao prazo.</p>
                 </div>
-              </div>
-            </div>
+              </li>
+            </ol>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ABOUT THE ARCHITECT -->
-    <section class="about py-5 py-lg-6" id="filosofia">
+    <section class="about" id="filosofia">
       <div class="container">
         <div class="row align-items-center gy-5">
-          <div class="col-lg-5 about__media" data-reveal>
-            <img src="https://images.pexels.com/photos/38139772/pexels-photo-38139772.jpeg?auto=compress&cs=tinysrgb&w=560" alt="Retrato do arquiteto fundador do estúdio" class="img-fluid mx-auto d-block" style="max-width:360px;" width="560" height="700" />
+          <div class="col-lg-6 order-lg-first" data-reveal>
+            <div class="about__media">
+              <img src="img/architect-portrait.png" alt="Retrato do arquiteto fundador da ARQ STUDIO" />
+            </div>
           </div>
 
-          <div class="col-lg-7" data-reveal>
-            <p class="eyebrow">Filosofia</p>
-            <p class="about__quote">
-              "Arquitetura atemporal não segue tendência — ela nasce do lugar, da luz e de quem vai viver
-              o espaço. É esse o compromisso por trás de cada projeto que assinamos."
+          <div class="col-lg-6" data-reveal>
+            <p class="eyebrow"><span class="eyebrow__line" aria-hidden="true"></span>O arquiteto</p>
+            <blockquote class="about__quote">
+              &ldquo;Arquitetura não é sobre impressionar. É sobre criar espaços que fazem sentido
+              hoje e continuam certos daqui a trinta anos.&rdquo;
+            </blockquote>
+            <p class="about__text">
+              Fundada com a convicção de que o bom design é discreto, a ARQ STUDIO combina o rigor
+              da tradição escandinava com a luz e os materiais brasileiros. Cada projeto começa
+              pela luz natural, pela circulação do ar e pela relação honesta entre forma e função.
             </p>
-            <p class="about__role mt-4 mb-0">Fundador &amp; Arquiteto Responsável</p>
+            <div class="about__signature">
+              <span class="about__signature-line" aria-hidden="true"></span>
+              <div>
+                <strong>Henrique Alvim</strong>
+                <span>Arquiteto fundador · CAU 12345-6</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -181,33 +193,45 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer py-5" id="contato">
+  <footer class="site-footer" id="contato">
     <div class="container">
-      <div class="row gy-4 align-items-center">
-        <div class="col-md-4">
-          <p class="navbar-brand d-inline-block mb-2">ARQ STUDIO</p>
-          <p class="mb-0">Rua dos Arquitetos, 240 — São Paulo, SP</p>
-          <p class="mb-0">+55 (11) 0000-0000</p>
-        </div>
-
-        <div class="col-md-4 text-md-center">
-          <p class="mb-0">&copy; 2026 ARQ STUDIO. Todos os direitos reservados.</p>
-        </div>
-
-        <div class="col-md-4 d-flex gap-2 justify-content-md-end social-links">
-          <a href="#" aria-label="Instagram" target="_blank" rel="noopener">
-            <i class="bi bi-instagram icon"></i>
-          </a>
-          <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener">
-            <i class="bi bi-linkedin icon"></i>
+      <div class="row gy-5">
+        <div class="col-lg-6">
+          <p class="site-footer__brand">ARQ<span class="text-wood">.</span>STUDIO</p>
+          <p class="site-footer__tagline">Vamos desenhar o próximo lugar que você vai chamar de seu.</p>
+          <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" class="btn-pill btn-pill--light">
+            Falar no WhatsApp <span aria-hidden="true">→</span>
           </a>
         </div>
+
+        <div class="col-6 col-lg-3">
+          <p class="site-footer__col-title">Contato</p>
+          <ul class="site-footer__list">
+            <li><a href="tel:+5511999999999">+55 11 99999-9999</a></li>
+            <li><a href="mailto:ola@arqstudio.com">ola@arqstudio.com</a></li>
+            <li>Rua dos Pinheiros, 1200<br />Pinheiros, São Paulo — SP</li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <p class="site-footer__col-title">Redes</p>
+          <ul class="site-footer__list">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Behance</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p class="mb-0">&copy; 2026 ARQ STUDIO. Todos os direitos reservados.</p>
+        <p class="mb-0">Arquitetura residencial de alto padrão · São Paulo, Brasil</p>
       </div>
     </div>
   </footer>
 
   <!-- FLOATING WHATSAPP BUTTON -->
-  <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
+  <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Falar no WhatsApp">
     <i class="bi bi-whatsapp icon"></i>
   </a>
 

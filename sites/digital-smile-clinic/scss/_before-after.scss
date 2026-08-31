@@ -1,77 +1,110 @@
 @use 'variables' as v;
 
-// O carrossel (arraste, paginação, setas) é o Swiper — aqui só o visual do slide.
+// Slider "antes/depois" arrastável — sem dependência de carrossel;
+// JS (js/main.js) atualiza a variável --pos via pointer events e o
+// CSS abaixo usa clip-path para revelar a imagem "antes".
 
-.ba-swiper {
-  padding-bottom: 3rem;
+.ba-slider {
+  position: relative;
+  max-width: 48rem;
+  margin-inline: auto;
+}
 
-  .swiper-slide {
-    height: auto;
-  }
+.ba-slider__frame {
+  --pos: 50%;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 1.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: v.$shadow-soft;
+  user-select: none;
+  touch-action: pan-y;
+  cursor: ew-resize;
+}
 
-  .swiper-pagination-bullet-active {
-    background: v.$color-cyan;
-  }
+.ba-slider__before-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
 
-  .swiper-button-prev,
-  .swiper-button-next {
-    color: v.$color-cyan;
+.ba-slider__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 
-    &::after {
-      font-size: 1.1rem;
-    }
+  &--before {
+    clip-path: inset(0 calc(100% - var(--pos)) 0 0);
   }
 }
 
-.ba-card {
-  height: 100%;
+.ba-slider__tag {
+  position: absolute;
+  top: 1rem;
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 
-  &__pair {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: v.$glass-border;
-    overflow: hidden;
-    border-radius: 1rem;
+  &--after {
+    right: 1rem;
+    background: v.$color-cyan;
+    color: v.$color-cyan-foreground;
   }
 
-  &__frame {
-    position: relative;
-    aspect-ratio: 3 / 4;
-    overflow: hidden;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    span {
-      position: absolute;
-      bottom: 0.6rem;
-      left: 0.6rem;
-      background: rgba(10, 17, 40, 0.75);
-      color: v.$color-cyan-light;
-      font-size: 0.68rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-    }
+  &--before {
+    left: 1rem;
+    background: v.$color-navy;
+    color: v.$color-navy-foreground;
   }
+}
 
-  &__caption {
-    padding: 1rem 0.25rem 0;
+.ba-slider__handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--pos);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2px;
+  background: v.$color-white;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
 
-    h3 {
-      font-size: 1rem;
-      margin-bottom: 0.15rem;
-    }
+.ba-slider__handle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 2px solid v.$color-white;
+  background: v.$color-navy;
+  color: v.$color-cyan;
+  box-shadow: v.$shadow-glow;
+  cursor: ew-resize;
+  pointer-events: auto;
+  font-size: 1.1rem;
+}
 
-    span {
-      font-size: 0.78rem;
-      color: v.$color-text-muted;
-    }
+.ba-slider__hint {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: v.$color-muted-foreground;
+
+  i {
+    color: v.$color-cyan;
   }
 }

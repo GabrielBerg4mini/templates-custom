@@ -1,42 +1,166 @@
 @use 'variables' as v;
 
+// Seção "Diferenciais" — 3 cards, um deles "ativo" (hover/click/foco),
+// espelhando o useState(active) do componente Differentials do v0.
+
 .tech-card {
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border: 1px solid v.$color-border;
+  background: v.$color-card;
+  padding: 2rem;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease, color 0.3s ease;
 
   &:hover {
-    transform: translateY(-6px);
-    box-shadow: v.$shadow-glow !important;
-    border-color: rgba(34, 211, 238, 0.4) !important;
+    transform: translateY(-4px);
+    border-color: rgba(94, 224, 240, 0.4);
+  }
+
+  &.is-active {
+    border-color: rgba(94, 224, 240, 0.5);
+    background: v.$color-navy;
+    color: v.$color-navy-foreground;
+    box-shadow: v.$shadow-glow;
+    transform: translateY(-4px);
+
+    .tech-card__glow {
+      opacity: 1;
+      background: rgba(94, 224, 240, 0.3);
+    }
 
     .tech-card__icon {
       background: v.$color-cyan;
-      color: v.$color-navy;
+      color: v.$color-cyan-foreground;
+    }
+
+    .tech-card__tag {
+      color: v.$color-cyan;
+    }
+
+    .tech-card__title {
+      color: v.$color-navy-foreground;
+    }
+
+    .tech-card__desc {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .tech-card__points li {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .tech-card__more {
+      color: v.$color-cyan;
     }
   }
+}
 
-  &__icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: rgba(34, 211, 238, 0.12);
-    color: v.$color-cyan;
+.tech-card__glow {
+  position: absolute;
+  top: -4rem;
+  right: -4rem;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background: rgba(94, 224, 240, 0.1);
+  filter: blur(28px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.tech-card:hover .tech-card__glow {
+  opacity: 1;
+}
+
+.tech-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  background: rgba(94, 224, 240, 0.1);
+  color: v.$color-cyan;
+  font-size: 1.6rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.tech-card__tag {
+  margin-top: 1.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: v.$color-muted-foreground;
+}
+
+.tech-card__title {
+  margin-top: 0.5rem;
+  font-family: v.$font-heading;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: v.$color-navy;
+}
+
+.tech-card__desc {
+  margin-top: 0.75rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: v.$color-muted-foreground;
+}
+
+.tech-card__points {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  li {
     display: flex;
     align-items: center;
-    justify-content: center;
-    transition: background 0.3s ease, color 0.3s ease;
-
-    i {
-      font-size: 26px;
-    }
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: rgba(10, 22, 51, 0.8);
   }
 
-  h3 {
-    font-size: 1.1rem;
+  &::before {
+    content: none;
   }
 
-  p {
-    color: v.$color-text-muted;
-    font-size: 0.9rem;
-    margin-bottom: 0;
+  li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: v.$color-cyan;
   }
+}
+
+.tech-card__more {
+  margin-top: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: v.$color-navy;
+  transition: color 0.3s ease, gap 0.2s ease;
+}
+
+.tech-card:hover .tech-card__more i {
+  transform: translateX(3px);
+}
+
+.tech-card__more i {
+  transition: transform 0.2s ease;
 }

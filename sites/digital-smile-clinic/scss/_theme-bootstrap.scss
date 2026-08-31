@@ -3,16 +3,26 @@
 // já no tom de cada projeto — sem escrever esses componentes do zero.
 @use 'variables' as v;
 
-$primary: v.$color-primary;
-$secondary: v.$color-secondary;
-$body-bg: v.$color-bg;
-$body-color: v.$color-text;
+// O Sass legado do Bootstrap roda mix()/shade-color()/tint-color() sobre
+// estas variáveis em tempo de build; por isso usamos os hex equivalentes
+// (ver comentário em _variables.scss) e não as cores oklch diretamente.
+// O restante do site (header, hero, cards, etc.) usa oklch puro.
+$primary: v.$color-navy-hex;
+$secondary: v.$color-secondary-hex;
+$body-bg: v.$color-background-hex;
+$body-color: v.$color-foreground-hex;
 $font-family-base: v.$font-base;
 $headings-font-family: v.$font-heading;
-// Cantos generosos — vidro fosco pede curvas suaves.
-$border-radius: 1rem;
+$headings-color: v.$color-navy-hex;
+$link-color: v.$color-navy-hex;
+$link-hover-color: v.$color-cyan-hex;
+// Design original (Tailwind) nunca sublinha links — sublinhado só onde
+// explicitamente adicionado via classe/CSS própria.
+$link-decoration: none;
+// Cantos generosos — o v0 usa --radius: 0.875rem como base.
+$border-radius: 0.875rem;
 $border-radius-lg: 1.5rem;
-$border-radius-sm: 0.6rem;
+$border-radius-sm: 0.55rem;
 $grid-gutter-width: v.$spacing-unit * 4;
 
 // Container mais largo que o padrão do Bootstrap — layout com mais
@@ -27,11 +37,9 @@ $container-max-widths: (
 $enable-shadows: false;
 $enable-negative-margins: true;
 
-// Cards em vidro fosco (glassmorphism) — fundo translúcido + blur
-// aplicado em _base.scss via .glass-card, já que o Bootstrap não
-// tem suporte nativo a backdrop-filter nas variáveis de $card-*.
-$card-bg: v.$glass-bg;
-$border-color: v.$glass-border;
-$body-secondary-color: v.$color-text-muted;
+$card-bg: #ffffff;
+$card-border-color: v.$color-border-hex;
+$border-color: v.$color-border-hex;
+$body-secondary-color: v.$color-muted-foreground-hex;
 
 @import 'bootstrap/scss/bootstrap';

@@ -1,0 +1,93 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// A seção de contato usa fundo ink (.section--ink) — todo texto solto
+// aqui precisa ser claro. Só os campos do formulário (caixas brancas)
+// e a confirmação de envio ficam em contraste invertido.
+.contact-info {
+  list-style: none;
+  margin: 0 0 2.5rem;
+  padding: 0;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding-block: 1rem;
+  border-bottom: 1px solid v.$color-line-on-ink;
+  color: v.$color-white;
+
+  .icon {
+    flex: none;
+    color: v.$color-accent;
+    font-size: 1.1rem;
+    margin-top: 0.15rem;
+  }
+
+  a {
+    color: v.$color-white;
+
+    &:hover,
+    &:focus-visible {
+      color: v.$color-accent;
+    }
+  }
+}
+
+.contact-hours {
+  color: v.$color-text-on-ink-muted;
+}
+
+.form-field {
+  margin-bottom: 1.5rem;
+}
+
+.form-field label {
+  @include m.label-tag;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: v.$color-white;
+}
+
+.form-field .form-control {
+  border: 2px solid v.$color-ink;
+  background: v.$color-white;
+  padding: 0.85rem 1rem;
+  font-family: v.$font-base;
+  color: v.$color-ink;
+
+  &::placeholder {
+    color: rgba(19, 19, 19, 0.4);
+  }
+
+  &:focus {
+    border-color: v.$color-accent;
+    box-shadow: none;
+  }
+}
+
+.contact-form__note {
+  @include m.label-tag;
+  color: v.$color-text-on-ink-muted;
+  margin-top: 1rem;
+}
+
+.contact-form__success {
+  display: none;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  padding: 0.9rem 1.1rem;
+  background: v.$color-white;
+  color: v.$color-ink;
+  font-weight: 600;
+
+  &.is-visible {
+    display: flex;
+  }
+
+  .icon {
+    color: v.$color-accent;
+  }
+}

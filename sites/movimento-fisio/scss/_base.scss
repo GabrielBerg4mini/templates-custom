@@ -1,0 +1,227 @@
+@use 'variables' as v;
+
+// O Bootstrap (via _theme-bootstrap.scss) cuida do reset, tipografia,
+// grid, links e imagens. Aqui só os utilitários que faltam.
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  overflow-x: hidden; // seções com clip-path/deslocamento não geram scroll horizontal
+}
+
+::selection {
+  background: v.$color-blue;
+  color: v.$color-white;
+}
+
+a:focus-visible,
+button:focus-visible,
+.faq-item__trigger:focus-visible {
+  outline: 2px solid v.$color-blue;
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4 {
+  font-family: v.$font-heading;
+  color: v.$color-black;
+  letter-spacing: -0.01em;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: v.$font-base;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: v.$color-blue;
+  margin-bottom: 1rem;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 22px;
+    height: 2px;
+    background: v.$color-blue;
+    transform: skewX(-20deg);
+  }
+
+  &--on-dark {
+    color: v.$color-white;
+
+    &::before {
+      background: v.$color-white;
+    }
+  }
+}
+
+.section-heading {
+  max-width: 640px;
+  margin-bottom: 3rem;
+
+  h2 {
+    font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+    font-weight: 800;
+    line-height: 1.1;
+  }
+
+  &--wide {
+    max-width: 760px;
+  }
+}
+
+// Números grandes em destaque tipográfico — a métrica NÃO é um card.
+.stat {
+  display: block;
+
+  &__value {
+    display: block;
+    font-family: v.$font-heading;
+    font-weight: 800;
+    font-size: clamp(2.6rem, 5.2vw, 4.2rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  &__label {
+    display: block;
+    margin-top: 0.6rem;
+    font-size: 0.9rem;
+    color: v.$color-text-muted;
+    max-width: 24ch;
+  }
+
+  &--on-blue &__label {
+    color: rgba(255, 255, 255, 0.72);
+  }
+}
+
+// Botões — retos, confiantes, sem glow nem gradiente
+.btn {
+  border-radius: v.$radius-sm;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding-inline: 1.6rem;
+  transition: transform v.$transition-base, background v.$transition-base, color v.$transition-base, border-color v.$transition-base;
+
+  .bi {
+    margin-right: 0.5rem;
+  }
+}
+
+a.btn-primary,
+.btn-primary {
+  background: v.$color-blue;
+  border-color: v.$color-blue;
+  color: v.$color-white;
+
+  &:hover,
+  &:focus-visible {
+    background: v.$color-black;
+    border-color: v.$color-black;
+    color: v.$color-white;
+    transform: translateY(-2px);
+  }
+}
+
+a.btn-outline-light,
+.btn-outline-light {
+  border-width: 1px;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+a.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: v.$color-black;
+  font-weight: 600;
+  padding: 0;
+  border: none;
+  background: none;
+
+  .bi {
+    transition: transform v.$transition-base;
+  }
+
+  &:hover {
+    color: v.$color-blue;
+
+    .bi {
+      transform: translateX(4px);
+    }
+  }
+}
+
+// Reveal-on-scroll (aplicado via data-reveal + IntersectionObserver em js/main.js)
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+// Lista editorial numerada — usada em "para quem é" e "profissional".
+// Substitui o padrão de card idêntico repetido por item.
+.editorial-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: grid;
+    grid-template-columns: 2.75rem 1fr;
+    gap: 1rem;
+    padding-block: 1.1rem;
+    border-top: 1px solid v.$color-border;
+
+    &:last-child {
+      border-bottom: 1px solid v.$color-border;
+    }
+  }
+
+  &__index {
+    font-family: v.$font-heading;
+    font-weight: 800;
+    color: v.$color-blue;
+    font-size: 1.1rem;
+  }
+
+  &__body {
+    p {
+      margin: 0.25rem 0 0;
+      color: v.$color-text-muted;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 0;
+    }
+  }
+}

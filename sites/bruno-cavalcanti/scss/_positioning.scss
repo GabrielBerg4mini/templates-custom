@@ -1,0 +1,28 @@
+@use 'variables' as v;
+
+// Bloco editorial curto que declara a tese do escritório — seção própria,
+// não um hero. Fundo claro para alternar densidade/ritmo com a hero escura.
+.positioning {
+  background: v.$color-bg-light;
+  color: v.$color-text-on-light;
+
+  h2 {
+    font-size: clamp(1.6rem, 3vw, 2.35rem);
+    line-height: 1.32;
+    color: v.$color-text-on-light;
+  }
+
+  em {
+    color: v.$color-bronze;
+  }
+}
+
+.positioning__text {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  max-width: 46rem;
+  font-family: v.$font-base;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: v.$color-text-on-light-muted;
+}

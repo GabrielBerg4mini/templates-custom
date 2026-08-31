@@ -1,76 +1,121 @@
 <!doctype html>
-<html lang="pt-BR" data-bs-theme="dark">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digital Smile Clinic — Odontologia Digital de Alta Tecnologia</title>
-  <meta name="description" content="Clínica odontológica digital com scanner intraoral 3D, Digital Smile Design e alinhadores invisíveis. Agende sua avaliação 3D." />
+  <title>Digital Smile Clinic | Odontologia Digital Avançada</title>
+  <meta name="description" content="Transforme seu sorriso de forma invisível, rápida e digital. Escaneamento intraoral 3D, alinhadores sem bráquetes, Digital Smile Design e clareamento a laser." />
+  <meta name="theme-color" content="#0a1633" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
 
   <!-- HEADER -->
-  <nav class="navbar navbar-expand-lg sticky-top">
+  <header class="site-header" id="site-header">
     <div class="container">
-      <a class="navbar-brand" href="#inicio">Digital <span>Smile</span> Clinic</a>
+      <div class="site-header__bar">
+        <a href="#top" class="site-header__brand">
+          <span class="site-header__logo"><i class="bi bi-upc-scan"></i></span>
+          <span class="site-header__name">
+            Digital Smile
+            <span class="site-header__tag">CLINIC</span>
+          </span>
+        </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-        aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <nav class="site-header__nav d-none d-md-flex">
+          <a href="#alinhadores">Alinhadores</a>
+          <a href="#lentes">Lentes</a>
+          <a href="#implantes">Implantes</a>
+          <a href="#sobre">Sobre</a>
+        </nav>
 
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4">
-          <li class="nav-item"><a class="nav-link" href="#inicio">Alinhadores</a></li>
-          <li class="nav-item"><a class="nav-link" href="#tecnologia">Lentes</a></li>
-          <li class="nav-item"><a class="nav-link" href="#antes-depois">Implantes</a></li>
-          <li class="nav-item"><a class="nav-link" href="#avaliacoes">Sobre</a></li>
-          <li class="nav-item">
-            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-cyan btn-sm rounded-pill ms-lg-2">
-              Avaliação Digital 3D
-            </a>
-          </li>
-        </ul>
+        <div class="site-header__actions">
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Quero%20agendar%20minha%20avalia%C3%A7%C3%A3o%20digital%203D." target="_blank" rel="noopener noreferrer" class="btn btn-navy rounded-3 d-none d-sm-inline-flex site-header__cta">
+            Avaliação Digital 3D
+          </a>
+          <button type="button" class="site-header__toggle d-md-none" id="site-header-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-header-mobile">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
       </div>
+
+      <nav class="site-header__mobile glass d-md-none" id="site-header-mobile">
+        <a href="#alinhadores">Alinhadores</a>
+        <a href="#lentes">Lentes</a>
+        <a href="#implantes">Implantes</a>
+        <a href="#sobre">Sobre</a>
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Quero%20agendar%20minha%20avalia%C3%A7%C3%A3o%20digital%203D." target="_blank" rel="noopener noreferrer" class="site-header__mobile-cta">
+          Avaliação Digital 3D
+        </a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
   <main>
     <!-- HERO -->
-    <section class="hero py-5 py-lg-6" id="inicio">
+    <section class="hero" id="top">
+      <div class="hero__blob hero__blob--cyan" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--navy" aria-hidden="true"></div>
+
       <div class="container">
         <div class="row align-items-center gy-5">
           <div class="col-lg-6" data-reveal>
-            <p class="eyebrow">Odontologia 100% digital</p>
-            <h1 class="display-5 fw-bold">Transforme seu sorriso de forma invisível, rápida e digital</h1>
+            <span class="hero__eyebrow">
+              <i class="bi bi-stars"></i>
+              ODONTOLOGIA DIGITAL DE ALTA PRECISÃO
+            </span>
+
+            <h1>
+              Transforme seu sorriso de forma
+              <span class="highlight">invisível</span>, rápida e digital
+            </h1>
+
             <p class="hero__subtitle">
-              Escaneamento intraoral em 3D e alinhadores sem brackets — um planejamento totalmente
-              digital, visualizado antes mesmo do primeiro alinhador chegar até você.
+              Escaneamento intraoral <strong>3D</strong> em minutos e alinhadores transparentes
+              <strong>sem bráquetes</strong>. Planejamento digital do início ao resultado final —
+              você vê seu novo sorriso antes de começar.
             </p>
-            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-cyan btn-lg rounded-pill mt-3">
-              <i class="bi bi-whatsapp icon"></i>
-              Agendar Consulta via WhatsApp
-            </a>
-            <ul class="hero__badges list-unstyled d-flex flex-wrap gap-3 mt-2">
-              <li>Sem moldagem de gesso</li>
-              <li>Simulação do resultado antes de começar</li>
-              <li>Acompanhamento pelo app</li>
+
+            <div class="hero__actions">
+              <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Quero%20agendar%20minha%20avalia%C3%A7%C3%A3o%20digital%203D." target="_blank" rel="noopener noreferrer" class="btn btn-cyan rounded-4">
+                <i class="bi bi-whatsapp"></i>
+                Agendar Consulta via WhatsApp
+              </a>
+              <a href="#diferenciais" class="btn btn-outline-card rounded-4">
+                Conhecer a tecnologia
+              </a>
+            </div>
+
+            <ul class="hero__badges list-unstyled">
+              <li><i class="bi bi-upc-scan"></i> Scanner intraoral 3D</li>
+              <li><i class="bi bi-shield-check"></i> +2.400 sorrisos entregues</li>
             </ul>
           </div>
 
           <div class="col-lg-6" data-reveal>
-            <div class="hero__media position-relative mx-auto rounded-4" style="max-width: 420px;">
-              <img src="https://images.pexels.com/photos/35000852/pexels-photo-35000852.jpeg?auto=compress&cs=tinysrgb&w=720"
-                alt="Pessoa confiante segurando um alinhador transparente"
-                class="img-fluid rounded-4 w-100" width="720" height="860" />
-              <div class="hero__media-badge rounded-4 px-3 py-2">
-                <strong>100% Digital</strong>
-                <span>do escaneamento ao alinhador</span>
+            <div class="hero__media">
+              <div class="hero__media-shadow" aria-hidden="true"></div>
+              <div class="hero__media-frame">
+                <img src="img/hero-aligner.png" alt="Paciente sorrindo segurando um alinhador transparente" width="720" height="860" />
+              </div>
+
+              <div class="hero__stat hero__stat--satisfaction glass animate-float-slow">
+                <p class="hero__stat__number">98%</p>
+                <p class="hero__stat__label">satisfação dos pacientes</p>
+              </div>
+
+              <div class="hero__stat hero__stat--scan glass animate-float-slow">
+                <div class="hero__stat__row">
+                  <span class="hero__stat__icon"><i class="bi bi-upc-scan"></i></span>
+                  <div>
+                    <p class="hero__stat__title">Scan 3D</p>
+                    <p class="hero__stat__sub">sem moldes</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -78,252 +123,332 @@
       </div>
     </section>
 
-    <!-- HIGH-TECH DIFFERENTIALS -->
-    <section class="tech py-5 py-lg-6" id="tecnologia">
+    <!-- DIFERENCIAIS HIGH-TECH -->
+    <section class="tech py-5 py-lg-6" id="diferenciais">
       <div class="container">
         <div class="section-heading section-heading--center" data-reveal>
-          <p class="eyebrow">Alta tecnologia</p>
-          <h2>Tecnologia que faz a diferença no resultado</h2>
+          <p class="eyebrow">Diferenciais High-Tech</p>
+          <h2>Tecnologia de ponta em cada etapa</h2>
+          <p class="section-heading__text">Equipamentos digitais que tornam o tratamento mais preciso, rápido e previsível.</p>
         </div>
 
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-lg-3 g-4">
           <div class="col" data-reveal>
-            <article class="tech-card card border p-4 h-100">
-              <div class="tech-card__icon mb-3">
-                <i class="bi bi-box"></i>
-              </div>
-              <h3>Scanner Intraoral 3D</h3>
-              <p>Escaneamento digital preciso, sem moldes de gesso e com resultado imediato na tela.</p>
-            </article>
+            <button type="button" id="alinhadores" class="tech-card is-active" data-tech-card="0">
+              <span class="tech-card__glow" aria-hidden="true"></span>
+              <span class="tech-card__icon"><i class="bi bi-upc-scan"></i></span>
+              <p class="tech-card__tag">Scanner Intraoral 3D</p>
+              <h3 class="tech-card__title">Escaneamento 3D em minutos</h3>
+              <p class="tech-card__desc">Digitalização de alta resolução da sua boca — sem moldes desconfortáveis. Um mapa 3D preciso que guia todo o tratamento com alinhadores.</p>
+              <ul class="tech-card__points">
+                <li>Sem moldes de gesso</li>
+                <li>Precisão de micra</li>
+                <li>Simulação instantânea</li>
+              </ul>
+              <span class="tech-card__more">Saber mais <i class="bi bi-arrow-right"></i></span>
+            </button>
           </div>
 
           <div class="col" data-reveal>
-            <article class="tech-card card border p-4 h-100">
-              <div class="tech-card__icon mb-3">
-                <i class="bi bi-emoji-smile"></i>
-              </div>
-              <h3>Digital Smile Design</h3>
-              <p>Simulação digital do seu novo sorriso antes de iniciar qualquer tratamento.</p>
-            </article>
+            <button type="button" id="lentes" class="tech-card" data-tech-card="1">
+              <span class="tech-card__glow" aria-hidden="true"></span>
+              <span class="tech-card__icon"><i class="bi bi-emoji-smile"></i></span>
+              <p class="tech-card__tag">Digital Smile Design (DSD)</p>
+              <h3 class="tech-card__title">Projete seu novo sorriso</h3>
+              <p class="tech-card__desc">Desenhamos digitalmente cada detalhe das suas lentes e facetas. Você aprova o resultado na tela antes de qualquer procedimento.</p>
+              <ul class="tech-card__points">
+                <li>Prévia realista do sorriso</li>
+                <li>Design personalizado</li>
+                <li>Aprovação antes de iniciar</li>
+              </ul>
+              <span class="tech-card__more">Saber mais <i class="bi bi-arrow-right"></i></span>
+            </button>
           </div>
 
           <div class="col" data-reveal>
-            <article class="tech-card card border p-4 h-100">
-              <div class="tech-card__icon mb-3">
-                <i class="bi bi-brightness-high-fill"></i>
-              </div>
-              <h3>Clareamento a Laser</h3>
-              <p>Sessões rápidas de clareamento com resultado perceptível já no primeiro atendimento.</p>
-            </article>
+            <button type="button" id="implantes" class="tech-card" data-tech-card="2">
+              <span class="tech-card__glow" aria-hidden="true"></span>
+              <span class="tech-card__icon"><i class="bi bi-lightning-charge"></i></span>
+              <p class="tech-card__tag">Clareamento a Laser</p>
+              <h3 class="tech-card__title">Dentes mais brancos, na hora</h3>
+              <p class="tech-card__desc">Tecnologia de clareamento a laser que entrega vários tons de branqueamento em uma única sessão, com segurança e sem sensibilidade.</p>
+              <ul class="tech-card__points">
+                <li>Resultado em 1 sessão</li>
+                <li>Baixa sensibilidade</li>
+                <li>Efeito duradouro</li>
+              </ul>
+              <span class="tech-card__more">Saber mais <i class="bi bi-arrow-right"></i></span>
+            </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- BEFORE & AFTER SLIDER -->
-    <section class="before-after py-5 py-lg-6" id="antes-depois">
+    <!-- ANTES & DEPOIS -->
+    <section class="before-after py-5 py-lg-6">
       <div class="container">
         <div class="section-heading section-heading--center" data-reveal>
-          <p class="eyebrow">Transformações</p>
-          <h2>Sorrisos reais, resultados reais</h2>
+          <p class="eyebrow">Antes &amp; Depois</p>
+          <h2>Resultados reais, arraste e compare</h2>
+          <p class="section-heading__text">Deslize a alça para revelar a transformação de sorriso feita com nosso protocolo digital.</p>
         </div>
 
-        <div class="swiper ba-swiper" data-slides-per-view="2" data-reveal>
-          <div class="swiper-wrapper">
+        <div class="ba-slider" data-reveal>
+          <div class="ba-slider__frame" id="ba-frame">
+            <img src="img/smile-after.png" alt="Sorriso depois do tratamento, dentes alinhados e brancos" class="ba-slider__img" />
+            <span class="ba-slider__tag ba-slider__tag--after">DEPOIS</span>
 
-            <div class="swiper-slide">
-              <div class="ba-card">
-                <div class="ba-card__pair">
-                  <div class="ba-card__frame">
-                    <img src="https://images.pexels.com/photos/907862/pexels-photo-907862.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Antes do tratamento com alinhadores" />
-                    <span>Antes</span>
-                  </div>
-                  <div class="ba-card__frame">
-                    <img src="https://images.pexels.com/photos/33669405/pexels-photo-33669405.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Depois do tratamento com alinhadores" />
-                    <span>Depois</span>
-                  </div>
-                </div>
-                <div class="ba-card__caption">
-                  <h3>Alinhadores Invisíveis</h3>
-                  <span>Tratamento de 8 meses</span>
-                </div>
-              </div>
+            <div class="ba-slider__before-wrap">
+              <img src="img/smile-before.png" alt="Sorriso antes do tratamento, dentes desalinhados" class="ba-slider__img ba-slider__img--before" />
+              <span class="ba-slider__tag ba-slider__tag--before">ANTES</span>
             </div>
 
-            <div class="swiper-slide">
-              <div class="ba-card">
-                <div class="ba-card__pair">
-                  <div class="ba-card__frame">
-                    <img src="https://images.pexels.com/photos/907862/pexels-photo-907862.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Antes das lentes de contato dental" />
-                    <span>Antes</span>
-                  </div>
-                  <div class="ba-card__frame">
-                    <img src="https://images.pexels.com/photos/33669405/pexels-photo-33669405.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Depois das lentes de contato dental" />
-                    <span>Depois</span>
-                  </div>
-                </div>
-                <div class="ba-card__caption">
-                  <h3>Lentes de Contato</h3>
-                  <span>Resultado em 2 sessões</span>
-                </div>
-              </div>
+            <div class="ba-slider__handle" id="ba-handle">
+              <button type="button" class="ba-slider__handle-btn" aria-label="Arrastar para comparar antes e depois">
+                <i class="bi bi-arrow-left-right"></i>
+              </button>
             </div>
-
-            <div class="swiper-slide">
-              <div class="ba-card">
-                <div class="ba-card__pair">
-                  <div class="ba-card__frame">
-                    <img src="https://images.pexels.com/photos/907862/pexels-photo-907862.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Antes do clareamento a laser" />
-                    <span>Antes</span>
-                  </div>
-                  <div class="ba-card__frame">
-                    <img src="https://images.pexels.com/photos/33669405/pexels-photo-33669405.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Depois do clareamento a laser" />
-                    <span>Depois</span>
-                  </div>
-                </div>
-                <div class="ba-card__caption">
-                  <h3>Clareamento a Laser</h3>
-                  <span>Resultado em 1 sessão</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="ba-card">
-                <div class="ba-card__pair">
-                  <div class="ba-card__frame">
-                    <img src="https://images.pexels.com/photos/907862/pexels-photo-907862.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Antes do implante dentário" />
-                    <span>Antes</span>
-                  </div>
-                  <div class="ba-card__frame">
-                    <img src="https://images.pexels.com/photos/33669405/pexels-photo-33669405.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Depois do implante dentário" />
-                    <span>Depois</span>
-                  </div>
-                </div>
-                <div class="ba-card__caption">
-                  <h3>Implante Guiado</h3>
-                  <span>Planejamento 100% digital</span>
-                </div>
-              </div>
-            </div>
-
           </div>
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+
+          <p class="ba-slider__hint">
+            <i class="bi bi-arrow-left-right"></i>
+            Arraste para comparar
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- PATIENT REVIEWS -->
-    <section class="reviews py-5 py-lg-6" id="avaliacoes">
+    <!-- AVALIAÇÕES DE PACIENTES -->
+    <section class="reviews py-5 py-lg-6" id="sobre">
+      <div class="reviews__blob" aria-hidden="true"></div>
       <div class="container">
         <div class="section-heading section-heading--center" data-reveal>
-          <p class="eyebrow">Avaliações</p>
-          <h2>Pacientes que já viveram a transformação</h2>
+          <span class="reviews__badge">
+            <span class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </span>
+            <span>5,0 no Google · 380+ avaliações</span>
+          </span>
+          <h2>Pacientes que sorriem de novo</h2>
         </div>
 
-        <div class="swiper reviews-swiper" data-slides-per-view="2" data-reveal>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="review-card card border p-4">
-                <div class="review-card__video">
-                  <img src="https://images.pexels.com/photos/5970876/pexels-photo-5970876.jpeg?auto=compress&cs=tinysrgb&w=480" alt="Miniatura de vídeo depoimento de paciente" />
-                  <div class="review-card__play">
-                    <span><i class="bi bi-play-fill"></i></span>
-                  </div>
-                </div>
-                <div class="stars mb-2" aria-label="5 de 5 estrelas">★★★★★</div>
-                <blockquote class="mb-3">"O planejamento digital me mostrou o resultado antes de começar. Passou muito mais confiança."</blockquote>
-                <p class="review-card__name mb-0">Juliana Prado</p>
-                <p class="review-card__meta">Avaliação no Google · Alinhadores</p>
+        <div class="mt-5" data-reveal>
+          <!-- Slide 1 -->
+          <div class="review-slide is-active" data-review-slide="0">
+            <div class="review-video">
+              <img src="img/patient-1.png" alt="Depoimento em vídeo de Rafael Almeida" />
+              <button type="button" class="review-video__play" aria-label="Reproduzir depoimento de Rafael Almeida">
+                <span><i class="bi bi-play-fill"></i></span>
+              </button>
+              <div class="review-video__caption glass-dark">
+                <p class="review-video__caption-name">Rafael Almeida</p>
+                <p class="review-video__caption-role">Alinhadores invisíveis</p>
               </div>
             </div>
 
-            <div class="swiper-slide">
-              <div class="review-card card border p-4">
-                <div class="review-card__video">
-                  <img src="https://images.pexels.com/photos/6193633/pexels-photo-6193633.jpeg?auto=compress&cs=tinysrgb&w=480" alt="Miniatura de vídeo depoimento de paciente" />
-                  <div class="review-card__play">
-                    <span><i class="bi bi-play-fill"></i></span>
-                  </div>
+            <div class="review-text glass-dark">
+              <i class="bi bi-quote"></i>
+              <p>&ldquo;Em 7 meses meu sorriso mudou completamente. O escaneamento 3D é impressionante — vi o resultado final antes mesmo de começar.&rdquo;</p>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <div class="review-text__footer">
+                <div class="review-dots" id="review-dots"></div>
+                <div class="review-nav">
+                  <button type="button" class="review-nav__prev" aria-label="Avaliação anterior" data-review-prev>
+                    <i class="bi bi-chevron-left"></i>
+                  </button>
+                  <button type="button" class="review-nav__next" aria-label="Próxima avaliação" data-review-next>
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
                 </div>
-                <div class="stars mb-2" aria-label="5 de 5 estrelas">★★★★★</div>
-                <blockquote class="mb-3">"Escaneamento super rápido, sem aquela moldagem incômoda. Recomendo demais a clínica."</blockquote>
-                <p class="review-card__name mb-0">Rafael Costa</p>
-                <p class="review-card__meta">Avaliação no Google · Scanner 3D</p>
               </div>
             </div>
-
-            <div class="swiper-slide">
-              <div class="review-card card border p-4">
-                <div class="review-card__video">
-                  <img src="https://images.pexels.com/photos/36766913/pexels-photo-36766913.jpeg?auto=compress&cs=tinysrgb&w=480" alt="Miniatura de vídeo depoimento de paciente" />
-                  <div class="review-card__play">
-                    <span><i class="bi bi-play-fill"></i></span>
-                  </div>
-                </div>
-                <div class="stars mb-2" aria-label="5 de 5 estrelas">★★★★★</div>
-                <blockquote class="mb-3">"Fiz o Digital Smile Design e já vi como ia ficar antes de decidir. Sensacional."</blockquote>
-                <p class="review-card__name mb-0">Amanda Reis</p>
-                <p class="review-card__meta">Avaliação no Google · DSD</p>
-              </div>
-            </div>
-
           </div>
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+
+          <!-- Slide 2 -->
+          <div class="review-slide" data-review-slide="1">
+            <div class="review-video">
+              <img src="img/patient-2.png" alt="Depoimento em vídeo de Juliana Costa" />
+              <button type="button" class="review-video__play" aria-label="Reproduzir depoimento de Juliana Costa">
+                <span><i class="bi bi-play-fill"></i></span>
+              </button>
+              <div class="review-video__caption glass-dark">
+                <p class="review-video__caption-name">Juliana Costa</p>
+                <p class="review-video__caption-role">Lentes de contato dental</p>
+              </div>
+            </div>
+
+            <div class="review-text glass-dark">
+              <i class="bi bi-quote"></i>
+              <p>&ldquo;O Digital Smile Design me deu total confiança. Aprovei cada detalhe na tela e o resultado ficou idêntico ao projeto. Recomendo demais!&rdquo;</p>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <div class="review-text__footer">
+                <div class="review-dots"></div>
+                <div class="review-nav">
+                  <button type="button" class="review-nav__prev" aria-label="Avaliação anterior" data-review-prev>
+                    <i class="bi bi-chevron-left"></i>
+                  </button>
+                  <button type="button" class="review-nav__next" aria-label="Próxima avaliação" data-review-next>
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="review-slide" data-review-slide="2">
+            <div class="review-video">
+              <img src="img/patient-3.png" alt="Depoimento em vídeo de Marina Ribeiro" />
+              <button type="button" class="review-video__play" aria-label="Reproduzir depoimento de Marina Ribeiro">
+                <span><i class="bi bi-play-fill"></i></span>
+              </button>
+              <div class="review-video__caption glass-dark">
+                <p class="review-video__caption-name">Marina Ribeiro</p>
+                <p class="review-video__caption-role">Clareamento a laser</p>
+              </div>
+            </div>
+
+            <div class="review-text glass-dark">
+              <i class="bi bi-quote"></i>
+              <p>&ldquo;Atendimento impecável e super tecnológico. Fiz o clareamento a laser em uma sessão e saí com o sorriso dos meus sonhos.&rdquo;</p>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <div class="review-text__footer">
+                <div class="review-dots"></div>
+                <div class="review-nav">
+                  <button type="button" class="review-nav__prev" aria-label="Avaliação anterior" data-review-prev>
+                    <i class="bi bi-chevron-left"></i>
+                  </button>
+                  <button type="button" class="review-nav__next" aria-label="Próxima avaliação" data-review-next>
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer pt-5">
-    <div class="container">
-      <div class="site-footer__grid row gy-5 pb-5">
-        <div class="col-md-4">
-          <a href="#inicio" class="navbar-brand d-inline-block mb-3">Digital <span>Smile</span> Clinic</a>
-          <ul class="contact-list list-unstyled">
+  <footer class="site-footer">
+    <!-- CTA -->
+    <section id="avaliacao" class="container pt-4">
+      <div class="cta-band" data-reveal>
+        <div class="cta-band__blob cta-band__blob--a" aria-hidden="true"></div>
+        <div class="cta-band__blob cta-band__blob--b" aria-hidden="true"></div>
+        <div class="cta-band__content">
+          <h2>Pronto para conhecer seu novo sorriso?</h2>
+          <p>Faça sua Avaliação Digital 3D e veja a simulação do resultado ainda na primeira consulta.</p>
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Quero%20agendar%20minha%20avalia%C3%A7%C3%A3o%20digital%203D." target="_blank" rel="noopener noreferrer" class="btn btn-cyan rounded-4">
+            <i class="bi bi-telephone"></i>
+            Agendar via WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="container py-5">
+      <div class="row gy-5">
+        <div class="col-md-6 col-lg-3">
+          <a href="#top" class="site-footer__brand">
+            <span class="site-header__logo"><i class="bi bi-upc-scan"></i></span>
+            <span class="site-header__name">
+              Digital Smile
+              <span class="site-header__tag">CLINIC</span>
+            </span>
+          </a>
+          <p class="site-footer__desc">Odontologia digital avançada: alinhadores invisíveis, lentes, implantes e planejamento 3D.</p>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <h3>Endereço</h3>
+          <p class="site-footer__address">
+            <i class="bi bi-geo-alt"></i>
+            <span>Av. Paulista, 1000 — 12º andar<br />Bela Vista, São Paulo — SP</span>
+          </p>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Av.+Paulista+1000+Sao+Paulo" target="_blank" rel="noopener noreferrer" class="btn btn-outline-card btn-sm rounded-3 site-footer__route">
+            <i class="bi bi-compass"></i>
+            Traçar rota no Google Maps
+          </a>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <h3>Horário</h3>
+          <ul class="site-footer__hours">
             <li>
-              <i class="bi bi-geo-alt icon"></i>
-              <span>Av. Digital, 450 — São Paulo, SP</span>
+              <span class="site-footer__hours-day"><i class="bi bi-clock"></i> Segunda a Sexta</span>
+              <span class="site-footer__hours-time">08h — 20h</span>
             </li>
             <li>
-              <i class="bi bi-telephone icon"></i>
-              <span>(11) 0000-0000</span>
+              <span class="site-footer__hours-day"><i class="bi bi-clock"></i> Sábado</span>
+              <span class="site-footer__hours-time">09h — 14h</span>
+            </li>
+            <li>
+              <span class="site-footer__hours-day"><i class="bi bi-clock"></i> Domingo</span>
+              <span class="site-footer__hours-time">Fechado</span>
             </li>
           </ul>
         </div>
 
-        <div class="col-md-4">
-          <h4>Horário</h4>
-          <p class="mb-0">Segunda a sexta · 08h às 20h<br />Sábado · 08h às 14h</p>
-        </div>
-
-        <div class="col-md-4">
-          <h4>Localização</h4>
-          <a href="https://www.google.com/maps/dir/?api=1&destination=Avenida+Paulista+São+Paulo" target="_blank" rel="noopener" class="btn btn-outline-light btn-sm rounded-pill">
-            Traçar rota no Google Maps
-          </a>
+        <div class="col-md-6 col-lg-3">
+          <h3>Contato</h3>
+          <ul class="site-footer__contact">
+            <li>
+              <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Quero%20agendar%20minha%20avalia%C3%A7%C3%A3o%20digital%203D." target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-telephone"></i> (11) 99999-9999
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contato@digitalsmileclinic.com.br">
+                <i class="bi bi-envelope"></i> contato@digitalsmile.com.br
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
 
-      <div class="site-footer__bottom py-4">
+      <div class="site-footer__bottom">
         <p class="mb-0">&copy; 2026 Digital Smile Clinic. Todos os direitos reservados.</p>
+        <p class="mb-0">CRO-SP 00000 · Responsável Técnico Dr. Digital</p>
       </div>
     </div>
   </footer>
 
-  <!-- FLOATING WHATSAPP BUTTON -->
-  <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
-    <i class="bi bi-whatsapp icon"></i>
-  </a>
+  <!-- WIDGET FLUTUANTE DO WHATSAPP -->
+  <div class="whatsapp-widget">
+    <div class="whatsapp-panel glass" id="whatsapp-panel">
+      <div class="whatsapp-panel__header">
+        <div class="whatsapp-panel__who">
+          <span class="whatsapp-panel__avatar"><i class="bi bi-whatsapp"></i></span>
+          <div>
+            <p class="whatsapp-panel__name">Digital Smile Clinic</p>
+            <p class="whatsapp-panel__status">Online agora</p>
+          </div>
+        </div>
+        <button type="button" class="whatsapp-panel__close" id="whatsapp-close" aria-label="Fechar">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <p class="whatsapp-panel__message">Olá! 👋 Quer agendar sua Avaliação Digital 3D? Fale com a gente agora.</p>
+      <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Quero%20agendar%20minha%20avalia%C3%A7%C3%A3o%20digital%203D." target="_blank" rel="noopener noreferrer" class="whatsapp-panel__cta">
+        <i class="bi bi-whatsapp"></i>
+        Iniciar conversa
+      </a>
+    </div>
+
+    <button type="button" class="whatsapp-fab" id="whatsapp-fab" aria-label="Abrir WhatsApp">
+      <i class="bi bi-whatsapp"></i>
+    </button>
+  </div>
 
   <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
-  <script src="vendor/swiper/swiper-bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

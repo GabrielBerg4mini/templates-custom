@@ -1,28 +1,172 @@
 @use 'variables' as v;
+@use 'mixins' as m;
 
-.navbar {
-  background: rgba(10, 17, 40, 0.7);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid v.$glass-border;
-  padding-block: 1rem;
-}
+// Header fixo — transparente no topo, vira "glass" ao rolar (JS alterna
+// .is-scrolled em #site-header, espelhando o estado `scrolled` do v0).
 
-.navbar-brand {
-  font-family: v.$font-heading;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: v.$color-text;
+.site-header {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 1050;
+  padding-block: 1.25rem;
+  transition: padding v.$transition-base;
 
-  span {
-    color: v.$color-cyan;
+  &.is-scrolled {
+    padding-block: 0.75rem;
   }
 }
 
-.nav-link {
-  font-size: 0.9rem;
-  color: v.$color-text-muted;
+.site-header__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  background: transparent;
+  transition: background v.$transition-base, box-shadow v.$transition-base, border-color v.$transition-base;
+  border: 1px solid transparent;
 
-  &:hover {
-    color: v.$color-text;
+  .is-scrolled & {
+    background: v.$glass-bg;
+    backdrop-filter: blur(v.$glass-blur) saturate(140%);
+    -webkit-backdrop-filter: blur(v.$glass-blur) saturate(140%);
+    border-color: v.$glass-border;
+    box-shadow: v.$shadow-soft;
+  }
+
+  @include m.breakpoint(sm) {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+.site-header__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+}
+
+.site-header__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.85rem;
+  background: v.$color-navy;
+  color: v.$color-cyan;
+  box-shadow: v.$shadow-glow;
+  font-size: 1.1rem;
+}
+
+.site-header__name {
+  font-family: v.$font-heading;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: v.$color-navy;
+}
+
+.site-header__tag {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  color: v.$color-cyan;
+}
+
+.site-header__nav {
+  align-items: center;
+  gap: 2rem;
+
+  a {
+    position: relative;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(10, 22, 51, 0.7);
+    text-decoration: none;
+    transition: color v.$transition-base;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -0.35rem;
+      width: 0;
+      height: 2px;
+      background: v.$color-cyan;
+      transition: width v.$transition-base;
+    }
+
+    &:hover {
+      color: v.$color-navy;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.site-header__cta {
+  white-space: nowrap;
+}
+
+.site-header__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid v.$color-border;
+  background: v.$color-card;
+  color: v.$color-navy;
+  font-size: 1.15rem;
+}
+
+.site-header__mobile {
+  display: none;
+  margin-top: 0.5rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  flex-direction: column;
+  gap: 0.15rem;
+
+  &.is-open {
+    display: flex;
+  }
+
+  a {
+    border-radius: 0.6rem;
+    padding: 0.65rem 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(10, 22, 51, 0.8);
+    text-decoration: none;
+
+    &:hover {
+      background: v.$color-secondary;
+    }
+  }
+
+  &-cta {
+    margin-top: 0.5rem;
+    text-align: center;
+    border-radius: 0.6rem;
+    padding: 0.65rem 0.75rem;
+    background: v.$color-navy;
+    color: v.$color-navy-foreground !important;
+    font-weight: 600;
   }
 }

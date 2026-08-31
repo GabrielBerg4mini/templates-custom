@@ -1,0 +1,86 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// FAQ — acordeão vanilla (sem dependência), controlado por js/main.js
+// via classe .is-open + [hidden] no painel de resposta.
+.faq {
+  padding-block: 4.5rem;
+
+  @include m.breakpoint(lg) {
+    padding-block: 6.5rem;
+  }
+}
+
+.faq-list {
+  max-width: 46rem;
+  border-top: 1px solid v.$color-line-strong;
+}
+
+.faq-item {
+  border-bottom: 1px solid v.$color-line-strong;
+}
+
+.faq-item__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: 1.35rem 0;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: v.$color-ink;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid v.$color-green;
+    outline-offset: 2px;
+  }
+}
+
+.faq-item__icon {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background: v.$color-ink;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  &::before {
+    width: 100%;
+    height: 1.5px;
+  }
+
+  &::after {
+    width: 1.5px;
+    height: 100%;
+  }
+}
+
+.faq-item.is-open .faq-item__icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  opacity: 0;
+}
+
+.faq-item__panel {
+  padding-bottom: 1.5rem;
+  max-width: 42rem;
+
+  p {
+    color: v.$color-ink-soft;
+    font-size: 0.94rem;
+    margin: 0;
+  }
+}

@@ -1,23 +1,136 @@
 @use 'variables' as v;
 
-.whatsapp-float {
+// Widget flutuante do WhatsApp — botão + painel de chat "glass" que abre
+// por cima, como no componente WhatsAppWidget do v0.
+
+.whatsapp-widget {
   position: fixed;
-  right: calc(v.$spacing-unit * 3);
-  bottom: calc(v.$spacing-unit * 3);
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: v.$color-whatsapp;
-  color: v.$color-white;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 1040;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.whatsapp-panel {
+  display: none;
+  width: 18rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: v.$shadow-soft;
+
+  &.is-open {
+    display: block;
+  }
+}
+
+.whatsapp-panel__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.whatsapp-panel__who {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.whatsapp-panel__avatar {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 12px 30px -10px rgba(37, 211, 102, 0.6);
-  z-index: 200;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: v.$color-whatsapp;
+  color: v.$color-white;
+  flex-shrink: 0;
+}
+
+.whatsapp-panel__name {
+  font-family: v.$font-heading;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: v.$color-navy;
+  margin-bottom: 0;
+}
+
+.whatsapp-panel__status {
+  font-size: 0.75rem;
+  color: v.$color-cyan;
+  margin-bottom: 0;
+}
+
+.whatsapp-panel__close {
+  border: 0;
+  background: transparent;
+  color: v.$color-muted-foreground;
+  font-size: 1rem;
+  line-height: 1;
+
+  &:hover {
+    color: v.$color-navy;
+  }
+}
+
+.whatsapp-panel__message {
+  margin-top: 0.75rem;
+  border-radius: 0.75rem;
+  background: v.$color-secondary;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.88rem;
+  color: rgba(10, 22, 51, 0.8);
+}
+
+.whatsapp-panel__cta {
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.75rem;
+  background: v.$color-whatsapp;
+  color: v.$color-white;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
   transition: transform v.$transition-base;
 
-  .icon {
-    font-size: 28px;
+  &:hover {
+    color: v.$color-white;
+    transform: translateY(-2px);
+  }
+}
+
+.whatsapp-fab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%;
+  background: v.$color-whatsapp;
+  color: v.$color-white;
+  font-size: 1.65rem;
+  box-shadow: 0 12px 30px -10px rgba(37, 211, 102, 0.6);
+  border: 0;
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition: transform 0.5s ease, opacity 0.5s ease, scale 0.3s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    transform: scale(1.06);
   }
 
   &::before {
@@ -28,10 +141,6 @@
     background: v.$color-whatsapp;
     animation: whatsapp-pulse 2.2s ease-out infinite;
     z-index: -1;
-  }
-
-  &:hover {
-    transform: scale(1.06);
   }
 }
 

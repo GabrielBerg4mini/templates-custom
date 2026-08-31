@@ -1,0 +1,70 @@
+@use 'variables' as v;
+
+.faq {
+  background: v.$color-white;
+  padding-block: clamp(4.5rem, 9vw, 7rem);
+}
+
+.faq-list {
+  max-width: 780px;
+}
+
+.faq-item {
+  border-top: 1px solid v.$color-border;
+
+  &:last-child {
+    border-bottom: 1px solid v.$color-border;
+  }
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    width: 100%;
+    padding-block: 1.35rem;
+    background: none;
+    border: none;
+    text-align: left;
+    font-family: v.$font-heading;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: v.$color-black;
+    cursor: pointer;
+
+    .bi {
+      flex-shrink: 0;
+      color: v.$color-blue;
+      transition: transform v.$transition-base;
+    }
+
+    &:hover {
+      color: v.$color-blue;
+    }
+  }
+
+  &.is-open &__trigger .bi {
+    transform: rotate(180deg);
+  }
+
+  &__answer-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
+  }
+
+  &.is-open &__answer-wrap {
+    grid-template-rows: 1fr;
+  }
+
+  &__answer {
+    overflow: hidden;
+  }
+
+  &__answer p {
+    color: v.$color-text-muted;
+    max-width: 62ch;
+    padding-bottom: 1.35rem;
+    margin: 0;
+  }
+}

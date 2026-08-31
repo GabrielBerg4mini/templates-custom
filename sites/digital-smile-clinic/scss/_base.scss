@@ -1,24 +1,24 @@
 @use 'variables' as v;
 
 // O Bootstrap (via _theme-bootstrap.scss) cuida do reset, tipografia,
-// grid, links e imagens. Aqui só os utilitários que faltam.
+// grid, links e imagens. Aqui só os utilitários que faltam / vêm do v0.
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background:
-    radial-gradient(circle at 12% 8%, rgba(34, 211, 238, 0.12), transparent 45%),
-    radial-gradient(circle at 88% 65%, rgba(34, 211, 238, 0.08), transparent 50%),
-    v.$color-navy;
+  background: v.$color-background;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: v.$font-heading;
 }
 
 .eyebrow {
-  font-family: v.$font-base;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: v.$color-cyan;
   margin-bottom: 0.75rem;
@@ -34,41 +34,115 @@ body {
   }
 
   h2 {
-    font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+    font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+    font-weight: 700;
+    color: v.$color-navy;
   }
 
   &__text {
-    color: v.$color-text-muted;
+    color: v.$color-muted-foreground;
     margin-bottom: 0;
   }
 }
 
-// Cards do Bootstrap já herdam $card-bg translúcido; aqui aplicamos
-// o desfoque por trás (backdrop-filter não tem variável Sass no Bootstrap).
-.card {
-  backdrop-filter: blur(v.$glass-blur);
+// Utilitários "glass" — equivalentes às classes .glass / .glass-dark do globals.css
+.glass {
+  background: v.$glass-bg;
+  backdrop-filter: blur(v.$glass-blur) saturate(140%);
+  -webkit-backdrop-filter: blur(v.$glass-blur) saturate(140%);
+  border: 1px solid v.$glass-border;
+}
+
+.glass-dark {
+  background: v.$glass-dark-bg;
+  backdrop-filter: blur(v.$glass-dark-blur) saturate(140%);
+  -webkit-backdrop-filter: blur(v.$glass-dark-blur) saturate(140%);
+  border: 1px solid v.$glass-dark-border;
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 24px rgba(94, 224, 240, 0.55);
+}
+
+.shadow-glow {
+  box-shadow: v.$shadow-glow;
+}
+
+// Fundo em grade sutil usado atrás do hero (grid-tech no v0)
+.grid-tech {
+  background-image:
+    linear-gradient(to right, rgba(10, 22, 51, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(10, 22, 51, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
 }
 
 .btn-cyan {
   background: v.$color-cyan;
   border: none;
-  color: v.$color-navy;
-  font-weight: 600;
+  color: v.$color-cyan-foreground;
+  font-weight: 700;
   box-shadow: v.$shadow-glow;
+  transition: transform v.$transition-base, background v.$transition-base;
 
   &:hover {
-    background: v.$color-cyan-light;
+    background: v.$color-cyan;
+    color: v.$color-cyan-foreground;
+    transform: translateY(-2px);
+  }
+}
+
+.btn-navy {
+  background: v.$color-navy;
+  border: none;
+  color: v.$color-navy-foreground;
+  font-weight: 600;
+  transition: transform v.$transition-base;
+
+  &:hover {
+    background: v.$color-navy;
+    color: v.$color-navy-foreground;
+    transform: translateY(-2px);
+  }
+}
+
+.btn-outline-card {
+  background: v.$color-card;
+  border: 1px solid v.$color-border;
+  color: v.$color-navy;
+  font-weight: 600;
+
+  &:hover {
+    background: v.$color-secondary;
     color: v.$color-navy;
+    border-color: v.$color-border;
   }
 }
 
 [data-reveal] {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 
   &.is-visible {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }

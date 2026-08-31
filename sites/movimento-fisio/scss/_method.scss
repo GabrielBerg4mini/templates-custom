@@ -1,0 +1,69 @@
+@use 'variables' as v;
+
+// Seção "Método" — a composição diagonal é o elemento estrutural, não
+// decoração pontual: o painel azul corta o fundo preto na diagonal e
+// carrega as métricas de demonstração do estúdio.
+.method {
+  position: relative;
+  background: v.$color-black;
+  color: v.$color-white;
+  padding-block: clamp(4.5rem, 9vw, 7rem);
+  overflow: hidden;
+
+  .section-heading h2 {
+    color: v.$color-white;
+  }
+
+  .editorial-list {
+    li {
+      border-top-color: rgba(255, 255, 255, 0.14);
+
+      &:last-child {
+        border-bottom-color: rgba(255, 255, 255, 0.14);
+      }
+    }
+
+    &__index {
+      color: v.$color-white;
+      opacity: 0.5;
+    }
+
+    &__body p {
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    &__body h3 {
+      color: v.$color-white;
+    }
+  }
+
+  &__panel {
+    position: relative;
+    background: v.$color-blue;
+    color: v.$color-white;
+    padding: clamp(2.25rem, 4vw, 3.25rem) clamp(1.75rem, 4vw, 2.75rem);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    clip-path: polygon(14% 0, 100% 0, 100% 100%, 0% 100%);
+
+    .stat + .stat {
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.22);
+    }
+  }
+
+  @media (max-width: 767px) {
+    &__panel {
+      clip-path: none;
+    }
+  }
+
+  &__disclaimer {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
+  }
+}

@@ -1,0 +1,217 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// O Bootstrap (via _theme-bootstrap.scss) já cuida do reset, tipografia
+// base, links, imagens e grid. Aqui ficam tokens de composição
+// reutilizados por várias seções: rótulos técnicos, linhas, botões e
+// o comportamento de reveal-on-scroll.
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+// Âncoras de navegação — compensam o header fixo.
+#especialidade,
+#tratamentos,
+#processo,
+#equipe,
+#faq,
+#agendamento {
+  scroll-margin-top: 92px;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background: v.$color-green;
+  color: v.$color-white;
+}
+
+// Rótulo técnico (IBM Plex Mono, caixa alta) precedido por um traço curto —
+// o "tick" de precisão que se repete em toda a página.
+.eyebrow-mono {
+  @include m.mono-label;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: v.$color-green;
+  margin-bottom: 1rem;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1px;
+    background: v.$color-green;
+  }
+}
+
+.section-heading {
+  max-width: 640px;
+  margin-bottom: 3rem;
+
+  &--center {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  &__text {
+    color: v.$color-ink-soft;
+    font-size: 1.02rem;
+    max-width: 52ch;
+  }
+}
+
+// Linha horizontal fina — elemento gráfico estrutural da direção.
+.rule {
+  border: none;
+  border-top: 1px solid v.$color-line;
+  margin: 0;
+}
+
+// Número técnico grande usado como indicador de resultado/processo
+// (tratamento tipográfico, não card).
+.figure-number {
+  font-family: v.$font-heading;
+  font-weight: 600;
+  color: v.$color-ink;
+  line-height: 1;
+}
+
+// Linha de estatísticas dividida por traços verticais — usada no hero e
+// na seção de especialidade em vez de cards repetidos.
+.stat-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  border-top: 1px solid v.$color-line;
+
+  &__item {
+    padding: 1.1rem 1.5rem 1.1rem 0;
+    margin-right: 1.5rem;
+    border-right: 1px solid v.$color-line;
+
+    &:last-child {
+      border-right: none;
+      margin-right: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__number {
+    display: block;
+    font-family: v.$font-heading;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: v.$color-ink;
+  }
+
+  &__label {
+    @include m.mono-label;
+    color: v.$color-ink-faint;
+    display: block;
+    margin-top: 0.3rem;
+  }
+}
+
+// Botões — cantos retos, sem sombra, hierarquia por preenchimento vs. linha.
+// Seletor com tag (a.btn-cta) para vencer regras de contexto (ex.: cor
+// herdada de containers escuros) sem depender só da classe solta.
+a.btn-cta,
+button.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: v.$color-green;
+  color: v.$color-white !important;
+  border: 1px solid v.$color-green;
+  border-radius: 2px;
+  padding: 0.85rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+
+  &:hover {
+    background: v.$color-green-dark;
+    border-color: v.$color-green-dark;
+    color: v.$color-white !important;
+  }
+
+  &:focus-visible {
+    outline: 2px solid v.$color-green;
+    outline-offset: 2px;
+  }
+}
+
+a.btn-line,
+button.btn-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: transparent;
+  color: v.$color-ink !important;
+  border: 1px solid v.$color-line-strong;
+  border-radius: 2px;
+  padding: 0.85rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    border-color: v.$color-ink;
+    background: v.$color-bg-soft;
+    color: v.$color-ink !important;
+  }
+
+  &:focus-visible {
+    outline: 2px solid v.$color-ink;
+    outline-offset: 2px;
+  }
+}
+
+// Reveal-on-scroll (aplicado via data-reveal + IntersectionObserver em js/main.js)
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Linha que "desenha" ao entrar na viewport — a assinatura de motion da
+// direção O2 (precisão), reaproveitada no hero e no diagrama de processo.
+[data-line-draw] {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+
+  &.is-visible {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-line-draw] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

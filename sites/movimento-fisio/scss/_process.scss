@@ -1,0 +1,53 @@
+@use 'variables' as v;
+
+.process {
+  background: v.$color-off-white;
+  padding-block: clamp(4.5rem, 9vw, 7rem);
+
+  &__timeline {
+    position: relative;
+    max-width: 720px;
+    padding-left: 3rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0.65rem;
+      top: 0.4rem;
+      bottom: 0.4rem;
+      width: 2px;
+      background: v.$color-border;
+    }
+  }
+
+  &__step {
+    position: relative;
+    padding-bottom: clamp(2rem, 4vw, 3rem);
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &__marker {
+    position: absolute;
+    left: -3rem;
+    top: 0.15rem;
+    width: 1.4rem;
+    height: 1.4rem;
+    background: v.$color-blue;
+    clip-path: polygon(20% 0, 100% 0, 80% 100%, 0 100%);
+  }
+
+  &__step h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+
+  &__step p {
+    color: v.$color-text-muted;
+    max-width: 52ch;
+    margin: 0;
+  }
+}

@@ -1,10 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
   initRevealOnScroll();
   initSwipers();
+  initHeaderScrollState();
 });
 
 // Bootstrap (navbar, collapse, etc.) já cuida de si mesmo via data-bs-*.
-// Aqui só ficam: reveal-on-scroll (Bootstrap não tem) e o init do Swiper.
+// Aqui só ficam: reveal-on-scroll, o estado do header ao rolar (v0 troca o
+// fundo do header por um vidro translúcido após 24px de scroll) e o init
+// do Swiper.
+
+function initHeaderScrollState() {
+  const header = document.querySelector('[data-header]');
+  if (!header) return;
+
+  const onScroll = () => {
+    header.classList.toggle('is-scrolled', window.scrollY > 24);
+  };
+
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+}
 
 function initRevealOnScroll() {
   const items = document.querySelectorAll('[data-reveal]');

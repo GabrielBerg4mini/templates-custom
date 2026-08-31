@@ -3,22 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vanguard Advocacia — Direito Corporativo Estratégico</title>
-  <meta name="description" content="Escritório de advocacia corporativa especializado em direito tributário, fusões e aquisições, proteção patrimonial e societário. Blindagem jurídica para o seu negócio." />
+  <title>Vanguard Advocacia | Blindagem Jurídica e Inteligência Estratégica</title>
+  <meta name="description" content="Escritório de advocacia empresarial de alta performance. Blindagem jurídica, otimização tributária e inteligência estratégica para proteger e escalar o seu negócio." />
+  <meta name="theme-color" content="#16191d" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
 
   <!-- HEADER -->
-  <nav class="navbar navbar-expand-lg sticky-top">
+  <nav class="navbar navbar-expand-lg" id="mainNavbar">
     <div class="container">
-      <a class="navbar-brand" href="#inicio">
-        <i class="bi bi-shield-check navbar-brand__emblem"></i>
-        Vanguard Advocacia
+      <a class="navbar-brand" href="#top" aria-label="Vanguard Advocacia - início">
+        <span class="navbar-brand__emblem" aria-hidden="true"><i class="bi bi-shield-check"></i></span>
+        <span class="navbar-brand__wordmark">
+          <span class="navbar-brand__name">Vanguard</span>
+          <span class="navbar-brand__sub">Advocacia</span>
+        </span>
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
@@ -27,13 +31,14 @@
       </button>
 
       <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
           <li class="nav-item"><a class="nav-link" href="#atuacao">Atuação Empresarial</a></li>
           <li class="nav-item"><a class="nav-link" href="#contencioso">Contencioso</a></li>
           <li class="nav-item"><a class="nav-link" href="#socios">Sócios</a></li>
           <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-          <li class="nav-item">
-            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-steel btn-sm ms-lg-2">
+          <li class="nav-item ms-lg-3">
+            <a href="#contato" class="navbar-cta">
+              <i class="bi bi-shield-check icon"></i>
               Atendimento VIP
             </a>
           </li>
@@ -44,25 +49,47 @@
 
   <main>
     <!-- HERO -->
-    <section class="hero" id="inicio">
+    <section class="hero" id="top">
+      <div class="hero__bg">
+        <img src="img/hero-office.jpg" alt="" aria-hidden="true" />
+      </div>
       <div class="container">
         <div class="row">
-          <div class="col-lg-8" data-reveal>
-            <p class="eyebrow">Direito corporativo estratégico</p>
-            <h1 class="fw-bold">Blindagem jurídica e inteligência estratégica para o seu negócio</h1>
-            <p class="hero__subtitle">
-              Estruturação tributária, redução de riscos e proteção patrimonial para empresas que não
-              podem se dar ao luxo de improvisar — com times dedicados e resposta ágil em cada demanda.
-            </p>
-            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-steel btn-lg mt-3">
-              <i class="bi bi-whatsapp icon"></i>
-              Falar com Especialista no WhatsApp
-            </a>
-            <ul class="hero__trust list-unstyled">
-              <li>Atendimento executivo dedicado</li>
-              <li>NDA disponível antes da consulta</li>
-              <li>Times especializados por área</li>
-            </ul>
+          <div class="col-lg-9 col-xl-8">
+            <div class="hero__content" data-reveal>
+              <span class="hero__badge">
+                <i class="bi bi-shield-check icon"></i>
+                Advocacia empresarial de alta performance
+              </span>
+
+              <h1>
+                Blindagem jurídica e
+                <span class="text-steel-gradient">inteligência estratégica</span>
+                para o seu negócio
+              </h1>
+
+              <p class="hero__subtitle">
+                Reduzimos riscos, protegemos patrimônio e otimizamos a carga tributária da sua empresa
+                com uma atuação preventiva, técnica e absolutamente confidencial.
+              </p>
+
+              <div class="hero__actions">
+                <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20especialista%20da%20Vanguard%20Advocacia." target="_blank" rel="noopener noreferrer" class="btn-steel">
+                  <i class="bi bi-whatsapp icon"></i>
+                  Falar com Especialista no WhatsApp
+                  <i class="bi bi-arrow-right icon"></i>
+                </a>
+                <a href="#atuacao" class="btn-outline-hairline">
+                  Áreas de atuação
+                </a>
+              </div>
+
+              <ul class="hero__trust list-unstyled">
+                <li>Sigilo absoluto</li>
+                <li>Atuação nacional</li>
+                <li>Conformidade LGPD</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -71,80 +98,70 @@
     <!-- PRACTICE AREAS -->
     <section class="practice-areas py-5 py-lg-6" id="atuacao">
       <div class="container">
-        <div class="section-heading section-heading--center" data-reveal>
-          <p class="eyebrow">Áreas de Atuação</p>
-          <h2>Cobertura jurídica completa para o seu negócio</h2>
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Atuação Empresarial</p>
+          <h2>Especialidades técnicas para cada frente do seu negócio</h2>
         </div>
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
-          <div class="col" data-reveal>
-            <div class="practice-module card border p-3">
-              <div class="practice-module__icon">
-                <i class="bi bi-percent"></i>
-              </div>
-              <div>
+        <div class="practice-grid" data-reveal>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-1">
+            <div class="col">
+              <div class="practice-module">
+                <div class="practice-module__icon">
+                  <i class="bi bi-bank"></i>
+                </div>
                 <h3>Direito Tributário</h3>
-                <p>Planejamento fiscal e defesa em autuações para reduzir carga tributária com segurança.</p>
+                <p>Planejamento e recuperação de créditos para reduzir a carga fiscal com segurança jurídica.</p>
               </div>
             </div>
-          </div>
 
-          <div class="col" data-reveal>
-            <div class="practice-module card border p-3">
-              <div class="practice-module__icon">
-                <i class="bi bi-graph-up-arrow"></i>
-              </div>
-              <div>
+            <div class="col" id="contencioso">
+              <div class="practice-module">
+                <div class="practice-module__icon">
+                  <i class="bi bi-sign-merge-right"></i>
+                </div>
                 <h3>Fusões &amp; Aquisições</h3>
-                <p>Due diligence e estruturação de operações societárias complexas, do início ao closing.</p>
+                <p>Estruturação de M&amp;A, due diligence e negociação de operações societárias complexas.</p>
               </div>
             </div>
-          </div>
 
-          <div class="col" data-reveal>
-            <div class="practice-module card border p-3">
-              <div class="practice-module__icon">
-                <i class="bi bi-shield-lock"></i>
-              </div>
-              <div>
+            <div class="col">
+              <div class="practice-module">
+                <div class="practice-module__icon">
+                  <i class="bi bi-shield-lock"></i>
+                </div>
                 <h3>Proteção Patrimonial</h3>
-                <p>Blindagem de ativos pessoais e corporativos frente a riscos e contingências.</p>
+                <p>Holdings, blindagem e sucessão para preservar o patrimônio de sócios e famílias.</p>
               </div>
             </div>
-          </div>
 
-          <div class="col" data-reveal>
-            <div class="practice-module card border p-3">
-              <div class="practice-module__icon">
-                <i class="bi bi-file-earmark-text"></i>
-              </div>
-              <div>
+            <div class="col">
+              <div class="practice-module">
+                <div class="practice-module__icon">
+                  <i class="bi bi-file-earmark-text"></i>
+                </div>
                 <h3>Contratos</h3>
-                <p>Elaboração e revisão de contratos empresariais com foco em mitigação de riscos.</p>
+                <p>Elaboração e revisão de contratos empresariais de alto valor com mitigação de riscos.</p>
               </div>
             </div>
-          </div>
 
-          <div class="col" data-reveal>
-            <div class="practice-module card border p-3">
-              <div class="practice-module__icon">
-                <i class="bi bi-briefcase"></i>
-              </div>
-              <div>
+            <div class="col">
+              <div class="practice-module">
+                <div class="practice-module__icon">
+                  <i class="bi bi-briefcase"></i>
+                </div>
                 <h3>Trabalhista B2B</h3>
-                <p>Prevenção e defesa em passivos trabalhistas para empresas de médio e grande porte.</p>
+                <p>Compliance trabalhista, terceirização e defesa estratégica em passivos corporativos.</p>
               </div>
             </div>
-          </div>
 
-          <div class="col" data-reveal>
-            <div class="practice-module card border p-3">
-              <div class="practice-module__icon">
-                <i class="bi bi-diagram-3"></i>
-              </div>
-              <div>
+            <div class="col">
+              <div class="practice-module">
+                <div class="practice-module__icon">
+                  <i class="bi bi-building"></i>
+                </div>
                 <h3>Societário</h3>
-                <p>Governança, reestruturação e acordos de sócios para negócios em crescimento.</p>
+                <p>Governança, acordos de sócios e reorganização de estruturas societárias.</p>
               </div>
             </div>
           </div>
@@ -152,26 +169,26 @@
       </div>
     </section>
 
-    <!-- NUMBERS & AUTHORITY -->
-    <section class="numbers-banner py-5" id="contencioso">
+    <!-- AUTHORITY STATS -->
+    <section class="numbers-banner">
       <div class="container">
-        <div class="row row-cols-1 row-cols-sm-3 g-4">
+        <div class="row row-cols-1 row-cols-sm-3">
           <div class="col" data-reveal>
             <div class="number-stat">
               <strong>R$ 50M+</strong>
-              <span>Economizados para clientes</span>
+              <span>Economizados em tributos para nossos clientes</span>
             </div>
           </div>
           <div class="col" data-reveal>
             <div class="number-stat">
               <strong>+200</strong>
-              <span>Empresas atendidas</span>
+              <span>Empresas atendidas em todo o território nacional</span>
             </div>
           </div>
           <div class="col" data-reveal>
             <div class="number-stat">
               <strong>98%</strong>
-              <span>Taxa de êxito</span>
+              <span>Taxa de êxito em teses e contencioso estratégico</span>
             </div>
           </div>
         </div>
@@ -181,52 +198,74 @@
     <!-- PARTNERS -->
     <section class="partners py-5 py-lg-6" id="socios">
       <div class="container">
-        <div class="section-heading section-heading--center" data-reveal>
+        <div class="section-heading" data-reveal>
           <p class="eyebrow">Sócios</p>
-          <h2>Quem lidera as suas causas</h2>
+          <h2>Advogados que lideram operações de alta complexidade</h2>
         </div>
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
           <div class="col" data-reveal>
-            <div class="partner-card">
-              <div class="partner-card__photo-wrap mb-3">
-                <img src="https://images.pexels.com/photos/38319082/pexels-photo-38319082.jpeg?auto=compress&cs=tinysrgb&w=480" alt="Retrato do Dr. Eduardo Vasconcelos" class="img-fluid rounded partner-card__photo" width="480" height="480" />
-                <span class="partner-card__linkedin">
+            <article class="partner-card">
+              <div class="partner-card__photo-wrap">
+                <img src="img/partner-1.jpg" alt="Retrato de Ricardo Vasconcelos" class="partner-card__photo" width="700" height="700" />
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Ricardo Vasconcelos" class="partner-card__linkedin">
                   <i class="bi bi-linkedin"></i>
-                </span>
+                </a>
               </div>
-              <h3>Dr. Eduardo Vasconcelos</h3>
-              <p class="partner-card__role">Sócio Fundador — Tributário</p>
-              <p class="partner-card__oab">OAB/SP 112.233</p>
-            </div>
+              <div class="partner-card__body">
+                <h3>Ricardo Vasconcelos</h3>
+                <p class="partner-card__role">Sócio Fundador · Tributário</p>
+                <p class="partner-card__credentials">OAB/SP 128.440 · LL.M. Direito Tributário (FGV)</p>
+              </div>
+            </article>
           </div>
 
           <div class="col" data-reveal>
-            <div class="partner-card">
-              <div class="partner-card__photo-wrap mb-3">
-                <img src="https://images.pexels.com/photos/8111814/pexels-photo-8111814.jpeg?auto=compress&cs=tinysrgb&w=480" alt="Retrato da Dra. Patrícia Guimarães" class="img-fluid rounded partner-card__photo" width="480" height="480" />
-                <span class="partner-card__linkedin">
+            <article class="partner-card">
+              <div class="partner-card__photo-wrap">
+                <img src="img/partner-2.jpg" alt="Retrato de Helena Marques" class="partner-card__photo" width="700" height="700" />
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Helena Marques" class="partner-card__linkedin">
                   <i class="bi bi-linkedin"></i>
-                </span>
+                </a>
               </div>
-              <h3>Dra. Patrícia Guimarães</h3>
-              <p class="partner-card__role">Sócia — Fusões &amp; Aquisições</p>
-              <p class="partner-card__oab">OAB/SP 223.344</p>
-            </div>
+              <div class="partner-card__body">
+                <h3>Helena Marques</h3>
+                <p class="partner-card__role">Sócia · M&amp;A e Societário</p>
+                <p class="partner-card__credentials">OAB/SP 201.882 · MBA Corporate Finance (Insper)</p>
+              </div>
+            </article>
           </div>
 
           <div class="col" data-reveal>
-            <div class="partner-card">
-              <div class="partner-card__photo-wrap mb-3">
-                <img src="https://images.pexels.com/photos/32907706/pexels-photo-32907706.jpeg?auto=compress&cs=tinysrgb&w=480" alt="Retrato do Dr. Felipe Andrade" class="img-fluid rounded partner-card__photo" width="480" height="480" />
-                <span class="partner-card__linkedin">
+            <article class="partner-card">
+              <div class="partner-card__photo-wrap">
+                <img src="img/partner-3.jpg" alt="Retrato de Eduardo Lins" class="partner-card__photo" width="700" height="700" />
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Eduardo Lins" class="partner-card__linkedin">
                   <i class="bi bi-linkedin"></i>
-                </span>
+                </a>
               </div>
-              <h3>Dr. Felipe Andrade</h3>
-              <p class="partner-card__role">Sócio — Societário</p>
-              <p class="partner-card__oab">OAB/SP 334.455</p>
-            </div>
+              <div class="partner-card__body">
+                <h3>Eduardo Lins</h3>
+                <p class="partner-card__role">Sócio · Contencioso Estratégico</p>
+                <p class="partner-card__credentials">OAB/RJ 156.771 · Mestre em Processo Civil (USP)</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col" data-reveal>
+            <article class="partner-card">
+              <div class="partner-card__photo-wrap">
+                <img src="img/partner-4.jpg" alt="Retrato de Carolina Prado" class="partner-card__photo" width="700" height="700" />
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Carolina Prado" class="partner-card__linkedin">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+              </div>
+              <div class="partner-card__body">
+                <h3>Carolina Prado</h3>
+                <p class="partner-card__role">Sócia · Proteção Patrimonial</p>
+                <p class="partner-card__credentials">OAB/SP 233.109 · Esp. Planejamento Sucessório</p>
+              </div>
+            </article>
           </div>
         </div>
       </div>
@@ -234,47 +273,93 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer pt-5" id="contato">
-    <div class="container">
-      <div class="site-footer__grid row gy-5 pb-5">
-        <div class="col-md-6">
-          <ul class="contact-list list-unstyled">
-            <li>
-              <i class="bi bi-geo-alt icon"></i>
-              <span>Av. Faria Lima, 2500 — Torre B, 18º andar, São Paulo, SP</span>
-            </li>
-            <li>
-              <i class="bi bi-envelope icon"></i>
-              <span>contato@vanguardadvocacia.com.br</span>
-            </li>
-            <li>
-              <i class="bi bi-telephone icon"></i>
-              <span>+55 (11) 0000-0000</span>
-            </li>
-          </ul>
+  <footer class="site-footer" id="contato">
+    <div class="container py-5 py-lg-6">
+      <div class="row gy-5">
+        <div class="col-lg-5">
+          <a class="navbar-brand" href="#top" aria-label="Vanguard Advocacia - início">
+            <span class="navbar-brand__emblem" aria-hidden="true"><i class="bi bi-shield-check"></i></span>
+            <span class="navbar-brand__wordmark">
+              <span class="navbar-brand__name">Vanguard</span>
+              <span class="navbar-brand__sub">Advocacia</span>
+            </span>
+          </a>
+          <p class="site-footer__about">
+            Escritório de advocacia empresarial dedicado à blindagem jurídica, eficiência
+            tributária e defesa estratégica de empresas de alto padrão.
+          </p>
+          <address class="footer-address">
+            <ul class="list-unstyled mb-0">
+              <li>
+                <i class="bi bi-geo-alt icon"></i>
+                <span>Av. Brigadeiro Faria Lima, 3477 · 14º andar<br />Itaim Bibi, São Paulo — SP, 04538-133</span>
+              </li>
+              <li>
+                <a href="tel:+551130000000">
+                  <i class="bi bi-telephone icon"></i>
+                  <span>+55 (11) 3000-0000</span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:contato@vanguardadvocacia.com.br">
+                  <i class="bi bi-envelope icon"></i>
+                  <span>contato@vanguardadvocacia.com.br</span>
+                </a>
+              </li>
+            </ul>
+          </address>
         </div>
 
-        <div class="col-md-6 d-flex align-items-start justify-content-md-end">
-          <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Faria+Lima+São+Paulo" target="_blank" rel="noopener" class="btn btn-outline-light btn-sm">
+        <div class="col-lg-4 col-sm-6">
+          <nav aria-label="Rodapé">
+            <h3 class="site-footer__heading">Atuação</h3>
+            <ul class="footer-nav">
+              <li><a href="#atuacao">Direito Tributário</a></li>
+              <li><a href="#atuacao">Fusões &amp; Aquisições</a></li>
+              <li><a href="#atuacao">Proteção Patrimonial</a></li>
+              <li><a href="#atuacao">Contratos</a></li>
+              <li><a href="#atuacao">Trabalhista B2B</a></li>
+              <li><a href="#atuacao">Societário</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="col-lg-3 col-sm-6">
+          <h3 class="site-footer__heading">Localização</h3>
+          <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Brigadeiro+Faria+Lima+3477+Sao+Paulo" target="_blank" rel="noopener noreferrer" class="footer-map-link">
             <i class="bi bi-geo-alt icon"></i>
-            Ver localização no mapa
+            Ver no mapa
+          </a>
+          <a href="#top" class="footer-vip-link">
+            <i class="bi bi-shield-check icon"></i>
+            Atendimento VIP
           </a>
         </div>
       </div>
 
-      <div class="site-footer__bottom py-4">
-        <p class="disclaimer mb-2">
-          Este site tem caráter informativo e não constitui consulta jurídica. Seus dados são tratados
-          com privacidade e segurança, em conformidade com a LGPD (Lei nº 13.709/2018).
-        </p>
-        <p class="mb-0">&copy; 2026 Vanguard Advocacia. Todos os direitos reservados.</p>
+      <div class="site-footer__bottom">
+        <p>&copy; <span id="footer-year">2026</span> Vanguard Advocacia. Todos os direitos reservados.</p>
+        <div class="site-footer__bottom-links">
+          <a href="#">Política de Privacidade (LGPD)</a>
+          <a href="#">Termos de Uso</a>
+          <span class="lgpd-badge">
+            <i class="bi bi-shield-check icon"></i>
+            Em conformidade com a LGPD
+          </span>
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- FLOATING WHATSAPP BUTTON -->
-  <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
-    <i class="bi bi-whatsapp icon"></i>
+  <!-- FLOATING WHATSAPP WIDGET -->
+  <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20especialista%20da%20Vanguard%20Advocacia." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Falar com especialista no WhatsApp">
+    <span class="whatsapp-float__icon">
+      <i class="bi bi-whatsapp icon"></i>
+    </span>
+    <span class="whatsapp-float__text">
+      <strong>Fale conosco</strong>
+      <small>Resposta imediata</small>
+    </span>
   </a>
 
   <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>

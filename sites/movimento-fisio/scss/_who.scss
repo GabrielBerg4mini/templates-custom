@@ -1,0 +1,38 @@
+@use 'variables' as v;
+
+// Seção "Para quem é" — costura diagonalmente com o corte do hero.
+.who {
+  position: relative;
+  z-index: 1;
+  background: v.$color-white;
+  margin-top: calc(-1 * #{v.$diagonal-cut});
+  padding-top: calc(#{v.$diagonal-cut} + 4.5rem);
+  padding-bottom: clamp(4rem, 8vw, 6rem);
+
+  &__statement {
+    font-family: v.$font-heading;
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    font-weight: 700;
+    line-height: 1.3;
+    max-width: 46ch;
+    margin-bottom: 2rem;
+
+    em {
+      font-style: normal;
+      color: v.$color-blue;
+    }
+  }
+
+  &__media {
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 8%, 8% 0);
+    aspect-ratio: 3 / 4;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+}

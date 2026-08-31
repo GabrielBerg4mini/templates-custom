@@ -1,0 +1,28 @@
+@use 'variables' as v;
+
+.whatsapp-float {
+  position: fixed;
+  right: calc(v.$spacing-unit * 3);
+  bottom: calc(v.$spacing-unit * 3);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: v.$color-whatsapp;
+  color: v.$color-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 28px -10px rgba(37, 211, 102, 0.55);
+  z-index: 200;
+  transition: transform v.$transition-base;
+
+  .bi {
+    font-size: 26px;
+  }
+
+  &:hover,
+  &:focus-visible {
+    transform: scale(1.06);
+    color: v.$color-white;
+  }
+}

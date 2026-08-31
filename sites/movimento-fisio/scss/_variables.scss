@@ -1,0 +1,47 @@
+// Paleta — branco, preto e azul profundo de performance (P2 — Movement Studio)
+// Nunca neon, nunca pastel: o azul é o único acento e carrega o
+// significado de "performance clínica", não decoração.
+$color-white: #ffffff;
+$color-off-white: #f4f5f7;
+$color-black: #101010;
+$color-black-soft: #1a1c20;
+$color-blue: #123b6b;
+$color-blue-light: #1d5490;
+$color-blue-pale: #eaf0f7;
+
+$color-text: $color-black;
+$color-text-muted: #5b6270;
+$color-border: rgba(16, 16, 16, 0.1);
+$color-whatsapp: #25d366;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-blue;
+$color-secondary: $color-black;
+$color-bg: $color-white;
+
+// Tipografia — display atlético/confiante + corpo neutro
+$font-heading: 'Bricolage Grotesque', system-ui, sans-serif;
+$font-base: 'Inter', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas — retas, técnicas; nada de cantos generosos tipo wellness
+$radius-sm: 2px;
+$radius-md: 4px;
+$radius-lg: 6px;
+
+// Sombra discreta — a hierarquia vem de massa/contraste, não de sombra
+$shadow-soft: 0 16px 40px -24px rgba(16, 16, 16, 0.35);
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.2s ease;
+
+// Corte diagonal — usado pelos divisores de seção (clip-path)
+$diagonal-cut: 5vw;

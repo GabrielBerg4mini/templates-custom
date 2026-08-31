@@ -2,47 +2,126 @@
 
 .hero {
   position: relative;
-  min-height: 78vh;
+  isolation: isolate;
+  overflow: hidden;
   display: flex;
   align-items: center;
-  background-image:
-    linear-gradient(100deg, rgba(26, 29, 35, 0.97) 0%, rgba(26, 29, 35, 0.88) 45%, rgba(26, 29, 35, 0.6) 100%),
-    url('https://images.pexels.com/photos/28506813/pexels-photo-28506813.jpeg?auto=compress&cs=tinysrgb&w=1920');
-  background-size: cover;
-  background-position: center;
+  min-height: 100svh;
+  min-height: 100vh;
+  padding-block: 8rem 6rem;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.4;
+    }
+
+    &::before {
+      // fade vertical: transparente no topo -> fundo sólido embaixo
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(24, 27, 32, 0.7) 0%,
+        rgba(24, 27, 32, 0.85) 45%,
+        v.$color-bg 100%
+      );
+    }
+
+    &::after {
+      // fade horizontal: sólido à esquerda (onde fica o texto) -> transparente à direita
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        v.$color-bg 0%,
+        rgba(24, 27, 32, 0.6) 55%,
+        transparent 100%
+      );
+    }
+  }
+
+  &__content {
+    max-width: 46rem;
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid v.$color-border-hairline;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: v.$color-text-muted;
+    backdrop-filter: blur(4px);
+
+    .icon {
+      color: v.$color-steel;
+      font-size: 0.9rem;
+    }
+  }
 
   h1 {
-    max-width: 19ch;
-    font-size: clamp(2rem, 4vw, 3.1rem);
-    line-height: 1.2;
+    margin-top: 1.75rem;
+    max-width: 22ch;
+    font-size: clamp(2.1rem, 4vw, 3.4rem);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    color: v.$color-text;
   }
 
   &__subtitle {
+    margin-top: 1.5rem;
+    max-width: 42ch;
+    font-size: 1.1rem;
+    line-height: 1.65;
     color: v.$color-text-muted;
-    font-size: 1.05rem;
-    max-width: 52ch;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
   }
 
   &__trust {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem 1.5rem;
-    margin-top: 2rem;
+    gap: 0.75rem 2rem;
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid v.$color-border-hairline;
 
     li {
-      font-size: 0.82rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.85rem;
       color: v.$color-text-muted;
-      padding-left: 1.1rem;
-      position: relative;
 
       &::before {
         content: '';
-        position: absolute;
-        left: 0;
-        top: 0.5em;
         width: 6px;
         height: 6px;
+        border-radius: 50%;
         background: v.$color-steel;
+        flex-shrink: 0;
       }
     }
   }
