@@ -64,9 +64,42 @@ function copyVendorAssets() {
   console.log(`[vendor] bootstrap.bundle.min.js + swiper-bundle + bootstrap-icons copiados para: ${siteDirs.join(', ')}`);
 }
 
+// O index.html da raiz compila seu próprio Bootstrap (com o tema de cores
+// da GB Softwares) via scss/main.scss; só os ícones vêm prontos de node_modules.
+const ROOT_VENDOR_FILES = [
+  {
+    src: path.join(rootDir, 'node_modules/bootstrap-icons/font/bootstrap-icons.min.css'),
+    dest: path.join('vendor', 'bootstrap-icons', 'bootstrap-icons.min.css'),
+  },
+  {
+    src: path.join(rootDir, 'node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff'),
+    dest: path.join('vendor', 'bootstrap-icons', 'fonts', 'bootstrap-icons.woff'),
+  },
+  {
+    src: path.join(rootDir, 'node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2'),
+    dest: path.join('vendor', 'bootstrap-icons', 'fonts', 'bootstrap-icons.woff2'),
+  },
+];
+
+function copyRootVendorAssets() {
+  for (const file of ROOT_VENDOR_FILES) {
+    const destPath = path.join(rootDir, file.dest);
+    fs.mkdirSync(path.dirname(destPath), { recursive: true });
+    fs.copyFileSync(file.src, destPath);
+  }
+  console.log('[vendor] bootstrap-icons copiados para a raiz (index.html).');
+}
+
 copyVendorAssets();
+copyRootVendorAssets();
 
 const pairs = [];
+
+const rootScssEntry = path.join('scss', 'main.scss');
+if (fs.existsSync(path.join(rootDir, rootScssEntry))) {
+  pairs.push(`${rootScssEntry}:${path.join('css', 'main.css')}`);
+}
+
 for (const site of siteDirs) {
   const scssEntry = path.join('sites', site, 'scss', 'main.scss');
   const cssOut = path.join('sites', site, 'css', 'main.css');

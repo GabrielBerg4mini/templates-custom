@@ -1,0 +1,101 @@
+@use 'variables' as v;
+
+// O Bootstrap (via _theme-bootstrap.scss) cuida do reset, tipografia, grid,
+// links e cards. Aqui só ficam os ajustes que replicam o tema escuro e as
+// superfícies do site institucional (gbsoftwares.com.br).
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+// Rótulo pequeno em maiúsculas — mesmo tratamento do ".gb-eyebrow" do site
+// institucional (SERVIÇOS, PORTFÓLIO, PROCESSO...).
+.eyebrow {
+  color: v.$primary;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.text-muted-soft {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+code {
+  color: v.$primary;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.25rem;
+  font-size: 0.85em;
+}
+
+// Nav de nichos fixa no topo, com leve blur sobre o conteúdo que passa por baixo
+.toc {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(v.$surface, 0.92);
+  backdrop-filter: saturate(140%) blur(6px);
+
+  a {
+    color: rgba(255, 255, 255, 0.65);
+
+    &:hover {
+      color: v.$primary;
+    }
+  }
+}
+
+section.niche {
+  scroll-margin-top: 4.5rem;
+}
+
+// Cards de template — mesmo tratamento do ".gb-card-service" do site
+// institucional: superfície elevada, borda translúcida, acento no hover.
+.template-card {
+  color: inherit;
+  overflow: hidden;
+  background-color: v.$surface;
+  border-color: v.$border-subtle;
+  border-radius: 0.75rem;
+  transition: border-color 200ms ease, transform 200ms ease;
+
+  &:hover {
+    border-color: rgba(v.$primary, 0.4);
+    transform: translateY(-2px);
+  }
+
+  &:hover .card-title {
+    text-decoration: underline;
+    text-decoration-color: v.$primary;
+    text-underline-offset: 3px;
+  }
+}
+
+.template-thumb {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  flex-shrink: 0;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  border-bottom: 1px solid v.$border-subtle;
+  background-color: v.$dark;
+}
+
+.card-open {
+  color: rgba(255, 255, 255, 0.85);
+
+  &::after {
+    content: ' →';
+    color: v.$primary;
+  }
+}
+
+.card-slug {
+  font-size: 0.68rem;
+}

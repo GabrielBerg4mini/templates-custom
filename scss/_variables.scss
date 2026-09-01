@@ -1,0 +1,17 @@
+// Paleta de marca — GB Softwares (mesmos tokens usados em gbsoftwares.com.br)
+$primary: #aeba50;
+$secondary: #1e293b;
+$success: #3fa66a;
+$danger: #c8414d;
+$warning: #e4b444;
+$info: #4190c8;
+$light: #f8fafc;
+$dark: #0f172a;
+
+// Tons de superfície do site institucional (extraídos do CSS de produção):
+// o fundo da página usa $dark puro; cards, nav e seções elevadas usam este
+// tom um pouco mais claro, com bordas translúcidas brancas por cima.
+$surface: #141f39;
+$border-subtle: rgba(255, 255, 255, 0.08);
+
+$font-base: 'Poppins', sans-serif;
