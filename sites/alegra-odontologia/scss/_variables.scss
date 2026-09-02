@@ -1,0 +1,64 @@
+// Alegra Odontologia — direção O3 "Bright Dental"
+// Branco + grafite + coral vibrante controlado. Jovem e acessível sem
+// infantilizar: sem pastel mint/sky (odonto-clinica), sem navy/cyan
+// (digital-smile-clinic), sem bordas retas grafite/verde (implanto-dental).
+
+// Cores base — paleta travada e validada em contraste (WCAG AA)
+$color-white: #ffffff;
+$color-graphite: #26292e; // texto principal — 14.6:1 sobre branco
+$color-graphite-soft: #5a5f66; // texto secundário — ~7.3:1 sobre branco
+$color-graphite-faint: #6e7278; // texto terciário / legendas — 4.84:1 sobre branco (AA)
+
+// Coral — acento de marca. $color-coral é SÓ para fundos/blocos grandes e
+// ícones médios-grandes (contraste 2.97:1, ruim para texto). Qualquer
+// texto, link, botão com rótulo ou ícone pequeno usa $color-coral-dark
+// (5.16:1 nas duas direções).
+$color-coral: #ff5d73;
+$color-coral-dark: #cc2f49;
+$color-coral-tint: #fff1f3; // superfície clara para chips/ícones (4.7:1 com coral-dark) — não é pastel de fundo de página
+
+// Superfície neutra quente para alternância de seções (sem virar bege/creme
+// de spa nem cinza-azulado clínico) e linhas estruturais.
+$color-bg-soft: #faf7f6;
+$color-line: rgba(38, 41, 46, 0.12);
+$color-line-strong: rgba(38, 41, 46, 0.2);
+
+$color-whatsapp: #25d366;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-coral-dark;
+$color-secondary: $color-graphite;
+$color-bg: $color-white;
+$color-text: $color-graphite;
+$color-muted: $color-graphite-soft;
+
+// Tipografia — Poppins (display, 600/700) amigável sem ser infantil;
+// DM Sans (corpo/UI, 400/500) legível e neutra.
+$font-heading: 'Poppins', system-ui, -apple-system, sans-serif;
+$font-base: 'DM Sans', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas — arredondamento moderado e intencional (energia jovem), nunca
+// máximo/rounded-pill em tudo.
+$radius-sm: 10px;
+$radius-md: 16px;
+$radius-lg: 24px;
+
+// Sombras — discretas, usadas para separar planos, não como decoração.
+$shadow-soft: 0 16px 40px -22px rgba(38, 41, 46, 0.22);
+$shadow-lift: 0 24px 56px -20px rgba(38, 41, 46, 0.28);
+
+// Breakpoints
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Container
+$container-max-width: 1200px;
+
+// Transições
+$transition-base: 0.2s ease;
+$ease-reveal: cubic-bezier(0.16, 1, 0.3, 1);

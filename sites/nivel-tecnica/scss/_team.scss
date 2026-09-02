@@ -1,0 +1,65 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.team {
+  background: v.$color-surface;
+  border-top: 1px solid v.$color-line;
+  border-bottom: 1px solid v.$color-line;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+
+  @include m.breakpoint(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include m.breakpoint(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.team-member__media {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  margin-bottom: 1.1rem;
+  border: 1px solid v.$color-line;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(0.15);
+  }
+}
+
+.team-member__code {
+  @include m.mono-label(0.68rem);
+  color: v.$color-amber-dark;
+  margin-bottom: 0.5rem;
+}
+
+.team-member__name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: v.$color-graphite;
+  margin-bottom: 0.15rem;
+}
+
+.team-member__role {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: v.$color-graphite-soft;
+  margin-bottom: 0.6rem;
+}
+
+.team-member__focus {
+  font-size: 0.88rem;
+  color: v.$color-graphite-soft;
+  margin: 0;
+  border-top: 1px solid v.$color-line;
+  padding-top: 0.75rem;
+}

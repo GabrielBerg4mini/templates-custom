@@ -1,0 +1,32 @@
+@use 'variables' as v;
+
+.about {
+  background: v.$color-ink;
+  color: rgba(255, 255, 255, 0.85);
+
+  h2 {
+    color: v.$color-white;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  &__media img {
+    box-shadow: v.$shadow-soft;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+}
+
+.about-badges {
+  li {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: v.$color-white;
+
+    .icon {
+      color: v.$color-green;
+    }
+  }
+}

@@ -1,0 +1,105 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.team {
+  background: v.$color-surface;
+}
+
+// Coordenador clínico: tratamento em destaque, maior que os outros dois
+// perfis — reforça hierarquia (1 elemento dominante) em vez de grade
+// uniforme de N médicos idênticos.
+.profile-feature {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid v.$color-border;
+
+  @include m.breakpoint(md) {
+    flex-direction: row;
+    align-items: center;
+    gap: 2.75rem;
+  }
+
+  &__media {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 220px;
+
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: v.$radius-md;
+    }
+  }
+
+  &__body {
+    flex: 1 1 auto;
+  }
+
+  &__role {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: v.$color-slate-blue;
+    margin-bottom: 0.4rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    color: v.$color-text-muted;
+    max-width: 58ch;
+    margin: 0;
+  }
+}
+
+.profile-row {
+  max-width: 46rem;
+}
+
+.profile {
+  &__media {
+    border-radius: v.$radius-md;
+    overflow: hidden;
+    margin-bottom: 1rem;
+
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+    }
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+  }
+
+  &__role {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: v.$color-slate-blue;
+    margin-bottom: 0.5rem;
+  }
+
+  &__text {
+    color: v.$color-text-muted;
+    font-size: 0.92rem;
+    margin: 0;
+  }
+}

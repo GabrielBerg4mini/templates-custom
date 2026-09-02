@@ -1,0 +1,60 @@
+@use 'variables' as v;
+
+// O Bootstrap (via _theme-bootstrap.scss) já cuida do reset, tipografia
+// base, links, imagens e grid. Aqui ficam só os utilitários que o
+// Bootstrap não tem prontos.
+
+html {
+  scroll-behavior: smooth;
+}
+
+.eyebrow {
+  font-family: v.$font-heading;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: v.$color-blue-dark;
+  margin-bottom: 0.5rem;
+}
+
+.section-heading {
+  max-width: 640px;
+  margin-inline: auto;
+  text-align: center;
+  margin-bottom: 3rem;
+
+  &--left {
+    margin-inline: 0;
+    text-align: left;
+  }
+
+  &__text {
+    color: v.$color-ink-muted;
+    margin-bottom: 0;
+  }
+}
+
+.btn-brand-green {
+  background: v.$color-green-dark;
+  border: none;
+  color: v.$color-white;
+  font-weight: 600;
+
+  &:hover {
+    background: v.$color-green-darker;
+    color: v.$color-white;
+  }
+}
+
+// Reveal-on-scroll (aplicado via data-reveal + IntersectionObserver em js/main.js)
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

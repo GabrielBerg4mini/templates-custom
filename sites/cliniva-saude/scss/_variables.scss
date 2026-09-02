@@ -1,0 +1,61 @@
+// Paleta — Direção C1 (Clinical Premium): off-white, tinta quase-preta e um
+// único acento azul-acinzentado DESSATURADO (nunca "medical blue" saturado).
+// Contraste validado (WCAG AA): ink 14.75:1 sobre off-white; slate-blue 7:1
+// sobre off-white e 7.32:1 com texto branco em cima — seguro em texto, ícone
+// ou fundo.
+$color-offwhite: #FAFAF8;
+$color-surface: #ffffff;
+$color-ink: #1E2530;
+$color-ink-soft: rgba(30, 37, 48, 0.72);
+$color-ink-faint: rgba(30, 37, 48, 0.55);
+$color-slate-blue: #46586B;
+$color-slate-blue-deep: #333f4d;
+$color-slate-blue-tint: rgba(70, 88, 107, 0.08);
+$color-slate-blue-tint-strong: rgba(70, 88, 107, 0.16);
+$color-border: rgba(30, 37, 48, 0.12);
+$color-border-soft: rgba(30, 37, 48, 0.08);
+
+$color-white: #ffffff;
+$color-whatsapp: #25d366;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-slate-blue;
+$color-secondary: $color-ink;
+$color-bg: $color-offwhite;
+$color-text: $color-ink;
+$color-text-muted: $color-ink-soft;
+
+// Tipografia — uma família só, Manrope (Google Fonts), sans limpa sem
+// serifa e sem enfeite, como pede a direção C1. 500/600 em títulos,
+// 400/500 no corpo.
+$font-heading: 'Manrope', system-ui, -apple-system, sans-serif;
+$font-base: 'Manrope', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas — discretas e precisas (0–12px), sem "pill" nem cantos decorativos:
+// reforça o tom de precisão clínica, em vez do acolhimento orgânico de
+// clinica-acolher (0.4–1rem) ou do luxo arredondado de clinica-integrativa (20px).
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 12px;
+
+$shadow-soft: 0 20px 45px -28px rgba(30, 37, 48, 0.22);
+$shadow-lift: 0 30px 60px -30px rgba(30, 37, 48, 0.28);
+$shadow-header: 0 1px 0 rgba(30, 37, 48, 0.08);
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.25s ease;
+$transition-slow: 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+
+// Reveal-on-scroll
+$reveal-distance: 26px;
+$reveal-duration: 0.8s;
+$reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);

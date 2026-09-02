@@ -1,0 +1,44 @@
+@use 'variables' as v;
+
+.testimonial-swiper {
+  padding-bottom: 3rem;
+
+  .swiper-slide {
+    height: auto;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: v.$color-blue-dark;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: v.$color-blue-dark;
+
+    &::after {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.testimonial-card {
+  height: 100%;
+  box-shadow: v.$shadow-soft;
+  border: none !important;
+
+  .stars {
+    color: v.$color-green-dark;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+  }
+
+  blockquote {
+    font-family: v.$font-heading;
+    font-size: 1.05rem;
+  }
+
+  &__tag {
+    font-size: 0.78rem;
+    color: v.$color-ink-muted;
+  }
+}

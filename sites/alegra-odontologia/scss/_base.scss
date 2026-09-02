@@ -1,0 +1,220 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// O Bootstrap (via _theme-bootstrap.scss) já cuida do reset, tipografia
+// base, links, imagens e grid. Aqui ficam tokens de composição
+// reutilizados por várias seções: kicker, botões, chips e o
+// comportamento de reveal-on-scroll.
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+// Âncoras de navegação — compensam o header fixo.
+#especialidade,
+#tratamentos,
+#processo,
+#equipe,
+#faq,
+#agendamento {
+  scroll-margin-top: 84px;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background: v.$color-coral;
+  color: v.$color-white;
+}
+
+.kicker {
+  @include m.kicker;
+  margin-bottom: 0.9rem;
+}
+
+.section-heading {
+  max-width: 640px;
+  margin-bottom: 3rem;
+
+  &--center {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  &__text {
+    color: v.$color-graphite-soft;
+    font-size: 1.02rem;
+    max-width: 52ch;
+    margin-top: 0.75rem;
+  }
+}
+
+// Número/indicador tipográfico grande — usado em processo/tratamentos em
+// vez de mais um ícone.
+.figure-number {
+  font-family: v.$font-heading;
+  font-weight: 700;
+  color: v.$color-graphite;
+  line-height: 1;
+}
+
+// Botões — especificidade de tag (a.btn-cta) para vencer ".wrapper a {
+// color: inherit }" e regras de contexto sem depender só da classe solta.
+a.btn-cta,
+button.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: v.$color-coral-dark;
+  color: v.$color-white !important;
+  border: 1px solid v.$color-coral-dark;
+  border-radius: 999px;
+  padding: 0.9rem 1.75rem;
+  font-weight: 700;
+  font-size: 0.96rem;
+  white-space: nowrap;
+  transition: background-color v.$transition-base, border-color v.$transition-base, transform 0.15s ease;
+
+  &:hover {
+    background: #a92339;
+    border-color: #a92339;
+    color: v.$color-white !important;
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid v.$color-coral-dark;
+    outline-offset: 3px;
+  }
+}
+
+a.btn-ghost,
+button.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: transparent;
+  color: v.$color-graphite !important;
+  border: 1.5px solid v.$color-line-strong;
+  border-radius: 999px;
+  padding: 0.86rem 1.6rem;
+  font-weight: 700;
+  font-size: 0.96rem;
+  transition: border-color v.$transition-base, background-color v.$transition-base;
+
+  &:hover {
+    border-color: v.$color-coral-dark;
+    background: v.$color-coral-tint;
+    color: v.$color-coral-dark !important;
+  }
+
+  &:focus-visible {
+    outline: 2px solid v.$color-coral-dark;
+    outline-offset: 3px;
+  }
+}
+
+// Link de texto com seta — usado quando um botão inteiro seria demais.
+a.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: v.$color-graphite !important;
+  font-weight: 700;
+  font-size: 0.94rem;
+  border-bottom: 1.5px solid transparent;
+  padding-bottom: 0.15rem;
+  transition: color v.$transition-base, border-color v.$transition-base;
+
+  i {
+    transition: transform v.$transition-base;
+  }
+
+  &:hover {
+    color: v.$color-coral-dark !important;
+    border-bottom-color: v.$color-coral-dark;
+
+    i {
+      transform: translateX(3px);
+    }
+  }
+}
+
+// Chip informativo — cor de marca aplicada como bloco pequeno de
+// superfície (coral-tint), nunca como texto puro em coral.
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: v.$color-coral-tint;
+  color: v.$color-coral-dark;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  i {
+    font-size: 0.95rem;
+  }
+}
+
+// Linha de fatos rápidos — texto + ícone, não cards repetidos.
+.fact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: v.$color-graphite-soft;
+  }
+
+  i {
+    color: v.$color-coral-dark;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+  }
+}
+
+// Reveal-on-scroll (aplicado via data-reveal + IntersectionObserver em js/main.js)
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

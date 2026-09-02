@@ -1,0 +1,105 @@
+@use 'variables' as v;
+
+// O Bootstrap (via _theme-bootstrap.scss) já cuida do reset, tipografia
+// base, links, imagens e grid. Aqui ficam só os utilitários que o
+// Bootstrap não tem prontos.
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-feature-settings: 'ss01' on;
+}
+
+::selection {
+  background: v.$color-slate-blue-tint-strong;
+  color: v.$color-ink;
+}
+
+h1, h2, h3, h4 {
+  color: v.$color-ink;
+  letter-spacing: -0.01em;
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: v.$color-slate-blue;
+  margin-bottom: 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &::before {
+    content: '';
+    width: 1.4rem;
+    height: 1px;
+    background: currentColor;
+    display: inline-block;
+  }
+}
+
+.section-heading {
+  max-width: 640px;
+  margin-bottom: 3rem;
+
+  &--center {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  &__text {
+    color: v.$color-text-muted;
+    font-size: 1.02rem;
+    max-width: 52ch;
+  }
+}
+
+// Botões de marca — especificidade extra (a.btn-slate) porque wrappers com
+// ".wrapper a { color: inherit }" (navbar, footer) venceriam um .btn solto
+// por especificidade de seletor.
+a.btn-slate {
+  background: v.$color-slate-blue;
+  border-color: v.$color-slate-blue;
+  color: v.$color-white;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding-inline: 1.5rem;
+
+  &:hover,
+  &:focus-visible {
+    background: v.$color-slate-blue-deep;
+    border-color: v.$color-slate-blue-deep;
+    color: v.$color-white;
+  }
+}
+
+// Reveal-on-scroll (aplicado via data-reveal + IntersectionObserver em js/main.js)
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(v.$reveal-distance);
+  transition: opacity v.$reveal-duration v.$reveal-ease,
+              transform v.$reveal-duration v.$reveal-ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

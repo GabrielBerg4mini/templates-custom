@@ -1,0 +1,73 @@
+@use 'variables' as v;
+
+.faq-list {
+  max-width: 780px;
+}
+
+.faq-item {
+  border-top: 1px solid v.$color-border;
+
+  &:last-child {
+    border-bottom: 1px solid v.$color-border;
+  }
+
+  &__trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 1.35rem 0;
+    font-family: v.$font-heading;
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: v.$color-brown-ink;
+    cursor: pointer;
+
+    .bi {
+      flex-shrink: 0;
+      color: v.$color-mustard-dark;
+      transition: transform v.$transition-base;
+    }
+
+    &:hover {
+      color: v.$color-mustard-dark;
+    }
+  }
+
+  &__answer-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows v.$transition-base;
+  }
+
+  &__answer {
+    overflow: hidden;
+
+    p {
+      color: v.$color-text-muted;
+      padding-bottom: 1.35rem;
+      max-width: 62ch;
+      margin: 0;
+    }
+  }
+
+  &.is-open {
+    .faq-item__answer-wrap {
+      grid-template-rows: 1fr;
+    }
+
+    .faq-item__trigger .bi {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-item__answer-wrap {
+    transition: none;
+  }
+}

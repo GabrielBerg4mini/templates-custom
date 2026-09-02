@@ -1,0 +1,44 @@
+@use 'variables' as v;
+
+// "Abordagem" — lista editorial (método) + painel de diferenciação
+// escuro. Em vez de repetir o painel de métrica de outra direção,
+// aqui o painel é uma lista de "o que você não vai encontrar aqui":
+// mais honesto para nutrição do que estatística de resultado.
+.approach {
+  &__panel {
+    background: v.$color-brown-ink;
+    color: v.$color-cream;
+    border-radius: v.$radius-lg;
+    padding: 2.25rem 2rem;
+    height: 100%;
+
+    h3 {
+      color: v.$color-cream;
+      font-size: 1.15rem;
+      margin-bottom: 1.4rem;
+    }
+  }
+
+  &__not-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.1rem;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: rgba(250, 246, 238, 0.85);
+    }
+
+    .bi {
+      color: v.$color-mustard;
+      font-size: 1.15rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@use 'variables' as v;
+
+.navbar {
+  background: rgba(250, 248, 246, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid v.$color-border-soft;
+  padding-block: 1.1rem;
+  transition: padding v.$transition-base;
+}
+
+.navbar-brand {
+  font-family: v.$font-heading;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: v.$color-ink;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  letter-spacing: -0.01em;
+
+  span {
+    color: v.$color-slate-blue;
+  }
+}
+
+.nav-link {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: v.$color-ink;
+  padding-inline: 0.9rem;
+
+  &:hover,
+  &:focus-visible {
+    color: v.$color-slate-blue;
+  }
+}
+
+.nav-cta {
+  white-space: nowrap;
+}
+
+.nav-phone {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: v.$color-ink;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  .icon {
+    color: v.$color-slate-blue;
+  }
+}

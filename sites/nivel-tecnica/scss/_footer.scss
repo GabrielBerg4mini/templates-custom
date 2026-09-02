@@ -1,0 +1,72 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.site-footer {
+  background: v.$color-white;
+  border-top: 1px solid v.$color-graphite;
+  padding-block: 3.5rem 2rem;
+}
+
+.site-footer__brand {
+  font-family: v.$font-display;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: v.$color-graphite;
+  margin-bottom: 0.75rem;
+
+  span {
+    color: v.$color-amber-dark;
+  }
+}
+
+.site-footer__tagline {
+  color: v.$color-graphite-soft;
+  max-width: 34ch;
+  font-size: 0.92rem;
+}
+
+.site-footer__col-title {
+  @include m.mono-label(0.68rem);
+  color: v.$color-graphite-soft;
+  margin-bottom: 1rem;
+}
+
+.site-footer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  a, li {
+    color: v.$color-graphite;
+    font-size: 0.9rem;
+  }
+
+  a {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+
+    &:hover, &:focus-visible {
+      color: v.$color-amber-dark;
+      border-color: v.$color-amber-dark;
+    }
+  }
+}
+
+.site-footer__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  border-top: 1px solid v.$color-line;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  font-size: 0.82rem;
+  color: v.$color-graphite-soft;
+
+  @include m.breakpoint(md) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,54 @@
+// Paleta — P3 Human Practice / Nutrição: creme, marrom-tinta e mostarda.
+// Natural e terrosa, sem repetir o sage de mente-equilibrio nem o
+// azul-profundo de movimento-fisio.
+$color-cream: #faf6ee; // fundo
+$color-cream-alt: #f2e9d7; // fundo alternado (ritmo entre seções, sem virar card)
+$color-brown-ink: #3a2e22; // texto principal — 12.2:1 sobre $color-cream
+$color-brown-soft: #6e5b48; // texto secundário/legendas — ainda AA sobre creme
+
+// Mostarda pura: SÓ fundos/blocos grandes/ícones médios-grandes.
+// Nunca como cor de texto pequeno ou texto de botão (contraste ruim).
+$color-mustard: #c9922e;
+// Variante escura: usar para qualquer texto, link, botão com texto ou ícone pequeno.
+$color-mustard-dark: #8a6412;
+
+$color-white: #ffffff;
+$color-whatsapp: #25d366;
+
+$color-text: $color-brown-ink;
+$color-text-muted: $color-brown-soft;
+$color-border: rgba(58, 46, 34, 0.14);
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-mustard-dark;
+$color-secondary: $color-brown-ink;
+$color-bg: $color-cream;
+
+// Tipografia — uma família só: Karla (humanista, calorosa, sem serifa)
+$font-heading: 'Karla', system-ui, -apple-system, sans-serif;
+$font-base: 'Karla', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas — moderadas: nem o arredondado quase-pílula de mente-equilibrio,
+// nem as quinas retas de movimento-fisio. Um meio-termo humano e contido.
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 18px;
+
+// Sombra discreta — a hierarquia vem de massa/composição, não de sombra forte
+$shadow-soft: 0 20px 48px -26px rgba(58, 46, 34, 0.28);
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.25s ease;
+
+// Deslocamento do "frame" atrás das fotos — o gesto de composição
+// assimétrica da direção (ver mixin frame-offset em _mixins.scss).
+$frame-offset: 18px;

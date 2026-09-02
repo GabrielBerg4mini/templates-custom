@@ -1,0 +1,41 @@
+@use 'variables' as v;
+
+// Grid vem do Bootstrap (.row-cols-*); aqui só o acabamento do .card.
+
+.procedure-card {
+  border: 1px solid rgba(46, 107, 31, 0.12) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: v.$shadow-lift !important;
+    border-color: rgba(46, 107, 31, 0.35) !important;
+
+    .procedure-card__icon {
+      background: v.$color-lime;
+      color: v.$color-ink;
+    }
+  }
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: v.$color-mint;
+    color: v.$color-forest;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, color 0.3s ease;
+
+    i {
+      font-size: 28px;
+    }
+  }
+
+  &__link {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: v.$color-forest;
+  }
+}

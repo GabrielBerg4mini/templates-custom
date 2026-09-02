@@ -1,0 +1,41 @@
+// Paleta — verde-limão vibrante, verde-menta suave e branco (marca Dani Santos)
+$color-lime: #96f76b;
+$color-mint: #d9f0c1;
+$color-white: #ffffff;
+// Verdes derivados do lime, só para funções que a marca não cobre: texto/ícone
+// sobre fundo branco (o lime puro não passa contraste AA como texto) e estado
+// de hover — nunca usados como "cor extra" fora desses papéis funcionais.
+$color-forest: #2e6b1f;
+$color-forest-light: #5fae3b;
+$color-ink: #17210f;
+$color-ink-muted: #57634c;
+
+$color-text: $color-ink;
+$color-text-muted: $color-ink-muted;
+$color-whatsapp: #25d366;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-forest;
+$color-secondary: $color-forest-light;
+$color-bg: $color-white;
+
+// Tipografia
+$font-heading: 'Playfair Display', serif;
+$font-base: 'Jost', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas / sombras
+$radius-lg: 28px;
+$shadow-soft: 0 20px 45px -20px rgba(23, 33, 15, 0.15);
+$shadow-lift: 0 30px 60px -25px rgba(46, 107, 31, 0.3);
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.3s ease;

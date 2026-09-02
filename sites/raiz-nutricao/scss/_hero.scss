@@ -1,0 +1,90 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Hero assimétrico 7/5, alinhado à esquerda — nem o hero centralizado
+// genérico, nem o hero escuro/dramático de movimento-fisio. Padding
+// próprio (mobile + desktop), sem utility classes py-* no markup.
+.hero {
+  position: relative;
+  background: v.$color-cream;
+  padding-block: 3rem 3.5rem;
+
+  @include m.breakpoint(lg) {
+    padding-block: 5rem 6rem;
+  }
+
+  h1 {
+    max-width: 16ch;
+    font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+    line-height: 1.14;
+    margin-bottom: 1.25rem;
+  }
+
+  &__subtitle {
+    color: v.$color-text-muted;
+    font-size: 1.08rem;
+    max-width: 46ch;
+    margin-bottom: 2rem;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.25rem;
+  }
+
+  &__facts {
+    list-style: none;
+    margin: 0;
+    padding: 1.25rem 0 0;
+    display: grid;
+    gap: 0.65rem;
+    border-top: 1px solid v.$color-border;
+    max-width: 42ch;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.92rem;
+      color: v.$color-text;
+    }
+
+    .bi {
+      color: v.$color-mustard-dark;
+      font-size: 1rem;
+      margin-top: 0.15rem;
+      flex-shrink: 0;
+    }
+  }
+
+  &__media {
+    @include m.frame-offset(v.$color-mustard, bottom-left);
+    max-width: 420px;
+    margin-inline: auto;
+
+    @include m.breakpoint(lg) {
+      margin-inline: 0 0 0 auto;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: v.$radius-md;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .hero {
+    text-align: left;
+
+    &__media {
+      margin-top: 1rem;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@use 'variables' as v;
+
+.about {
+  background: v.$color-mint;
+
+  &__media img {
+    box-shadow: v.$shadow-soft;
+    aspect-ratio: 643 / 639;
+    object-fit: cover;
+  }
+
+  &__role {
+    color: v.$color-forest;
+    font-weight: 500;
+  }
+}
+
+.badges {
+  li {
+    // O .badge do Bootstrap define color:#fff por padrão (pensado para ficar
+    // sobre bg-* colorido) — aqui o fundo é branco, então o texto precisa de
+    // cor própria ou fica invisível.
+    background: v.$color-white;
+    color: v.$color-text;
+    box-shadow: v.$shadow-soft;
+
+    .icon {
+      color: v.$color-forest;
+    }
+  }
+}

@@ -1,0 +1,119 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Hero split assimétrico: texto à esquerda, foto à direita apoiada sobre
+// um bloco sólido de coral (massa de cor, não gradiente/blob/glow) —
+// o "acento vibrante controlado" da direção O3 aplicado em um único
+// elemento grande, nunca como fundo de página.
+.hero {
+  position: relative;
+  overflow: hidden;
+  // Header fixo sobrepõe o hero — compensado aqui, nunca com utilities
+  // py-* do Bootstrap (saem com !important e vencem qualquer valor daqui).
+  padding-top: 6.5rem;
+  padding-bottom: 3rem;
+
+  @include m.breakpoint(lg) {
+    padding-top: 8.5rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.hero__content {
+  @include m.breakpoint(lg) {
+    padding-right: 1.5rem;
+  }
+}
+
+.hero h1 {
+  max-width: 15ch;
+  font-size: clamp(2.1rem, 3.4vw + 1.2rem, 3.35rem);
+  font-weight: 700;
+  line-height: 1.08;
+  margin-bottom: 1.35rem;
+  color: v.$color-graphite;
+
+  .highlight {
+    color: v.$color-coral-dark;
+  }
+}
+
+.hero__subtitle {
+  color: v.$color-graphite-soft;
+  font-size: 1.08rem;
+  max-width: 46ch;
+  margin-bottom: 2rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero .fact-row {
+  border-top: 1px solid v.$color-line;
+  padding-top: 1.5rem;
+  max-width: 34rem;
+}
+
+// Painel visual: bloco coral sólido deslocado atrás da foto — profundidade
+// e energia sem blur, glassmorphism ou parallax.
+.hero__visual {
+  position: relative;
+  max-width: 420px;
+  margin-inline: auto;
+
+  @include m.breakpoint(lg) {
+    max-width: none;
+    margin-inline: 0;
+  }
+}
+
+.hero__visual-block {
+  position: absolute;
+  inset: 1.25rem -1rem -1.25rem 1.5rem;
+  background: v.$color-coral;
+  border-radius: v.$radius-lg;
+  z-index: 0;
+}
+
+.hero__visual-frame {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: v.$radius-lg;
+  box-shadow: v.$shadow-lift;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 4 / 5;
+  }
+}
+
+.hero__visual-tag {
+  position: absolute;
+  z-index: 2;
+  left: 1.25rem;
+  bottom: -1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: v.$color-white;
+  color: v.$color-graphite;
+  border-radius: 999px;
+  padding: 0.75rem 1.15rem;
+  box-shadow: v.$shadow-soft;
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  i {
+    color: v.$color-coral-dark;
+    font-size: 1.05rem;
+  }
+}

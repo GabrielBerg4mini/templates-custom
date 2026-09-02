@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NÍVEL Arquitetura Técnica — Projeto e Cálculo Estrutural</title>
+  <meta name="description" content="NÍVEL Arquitetura Técnica: projeto estrutural, elétrico e consultoria técnica em concreto armado, aço e alvenaria estrutural, do cálculo ao laudo com ART." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header navbar navbar-expand-lg" id="topo">
+    <div class="container">
+      <a class="site-header__brand" href="#topo">
+        <strong>NÍVEL</strong>
+        <small>Arquitetura Técnica</small>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse site-header__nav-collapse" id="mainNav">
+        <nav class="site-header__nav" aria-label="Navegação principal">
+          <a href="#capacidades">Capacidades</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#metodologia">Metodologia</a>
+          <a href="#equipe">Equipe</a>
+          <a href="#contato">Contato</a>
+        </nav>
+        <div class="site-header__actions">
+          <a href="#contato" class="btn-technical btn-technical--sm">Solicitar análise</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="row gy-5 align-items-stretch">
+          <div class="col-lg-7 hero__content" data-reveal>
+            <p class="eyebrow">Consultoria técnica · Arquitetura &amp; engenharia estrutural</p>
+            <h1>Estrutura é a parte do projeto que não aceita opinião — só cálculo.</h1>
+            <p class="hero__lead">
+              A NÍVEL projeta, calcula e acompanha estruturas em concreto armado, aço e alvenaria
+              estrutural. Do projeto executivo ao laudo técnico com ART, cada etapa fica registrada
+              e é rastreável.
+            </p>
+            <div class="hero__actions">
+              <a href="#contato" class="btn-technical">
+                Solicitar análise técnica <i class="bi bi-arrow-up-right icon" aria-hidden="true"></i>
+              </a>
+              <a href="#capacidades" class="link-arrow">
+                Ver áreas técnicas <i class="bi bi-arrow-up-right icon" aria-hidden="true"></i>
+              </a>
+            </div>
+
+            <dl class="hero__facts">
+              <div>
+                <dt>Documentação</dt>
+                <dd>Memorial de cálculo em todo projeto estrutural</dd>
+              </div>
+              <div>
+                <dt>Compatibilização</dt>
+                <dd>Estrutural, elétrico e arquitetônico cruzados antes da obra</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="col-lg-5" data-reveal>
+            <div class="spec-panel">
+              <div class="spec-panel__head">
+                <span class="spec-panel__head-label">Ficha técnica</span>
+                <span class="spec-panel__head-code">Nº NT-2026.014</span>
+              </div>
+
+              <div class="spec-panel__grid">
+                <div class="spec-panel__cell spec-panel__cell--wide">
+                  <span class="spec-panel__label">Projeto</span>
+                  <span class="spec-panel__value">Estrutural · Concreto armado</span>
+                </div>
+                <div class="spec-panel__cell">
+                  <span class="spec-panel__label">Escala</span>
+                  <span class="spec-panel__value">1:50</span>
+                </div>
+                <div class="spec-panel__cell">
+                  <span class="spec-panel__label">Revisão</span>
+                  <span class="spec-panel__value">04</span>
+                </div>
+                <div class="spec-panel__cell spec-panel__cell--wide">
+                  <span class="spec-panel__label">Responsável técnico</span>
+                  <span class="spec-panel__value">Eng. Eduardo Matte</span>
+                </div>
+              </div>
+
+              <hr class="rule spec-panel__divider" />
+
+              <div class="level-diagram">
+                <p class="level-diagram__caption">Níveis de referência — corte esquemático</p>
+                <ul class="level-diagram__list">
+                  <li>
+                    <span class="level-diagram__mark">+12,40</span>
+                    <span class="level-diagram__tag">Cobertura</span>
+                  </li>
+                  <li>
+                    <span class="level-diagram__mark">+8,20</span>
+                    <span class="level-diagram__tag">Pavimento 2</span>
+                  </li>
+                  <li>
+                    <span class="level-diagram__mark">+4,10</span>
+                    <span class="level-diagram__tag">Pavimento 1</span>
+                  </li>
+                  <li>
+                    <span class="level-diagram__mark level-diagram__mark--ref">±0,00</span>
+                    <span class="level-diagram__tag">Nível de referência</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPACIDADES -->
+    <section class="capabilities py-5 py-lg-6" id="capacidades">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Áreas técnicas</p>
+          <h2>Quatro frentes, uma mesma responsabilidade técnica</h2>
+          <p>Cada projeto passa pelas mesmas camadas de verificação, na ordem em que aparecem em obra.</p>
+        </div>
+
+        <div class="capabilities-grid" data-reveal-group>
+          <article class="capability" data-reveal>
+            <span class="capability__index">01</span>
+            <span class="capability__code">EST</span>
+            <h3>Projeto estrutural</h3>
+            <p>Cálculo e detalhamento de estruturas em concreto armado, aço e alvenaria estrutural, com memorial de cálculo completo.</p>
+          </article>
+
+          <article class="capability" data-reveal>
+            <span class="capability__index">02</span>
+            <span class="capability__code">ELE</span>
+            <h3>Projeto elétrico</h3>
+            <p>Dimensionamento de cargas, quadros e proteções conforme NBR 5410, compatibilizado com a estrutura e a arquitetura.</p>
+          </article>
+
+          <article class="capability" data-reveal>
+            <span class="capability__index">03</span>
+            <span class="capability__code">CIV</span>
+            <h3>Consultoria &amp; compatibilização</h3>
+            <p>Cruzamento entre os projetos de arquitetura, estrutura e instalações antes do início da obra, para eliminar conflitos em campo.</p>
+          </article>
+
+          <article class="capability" data-reveal>
+            <span class="capability__index">04</span>
+            <span class="capability__code">DIA</span>
+            <h3>Laudos &amp; diagnóstico</h3>
+            <p>Vistoria técnica, identificação de patologias construtivas e emissão de laudo com ART.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section class="projects py-5 py-lg-6" id="projetos">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Projetos selecionados</p>
+          <h2>Projetos com responsabilidade técnica registrada</h2>
+          <p>Do cálculo estrutural à obra concluída — cada projeto listado aqui com o dado que importa: tipo, local e ano.</p>
+        </div>
+
+        <div class="projects-grid" data-reveal-group>
+          <article class="project-card" data-reveal>
+            <div class="project-card__media">
+              <img src="https://images.pexels.com/photos/10682523/pexels-photo-10682523.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Estrutura metálica industrial em construção sob céu aberto" loading="lazy" width="900" height="600" />
+            </div>
+            <div class="project-card__info">
+              <span class="project-card__number">P.01</span>
+              <div>
+                <p class="project-card__meta">Industrial · Cajamar, SP · 2025</p>
+                <h3 class="project-card__title">Galpão Malha 12</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-card__media">
+              <img src="https://images.pexels.com/photos/20273065/pexels-photo-20273065.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Fachada de vidro e estrutura metálica de edifício comercial em ângulo baixo" loading="lazy" width="900" height="600" />
+            </div>
+            <div class="project-card__info">
+              <span class="project-card__number">P.02</span>
+              <div>
+                <p class="project-card__meta">Comercial · São Paulo, SP · 2024</p>
+                <h3 class="project-card__title">Torre Vetor</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-card__media">
+              <img src="https://images.pexels.com/photos/12843084/pexels-photo-12843084.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Estrutura em concreto e aço de edifício multipavimento em construção" loading="lazy" width="900" height="600" />
+            </div>
+            <div class="project-card__info">
+              <span class="project-card__number">P.03</span>
+              <div>
+                <p class="project-card__meta">Residencial multifamiliar · Alphaville, SP · 2023</p>
+                <h3 class="project-card__title">Residencial Cota Alta</h3>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-card__media">
+              <img src="https://images.pexels.com/photos/9304988/pexels-photo-9304988.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Ponte de concreto com pilares simétricos sobre curso d'água" loading="lazy" width="900" height="600" />
+            </div>
+            <div class="project-card__info">
+              <span class="project-card__number">P.04</span>
+              <div>
+                <p class="project-card__meta">Infraestrutura urbana · Curitiba, PR · 2025</p>
+                <h3 class="project-card__title">Passarela Norte</h3>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NÚMEROS -->
+    <section class="metrics py-5 py-lg-6" id="numeros">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Em números</p>
+          <h2>Volume técnico acumulado ao longo da atuação do escritório</h2>
+        </div>
+
+        <div class="metrics-grid" data-reveal>
+          <div class="metric">
+            <span class="metric__value" data-count-up>214</span>
+            <span class="metric__label">Projetos estruturais calculados</span>
+          </div>
+          <div class="metric">
+            <span class="metric__value" data-count-up>12</span>
+            <span class="metric__label">Anos de atuação técnica</span>
+          </div>
+          <div class="metric">
+            <span class="metric__value" data-count-up>38</span>
+            <span class="metric__label">Municípios atendidos</span>
+          </div>
+          <div class="metric">
+            <span class="metric__value" data-count-up>100%</span>
+            <span class="metric__label">Projetos entregues com ART</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- METODOLOGIA -->
+    <section class="methodology py-5 py-lg-6" id="metodologia">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Como trabalhamos</p>
+          <h2>Cinco etapas, uma linha técnica — sem pular verificação</h2>
+        </div>
+
+        <ol class="methodology-timeline" data-reveal>
+          <li class="methodology-timeline__step">
+            <span class="methodology-timeline__number">01</span>
+            <div class="methodology-timeline__content">
+              <h3>Diagnóstico e levantamento</h3>
+              <p>Levantamento de cargas e análise do projeto de arquitetura antes de qualquer cálculo estrutural.</p>
+            </div>
+          </li>
+          <li class="methodology-timeline__step">
+            <span class="methodology-timeline__number">02</span>
+            <div class="methodology-timeline__content">
+              <h3>Modelagem e cálculo</h3>
+              <p>Modelagem em software de análise estrutural, dimensionamento de elementos e memorial de cálculo completo.</p>
+            </div>
+          </li>
+          <li class="methodology-timeline__step">
+            <span class="methodology-timeline__number">03</span>
+            <div class="methodology-timeline__content">
+              <h3>Compatibilização</h3>
+              <p>Cruzamento com os projetos elétrico, hidráulico e arquitetônico, eliminando conflitos antes da obra.</p>
+            </div>
+          </li>
+          <li class="methodology-timeline__step">
+            <span class="methodology-timeline__number">04</span>
+            <div class="methodology-timeline__content">
+              <h3>Acompanhamento de execução</h3>
+              <p>Visitas técnicas periódicas ao canteiro para verificar conformidade entre o projetado e o executado.</p>
+            </div>
+          </li>
+          <li class="methodology-timeline__step">
+            <span class="methodology-timeline__number">05</span>
+            <div class="methodology-timeline__content">
+              <h3>Entrega técnica (as-built)</h3>
+              <p>Documentação final com registro as-built e, quando aplicável, emissão de laudo técnico com ART.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- EQUIPE -->
+    <section class="team py-5 py-lg-6" id="equipe">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Equipe técnica</p>
+          <h2>Responsabilidade técnica assinada por quem projeta</h2>
+        </div>
+
+        <div class="team-grid" data-reveal-group>
+          <article class="team-member" data-reveal>
+            <div class="team-member__media">
+              <img src="https://images.pexels.com/photos/3771045/pexels-photo-3771045.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Retrato de Eduardo Matte, engenheiro estrutural" loading="lazy" width="500" height="625" />
+            </div>
+            <p class="team-member__code">01 / EST</p>
+            <h3 class="team-member__name">Eduardo Matte</h3>
+            <p class="team-member__role">Engenheiro estrutural, responsável técnico</p>
+            <p class="team-member__focus">Cálculo estrutural em concreto armado e aço, com foco em edifícios verticais.</p>
+          </article>
+
+          <article class="team-member" data-reveal>
+            <div class="team-member__media">
+              <img src="https://images.pexels.com/photos/8469999/pexels-photo-8469999.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Retrato de Renata Kolb, arquiteta técnica" loading="lazy" width="500" height="625" />
+            </div>
+            <p class="team-member__code">02 / CIV</p>
+            <h3 class="team-member__name">Renata Kolb</h3>
+            <p class="team-member__role">Arquiteta técnica</p>
+            <p class="team-member__focus">Compatibilização entre o projeto arquitetônico e o projeto estrutural.</p>
+          </article>
+
+          <article class="team-member" data-reveal>
+            <div class="team-member__media">
+              <img src="https://images.pexels.com/photos/8487797/pexels-photo-8487797.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Retrato de Camila Prado, engenheira elétrica" loading="lazy" width="500" height="625" />
+            </div>
+            <p class="team-member__code">03 / ELE</p>
+            <h3 class="team-member__name">Camila Prado</h3>
+            <p class="team-member__role">Engenheira eletricista</p>
+            <p class="team-member__focus">Dimensionamento elétrico e adequação às normas técnicas vigentes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SETORES ATENDIDOS -->
+    <section class="sectors py-5 py-lg-6" id="setores">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Setores atendidos</p>
+          <h2>Projeto técnico para diferentes escalas de obra</h2>
+        </div>
+
+        <ul class="sectors-list list-unstyled" data-reveal>
+          <li>
+            <i class="bi bi-building-gear icon" aria-hidden="true"></i>
+            <div>
+              <h3>Industrial</h3>
+              <p>Galpões, centros de distribuição e plantas produtivas.</p>
+            </div>
+          </li>
+          <li>
+            <i class="bi bi-building icon" aria-hidden="true"></i>
+            <div>
+              <h3>Comercial</h3>
+              <p>Torres corporativas, lojas e edifícios de uso misto.</p>
+            </div>
+          </li>
+          <li>
+            <i class="bi bi-house-gear icon" aria-hidden="true"></i>
+            <div>
+              <h3>Residencial de alto padrão</h3>
+              <p>Residências unifamiliares e multifamiliares de padrão elevado.</p>
+            </div>
+          </li>
+          <li>
+            <i class="bi bi-signpost-2 icon" aria-hidden="true"></i>
+            <div>
+              <h3>Infraestrutura urbana</h3>
+              <p>Passarelas, contenções e obras de infraestrutura urbana.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="contact py-5 py-lg-6" id="contato">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Contato</p>
+          <h2>Descreva o projeto e o estágio atual da obra</h2>
+          <p>Retornamos em até dois dias úteis com os próximos passos técnicos.</p>
+        </div>
+
+        <div class="row gy-5">
+          <div class="col-lg-5" data-reveal>
+            <ul class="contact-info list-unstyled">
+              <li>
+                <i class="bi bi-geo-alt icon" aria-hidden="true"></i>
+                <span>Rua dos Engenheiros, 340 — Bairro Técnico, Curitiba, PR</span>
+              </li>
+              <li>
+                <i class="bi bi-envelope icon" aria-hidden="true"></i>
+                <a href="mailto:projetos@nivelatecnica.com.br">projetos@nivelatecnica.com.br</a>
+              </li>
+              <li>
+                <i class="bi bi-telephone icon" aria-hidden="true"></i>
+                <a href="tel:+554130000000">+55 41 3000-0000</a>
+              </li>
+              <li>
+                <i class="bi bi-clock icon" aria-hidden="true"></i>
+                <span>Segunda a sexta, 08h às 18h</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-7" data-reveal>
+            <form class="contact-form" data-contact-form novalidate>
+              <div class="row gy-3">
+                <div class="col-sm-6 form-field">
+                  <label for="nome">Nome</label>
+                  <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome completo" required />
+                </div>
+                <div class="col-sm-6 form-field">
+                  <label for="telefone">Telefone</label>
+                  <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(41) 90000-0000" />
+                </div>
+                <div class="col-sm-6 form-field">
+                  <label for="email">E-mail</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="voce@email.com" required />
+                </div>
+                <div class="col-sm-6 form-field">
+                  <label for="tipo-projeto">Tipo de projeto</label>
+                  <select class="form-select" id="tipo-projeto" name="tipo-projeto">
+                    <option value="">Selecione</option>
+                    <option value="estrutural">Projeto estrutural</option>
+                    <option value="eletrico">Projeto elétrico</option>
+                    <option value="compatibilizacao">Consultoria e compatibilização</option>
+                    <option value="laudo">Laudo técnico</option>
+                  </select>
+                </div>
+                <div class="col-12 form-field">
+                  <label for="mensagem">Sobre o projeto</label>
+                  <textarea class="form-control" id="mensagem" name="mensagem" rows="4" placeholder="Tipo de obra, área aproximada e estágio atual do projeto." required></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn-technical mt-4">
+                Enviar mensagem <i class="bi bi-arrow-up-right icon" aria-hidden="true"></i>
+              </button>
+              <p class="contact-form__note">Campos com preenchimento obrigatório permitem uma resposta técnica mais precisa.</p>
+              <p class="contact-form__success" data-contact-success role="status">
+                <i class="bi bi-check2 icon" aria-hidden="true"></i>
+                Mensagem recebida. Retornaremos em até dois dias úteis.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row gy-5">
+        <div class="col-lg-4">
+          <p class="site-footer__brand">NÍVEL<span>.</span></p>
+          <p class="site-footer__tagline">Arquitetura técnica, cálculo estrutural e consultoria — do projeto executivo à obra concluída.</p>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <p class="site-footer__col-title">Navegação</p>
+          <ul class="site-footer__list">
+            <li><a href="#capacidades">Capacidades</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#metodologia">Metodologia</a></li>
+            <li><a href="#equipe">Equipe</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <p class="site-footer__col-title">Contato</p>
+          <ul class="site-footer__list">
+            <li><a href="mailto:projetos@nivelatecnica.com.br">projetos@nivelatecnica.com.br</a></li>
+            <li><a href="tel:+554130000000">+55 41 3000-0000</a></li>
+            <li>Curitiba, PR</li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <p class="site-footer__col-title">Redes</p>
+          <ul class="site-footer__list">
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p class="mb-0">&copy; 2026 NÍVEL Arquitetura Técnica. Todos os direitos reservados.</p>
+        <p class="mb-0">Projeto e cálculo estrutural · Curitiba, Brasil</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

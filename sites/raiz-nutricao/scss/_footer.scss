@@ -1,0 +1,46 @@
+@use 'variables' as v;
+
+.site-footer {
+  background: v.$color-brown-ink;
+  color: rgba(250, 246, 238, 0.72);
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: v.$color-mustard;
+    }
+  }
+
+  &__grid {
+    border-bottom: 1px solid rgba(250, 246, 238, 0.12);
+  }
+
+  .navbar-brand {
+    color: v.$color-cream;
+
+    span {
+      color: v.$color-mustard;
+    }
+  }
+
+  .lgpd {
+    color: rgba(250, 246, 238, 0.55);
+    max-width: 50ch;
+  }
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(250, 246, 238, 0.25);
+  border-radius: 50%;
+
+  &:hover {
+    border-color: v.$color-mustard;
+    background: rgba(201, 146, 46, 0.12);
+  }
+}

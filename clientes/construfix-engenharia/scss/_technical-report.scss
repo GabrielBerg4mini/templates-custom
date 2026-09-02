@@ -1,0 +1,94 @@
+@use 'variables' as v;
+
+.technical-report {
+  background: v.$color-navy-light;
+
+  &__alert {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(242, 118, 30, 0.12);
+    border: 1px solid rgba(242, 118, 30, 0.4);
+    color: v.$color-orange;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    margin-bottom: 1.25rem;
+
+    i {
+      font-size: 15px;
+    }
+  }
+
+  h2 {
+    max-width: 16ch;
+  }
+
+  &__lead {
+    color: v.$color-text-muted;
+    font-size: 1.05rem;
+    max-width: 46ch;
+  }
+
+  &__list {
+    margin: 1.5rem 0;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+
+      i {
+        color: v.$color-orange;
+        margin-top: 0.2rem;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  &__media img {
+    box-shadow: v.$shadow-soft;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+
+  &__badge {
+    position: absolute;
+    bottom: -1.25rem;
+    left: -1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    background: v.$color-navy;
+    border: 1px solid rgba(242, 118, 30, 0.35);
+    border-radius: 1rem;
+    padding: 0.85rem 1.1rem;
+    box-shadow: v.$shadow-soft;
+    max-width: 220px;
+
+    i {
+      font-size: 26px;
+      color: v.$color-orange;
+      flex-shrink: 0;
+    }
+
+    strong {
+      display: block;
+      font-family: v.$font-heading;
+      font-size: 0.95rem;
+      color: v.$color-white;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    span {
+      font-size: 0.72rem;
+      color: v.$color-text-muted;
+    }
+  }
+}

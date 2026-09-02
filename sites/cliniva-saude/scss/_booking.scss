@@ -1,0 +1,72 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Bloco de agendamento com fundo no acento (slate-blue) — o ponto mais
+// forte da página antes do footer, para o CTA de agendamento ficar
+// reforçado como pede a direção C1 ("booking visível").
+.booking {
+  background: v.$color-slate-blue;
+  color: v.$color-white;
+
+  .eyebrow {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  h2 {
+    color: v.$color-white;
+  }
+
+  .section-heading__text {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  a.btn-slate {
+    background: v.$color-white;
+    border-color: v.$color-white;
+    color: v.$color-slate-blue-deep;
+
+    &:hover,
+    &:focus-visible {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(255, 255, 255, 0.9);
+      color: v.$color-slate-blue-deep;
+    }
+  }
+}
+
+.booking-info {
+  margin-top: 3rem;
+  display: grid;
+  gap: 1.75rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+
+  @include m.breakpoint(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+
+    .icon {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-top: 0.15rem;
+      flex-shrink: 0;
+    }
+
+    strong {
+      display: block;
+      font-size: 0.92rem;
+      margin-bottom: 0.15rem;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.78);
+    }
+  }
+}

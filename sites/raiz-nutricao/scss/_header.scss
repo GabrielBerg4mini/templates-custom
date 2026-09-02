@@ -1,0 +1,42 @@
+@use 'variables' as v;
+
+.navbar {
+  background: rgba(250, 246, 238, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid v.$color-border;
+  padding-block: 1.1rem;
+}
+
+.navbar-brand {
+  font-family: v.$font-heading;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: v.$color-brown-ink;
+
+  span {
+    color: v.$color-mustard-dark;
+  }
+}
+
+.nav-link {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: v.$color-brown-ink;
+
+  &:hover {
+    color: v.$color-mustard-dark;
+  }
+}
+
+a.nav-cta {
+  background: v.$color-brown-ink;
+  color: v.$color-cream;
+  border-radius: v.$radius-sm;
+  padding: 0.55rem 1.1rem !important;
+  font-weight: 600;
+
+  &:hover {
+    background: v.$color-mustard-dark;
+    color: v.$color-cream;
+  }
+}

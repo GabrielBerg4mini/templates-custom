@@ -1,0 +1,54 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Anti-card: lista editorial em duas colunas (número + título à esquerda,
+// descrição à direita), com divisores finos — não grade de cards com ícone.
+.practice-list {
+  border-top: 1px solid v.$color-border-hairline;
+}
+
+.practice-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding-block: 2.25rem;
+  border-bottom: 1px solid v.$color-border-hairline;
+
+  @include m.breakpoint(lg) {
+    grid-template-columns: minmax(0, 19rem) minmax(0, 1fr);
+    gap: 2rem 3.5rem;
+    align-items: baseline;
+  }
+}
+
+.practice-item__label {
+  display: flex;
+  align-items: baseline;
+  gap: 1.1rem;
+}
+
+.practice-item__index {
+  font-family: v.$font-display;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.9rem;
+  line-height: 1;
+  color: v.$color-burgundy;
+  flex-shrink: 0;
+}
+
+.practice-item__title {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: v.$color-ink;
+}
+
+.practice-item__desc {
+  margin: 0;
+  max-width: 42rem;
+  font-family: v.$font-base;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: v.$color-muted;
+}

@@ -1,0 +1,190 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// O Bootstrap (via _theme-bootstrap.scss) já cuida do reset, tipografia
+// base, links, imagens e grid. Aqui ficam só os utilitários e padrões
+// tipográficos que a direção "Editorial Authority" exige e o Bootstrap
+// não tem pronto.
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: v.$font-base;
+}
+
+h1, h2, h3, h4 {
+  font-family: v.$font-display;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: v.$color-ink;
+}
+
+// Toque editorial: itálico serifado leve, usado com moderação em palavras
+// de destaque dentro de headlines — nunca o parágrafo inteiro.
+em, .accent-italic {
+  font-family: v.$font-display;
+  font-weight: 400;
+  font-style: italic;
+  color: v.$color-burgundy;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: v.$font-base;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: v.$color-burgundy;
+  margin-bottom: 1.25rem;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 1.75rem;
+    height: 1px;
+    background: currentColor;
+  }
+
+  // Sobre a section de contraste escura (stats) — marfim em vez de bordô,
+  // já que bordô sobre tinta não garante contraste AA em texto pequeno.
+  &--on-ink {
+    color: v.$color-ivory-muted-on-ink;
+
+    &::before {
+      background: v.$color-burgundy;
+    }
+  }
+}
+
+.section-heading {
+  max-width: 42rem;
+  margin-bottom: 3.5rem;
+
+  h2 {
+    font-size: clamp(1.9rem, 3.2vw, 2.65rem);
+    line-height: 1.2;
+  }
+
+  &__text {
+    margin-top: 1.25rem;
+    margin-bottom: 0;
+    max-width: 38rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: v.$color-muted;
+  }
+}
+
+.section-y {
+  padding-block: clamp(4.5rem, 8vw, 8rem);
+}
+
+// Alterna o fundo entre marfim e uma superfície levemente mais densa para
+// dar ritmo entre sections sem repetir sempre o mesmo tom.
+.bg-ivory-warm {
+  background: v.$color-ivory-warm;
+}
+
+.bg-ink {
+  background: v.$color-ink-elevated;
+  color: v.$color-ivory-on-ink;
+}
+
+// Botão-linha: CTA discreto e contextual, sem preenchimento — só uma linha
+// que se estende no hover. Especificidade "a.btn-line" para vencer regras
+// genéricas de wrapper como ".site-footer a { color }" (pitfall #4).
+a.btn-line {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-bottom: 0.55rem;
+  font-family: v.$font-base;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: v.$color-ink;
+  border-bottom: 1px solid v.$color-border-hairline-strong;
+  transition: color v.$transition-base, border-color v.$transition-base, gap v.$transition-base;
+
+  .icon {
+    color: v.$color-burgundy;
+    transition: transform v.$transition-base;
+  }
+
+  &:hover {
+    color: v.$color-ink;
+    border-color: v.$color-burgundy;
+    gap: 1.1rem;
+
+    .icon {
+      transform: translateX(3px);
+    }
+  }
+
+  &--on-ink {
+    color: v.$color-ivory-on-ink;
+    border-color: v.$color-border-hairline-on-ink;
+
+    &:hover {
+      color: v.$color-ivory-on-ink;
+      border-color: v.$color-burgundy;
+    }
+  }
+}
+
+// Botão sólido — reservado para a ação primária real do site (envio de
+// contato / agendar conversa). Bordô usado em bloco pequeno, nunca em
+// seção inteira nem em gradiente.
+a.btn-solid,
+button.btn-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.9rem 1.85rem;
+  background: v.$color-burgundy;
+  border: 1px solid v.$color-burgundy;
+  border-radius: v.$radius-sm;
+  font-family: v.$font-base;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: v.$color-ivory;
+  transition: background-color v.$transition-base, border-color v.$transition-base;
+
+  &:hover {
+    color: v.$color-ivory;
+    background: #591821;
+    border-color: #591821;
+  }
+}
+
+// Reveal-on-scroll (aplicado via data-reveal + IntersectionObserver em
+// js/main.js). Deslocamento pequeno, ~400ms — motion mínimo, sem parallax.
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,63 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Único bloco de contraste forte do site: fundo tinta, métricas em
+// tipografia grande — não cards com ícone, não foto de fundo. É a "seção
+// densa" que alterna o ritmo com as sections claras ao redor.
+.stats {
+  background: v.$color-ink-elevated;
+  color: v.$color-ivory-on-ink;
+}
+
+.stats__lead {
+  margin-top: 1rem;
+  max-width: 40rem;
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.4;
+  color: v.$color-ivory-on-ink;
+}
+
+.stats__grid {
+  margin-top: 3.5rem;
+  --bs-gutter-x: 0;
+
+  .col {
+    border-top: 1px solid v.$color-border-hairline-on-ink;
+    padding-top: 2rem;
+
+    @include m.breakpoint(sm) {
+      border-top: none;
+      border-inline-start: 1px solid v.$color-border-hairline-on-ink;
+      padding-inline-start: 2.5rem;
+      padding-top: 0;
+
+      &:first-child {
+        border-inline-start: none;
+        padding-inline-start: 0;
+      }
+    }
+  }
+}
+
+.stat {
+  strong {
+    display: block;
+    font-family: v.$font-display;
+    font-weight: 600;
+    font-size: clamp(2.75rem, 5.2vw, 4rem);
+    line-height: 1;
+    color: v.$color-ivory-on-ink;
+  }
+
+  span {
+    display: block;
+    margin-top: 0.9rem;
+    max-width: 18rem;
+    font-family: v.$font-base;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: v.$color-ivory-muted-on-ink;
+  }
+}

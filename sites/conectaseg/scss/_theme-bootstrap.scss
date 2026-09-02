@@ -1,0 +1,46 @@
+// Sobrescreve variáveis do Bootstrap com os tokens do site (scss/_variables.scss)
+// antes de importar o Bootstrap, para herdar grid, botões, navbar e cards
+// já no tom de cada projeto — sem escrever esses componentes do zero.
+@use 'variables' as v;
+
+$primary: v.$color-primary;
+$secondary: v.$color-secondary;
+$body-bg: v.$color-bg;
+$body-color: v.$color-text;
+$font-family-base: v.$font-base;
+$headings-font-family: v.$font-heading;
+// Sem isso o Bootstrap sublinha todo <a> por padrão.
+$link-decoration: none;
+$border-radius: 0.75rem;
+$border-radius-lg: 1.25rem;
+$border-radius-sm: 0.5rem;
+$grid-gutter-width: v.$spacing-unit * 4;
+
+// Container mais largo que o padrão do Bootstrap — layout com mais
+// respiro nas telas grandes, sem virar full-width (container-fluid).
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1240px,
+  xxl: 1440px,
+);
+$enable-shadows: false;
+$enable-negative-margins: true;
+
+// O Bootstrap só define spacers até 5 (3rem) — todas as sections já usam
+// "py-5 py-lg-6" no HTML, mas o "-6" era um no-op silencioso. Estendendo o
+// mapa para incluir 6 (6rem), esse "py-lg-6" passa a valer de verdade e dá
+// mais respiro no desktop entre as sections (a hero foi excluída de
+// propósito — ver comentário em index.html).
+$spacers: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 1rem,
+  4: 1.5rem,
+  5: 3rem,
+  6: 6rem,
+);
+
+@import 'bootstrap/scss/bootstrap';

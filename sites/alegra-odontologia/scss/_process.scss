@@ -1,0 +1,97 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Processo — as três etapas do atendimento como uma linha de nós
+// numerados, não mais uma fileira de cards idênticos.
+// Padding vertical da section vem do utility "py-5 py-lg-6" no HTML.
+.process-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+
+  @include m.breakpoint(lg) {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+}
+
+// Linha conectora — só a partir do desktop, atrás dos nós.
+.process-list::before {
+  content: '';
+
+  @include m.breakpoint(lg) {
+    position: absolute;
+    top: 1.4rem;
+    left: 2.8rem;
+    right: 2.8rem;
+    height: 2px;
+    background: v.$color-line-strong;
+    z-index: 0;
+  }
+}
+
+.process-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  position: relative;
+  z-index: 1;
+
+  @include m.breakpoint(lg) {
+    flex-direction: column;
+    flex: 1;
+    padding-right: 1.5rem;
+  }
+}
+
+.process-step__node {
+  flex-shrink: 0;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  background: v.$color-white;
+  border: 2px solid v.$color-coral-dark;
+  color: v.$color-coral-dark;
+  font-family: v.$font-heading;
+  font-weight: 700;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process-step__body {
+  padding-top: 0.15rem;
+
+  @include m.breakpoint(lg) {
+    padding-top: 1.1rem;
+  }
+}
+
+.process-step__code {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: v.$color-graphite-faint;
+  margin-bottom: 0.4rem;
+}
+
+.process-step__body h3 {
+  font-size: 1.08rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  max-width: 20ch;
+}
+
+.process-step__body p {
+  color: v.$color-graphite-soft;
+  font-size: 0.93rem;
+  margin: 0;
+  max-width: 30ch;
+}

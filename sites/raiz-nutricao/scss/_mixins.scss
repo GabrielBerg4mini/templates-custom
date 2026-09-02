@@ -1,0 +1,48 @@
+@use 'variables' as v;
+
+@mixin breakpoint($size) {
+  @if $size == sm {
+    @media (min-width: v.$bp-sm) { @content; }
+  } @else if $size == md {
+    @media (min-width: v.$bp-md) { @content; }
+  } @else if $size == lg {
+    @media (min-width: v.$bp-lg) { @content; }
+  } @else if $size == xl {
+    @media (min-width: v.$bp-xl) { @content; }
+  }
+}
+
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+// Moldura deslocada atrás da foto — o gesto de composição assimétrica
+// e "alguém desenhou isso" da direção P3. Usar com moderação: uma
+// moldura por foto de destaque, nunca em toda imagem da página.
+@mixin frame-offset($color: v.$color-mustard, $corner: bottom-left) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: $color;
+    border-radius: v.$radius-md;
+    z-index: 0;
+
+    @if $corner == bottom-left {
+      transform: translate(-#{v.$frame-offset}, #{v.$frame-offset});
+    } @else {
+      transform: translate(#{v.$frame-offset}, #{v.$frame-offset});
+    }
+  }
+
+  > img,
+  > .frame-inner {
+    position: relative;
+    z-index: 1;
+  }
+}

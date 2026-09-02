@@ -1,0 +1,69 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.facility {
+  background: v.$color-offwhite;
+
+  &__gallery {
+    position: relative;
+  }
+
+  &__main img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: v.$radius-md;
+  }
+
+  &__offset {
+    display: none;
+
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 5 / 4;
+      object-fit: cover;
+      border-radius: v.$radius-md;
+      box-shadow: v.$shadow-lift;
+    }
+
+    @include m.breakpoint(sm) {
+      display: block;
+      position: absolute;
+      width: 52%;
+      right: -1.5rem;
+      bottom: -2rem;
+      border: 4px solid v.$color-offwhite;
+      border-radius: v.$radius-md;
+    }
+  }
+
+  &__text {
+    color: v.$color-text-muted;
+    max-width: 46ch;
+    margin-bottom: 1.5rem;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.75rem;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      color: v.$color-ink;
+
+      .icon {
+        color: v.$color-slate-blue;
+        margin-top: 0.15rem;
+        flex-shrink: 0;
+      }
+    }
+  }
+}

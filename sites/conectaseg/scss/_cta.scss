@@ -1,0 +1,29 @@
+@use 'variables' as v;
+
+.cta-band {
+  background: v.$color-green-dark;
+  color: v.$color-white;
+  text-align: center;
+
+  h2 {
+    color: v.$color-white;
+    max-width: 26ch;
+    margin-inline: auto;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 46ch;
+    margin-inline: auto;
+  }
+
+  .btn-light {
+    color: v.$color-green-dark;
+    font-weight: 600;
+
+    &:hover {
+      background: v.$color-ink;
+      color: v.$color-white;
+    }
+  }
+}

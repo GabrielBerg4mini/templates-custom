@@ -1,0 +1,83 @@
+@use 'variables' as v;
+
+// FAQ — acordeão vanilla (sem dependência), controlado por js/main.js
+// via classe .is-open + [hidden] no painel de resposta.
+// Padding vertical da section vem do utility "py-5 py-lg-6" no HTML.
+.faq-list {
+  max-width: 46rem;
+  border-top: 1px solid v.$color-line-strong;
+}
+
+.faq-item {
+  border-bottom: 1px solid v.$color-line-strong;
+}
+
+.faq-item__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: 1.35rem 0;
+  font-size: 1.03rem;
+  font-weight: 700;
+  font-family: v.$font-heading;
+  color: v.$color-graphite;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid v.$color-coral-dark;
+    outline-offset: 2px;
+    border-radius: v.$radius-sm;
+  }
+}
+
+.faq-item__icon {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: v.$color-coral-tint;
+  position: relative;
+  transition: background-color v.$transition-base;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background: v.$color-coral-dark;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  &::before {
+    width: 0.85rem;
+    height: 1.5px;
+  }
+
+  &::after {
+    width: 1.5px;
+    height: 0.85rem;
+  }
+}
+
+.faq-item.is-open .faq-item__icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  opacity: 0;
+}
+
+.faq-item__panel {
+  padding-bottom: 1.5rem;
+  max-width: 42rem;
+
+  p {
+    color: v.$color-graphite-soft;
+    font-size: 0.94rem;
+    margin: 0;
+  }
+}

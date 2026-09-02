@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cliniva Saúde — Clínica Médica Multiespecialidade</title>
+  <meta name="description" content="Cliniva Saúde: clínica médica multiespecialidade com clínica geral, cardiologia, dermatologia, ortopedia e check-up executivo em um só endereço, com agenda organizada e prontuário compartilhado entre especialidades." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a class="navbar-brand" href="#inicio">Cliniva <span>Saúde</span></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse flex-grow-0" id="mainNav">
+        <ul class="navbar-nav align-items-lg-center gap-lg-3 mx-lg-4">
+          <li class="nav-item"><a class="nav-link" href="#especialidades">Especialidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#profissionais">Profissionais</a></li>
+          <li class="nav-item"><a class="nav-link" href="#estrutura">Estrutura</a></li>
+          <li class="nav-item"><a class="nav-link" href="#como-funciona">Como funciona</a></li>
+          <li class="nav-item d-lg-none mt-2">
+            <a href="https://wa.me/5511994028922?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Cliniva%20Sa%C3%BAde." target="_blank" rel="noopener" class="btn-slate btn w-100">
+              Agendar consulta
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="d-none d-lg-flex align-items-center gap-4">
+        <a class="nav-phone" href="tel:+551140028922">
+          <i class="bi bi-telephone icon" aria-hidden="true"></i>
+          (11) 4002-8922
+        </a>
+        <a href="https://wa.me/5511994028922?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Cliniva%20Sa%C3%BAde." target="_blank" rel="noopener" class="btn-slate btn btn-sm nav-cta">
+          Agendar consulta
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="row align-items-stretch">
+          <div class="col-lg-5" data-reveal>
+            <div class="hero__content">
+              <p class="eyebrow">Clínica médica multiespecialidade</p>
+              <h1>Uma decisão clínica bem explicada vale mais do que uma consulta rápida</h1>
+              <p class="hero__subtitle">
+                Clínica geral, cardiologia, dermatologia, ortopedia e check-up executivo em
+                um só endereço, com agenda organizada por horário marcado e histórico
+                compartilhado entre as especialidades — para você não repetir a mesma
+                explicação a cada porta.
+              </p>
+
+              <div class="hero__actions">
+                <a href="https://wa.me/5511994028922?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Cliniva%20Sa%C3%BAde." target="_blank" rel="noopener" class="btn-slate btn btn-lg">
+                  <i class="bi bi-calendar2-check icon" aria-hidden="true"></i>
+                  Agendar consulta
+                </a>
+                <a href="#especialidades" class="hero__link">
+                  Ver especialidades
+                  <i class="bi bi-arrow-right icon" aria-hidden="true"></i>
+                </a>
+              </div>
+
+              <ul class="hero__facts">
+                <li><i class="bi bi-check2-circle icon" aria-hidden="true"></i> Horário marcado — sem atendimento por ordem de chegada</li>
+                <li><i class="bi bi-check2-circle icon" aria-hidden="true"></i> Prontuário único, acessível a toda a equipe que cuida de você</li>
+                <li><i class="bi bi-check2-circle icon" aria-hidden="true"></i> Atendimento presencial e por teleconsulta</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-7" data-reveal>
+            <div class="hero__media">
+              <img src="https://images.pexels.com/photos/7578797/pexels-photo-7578797.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                alt="Médica revisa exames com paciente durante consulta em consultório claro, iluminado por persiana"
+                width="1000" height="1333" loading="eager" />
+              <div class="hero__chip">
+                <i class="bi bi-geo-alt-fill icon" aria-hidden="true"></i>
+                <div>
+                  <strong>Alameda Santos, 1200</strong>
+                  <span>Jardim Paulista, São Paulo — SP</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESPECIALIDADES -->
+    <section class="specialties py-5 py-lg-6" id="especialidades">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">Especialidades</p>
+              <h2>Cinco especialidades, o mesmo padrão de atendimento</h2>
+              <p class="section-heading__text">
+                Da consulta de rotina ao acompanhamento de uma condição crônica, cada
+                especialidade segue o mesmo processo: histórico revisado antes da consulta,
+                tempo real de escuta e retorno explicado por escrito.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <article class="specialty-feature" data-reveal>
+          <div class="specialty-feature__media">
+            <img src="https://images.pexels.com/photos/39192383/pexels-photo-39192383.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Médico consulta paciente em escritório clínico moderno, revisando receita sobre a mesa" loading="lazy" width="700" height="467" />
+          </div>
+          <div class="specialty-feature__body">
+            <span class="specialty-feature__index">01</span>
+            <div class="specialty-feature__title">
+              <i class="bi bi-clipboard2-pulse icon" aria-hidden="true"></i>
+              <h3>Clínica Geral</h3>
+            </div>
+            <p>Porta de entrada para adultos e idosos: consultas de rotina, avaliação de
+              exames e acompanhamento de condições crônicas, com tempo reservado para
+              ouvir o que trouxe o paciente até aqui antes de qualquer conduta.</p>
+          </div>
+        </article>
+
+        <div class="specialty-list">
+          <div class="specialty-line" data-reveal>
+            <span class="specialty-line__index">02</span>
+            <div class="specialty-line__media">
+              <img src="https://images.pexels.com/photos/7108341/pexels-photo-7108341.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Eletrodos de eletrocardiograma sendo posicionados no tórax de paciente" loading="lazy" width="300" height="300" />
+            </div>
+            <div class="specialty-line__body">
+              <div class="specialty-line__title">
+                <i class="bi bi-heart-pulse icon" aria-hidden="true"></i>
+                <h3>Cardiologia</h3>
+              </div>
+              <p>Avaliação de risco cardiovascular, eletrocardiograma e acompanhamento de
+                hipertensão e outras condições crônicas do coração.</p>
+            </div>
+          </div>
+
+          <div class="specialty-line" data-reveal>
+            <span class="specialty-line__index">03</span>
+            <div class="specialty-line__media">
+              <img src="https://images.pexels.com/photos/7446660/pexels-photo-7446660.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Dermatologista examina a pele de paciente com dermatoscópio digital" loading="lazy" width="300" height="300" />
+            </div>
+            <div class="specialty-line__body">
+              <div class="specialty-line__title">
+                <i class="bi bi-droplet-half icon" aria-hidden="true"></i>
+                <h3>Dermatologia</h3>
+              </div>
+              <p>Avaliação clínica de pele, mapeamento de lesões com dermatoscopia digital
+                e acompanhamento de condições dermatológicas recorrentes.</p>
+            </div>
+          </div>
+
+          <div class="specialty-line" data-reveal>
+            <span class="specialty-line__index">04</span>
+            <div class="specialty-line__media">
+              <img src="https://images.pexels.com/photos/4506111/pexels-photo-4506111.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Ortopedista examina mobilidade do ombro e da coluna de paciente" loading="lazy" width="300" height="300" />
+            </div>
+            <div class="specialty-line__body">
+              <div class="specialty-line__title">
+                <i class="bi bi-person-arms-up icon" aria-hidden="true"></i>
+                <h3>Ortopedia</h3>
+              </div>
+              <p>Avaliação de dores articulares e lesões por esforço repetitivo, com
+                encaminhamento direto para exame de imagem quando necessário.</p>
+            </div>
+          </div>
+
+          <div class="specialty-line" data-reveal>
+            <span class="specialty-line__index">05</span>
+            <div class="specialty-line__media">
+              <img src="https://images.pexels.com/photos/7659573/pexels-photo-7659573.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Profissional de saúde afere a pressão arterial de paciente durante check-up" loading="lazy" width="300" height="300" />
+            </div>
+            <div class="specialty-line__body">
+              <div class="specialty-line__title">
+                <i class="bi bi-speedometer2 icon" aria-hidden="true"></i>
+                <h3>Check-up Executivo</h3>
+              </div>
+              <p>Bateria de exames organizada em um único dia, com devolutiva consolidada
+                para quem precisa encaixar a prevenção numa agenda apertada.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFISSIONAIS -->
+    <section class="team py-5 py-lg-6" id="profissionais">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Profissionais</p>
+          <h2>Três médicos, presença constante nas especialidades mais procuradas</h2>
+          <p class="section-heading__text">
+            O paciente é recebido pelo mesmo profissional a cada retorno — o que muda é o
+            motivo da consulta, não quem já conhece o seu histórico.
+          </p>
+        </div>
+
+        <article class="profile-feature" data-reveal>
+          <div class="profile-feature__media">
+            <img src="https://images.pexels.com/photos/6762869/pexels-photo-6762869.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Retrato do Dr. Rafael Bastos Almeida, clínico geral" loading="lazy" width="600" height="800" />
+          </div>
+          <div class="profile-feature__body">
+            <span class="profile-feature__role">Clínica Geral · Coordenação clínica</span>
+            <h3>Dr. Rafael Bastos Almeida</h3>
+            <p>Coordena o time clínico da Cliniva e acompanha pacientes adultos em
+              consultas de rotina e condições crônicas, com atenção especial à
+              continuidade entre as especialidades — é ele quem revisa o encaminhamento
+              antes de qualquer troca de especialista.</p>
+          </div>
+        </article>
+
+        <div class="row row-cols-1 row-cols-sm-2 g-4 profile-row">
+          <div class="col" data-reveal>
+            <article class="profile">
+              <div class="profile__media">
+                <img src="https://images.pexels.com/photos/32254667/pexels-photo-32254667.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Retrato da Dra. Fernanda Kirchner Lima, cardiologista" loading="lazy" width="500" height="667" />
+              </div>
+              <h3>Dra. Fernanda Kirchner Lima</h3>
+              <span class="profile__role">Cardiologia</span>
+              <p class="profile__text">Avalia risco cardiovascular e acompanha pacientes hipertensos em consultas de retorno regular.</p>
+            </article>
+          </div>
+
+          <div class="col" data-reveal>
+            <article class="profile">
+              <div class="profile__media">
+                <img src="https://images.pexels.com/photos/32254658/pexels-photo-32254658.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Retrato do Dr. Thiago Nascimento Rocha, dermatologista" loading="lazy" width="500" height="667" />
+              </div>
+              <h3>Dr. Thiago Nascimento Rocha</h3>
+              <span class="profile__role">Dermatologia</span>
+              <p class="profile__text">Conduz mapeamento de pele e acompanhamento de condições dermatológicas de longa duração.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTRUTURA -->
+    <section class="facility py-5 py-lg-6" id="estrutura">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-6" data-reveal>
+            <div class="facility__gallery">
+              <div class="facility__main">
+                <img src="https://images.pexels.com/photos/8459996/pexels-photo-8459996.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Sala de espera clara e organizada da clínica, com luz natural e poltronas confortáveis" loading="lazy" width="900" height="675" />
+              </div>
+              <div class="facility__offset">
+                <img src="https://images.pexels.com/photos/33812025/pexels-photo-33812025.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Recepção da clínica com painel de madeira e acabamento contemporâneo" loading="lazy" width="700" height="560" />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-reveal>
+            <p class="eyebrow">Estrutura</p>
+            <h2 class="mb-3">Um espaço projetado para reduzir a ansiedade da espera</h2>
+            <p class="facility__text">
+              Consultórios isolados acusticamente, recepção com previsão de horário
+              informada já no check-in e sala de coleta separada da área de espera geral —
+              para que o tempo parado antes da consulta pese o mínimo possível.
+            </p>
+            <ul class="facility__list">
+              <li><i class="bi bi-check2-circle icon" aria-hidden="true"></i> Recepção com previsão de horário no check-in</li>
+              <li><i class="bi bi-check2-circle icon" aria-hidden="true"></i> Consultórios isolados para consultas mais sensíveis</li>
+              <li><i class="bi bi-check2-circle icon" aria-hidden="true"></i> Estacionamento conveniado no mesmo quarteirão</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="process py-5 py-lg-6" id="como-funciona">
+      <div class="container">
+        <div class="section-heading section-heading--center" data-reveal>
+          <p class="eyebrow">Como funciona</p>
+          <h2>Do agendamento ao acompanhamento, em três etapas</h2>
+        </div>
+
+        <div class="process-steps" data-reveal>
+          <div class="process-step">
+            <span class="process-step__index">01</span>
+            <h3>Agendamento</h3>
+            <p>Você escolhe a especialidade pelo WhatsApp ou telefone e recebe um horário
+              marcado, presencial ou por teleconsulta, com confirmação por mensagem.</p>
+          </div>
+
+          <div class="process-step">
+            <span class="process-step__index">02</span>
+            <h3>Consulta</h3>
+            <p>Atendimento com tempo reservado para histórico e exame clínico, sem
+              consultas encaixadas por cima do seu horário marcado.</p>
+          </div>
+
+          <div class="process-step">
+            <span class="process-step__index">03</span>
+            <h3>Acompanhamento</h3>
+            <p>O retorno fica registrado no mesmo prontuário, disponível para qualquer
+              especialista da Cliniva que continue o seu cuidado.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFIABILIDADE -->
+    <section class="trust py-5 py-lg-6" id="confianca">
+      <div class="container">
+        <div class="trust__grid">
+          <div data-reveal>
+            <p class="eyebrow">Confiabilidade</p>
+            <h2 class="mb-4">Construída para durar mais do que uma consulta</h2>
+
+            <dl class="trust-facts">
+              <div class="trust-facts__item">
+                <dt>Fundação</dt>
+                <dd>Em atividade desde 2014, no mesmo endereço</dd>
+              </div>
+              <div class="trust-facts__item">
+                <dt>Continuidade</dt>
+                <dd>5 especialidades sob o mesmo prontuário clínico</dd>
+              </div>
+              <div class="trust-facts__item">
+                <dt>Modalidade</dt>
+                <dd>Atendimento presencial e por teleconsulta</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div data-reveal>
+            <div class="testimonial">
+              <i class="bi bi-chat-quote-fill testimonial__mark" aria-hidden="true"></i>
+              <div class="testimonial__track">
+                <blockquote class="testimonial__slide is-active">
+                  <p class="testimonial__quote">"Troquei de cardiologista três vezes em outros lugares até achar um consultório onde o retorno realmente lê o exame anterior antes de me atender."</p>
+                  <cite>
+                    <span class="testimonial__author">Marcelo Andrade Ferreira</span>
+                    <span class="testimonial__role">Paciente de cardiologia</span>
+                  </cite>
+                </blockquote>
+                <blockquote class="testimonial__slide">
+                  <p class="testimonial__quote">"Fiz o check-up executivo em uma manhã só e recebi os resultados explicados na mesma semana, sem ter que voltar para uma segunda consulta."</p>
+                  <cite>
+                    <span class="testimonial__author">Patrícia Vilhena Costa</span>
+                    <span class="testimonial__role">Paciente de check-up executivo</span>
+                  </cite>
+                </blockquote>
+                <blockquote class="testimonial__slide">
+                  <p class="testimonial__quote">"O ortopedista já tinha visto o histórico da clínica geral antes da minha primeira consulta. Não precisei repetir os exames que já tinha feito."</p>
+                  <cite>
+                    <span class="testimonial__author">Eduardo Malta Siqueira</span>
+                    <span class="testimonial__role">Paciente de ortopedia</span>
+                  </cite>
+                </blockquote>
+              </div>
+              <div class="testimonial__nav" aria-label="Selecionar depoimento">
+                <button type="button" class="is-active" aria-label="Ver depoimento 1" aria-current="true"></button>
+                <button type="button" aria-label="Ver depoimento 2" aria-current="false"></button>
+                <button type="button" aria-label="Ver depoimento 3" aria-current="false"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AGENDAMENTO -->
+    <section class="booking py-5 py-lg-6" id="agendamento">
+      <div class="container">
+        <div class="section-heading section-heading--center" data-reveal>
+          <p class="eyebrow">Agendamento</p>
+          <h2>Marque sua consulta com especialidade e horário definidos</h2>
+          <p class="section-heading__text">
+            Fale com a nossa recepção pelo WhatsApp para escolher especialidade,
+            profissional e horário — presencial ou por teleconsulta.
+          </p>
+        </div>
+
+        <div class="text-center" data-reveal>
+          <a href="https://wa.me/5511994028922?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Cliniva%20Sa%C3%BAde." target="_blank" rel="noopener" class="btn-slate btn btn-lg">
+            <i class="bi bi-whatsapp icon" aria-hidden="true"></i>
+            Agendar pelo WhatsApp
+          </a>
+        </div>
+
+        <div class="booking-info" data-reveal>
+          <div class="booking-info__item">
+            <i class="bi bi-geo-alt icon" aria-hidden="true"></i>
+            <div>
+              <strong>Endereço</strong>
+              <p>Alameda Santos, 1200 — Jardim Paulista, São Paulo, SP</p>
+            </div>
+          </div>
+          <div class="booking-info__item">
+            <i class="bi bi-clock icon" aria-hidden="true"></i>
+            <div>
+              <strong>Horários</strong>
+              <p>Seg–Sex: 7h às 20h · Sáb: 8h às 13h</p>
+            </div>
+          </div>
+          <div class="booking-info__item">
+            <i class="bi bi-telephone icon" aria-hidden="true"></i>
+            <div>
+              <strong>Contato</strong>
+              <p>(11) 4002-8922</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid row gy-5">
+        <div class="col-lg-4">
+          <a href="#inicio" class="navbar-brand d-inline-block">Cliniva <span>Saúde</span></a>
+          <p class="site-footer__desc">
+            Clínica médica multiespecialidade, com clínica geral, cardiologia,
+            dermatologia, ortopedia e check-up executivo em um só endereço.
+          </p>
+        </div>
+
+        <div class="col-lg-3">
+          <p class="site-footer__label">Navegação</p>
+          <ul>
+            <li><a href="#especialidades">Especialidades</a></li>
+            <li><a href="#profissionais">Profissionais</a></li>
+            <li><a href="#estrutura">Estrutura</a></li>
+            <li><a href="#agendamento">Agendamento</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-5">
+          <p class="site-footer__label">Contato</p>
+          <ul>
+            <li><i class="bi bi-geo-alt icon" aria-hidden="true"></i> Alameda Santos, 1200 — São Paulo, SP</li>
+            <li><i class="bi bi-telephone icon" aria-hidden="true"></i> (11) 4002-8922</li>
+            <li>
+              <a href="https://wa.me/5511994028922?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Cliniva%20Sa%C3%BAde." target="_blank" rel="noopener">
+                <i class="bi bi-whatsapp icon" aria-hidden="true"></i> Agendar pelo WhatsApp
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p class="lgpd mb-0">Seus dados de saúde são tratados com sigilo profissional e em conformidade com a LGPD (Lei nº 13.709/2018).</p>
+        <p class="mb-0">&copy; 2026 Cliniva Saúde. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/5511994028922?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Cliniva%20Sa%C3%BAde." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
+    <i class="bi bi-whatsapp icon" aria-hidden="true"></i>
+  </a>
+
+  <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

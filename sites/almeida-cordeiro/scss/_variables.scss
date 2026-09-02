@@ -1,0 +1,49 @@
+// Paleta — "Editorial Authority" (A1): marfim, preto quente e cinza quente,
+// com bordô/vinho como único acento. Travada para não colidir com
+// advocacia-associados (navy corporativo) nem bruno-cavalcanti (preto +
+// bronze) — os outros dois sites de advocacia já existentes no repositório.
+$color-ivory: #f6f2ea; // fundo principal
+$color-ivory-warm: #f1ebe0; // superfície levemente mais densa (alterna ritmo entre sections)
+$color-surface: #ffffff; // cartão/superfície pontual sobre o marfim
+$color-ink: #1c1815; // texto principal — 15.8:1 sobre marfim
+$color-muted: #6f675d; // texto secundário — 4.98:1 sobre marfim (não usar tom mais claro)
+$color-burgundy: #6e1f2b; // único acento — 9.93:1 sobre marfim, 11.09:1 com texto branco sobre ele
+
+// Seção de contraste (stats/indicadores) — bloco escuro pontual para alternar
+// densidade, não um "dark mode" do site inteiro.
+$color-ink-elevated: #241f1b;
+$color-ivory-on-ink: #f6f2ea;
+$color-ivory-muted-on-ink: rgba(246, 242, 234, 0.66);
+
+$color-border-hairline: rgba(28, 24, 21, 0.14);
+$color-border-hairline-strong: rgba(28, 24, 21, 0.22);
+$color-border-hairline-on-ink: rgba(246, 242, 234, 0.18);
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-burgundy;
+$color-secondary: $color-ink;
+$color-bg: $color-ivory;
+$color-text: $color-ink;
+
+// Tipografia — Source Serif 4 (serif editorial, 400/600, itálico 400 para
+// toques pontuais) para headlines; Work Sans (grotesk, 400/500/600) para
+// corpo, labels, navegação e botões.
+$font-display: 'Source Serif 4', 'Georgia', serif;
+$font-base: 'Work Sans', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas — linhas finas, quase retas. A direção pede pouca curvatura.
+$radius-sm: 2px;
+$radius-md: 3px;
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições — motion mínimo, reveal sutil
+$transition-base: 0.2s ease;
+$transition-slow: 0.4s cubic-bezier(0.16, 1, 0.3, 1);

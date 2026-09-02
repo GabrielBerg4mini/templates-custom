@@ -1,0 +1,41 @@
+// Paleta — extraída visualmente da identidade da ConstruFix (logo, placa e
+// material publicitário enviados pelo cliente): azul-marinho escuro + laranja
+// de segurança + branco. Sem arquivo de marca/paleta oficial disponível —
+// hex aproximados por leitura visual das imagens de referência.
+$color-navy: #10203d;
+$color-navy-light: #1b2f52;
+$color-navy-lighter: #24406e;
+$color-orange: #f2761e;
+$color-orange-light: #ff9142;
+$color-orange-dark: #d45f0f;
+
+$color-text: #f5f5f2;
+$color-text-muted: #a9b4c7;
+$color-white: #ffffff;
+$color-whatsapp: #25d366;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-orange;
+$color-secondary: $color-navy-lighter;
+$color-bg: $color-navy;
+
+// Tipografia
+$font-heading: 'Space Grotesk', system-ui, sans-serif;
+$font-base: 'Inter', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas / sombras
+$radius-lg: 20px;
+$shadow-soft: 0 20px 45px -20px rgba(0, 0, 0, 0.6);
+$shadow-lift: 0 30px 70px -25px rgba(242, 118, 30, 0.3);
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.3s ease;

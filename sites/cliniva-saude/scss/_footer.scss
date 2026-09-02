@@ -1,0 +1,80 @@
+@use 'variables' as v;
+
+.site-footer {
+  background: v.$color-ink;
+  color: rgba(250, 248, 246, 0.72);
+  padding-top: 4rem;
+
+  .navbar-brand {
+    color: v.$color-offwhite;
+
+    span {
+      color: #8fa2b8;
+    }
+  }
+
+  &__desc {
+    max-width: 34ch;
+    margin-top: 0.9rem;
+    color: rgba(250, 248, 246, 0.6);
+  }
+
+  &__label {
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 246, 0.5);
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+    font-size: 0.92rem;
+
+    .icon {
+      color: #8fa2b8;
+      margin-top: 0.15rem;
+      flex-shrink: 0;
+    }
+  }
+
+  a {
+    color: inherit;
+
+    &:hover,
+    &:focus-visible {
+      color: v.$color-offwhite;
+    }
+  }
+
+  &__grid {
+    border-bottom: 1px solid rgba(250, 248, 246, 0.14);
+    padding-bottom: 2.5rem;
+  }
+
+  &__bottom {
+    padding-block: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+  }
+
+  .lgpd {
+    max-width: 54ch;
+    color: rgba(250, 248, 246, 0.5);
+  }
+}

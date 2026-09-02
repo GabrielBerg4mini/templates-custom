@@ -1,0 +1,48 @@
+@use 'variables' as v;
+
+// "Para quem é" — imagem à esquerda (5 cols), texto à direita (7 cols):
+// giro deliberado em relação ao hero, para não repetir a mesma
+// assimetria em duas seções seguidas.
+.who {
+  &__media {
+    position: relative;
+    border-radius: v.$radius-md;
+    overflow: hidden;
+    max-width: 400px;
+
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+    }
+  }
+
+  &__caption {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    right: 1rem;
+    background: rgba(58, 46, 34, 0.82);
+    color: v.$color-cream;
+    padding: 0.7rem 1rem;
+    border-radius: v.$radius-sm;
+    font-size: 0.82rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .bi {
+      color: v.$color-mustard;
+    }
+  }
+
+  &__statement {
+    max-width: 30ch;
+
+    em {
+      font-style: normal;
+      color: v.$color-mustard-dark;
+    }
+  }
+}

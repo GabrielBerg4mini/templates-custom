@@ -1,0 +1,151 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Padding da hero é controlado inteiramente aqui (não em utility classes no
+// HTML) — ver nota no index.html: a section.hero não leva py-5/py-lg-6.
+.hero {
+  position: relative;
+  padding-top: clamp(2.75rem, 6vw, 4.5rem);
+  padding-bottom: clamp(3rem, 7vw, 5.5rem);
+  overflow: hidden;
+
+  .row {
+    row-gap: 2.5rem;
+  }
+
+  &__content {
+    max-width: 34rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h1 {
+    max-width: 16ch;
+    font-size: clamp(2rem, 3.6vw, 2.9rem);
+    font-weight: 700;
+    line-height: 1.16;
+    margin-bottom: 1.25rem;
+  }
+
+  &__subtitle {
+    color: v.$color-text-muted;
+    font-size: 1.04rem;
+    max-width: 46ch;
+    margin-bottom: 1.85rem;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.25rem;
+  }
+
+  &__link {
+    font-weight: 600;
+    color: v.$color-ink;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    .icon {
+      transition: transform v.$transition-base;
+    }
+
+    &:hover .icon,
+    &:focus-visible .icon {
+      transform: translateX(3px);
+    }
+  }
+
+  &__facts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-top: 1.75rem;
+    border-top: 1px solid v.$color-border;
+    display: grid;
+    gap: 0.7rem;
+    max-width: 34rem;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.92rem;
+      color: v.$color-ink;
+
+      .icon {
+        color: v.$color-slate-blue;
+        margin-top: 0.15rem;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  &__media {
+    position: relative;
+    height: 100%;
+    min-height: 340px;
+    overflow: hidden;
+    border-radius: v.$radius-md;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      object-fit: cover;
+      aspect-ratio: 4 / 5;
+    }
+
+    @include m.breakpoint(lg) {
+      // Full-bleed apenas do lado direito: o card de mídia estica até a
+      // borda da viewport, criando a assimetria pedida pela direção C1 sem
+      // recorrer a blob/gradiente decorativo.
+      margin-right: calc(50% - 50vw);
+      border-radius: v.$radius-md 0 0 v.$radius-md;
+
+      img {
+        aspect-ratio: auto;
+        min-height: 460px;
+      }
+    }
+  }
+
+  &__chip {
+    position: absolute;
+    left: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: v.$color-surface;
+    border-radius: v.$radius-sm;
+    box-shadow: v.$shadow-soft;
+    padding: 0.85rem 1.1rem;
+    max-width: calc(100% - 2.5rem);
+
+    .icon {
+      color: v.$color-slate-blue;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    strong {
+      display: block;
+      font-size: 0.86rem;
+      color: v.$color-ink;
+    }
+
+    span {
+      display: block;
+      font-size: 0.78rem;
+      color: v.$color-text-muted;
+    }
+  }
+}

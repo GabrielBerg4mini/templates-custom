@@ -1,0 +1,52 @@
+// Paleta — extraída da logo real da ConectaSeg (azul + verde).
+// O azul/verde puros (#0473FB / #00BE60) não passam contraste AA como
+// texto/ícone pequeno sobre branco (4.33:1 e 2.46:1) — por isso existem as
+// variantes "-dark", mais escuras, reservadas para texto, links e ícones
+// pequenos; as cores puras seguem usadas em fundos, blocos grandes e ícones
+// médios/grandes, exatamente como aparecem no material da marca.
+$color-blue: #0473fb;
+$color-blue-dark: #0459c7;
+$color-green: #00be60;
+$color-green-dark: #00833f;
+$color-green-darker: #006a33;
+
+$color-ink: #14213d;
+$color-ink-muted: #55627a;
+// Vermelho de alerta — só para o rótulo "Mito" da seção de fatos, um uso
+// semântico universal (falso/atenção), não um acento de marca.
+$color-alert: #c0392b;
+$color-white: #ffffff;
+$color-bg-soft: #eaf3ff;
+$color-whatsapp: #25d366;
+
+$color-text: $color-ink;
+$color-muted: $color-ink-muted;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-blue-dark;
+$color-secondary: $color-green-dark;
+$color-bg: $color-white;
+
+// Tipografia
+$font-heading: 'Sora', system-ui, sans-serif;
+$font-base: 'Inter', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas / sombras
+$radius-lg: 20px;
+$shadow-soft: 0 20px 45px -20px rgba(20, 33, 61, 0.16);
+$shadow-lift: 0 25px 55px -20px rgba(4, 115, 251, 0.25);
+
+// Breakpoints
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.3s ease;
+
+// Container
+$container-max-width: 1200px;

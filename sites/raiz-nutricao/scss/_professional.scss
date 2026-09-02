@@ -1,0 +1,58 @@
+@use 'variables' as v;
+
+.professional {
+  &__media {
+    position: relative;
+    max-width: 340px;
+    margin-inline: auto;
+
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: v.$radius-lg;
+    }
+  }
+
+  &__quote {
+    position: relative;
+    font-family: v.$font-heading;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: v.$color-brown-ink;
+    max-width: 44ch;
+    margin: 1.25rem 0 1.5rem;
+    padding-left: 1.25rem;
+    border-left: 3px solid v.$color-mustard;
+  }
+
+  &__bio {
+    color: v.$color-text-muted;
+    max-width: 52ch;
+    margin-bottom: 1.5rem;
+  }
+
+  &__credentials {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.7rem;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      color: v.$color-text;
+    }
+
+    .bi {
+      color: v.$color-mustard-dark;
+      margin-top: 0.15rem;
+      flex-shrink: 0;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@use 'variables' as v;
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 85% 15%, rgba(150, 247, 107, 0.22), transparent 55%),
+              radial-gradient(circle at 10% 90%, rgba(217, 240, 193, 0.55), transparent 50%);
+
+  h1 {
+    max-width: 15ch;
+  }
+
+  &__subtitle {
+    color: v.$color-text-muted;
+    font-size: 1.05rem;
+    max-width: 46ch;
+  }
+
+  &__badges {
+    li {
+      font-size: 0.82rem;
+      color: v.$color-text-muted;
+      padding-left: 1rem;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.5em;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: v.$color-forest;
+      }
+    }
+  }
+
+  &__media {
+    position: relative;
+
+    img {
+      box-shadow: v.$shadow-lift;
+      aspect-ratio: 720 / 860;
+      object-fit: cover;
+    }
+  }
+
+  &__media-badge {
+    position: absolute;
+    bottom: -1rem;
+    left: -1rem;
+    line-height: 1.2;
+
+    strong {
+      font-family: v.$font-heading;
+      font-size: 1.6rem;
+      color: v.$color-forest;
+    }
+
+    span {
+      font-size: 0.75rem;
+      color: v.$color-text-muted;
+      max-width: 14ch;
+      display: block;
+    }
+  }
+}

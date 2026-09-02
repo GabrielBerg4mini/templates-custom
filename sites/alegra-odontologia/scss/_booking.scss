@@ -1,0 +1,111 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Agendamento — o único bloco de página inteira em coral sólido: o
+// "acento vibrante controlado" usado com intenção, uma vez, no CTA mais
+// importante do site.
+// Padding vertical da section vem do utility "py-5 py-lg-6" no HTML
+// (spacers estendidos em _theme-bootstrap.scss).
+.booking-band {
+  background: v.$color-coral-dark;
+  border-radius: v.$radius-lg;
+  padding: 2.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+
+  @include m.breakpoint(lg) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 3.5rem;
+    gap: 2.5rem;
+  }
+}
+
+// Sobre o fundo coral sólido, o kicker vira branco — coral-dark (o padrão
+// do mixin) teria contraste ruim sobre coral.
+.kicker--on-coral {
+  color: v.$color-white;
+}
+
+.booking-band__content {
+  max-width: 32rem;
+
+  h2 {
+    color: v.$color-white;
+    font-size: clamp(1.55rem, 1.8vw + 1rem, 2.1rem);
+    font-weight: 700;
+    margin-bottom: 0.9rem;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+  }
+}
+
+.booking-band__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-shrink: 0;
+
+  @include m.breakpoint(sm) {
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+// Dentro do bloco coral sólido, o CTA inverte para branco com texto
+// coral-dark — mantém o contraste alto (nunca texto coral em fundo coral).
+.booking-band .btn-cta {
+  background: v.$color-white;
+  border-color: v.$color-white;
+  color: v.$color-coral-dark !important;
+
+  &:hover {
+    background: v.$color-graphite;
+    border-color: v.$color-graphite;
+    color: v.$color-white !important;
+  }
+}
+
+.booking-band__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: v.$color-white;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.booking-hours {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  border-top: 1px solid v.$color-line;
+  padding-top: 1.75rem;
+
+  @include m.breakpoint(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  dt {
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: v.$color-graphite-faint;
+    margin-bottom: 0.3rem;
+  }
+
+  dd {
+    margin: 0;
+    font-size: 0.95rem;
+    color: v.$color-graphite;
+    font-weight: 500;
+  }
+}

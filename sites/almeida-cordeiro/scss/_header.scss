@@ -1,0 +1,89 @@
+@use 'variables' as v;
+
+// Header estático e sólido (não overlay transparente sobre a hero) — a
+// direção editorial pede clareza de leitura desde o primeiro instante,
+// não um header flutuando sobre uma imagem escura.
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+  padding-block: 0;
+  background: v.$color-ivory;
+  border-bottom: 1px solid v.$color-border-hairline;
+
+  .container {
+    min-height: 5rem;
+  }
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  line-height: 1;
+
+  &__rule {
+    width: 1px;
+    height: 1.6rem;
+    background: v.$color-border-hairline-strong;
+  }
+
+  &__lockup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  &__name {
+    font-family: v.$font-display;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: v.$color-ink;
+  }
+
+  &__sub {
+    font-family: v.$font-base;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: v.$color-burgundy;
+  }
+}
+
+.navbar-nav {
+  .nav-link {
+    position: relative;
+    font-family: v.$font-base;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: v.$color-muted;
+    padding-block: 0.5rem;
+    transition: color v.$transition-base;
+
+    &:hover,
+    &.active {
+      color: v.$color-ink;
+    }
+  }
+}
+
+.navbar-toggler {
+  border-color: v.$color-border-hairline-strong;
+  padding: 0.35rem 0.55rem;
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(110, 31, 43, 0.22);
+  }
+}
+
+.navbar-collapse {
+  @media (max-width: 991.98px) {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    border-top: 1px solid v.$color-border-hairline;
+  }
+}

@@ -1,0 +1,123 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Padding vertical da section vem do utility "py-5 py-lg-6" no HTML.
+.team {
+  background: v.$color-bg-soft;
+}
+
+.team-profile {
+  display: flex;
+  gap: 1.1rem;
+  background: v.$color-white;
+  border: 1px solid v.$color-line;
+  border-radius: v.$radius-md;
+  padding: 1.35rem;
+  height: 100%;
+}
+
+.team-profile__media {
+  flex-shrink: 0;
+  width: 96px;
+  height: 96px;
+  border-radius: v.$radius-sm;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.team-profile__role {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: v.$color-coral-dark;
+  margin-bottom: 0.3rem;
+}
+
+.team-profile__name {
+  font-size: 1.08rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: v.$color-graphite;
+}
+
+.team-profile__bio {
+  color: v.$color-graphite-soft;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.team-profile__cro {
+  display: block;
+  font-size: 0.72rem;
+  color: v.$color-graphite-faint;
+}
+
+.structure-heading {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: v.$color-graphite;
+  }
+
+  p {
+    color: v.$color-graphite-soft;
+    font-size: 0.92rem;
+    margin: 0.35rem 0 0;
+    max-width: 52ch;
+  }
+}
+
+.structure-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+
+  @include m.breakpoint(md) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.structure-card {
+  position: relative;
+  border-radius: v.$radius-md;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.structure-card__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.25rem 1.1rem 1rem;
+  background: linear-gradient(180deg, rgba(38, 41, 46, 0) 0%, rgba(38, 41, 46, 0.7) 100%);
+
+  strong {
+    display: block;
+    color: v.$color-white;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+  }
+
+  span {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.82rem;
+  }
+}

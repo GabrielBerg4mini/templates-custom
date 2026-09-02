@@ -1,0 +1,79 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.metrics {
+  background: v.$color-graphite;
+  color: v.$color-white;
+
+  // $color-amber nunca é usado como cor de texto (só como bloco/fundo) —
+  // por isso o eyebrow aqui fica branco e o traço decorativo é que leva o âmbar.
+  .section-heading {
+    .eyebrow {
+      color: v.$color-white;
+
+      &::before {
+        background: v.$color-amber;
+        height: 2px;
+      }
+    }
+
+    h2 { color: v.$color-white; }
+  }
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+
+  @include m.breakpoint(md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.metric {
+  padding: 2rem 1.5rem 2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+
+  &:nth-child(odd) {
+    padding-right: 1.5rem;
+  }
+
+  @include m.breakpoint(md) {
+    border-left: 1px solid rgba(255, 255, 255, 0.18);
+    padding-left: 1.5rem;
+    border-bottom: 0;
+
+    &:first-child {
+      border-left: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+.metric__value {
+  display: block;
+  font-family: v.$font-display;
+  font-weight: 700;
+  font-size: clamp(2.75rem, 6vw, 4.25rem);
+  line-height: 1;
+  color: v.$color-white;
+  margin-bottom: 0.5rem;
+
+  // Marca de medição em âmbar — bloco de cor, nunca texto, acima do número.
+  &::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 4px;
+    background: v.$color-amber;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.metric__label {
+  @include m.mono-label(0.72rem);
+  color: rgba(255, 255, 255, 0.75);
+  display: block;
+  max-width: 18ch;
+}

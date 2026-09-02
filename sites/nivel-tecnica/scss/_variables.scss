@@ -1,0 +1,39 @@
+// NÍVEL Arquitetura Técnica — AR2 Technical Studio
+// Paleta travada e validada em contraste (ver docs/02-niche-art-direction.md):
+// branco + grafite (texto, 15:1) + âmbar (só blocos/ícones grandes, NUNCA texto)
+// + âmbar-escuro (variante de texto/ícone pequeno, 5.27:1).
+$color-white: #ffffff;
+$color-graphite: #24272b;
+$color-graphite-soft: #4a4f56; // texto secundário sobre branco
+$color-line: #d8d9db; // linhas finas estruturais / bordas
+$color-surface: #f4f4f2; // superfície neutra levemente fria, não off-white quente
+$color-amber: #e6b400; // SÓ fundo/bloco grande/ícone médio-grande — nunca texto
+$color-amber-dark: #8a6600; // texto, link, ícone pequeno sobre branco (5.27:1)
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-amber-dark;
+$color-secondary: $color-graphite;
+$color-bg: $color-white;
+$color-text: $color-graphite;
+
+// Tipografia — display condensado técnico + corpo neutro + mono para dados
+$font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+$font-base: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+$font-heading: $font-display;
+$font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas — retas, raio pequeno (direção técnica: 2-6px, nunca arredondamento generoso)
+$radius-sm: 2px;
+$radius-md: 4px;
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições — motion mínimo e funcional
+$transition-base: 0.18s ease;
