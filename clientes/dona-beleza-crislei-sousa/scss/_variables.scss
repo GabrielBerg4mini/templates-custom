@@ -1,0 +1,88 @@
+// Paleta — extraída visualmente do material real da cliente (flyers de
+// Instagram): rosa empoeirado (promoção de Botox), verde-oliva/bronze escuro
+// (barras da arte "Agenda aberta") e creme quente de fundo.
+$color-rose-50: #fbf3f1;
+$color-rose-100: #f3e1dc;
+$color-rose-200: #e6c4bb;
+$color-rose-300: #d6a599;
+$color-rose-400: #c68f81;
+$color-rose-500: #b8827a;
+$color-rose-600: #93615a;
+$color-rose-700: #7d5148;
+$color-rose-800: #5e3b34;
+$color-rose-900: #402823;
+
+$color-olive-50: #f5f3ec;
+$color-olive-100: #e8e2cc;
+$color-olive-200: #d3c89c;
+$color-olive-300: #b8a96e;
+$color-olive-400: #94854a;
+$color-olive-500: #756a38;
+$color-olive-600: #5c5233;
+$color-olive-700: #453d26;
+$color-olive-800: #2f291a;
+$color-olive-900: #1a170e;
+
+$color-cream-50: #fdfbf6;
+$color-cream-100: #f7f0e1;
+$color-cream-200: #efe2c8;
+$color-cream-300: #e4d0a8;
+$color-cream-400: #d7bc85;
+$color-cream-500: #c7a563;
+
+$color-nude-100: #f5ede4;
+$color-nude-200: #e9dcc9;
+$color-nude-300: #dbc5aa;
+$color-nude-400: #cbac88;
+$color-nude-500: #ba9269;
+
+$color-ink-700: #3d3530;
+$color-ink-800: #2a2420;
+$color-ink-900: #1a1614;
+
+$color-white: #ffffff;
+$color-whatsapp: #25d366;
+
+// Aliases curtos usados nos parciais
+$color-rose: $color-rose-500;
+$color-rose-dark: $color-rose-600;
+$color-olive: $color-olive-600;
+$color-olive-dark: $color-olive-700;
+$color-cream: $color-cream-50;
+$color-nude: $color-nude-200;
+
+$color-text: $color-ink-800;
+$color-text-muted: rgba($color-ink-700, 0.7);
+
+// Tokens padrão consumidos por _theme-bootstrap.scss — usa a variante "-dark"
+// porque o rosa puro (#B8827A) não passa contraste AA como texto (3.12:1).
+$color-primary: $color-rose-dark;
+$color-secondary: $color-olive;
+$color-bg: $color-cream;
+
+// Tipografia
+$font-heading: 'Cormorant Garamond', Georgia, serif;
+$font-base: 'Jost', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas / sombras
+$radius-lg: 20px;
+$shadow-soft: 0 20px 45px -22px rgba(26, 22, 20, 0.16);
+$shadow-lift: 0 30px 60px -25px rgba(198, 107, 61, 0.25);
+$shadow-header: 0 1px 20px rgba(42, 36, 32, 0.06);
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.3s ease;
+
+// Reveal-on-scroll — distância e easing fiéis ao design aprovado
+$reveal-distance: 40px;
+$reveal-duration: 0.9s;
+$reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
