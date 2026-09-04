@@ -1,0 +1,92 @@
+@use 'variables' as v;
+
+.site-header {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 1050;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color v.$transition-base, border-color v.$transition-base,
+    backdrop-filter v.$transition-base;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-block: 1.25rem;
+  }
+
+  // Estado aplicado via JS quando window.scrollY > 24 (ver js/main.js),
+  // reproduzindo o header translúcido com blur do v0 ao rolar a página.
+  &.is-scrolled {
+    background: rgba(239, 240, 236, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom-color: v.$color-border;
+  }
+}
+
+.site-header__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: v.$color-fg;
+
+  .text-wood {
+    color: v.$color-wood;
+  }
+}
+
+.site-header__brand-mark {
+  height: 34px;
+  width: auto;
+}
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+
+  a {
+    font-size: 0.88rem;
+    letter-spacing: 0.02em;
+    color: v.$color-text-muted;
+    transition: color v.$transition-base;
+
+    &:hover {
+      color: v.$color-fg;
+    }
+  }
+}
+
+.site-header__cta {
+  flex: none;
+}
+
+.site-header .navbar-toggler {
+  border: none;
+  padding: 0.25rem 0.5rem;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+@media (max-width: v.$bp-md - 1) {
+  .site-header__nav-collapse {
+    background: v.$color-bg-body;
+    border-bottom: 1px solid v.$color-border;
+    padding: 1rem 0 1.5rem;
+
+    .site-header__nav {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
+}

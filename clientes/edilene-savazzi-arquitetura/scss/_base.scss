@@ -1,0 +1,135 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// O Bootstrap (via _theme-bootstrap.scss) cuida do reset, tipografia,
+// grid, links e imagens. Aqui só os utilitários compartilhados entre seções.
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: v.$color-text-muted;
+  margin-bottom: 1rem;
+
+  &__line {
+    display: inline-block;
+    width: 2.5rem;
+    height: 1px;
+    background: v.$color-wood;
+    flex: none;
+  }
+}
+
+.section-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+
+  h2 {
+    @include m.serif-light;
+    font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  }
+}
+
+// Link sublinhado em madeira — repetido em vários CTAs de texto do v0
+// ("Ver projetos", "Ver portfólio completo", etc.).
+.link-underline {
+  display: inline-block;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  color: v.$color-fg;
+  text-decoration: underline;
+  text-decoration-color: v.$color-wood;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+  transition: color v.$transition-base;
+
+  &:hover {
+    color: v.$color-wood;
+  }
+}
+
+// Botão pill escuro — CTA principal (WhatsApp) em hero e footer.
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: v.$radius-pill;
+  background: v.$color-fg;
+  color: v.$color-bg-body;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 1rem 2rem;
+  border: 1px solid v.$color-fg;
+  transition: opacity v.$transition-base;
+
+  &:hover {
+    opacity: 0.9;
+    color: v.$color-bg-body;
+  }
+
+  &--light {
+    background: v.$color-bg-body;
+    color: v.$color-fg;
+    border-color: v.$color-bg-body;
+
+    &:hover {
+      color: v.$color-fg;
+    }
+  }
+}
+
+// Botão pill contornado — CTA do header.
+.btn-pill-outline {
+  display: inline-flex;
+  align-items: center;
+  border-radius: v.$radius-pill;
+  border: 1px solid v.$color-fg;
+  color: v.$color-fg;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  padding: 0.5rem 1.25rem;
+  transition: background-color v.$transition-base, color v.$transition-base;
+
+  &:hover {
+    background: v.$color-fg;
+    color: v.$color-bg-body;
+  }
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Reveal escalonado — usado nos passos da metodologia e nos cards de projeto,
+// para reproduzir o efeito de entrada em cascata do v0.
+[data-reveal-group] > [data-reveal] {
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}) {
+      transition-delay: ($i - 1) * 0.1s;
+    }
+  }
+}

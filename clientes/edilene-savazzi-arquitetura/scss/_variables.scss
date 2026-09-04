@@ -1,0 +1,49 @@
+// Paleta — extraída da identidade visual real da cliente (logo + flyers do
+// Instagram @arqedilenesavazzi): cinza-pedra + off-white. "-dark"/"muted" são
+// variantes com contraste WCAG-AA verificado para uso em texto/links (o tom
+// puro da marca, $color-stone, fica reservado a fundos, bordas e ícones).
+$color-cream: #eff0ec; // fundo principal (identidade da cliente)
+$color-white: #ffffff;
+$color-stone: #918d89; // tom puro da marca — só fundos/bordas/ícones grandes
+$color-stone-dark: #524e4a; // variante segura p/ texto/links sobre $color-cream (7.2:1)
+$color-ink: #24221f; // texto principal / headings (13.86:1 sobre $color-cream)
+$color-text-muted: #6f6b66; // texto secundário (4.62:1 sobre $color-cream)
+$color-border: #dcdad5;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss e pelas partials
+// herdadas do arq-studio (mantêm os nomes $color-fg/$color-wood).
+$color-fg: $color-ink;
+$color-primary: $color-ink;
+$color-wood: $color-stone-dark;
+$color-bg-body: $color-cream;
+$color-secondary: $color-white; // faixa alternada (seção "Processo")
+$color-text: $color-ink;
+
+// Tipografia — Fraunces (serif leve, display) + Inter (sans, texto).
+$font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+$font-base: 'Inter', system-ui, -apple-system, sans-serif;
+$font-heading: $font-base;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas
+$radius-base: 0.625rem;
+$radius-sm: $radius-base * 0.6;
+$radius-md: $radius-base * 0.8;
+$radius-lg: $radius-base;
+$radius-xl: $radius-base * 1.4;
+$radius-pill: 999px;
+
+$shadow-soft: 0 20px 45px -25px rgba(36, 34, 31, 0.25);
+$shadow-lift: 0 30px 60px -25px rgba(36, 34, 31, 0.35);
+
+// Breakpoints
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;

@@ -1,0 +1,28 @@
+@use 'variables' as v;
+
+@mixin breakpoint($size) {
+  @if $size == sm {
+    @media (min-width: v.$bp-sm) { @content; }
+  } @else if $size == md {
+    @media (min-width: v.$bp-md) { @content; }
+  } @else if $size == lg {
+    @media (min-width: v.$bp-lg) { @content; }
+  } @else if $size == xl {
+    @media (min-width: v.$bp-xl) { @content; }
+  }
+}
+
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+// Serif leve — usado nos poucos elementos "de destaque" do v0
+// (h1 do hero, h2 de seção, citação do arquiteto, nome dos projetos).
+@mixin serif-light {
+  font-family: v.$font-serif;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}

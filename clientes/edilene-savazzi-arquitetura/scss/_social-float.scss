@@ -1,0 +1,28 @@
+@use 'variables' as v;
+
+// Cliente não informou WhatsApp — o botão flutuante direciona para o
+// Instagram real (@arqedilenesavazzi) em vez de um número inventado.
+.social-float {
+  position: fixed;
+  right: calc(v.$spacing-unit * 3);
+  bottom: calc(v.$spacing-unit * 3);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: v.$color-ink;
+  color: v.$color-bg-body;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: v.$shadow-lift;
+  z-index: 1040;
+  transition: transform v.$transition-base;
+
+  .icon {
+    font-size: 24px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
