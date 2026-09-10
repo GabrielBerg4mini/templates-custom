@@ -1,0 +1,88 @@
+// Paleta — extraída da identidade visual real da cliente (logo @espacovaniabrito):
+// azul-marinho profundo + rosa envelhecido. "-dark" é a variante com contraste
+// WCAG-AA verificado para uso em texto/links (o tom "puro" de cada família
+// fica reservado a fundos, bordas e ícones).
+$color-blush-50: #fbf0f0;
+$color-blush-100: #f5dde0;
+$color-blush-200: #e9bcc2;
+$color-blush-300: #dc9aa3;
+$color-blush-400: #cd7c87;
+$color-blush-500: #bd6d78;
+$color-blush-600: #9c525c;
+$color-blush-700: #7a3f47;
+$color-blush-800: #5c2f35;
+$color-blush-900: #402025;
+
+$color-navy-50: #eef0f5;
+$color-navy-100: #d7dae7;
+$color-navy-200: #b3b9d1;
+$color-navy-300: #8790b6;
+$color-navy-400: #5f6796;
+$color-navy-500: #454b78;
+$color-navy-600: #343a61;
+$color-navy-700: #262b4a;
+$color-navy-800: #1b1e37;
+$color-navy-900: #121428;
+
+$color-cream-50: #fdfbf7;
+$color-cream-100: #faf4ea;
+$color-cream-200: #f4e8d3;
+$color-cream-300: #ebd7b5;
+$color-cream-400: #e0c294;
+$color-cream-500: #d4ab73;
+
+$color-nude-100: #f5eae0;
+$color-nude-200: #e8d5c3;
+$color-nude-300: #d9bca1;
+$color-nude-400: #c9a380;
+$color-nude-500: #b88a60;
+
+$color-ink-700: #3d3530;
+$color-ink-800: #2a2420;
+$color-ink-900: #1a1614;
+
+$color-white: #ffffff;
+$color-whatsapp: #25d366;
+
+// Aliases curtos usados nos parciais
+$color-blush: $color-blush-500;
+$color-blush-dark: $color-blush-600;
+$color-navy: $color-navy-600;
+$color-navy-dark: $color-navy-700;
+$color-cream: $color-cream-50;
+$color-nude: $color-nude-200;
+
+$color-text: $color-ink-800;
+$color-text-muted: rgba($color-ink-700, 0.7);
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-blush;
+$color-secondary: $color-navy;
+$color-bg: $color-cream;
+
+// Tipografia
+$font-heading: 'Cormorant Garamond', Georgia, serif;
+$font-base: 'Jost', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas / sombras
+$radius-lg: 20px;
+$shadow-soft: 0 20px 45px -22px rgba(26, 22, 20, 0.16);
+$shadow-lift: 0 30px 60px -25px rgba(189, 109, 120, 0.25);
+$shadow-header: 0 1px 20px rgba(42, 36, 32, 0.06);
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.3s ease;
+
+// Reveal-on-scroll — distância e easing fiéis ao design aprovado
+$reveal-distance: 40px;
+$reveal-duration: 0.9s;
+$reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
