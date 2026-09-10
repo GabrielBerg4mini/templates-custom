@@ -1,0 +1,66 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.services {
+  background: v.$color-secondary;
+  border-top: 1px solid v.$color-border;
+  border-bottom: 1px solid v.$color-border;
+  padding-block: 6rem;
+
+  @media (min-width: v.$bp-lg) {
+    padding-block: 8rem;
+  }
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+
+  @media (min-width: v.$bp-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.service-card {
+  padding: 2.5rem 1.5rem;
+  border-top: 1px solid v.$color-border;
+
+  @media (min-width: v.$bp-md) {
+    border-top: none;
+    border-left: 1px solid v.$color-border;
+    padding-inline: 2.5rem;
+
+    &:first-child {
+      border-left: none;
+      padding-left: 0;
+    }
+  }
+
+  &:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  &__number {
+    @include m.serif-light;
+    display: block;
+    font-size: 1.1rem;
+    color: v.$color-gold;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    @include m.serif-light;
+    font-size: 1.5rem;
+    margin-bottom: 0.85rem;
+    color: v.$color-fg;
+  }
+
+  p {
+    margin: 0;
+    max-width: 32ch;
+    color: v.$color-text-muted;
+    line-height: 1.6;
+  }
+}

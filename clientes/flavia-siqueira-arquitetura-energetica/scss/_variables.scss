@@ -1,0 +1,50 @@
+// Paleta — extraída da identidade visual real da cliente (logo: fundo verde
+// profundo + tipografia dourada). "-dark" é a variante seguro para texto e
+// links sobre $color-cream (o verde puro da marca fica reservado a fundos
+// grandes, como header escuro e rodapé).
+$color-cream: #f6f1e7; // fundo principal (identidade da cliente)
+$color-white: #ffffff;
+$color-forest: #1f3d2f; // tom puro da marca — fundos grandes (rodapé, botões)
+$color-forest-dark: #16281f; // variante segura p/ texto/links sobre $color-cream (13.4:1)
+$color-ink: $color-forest-dark; // texto principal / headings
+$color-text-muted: #6d6355; // texto secundário (4.7:1 sobre $color-cream)
+$color-gold: #b3873c; // dourado da marca — eyebrows, números, underline (só sobre fundo claro)
+$color-border: #e3dbc9;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss e pelas partials
+// herdadas do arq-studio (mantêm os nomes $color-fg/$color-wood).
+$color-fg: $color-ink;
+$color-primary: $color-ink;
+$color-wood: $color-gold;
+$color-bg-body: $color-cream;
+$color-secondary: $color-white; // faixa alternada (seção "Serviços"/"Processo")
+$color-text: $color-ink;
+
+// Tipografia — Fraunces (serif leve, display) + Inter (sans, texto).
+$font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+$font-base: 'Inter', system-ui, -apple-system, sans-serif;
+$font-heading: $font-base;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas
+$radius-base: 0.625rem;
+$radius-sm: $radius-base * 0.6;
+$radius-md: $radius-base * 0.8;
+$radius-lg: $radius-base;
+$radius-xl: $radius-base * 1.4;
+$radius-pill: 999px;
+
+$shadow-soft: 0 20px 45px -25px rgba(22, 40, 31, 0.28);
+$shadow-lift: 0 30px 60px -25px rgba(22, 40, 31, 0.38);
+
+// Breakpoints
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;

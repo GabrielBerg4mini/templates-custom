@@ -1,0 +1,60 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.concept {
+  padding-block: 6rem;
+
+  @media (min-width: v.$bp-lg) {
+    padding-block: 8rem;
+  }
+
+  &__lead {
+    @include m.serif-light;
+    max-width: 44ch;
+    font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+    line-height: 1.4;
+    color: v.$color-fg;
+    margin-bottom: 4rem;
+  }
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @media (min-width: v.$bp-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pillar-card {
+  padding: 2.5rem 2rem;
+  background: v.$color-white;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-sm;
+
+  &__icon {
+    @include m.flex-center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: v.$color-fg;
+    color: v.$color-bg-body;
+    font-size: 1.3rem;
+    margin-bottom: 1.75rem;
+  }
+
+  h3 {
+    @include m.serif-light;
+    font-size: 1.35rem;
+    margin-bottom: 0.85rem;
+    color: v.$color-fg;
+  }
+
+  p {
+    margin: 0;
+    color: v.$color-text-muted;
+    line-height: 1.6;
+  }
+}
