@@ -1,7 +1,6 @@
 @use 'variables' as v;
 
-// Cliente não informou WhatsApp — o botão flutuante direciona para o
-// Instagram real (@flaviasiqueira.arquiteta) em vez de um número inventado.
+// Botão flutuante direciona para o WhatsApp real da cliente.
 .social-float {
   position: fixed;
   right: calc(v.$spacing-unit * 3);
