@@ -1,0 +1,206 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Hero: composição split, nunca centralizada. Padding próprio (não utility
+// classes) — pitfall mapeado no repo: mobile e desktop controlados aqui.
+.hero {
+  background: v.$color-white;
+  border-bottom: 1px solid v.$color-line;
+  padding-block: 3rem;
+  overflow: hidden;
+
+  @include m.breakpoint(md) {
+    padding-block: 4.5rem;
+  }
+
+  @include m.breakpoint(lg) {
+    padding-block: 6rem;
+  }
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: v.$color-graphite;
+    max-width: 16ch;
+    margin-bottom: 1.25rem;
+  }
+}
+
+.hero__lead {
+  font-size: 1.1rem;
+  color: v.$color-graphite-soft;
+  max-width: 46ch;
+  margin-bottom: 1.75rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero__facts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  border-top: 1px solid v.$color-line;
+  padding-top: 1.5rem;
+  margin: 0;
+
+  @include m.breakpoint(sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  dt {
+    @include m.mono-label(0.68rem);
+    color: v.$color-amber-dark;
+    margin-bottom: 0.35rem;
+  }
+
+  dd {
+    font-size: 0.92rem;
+    color: v.$color-graphite-soft;
+    margin: 0;
+  }
+}
+
+// Ficha técnica — carimbo de desenho técnico, elemento de composição
+// (diagrama simples em CSS, sem SVG), reforça a direção AR2.
+.spec-panel {
+  border: 1px solid v.$color-graphite;
+  background: v.$color-surface;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-panel__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: v.$color-graphite;
+  color: v.$color-white;
+  padding: 0.9rem 1.25rem;
+}
+
+.spec-panel__head-label {
+  @include m.mono-label(0.72rem);
+  color: v.$color-white;
+}
+
+// Âmbar puro só como bloco de fundo (chip), nunca como cor de texto —
+// o texto do código vai em grafite sobre o próprio bloco âmbar.
+.spec-panel__head-code {
+  @include m.mono-label(0.68rem);
+  color: v.$color-graphite;
+  background: v.$color-amber;
+  padding: 0.2rem 0.5rem;
+}
+
+.spec-panel__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .spec-panel__cell {
+    padding: 1.1rem 1.25rem;
+    border-top: 1px solid v.$color-line;
+    border-left: 1px solid v.$color-line;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+
+    &:nth-child(odd) {
+      border-left: 0;
+    }
+
+    &--wide {
+      grid-column: 1 / -1;
+      border-left: 0;
+    }
+  }
+}
+
+.spec-panel__label {
+  @include m.mono-label(0.64rem);
+  color: v.$color-graphite-soft;
+}
+
+.spec-panel__value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: v.$color-graphite;
+}
+
+.spec-panel__divider {
+  margin: 0;
+  border-color: v.$color-line;
+}
+
+// Diagrama de níveis — corte esquemático simples (linha + marcas), sem SVG.
+// Faz eco literal ao nome da marca (NÍVEL / nível de referência).
+.level-diagram {
+  padding: 1.25rem 1.25rem 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.level-diagram__caption {
+  @include m.mono-label(0.62rem);
+  color: v.$color-graphite-soft;
+  margin-bottom: 1rem;
+}
+
+.level-diagram__list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0.9rem;
+  border-left: 1px solid v.$color-graphite;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.85rem;
+  flex-grow: 1;
+
+  li {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -0.9rem;
+      top: 0.5em;
+      width: 0.6rem;
+      height: 1px;
+      background: v.$color-graphite;
+    }
+  }
+}
+
+.level-diagram__mark {
+  @include m.mono-label(0.78rem);
+  color: v.$color-graphite;
+  min-width: 4.2rem;
+
+  &--ref {
+    color: v.$color-amber-dark;
+    font-weight: 700;
+  }
+}
+
+.level-diagram__tag {
+  font-size: 0.85rem;
+  color: v.$color-graphite-soft;
+}

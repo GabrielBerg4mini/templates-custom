@@ -1,0 +1,87 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.capabilities {
+  background: v.$color-white;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 1px solid v.$color-line;
+
+  @include m.breakpoint(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include m.breakpoint(lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.capability {
+  padding: 2rem 1.75rem 2rem 0;
+  border-bottom: 1px solid v.$color-line;
+  position: relative;
+
+  // Mobile: pilha única, sem borda lateral, só o traço inferior.
+  // Tablet (2 colunas): a coluna da esquerda não recebe borda esquerda.
+  @include m.breakpoint(md) {
+    padding-left: 1.75rem;
+    border-left: 1px solid v.$color-line;
+
+    &:nth-child(odd) {
+      padding-left: 0;
+      border-left: 0;
+    }
+  }
+
+  // Desktop (4 colunas): só o primeiro item fica sem borda esquerda.
+  @include m.breakpoint(lg) {
+    padding-left: 1.75rem;
+    border-left: 1px solid v.$color-line;
+
+    &:nth-child(odd) {
+      padding-left: 1.75rem;
+      border-left: 1px solid v.$color-line;
+    }
+
+    &:first-child {
+      padding-left: 0;
+      border-left: 0;
+    }
+  }
+}
+
+.capability__index {
+  display: block;
+  font-family: v.$font-display;
+  font-weight: 700;
+  font-size: 2.75rem;
+  line-height: 1;
+  color: v.$color-line;
+  margin-bottom: 0.75rem;
+}
+
+.capability__code {
+  @include m.mono-label(0.7rem);
+  display: inline-block;
+  color: v.$color-amber-dark;
+  border: 1px solid v.$color-amber-dark;
+  padding: 0.15rem 0.5rem;
+  border-radius: v.$radius-sm;
+  margin-bottom: 0.9rem;
+}
+
+.capability h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: v.$color-graphite;
+  margin-bottom: 0.6rem;
+}
+
+.capability p {
+  font-size: 0.92rem;
+  color: v.$color-graphite-soft;
+  margin: 0;
+}

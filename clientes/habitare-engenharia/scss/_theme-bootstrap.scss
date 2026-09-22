@@ -1,0 +1,48 @@
+// Sobrescreve variáveis do Bootstrap com os tokens do site (scss/_variables.scss)
+// antes de importar o Bootstrap, para herdar grid, botões, navbar e cards
+// já no tom de cada projeto — sem escrever esses componentes do zero.
+@use 'variables' as v;
+
+$primary: v.$color-primary;
+$secondary: v.$color-secondary;
+$body-bg: v.$color-bg;
+$body-color: v.$color-text;
+$font-family-base: v.$font-base;
+$headings-font-family: v.$font-heading;
+$headings-font-weight: 600;
+$border-radius: v.$radius-md;
+$border-radius-lg: v.$radius-md;
+$border-radius-sm: v.$radius-sm;
+$grid-gutter-width: v.$spacing-unit * 4;
+
+// Pitfall mapeado no repo: sem isso, .wrapper a herda sublinhado do Bootstrap
+// de forma inconsistente com os links customizados do site técnico.
+$link-decoration: none;
+$link-hover-color: v.$color-amber-dark;
+
+// Container mais contido que a direção editorial de outros sites — leitura
+// técnica pede coluna de texto mais curta e mais linha/grade visível.
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1180px,
+  xxl: 1320px,
+);
+
+// $spacers do Bootstrap só vai de 0 a 5 (3rem) — pitfall mapeado no repo.
+// Redefine com uma chave 6 extra para permitir py-5 py-lg-6 nas sections.
+$spacers: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 1rem,
+  4: 1.5rem,
+  5: 3rem,
+  6: 6rem,
+);
+
+$enable-shadows: false;
+$enable-negative-margins: true;
+
+@import 'bootstrap/scss/bootstrap';

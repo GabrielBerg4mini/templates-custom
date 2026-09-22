@@ -1,0 +1,67 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.projects {
+  background: v.$color-surface;
+  border-top: 1px solid v.$color-line;
+  border-bottom: 1px solid v.$color-line;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @include m.breakpoint(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.project-card {
+  background: v.$color-white;
+  border: 1px solid v.$color-line;
+}
+
+.project-card__media {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+}
+
+.project-card:hover .project-card__media img {
+  transform: scale(1.04);
+}
+
+.project-card__info {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid v.$color-line;
+}
+
+.project-card__number {
+  @include m.mono-label(0.72rem);
+  color: v.$color-amber-dark;
+  padding-top: 0.2rem;
+}
+
+.project-card__meta {
+  @include m.mono-label(0.68rem);
+  color: v.$color-graphite-soft;
+  margin-bottom: 0.35rem;
+}
+
+.project-card__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: v.$color-graphite;
+  margin: 0;
+}

@@ -1,0 +1,102 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.methodology {
+  background: v.$color-white;
+}
+
+// Linha do tempo com linha conectora (exigência da direção: "linha conectora")
+.methodology-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  max-width: 760px;
+
+  // Linha conectora vertical (mobile/tablet)
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0.9rem;
+    bottom: 0.9rem;
+    left: 1.15rem;
+    width: 1px;
+    background: v.$color-line;
+
+    @include m.breakpoint(lg) {
+      display: none;
+    }
+  }
+
+  @include m.breakpoint(lg) {
+    max-width: none;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.methodology-timeline__step {
+  position: relative;
+  display: flex;
+  gap: 1.25rem;
+  padding-bottom: 2.5rem;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  @include m.breakpoint(lg) {
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+}
+
+.methodology-timeline__number {
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid v.$color-graphite;
+  background: v.$color-white;
+  @include m.flex-center;
+  font-family: v.$font-mono;
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: v.$color-graphite;
+  position: relative;
+  z-index: 1;
+}
+
+// Linha conectora horizontal (desktop) entre os marcadores numerados
+@include m.breakpoint(lg) {
+  .methodology-timeline__step:not(:last-child) .methodology-timeline__number::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: calc(1.5rem + 1px);
+    height: 1px;
+    background: v.$color-line;
+    transform: translateY(-50%);
+  }
+}
+
+.methodology-timeline__content {
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: v.$color-graphite;
+    margin-top: 0.35rem;
+    margin-bottom: 0.5rem;
+
+    @include m.breakpoint(lg) {
+      margin-top: 1rem;
+    }
+  }
+
+  p {
+    font-size: 0.88rem;
+    color: v.$color-graphite-soft;
+    margin: 0;
+  }
+}
