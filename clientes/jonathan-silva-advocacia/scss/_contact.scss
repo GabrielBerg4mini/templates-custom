@@ -1,0 +1,81 @@
+@use 'variables' as v;
+
+.contact {
+  background: v.$color-surface;
+}
+
+.contact__heading {
+  margin-top: 0.5rem;
+  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+}
+
+.contact__text {
+  margin-top: 1.25rem;
+  max-width: 30rem;
+  font-family: v.$font-base;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: v.$color-muted;
+}
+
+.contact-info {
+  margin-top: 2.25rem;
+  font-style: normal;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    margin-bottom: 1rem;
+    font-family: v.$font-base;
+    font-size: 0.94rem;
+    line-height: 1.6;
+    color: v.$color-ink;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    color: v.$color-ink;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+
+    &:hover {
+      color: v.$color-burgundy;
+    }
+  }
+
+  .icon {
+    margin-top: 0.2rem;
+    color: v.$color-burgundy;
+    flex-shrink: 0;
+  }
+}
+
+// Sem back-end nesta fase: em vez do formulário simulado do template-base
+// (que não envia a mensagem a lugar nenhum), o contato principal é o
+// WhatsApp real do cliente — mesma lógica editorial de "menos ornamentação",
+// aqui como um bloco de texto + CTA em vez de um card fechado.
+.contact-cta {
+  max-width: 30rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid v.$color-border-hairline-strong;
+
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: v.$color-ink;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    font-family: v.$font-base;
+    color: v.$color-muted;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
+  }
+}

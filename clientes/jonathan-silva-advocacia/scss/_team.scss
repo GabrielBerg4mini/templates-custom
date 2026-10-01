@@ -1,0 +1,52 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Retrato + texto, sem borda nem sombra de card — fotografia a cores,
+// tratamento editorial e estático (sem hover de zoom), consistente com o
+// ritmo calmo da direção "Editorial Authority".
+.partner {
+  height: 100%;
+}
+
+.partner__photo-wrap {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: v.$color-ivory-warm;
+}
+
+.partner__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.partner__body {
+  padding-top: 1.25rem;
+  margin-top: 1.25rem;
+  border-top: 1px solid v.$color-border-hairline;
+}
+
+.partner h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: v.$color-ink;
+  margin-bottom: 0.35rem;
+}
+
+.partner__role {
+  font-family: v.$font-base;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: v.$color-burgundy;
+  margin-bottom: 0.85rem;
+}
+
+.partner__desc {
+  margin: 0;
+  font-family: v.$font-base;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: v.$color-muted;
+}

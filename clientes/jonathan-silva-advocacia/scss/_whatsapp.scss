@@ -1,0 +1,29 @@
+@use 'variables' as v;
+
+// Botão flutuante de WhatsApp — raio pequeno (v.$radius-sm) e bordô sólido,
+// consistente com a direção editorial de bordas quase retas e acento único.
+.whatsapp-float {
+  position: fixed;
+  right: calc(v.$spacing-unit * 3);
+  bottom: calc(v.$spacing-unit * 3);
+  width: 56px;
+  height: 56px;
+  border-radius: v.$radius-sm;
+  background: v.$color-burgundy;
+  color: v.$color-ivory;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px -8px rgba(19, 18, 47, 0.45);
+  z-index: 200;
+  transition: background-color v.$transition-base, transform v.$transition-base;
+
+  .icon {
+    font-size: 26px;
+  }
+
+  &:hover, &:focus-visible {
+    background: #0d0c20;
+    transform: scale(1.05);
+  }
+}

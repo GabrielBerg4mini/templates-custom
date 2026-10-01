@@ -1,0 +1,25 @@
+@use 'variables' as v;
+
+// Bloco editorial curto com a tese do escritório — seção própria, não uma
+// hero nem um card. Fundo levemente mais denso para alternar o ritmo com a
+// hero e a lista de áreas de atuação, sem virar "dark mode".
+.positioning {
+  background: v.$color-ivory-warm;
+
+  h2 {
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-weight: 400;
+    line-height: 1.35;
+    color: v.$color-ink;
+  }
+}
+
+.positioning__text {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  max-width: 46rem;
+  font-family: v.$font-base;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: v.$color-muted;
+}

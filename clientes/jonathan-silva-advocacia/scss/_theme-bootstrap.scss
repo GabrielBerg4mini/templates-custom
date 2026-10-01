@@ -1,0 +1,52 @@
+// Sobrescreve variáveis do Bootstrap com os tokens do site (scss/_variables.scss)
+// antes de importar o Bootstrap, para herdar grid, botões, navbar e cards
+// já no tom de cada projeto — sem escrever esses componentes do zero.
+@use 'variables' as v;
+
+$primary: v.$color-burgundy;
+$secondary: v.$color-ink;
+$body-bg: v.$color-ivory;
+$body-color: v.$color-ink;
+$font-family-base: v.$font-base;
+$headings-font-family: v.$font-display;
+
+// O design original nunca sublinha links por padrão — sublinhado só onde
+// explicitamente adicionado via classe/CSS própria (pitfall #1 do repositório).
+$link-decoration: none;
+
+// Bordas quase retas — direção editorial, sem cantos orgânicos.
+$border-radius: v.$radius-md;
+$border-radius-lg: v.$radius-md;
+$border-radius-sm: v.$radius-sm;
+$grid-gutter-width: v.$spacing-unit * 4;
+
+// Container mais largo que o padrão do Bootstrap — grandes margens editoriais.
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1240px,
+  xxl: 1440px,
+);
+$enable-shadows: false;
+$enable-negative-margins: true;
+
+// O Bootstrap só define spacers até 5 (3rem). Estendendo o mapa para incluir
+// 6 (6rem), "py-lg-6" usado nas sections passa a valer de verdade em vez de
+// ser um no-op silencioso (pitfall #2 do repositório). A hero fica de fora
+// de propósito — ela controla o próprio padding em _hero.scss (pitfall #3).
+$spacers: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 1rem,
+  4: 1.5rem,
+  5: 3rem,
+  6: 6rem,
+);
+
+$card-bg: v.$color-surface;
+$border-color: v.$color-border-hairline;
+$body-secondary-color: v.$color-muted;
+
+@import 'bootstrap/scss/bootstrap';
