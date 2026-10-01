@@ -1,0 +1,29 @@
+@use 'variables' as v;
+
+// No v0 o botão flutuante usa as mesmas cores foreground/background do
+// resto do site (preto sobre off-white) em vez do verde tradicional do
+// WhatsApp, e não tem animação de pulso — só leve escala no hover.
+.whatsapp-float {
+  position: fixed;
+  right: calc(v.$spacing-unit * 3);
+  bottom: calc(v.$spacing-unit * 3);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: v.$color-fg;
+  color: v.$color-bg-body;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: v.$shadow-lift;
+  z-index: 1040;
+  transition: transform v.$transition-base;
+
+  .icon {
+    font-size: 26px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

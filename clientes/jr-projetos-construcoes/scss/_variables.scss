@@ -1,0 +1,53 @@
+// Paleta — extraída da identidade visual real da cliente (logo + posts do
+// Instagram @jr_projetos_e_construcoes): vermelho vivo + preto + off-white.
+// "-dark" é a variante com contraste WCAG-AA verificado para uso em texto/
+// links (o vermelho "puro" fica reservado a fundos, bordas e ícones).
+$color-bg: #faf9f7; // off-white cru
+$color-fg: #1a1a1a; // preto quente, quase fosco
+$color-card: #ffffff;
+$color-secondary: #f0ede8; // superfície alternada (methodology)
+$color-muted: #f0ede8;
+$color-muted-fg: #6b6760; // texto secundário — 7.7:1 sobre $color-bg
+$color-red: #d7262f; // vermelho da marca — SÓ fundo/bloco grande/ícone — nunca texto pequeno
+$color-red-dark: #a81b22; // variante segura p/ texto/links sobre $color-bg (7.02:1)
+$color-border: #e3dfd8;
+
+$color-white: #ffffff;
+$color-black: $color-fg;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss e pelas partials
+// herdadas do arq-studio (mantêm os nomes $color-wood do template-base).
+$color-primary: $color-fg;
+$color-wood: $color-red-dark;
+$color-bg-body: $color-bg;
+$color-text: $color-fg;
+$color-text-muted: $color-muted-fg;
+
+// Tipografia — Fraunces (serif, display, peso leve) + Inter (sans, texto).
+$font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+$font-base: 'Inter', system-ui, -apple-system, sans-serif;
+$font-heading: $font-base;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas
+$radius-base: 0.625rem;
+$radius-sm: $radius-base * 0.6;
+$radius-md: $radius-base * 0.8;
+$radius-lg: $radius-base;
+$radius-xl: $radius-base * 1.4;
+$radius-pill: 999px;
+
+$shadow-soft: 0 20px 45px -25px rgba(26, 26, 26, 0.25);
+$shadow-lift: 0 30px 60px -25px rgba(26, 26, 26, 0.35);
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;
