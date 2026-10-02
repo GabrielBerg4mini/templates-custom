@@ -1,0 +1,41 @@
+// Paleta — grafite escuro + vermelho da marca real (logo @learaujo.arquitetura)
+// + branco. Dois tons de vermelho, verificados em contraste: $color-red
+// (puro, só fundo de botão — com texto branco, 5.6:1) e $color-red-light
+// (mais claro, para texto/ícone sobre o grafite escuro, 5.6:1).
+$color-graphite: #121214;
+$color-graphite-light: #1c1c20;
+$color-graphite-lighter: #26262b;
+$color-red: #c62828;
+$color-red-light: #f2574d;
+$color-red-dark: #8f1d1d;
+
+$color-text: #f5f5f2;
+$color-text-muted: #a3a3aa;
+$color-white: #ffffff;
+$color-whatsapp: #25d366;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-red;
+$color-secondary: $color-graphite-lighter;
+$color-bg: $color-graphite;
+
+// Tipografia
+$font-heading: 'Space Grotesk', system-ui, sans-serif;
+$font-base: 'Inter', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas / sombras
+$radius-lg: 20px;
+$shadow-soft: 0 20px 45px -20px rgba(0, 0, 0, 0.6);
+$shadow-lift: 0 30px 70px -25px rgba(242, 87, 77, 0.25);
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.3s ease;
