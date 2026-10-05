@@ -1,0 +1,79 @@
+@use 'variables' as v;
+
+.navbar {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 1050;
+  padding-block: 0;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color v.$transition-slow, border-color v.$transition-slow;
+
+  .container {
+    min-height: 5.5rem;
+  }
+
+  // Estado "rolado" — aplicado via JS quando scrollY > 24px.
+  &.navbar--scrolled {
+    background: rgba(18, 17, 16, 0.92);
+    border-bottom-color: v.$color-border-hairline;
+  }
+}
+
+.navbar-brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 0.3rem;
+
+  &__name {
+    font-family: v.$font-display;
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: v.$color-offwhite;
+  }
+
+  &__sub {
+    font-family: v.$font-base;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: v.$color-bronze-light;
+  }
+}
+
+.navbar-nav {
+  .nav-link {
+    position: relative;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: v.$color-offwhite-muted;
+    padding-block: 0.5rem;
+    transition: color v.$transition-base;
+
+    &:hover,
+    &.active {
+      color: v.$color-offwhite;
+    }
+  }
+}
+
+.navbar-toggler {
+  border-color: v.$color-border-hairline;
+  padding: 0.35rem 0.55rem;
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(166, 106, 61, 0.3);
+  }
+}
+
+.navbar-collapse {
+  @media (max-width: 991.98px) {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    border-top: 1px solid v.$color-border-hairline;
+  }
+}

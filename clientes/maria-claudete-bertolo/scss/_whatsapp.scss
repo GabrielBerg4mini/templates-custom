@@ -1,0 +1,72 @@
+@use 'variables' as v;
+
+.whatsapp-float {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 200;
+  display: flex;
+  width: 3.75rem;
+  height: 3.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: v.$color-whatsapp;
+  color: #071a0d;
+  box-shadow: 0 12px 30px -10px rgba(37, 211, 102, 0.6);
+  transition: transform v.$transition-base, box-shadow v.$transition-base;
+
+  .icon {
+    font-size: 1.75rem;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: 50%;
+    background: v.$color-whatsapp;
+    animation: whatsapp-pulse 2.2s ease-out infinite;
+  }
+
+  &:hover {
+    color: #071a0d;
+    transform: scale(1.06);
+    box-shadow: 0 15px 35px -8px rgba(37, 211, 102, 0.7);
+  }
+
+  &:focus-visible {
+    outline: 3px solid v.$color-offwhite;
+    outline-offset: 4px;
+  }
+}
+
+@keyframes whatsapp-pulse {
+  0% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.7);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-float {
+    transition: none;
+
+    &::before {
+      animation: none;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .whatsapp-float {
+    right: 1rem;
+    bottom: 1rem;
+  }
+}

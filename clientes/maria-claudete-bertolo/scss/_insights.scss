@@ -1,0 +1,59 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Lista editorial com divisores finos — mesma lógica anti-card das áreas
+// de atuação, aplicada aqui a "artigos" de conteúdo.
+.insight-list {
+  border-top: 1px solid v.$color-border-hairline;
+}
+
+.insight-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  padding-block: 2.25rem;
+  border-bottom: 1px solid v.$color-border-hairline;
+
+  @include m.breakpoint(lg) {
+    grid-template-columns: 8rem minmax(0, 1fr);
+    gap: 1rem 3rem;
+  }
+}
+
+.insight-item__label {
+  margin: 0;
+  font-family: v.$font-base;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: v.$color-bronze-light;
+}
+
+.insight-item__title {
+  margin: 0 0 0.75rem;
+  max-width: 42rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: v.$color-offwhite;
+
+  @include m.breakpoint(lg) {
+    grid-column: 2;
+  }
+}
+
+.insight-item__summary {
+  grid-column: 1 / -1;
+  margin: 0;
+  max-width: 42rem;
+  font-family: v.$font-base;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: v.$color-offwhite-muted;
+
+  @include m.breakpoint(lg) {
+    grid-column: 2;
+    margin-top: -0.5rem;
+  }
+}
