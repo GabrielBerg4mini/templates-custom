@@ -1,0 +1,240 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// O Bootstrap (via _theme-bootstrap.scss) já cuida do reset, tipografia
+// base, links, imagens e grid. Aqui ficam só os utilitários que o
+// Bootstrap não tem prontos e que várias seções compartilham.
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+::selection {
+  background: v.$color-accent;
+  color: v.$color-white;
+}
+
+:focus-visible {
+  outline: 3px solid v.$color-accent;
+  outline-offset: 2px;
+}
+
+// Seções — ritmo por padding próprio (nunca .py-5/.py-lg-6 do Bootstrap,
+// que compila com !important e não tem degrau -6).
+.section {
+  padding-block: clamp(3.5rem, 7vw, 6.5rem);
+}
+
+.section--ink {
+  background: v.$color-ink;
+  color: v.$color-text-on-ink;
+
+  // Bootstrap resolve a cor de heading via --bs-heading-color, definida
+  // uma única vez em :root com o tom claro — precisa ser reafirmada
+  // aqui, senão os títulos ficam escuros sobre o próprio fundo escuro.
+  h1, h2, h3, h4 {
+    color: v.$color-text-on-ink;
+  }
+}
+
+.section--dim {
+  background: v.$color-concrete-dim;
+}
+
+// Cabeçalho de seção — rótulo técnico + título, alinhado à esquerda
+// por padrão (a direção proíbe centralizar por hábito).
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: clamp(2.25rem, 5vw, 3.5rem);
+  padding-bottom: 1.5rem;
+  border-bottom: 3px solid v.$color-line;
+
+  .section--ink & {
+    border-bottom-color: v.$color-line-on-ink;
+  }
+}
+
+.section-head__title {
+  max-width: 40rem;
+}
+
+.section-head__link {
+  @include m.label-tag;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: v.$color-ink;
+  white-space: nowrap;
+
+  .icon {
+    transition: transform v.$transition-base;
+  }
+
+  &:hover {
+    color: v.$color-accent;
+
+    .icon {
+      transform: translate(2px, -2px);
+    }
+  }
+
+  .section--ink & {
+    color: v.$color-white;
+
+    &:hover {
+      color: v.$color-accent;
+    }
+  }
+}
+
+.label-tag {
+  @include m.label-tag;
+  color: v.$color-ink;
+
+  .section--ink & {
+    color: v.$color-text-on-ink;
+  }
+}
+
+.label-tag--accent {
+  color: v.$color-accent;
+}
+
+h1, h2, h3 {
+  @include m.display-black;
+}
+
+h1 { font-size: clamp(2.6rem, 6.4vw, 5.75rem); }
+h2 { font-size: clamp(2rem, 4.2vw, 3.25rem); }
+h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); }
+
+p {
+  max-width: 60ch;
+}
+
+// Número de projeto / etapa — o elemento tipográfico mais importante
+// da direção. Grande o suficiente para funcionar como composição, não
+// como legenda.
+.index-number {
+  @include m.display-black;
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  color: v.$color-ink;
+
+  .section--ink & {
+    color: v.$color-text-on-ink;
+  }
+}
+
+.index-number--accent {
+  color: v.$color-accent;
+}
+
+.index-number--outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px v.$color-ink;
+
+  .section--ink & {
+    -webkit-text-stroke-color: v.$color-text-on-ink-muted;
+  }
+}
+
+// Botão sólido — bloco de cor, sem raio, inverte no hover. Especificidade
+// alta o suficiente (elemento + classe) para nunca perder para regras
+// genéricas de link dentro de wrappers (ver docs/pitfall #4). Cobre tanto
+// <a class="btn-block"> (CTAs de navegação) quanto <button class="btn-block">
+// (envio de formulário).
+a.btn-block,
+button.btn-block {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.95rem 1.75rem;
+  background: v.$color-ink;
+  color: v.$color-white;
+  font-family: v.$font-base;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1px solid v.$color-ink;
+  transition: background-color v.$transition-base, color v.$transition-base, border-color v.$transition-base;
+
+  &:hover,
+  &:focus-visible {
+    background: v.$color-accent;
+    border-color: v.$color-accent;
+    color: v.$color-white;
+  }
+}
+
+a.btn-block--outline {
+  background: transparent;
+  color: v.$color-ink;
+
+  .section--ink & {
+    color: v.$color-white;
+    border-color: v.$color-line-on-ink;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background: v.$color-accent;
+    border-color: v.$color-accent;
+    color: v.$color-white;
+  }
+}
+
+a.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  color: v.$color-ink;
+  border-bottom: 2px solid v.$color-ink;
+  padding-bottom: 0.15rem;
+  transition: color v.$transition-base, border-color v.$transition-base;
+
+  .section--ink & {
+    color: v.$color-white;
+    border-bottom-color: v.$color-white;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: v.$color-accent;
+    border-bottom-color: v.$color-accent;
+  }
+}
+
+// Reveal-on-scroll (aplicado via data-reveal + IntersectionObserver em js/main.js)
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
