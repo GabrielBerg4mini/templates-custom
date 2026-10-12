@@ -1,0 +1,51 @@
+// Paleta inspirada na identidade enviada: areia, taupe e marrom café.
+$color-bg: #e1cfbd;
+$color-fg: #4d392d;
+$color-card: #eadbcb;
+$color-secondary: #eee1d3;
+$color-muted: #eee1d3;
+$color-muted-fg: #7c6657;
+$color-accent: #c9b09a;
+$color-wood: #76533d;
+$color-wood-fg: #fbf6f0;
+$color-border: #cdb8a4;
+$color-ring: #76533d;
+
+$color-white: #ffffff;
+$color-black: $color-fg;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-fg;
+$color-bg-body: $color-bg;
+$color-text: $color-fg;
+$color-text-muted: $color-muted-fg;
+
+// Tipografia editorial para equilibrar a marca minimalista e acolhedora.
+$font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+$font-base: 'Inter', system-ui, -apple-system, sans-serif;
+$font-heading: $font-base; // headings padrão do Bootstrap usam a sans (h3, nav, etc.)
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas — raio base 0.625rem (--radius do v0), com as mesmas frações
+// usadas em @theme inline (radius-sm/md/lg/xl).
+$radius-base: 0.625rem;
+$radius-sm: $radius-base * 0.6; // 0.375rem — imagens (rounded-sm)
+$radius-md: $radius-base * 0.8;
+$radius-lg: $radius-base;
+$radius-xl: $radius-base * 1.4;
+$radius-pill: 999px; // botões rounded-full
+
+$shadow-soft: 0 20px 45px -25px rgba(0, 0, 0, 0.25);
+$shadow-lift: 0 30px 60px -25px rgba(0, 0, 0, 0.35);
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;
