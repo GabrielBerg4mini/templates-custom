@@ -1,0 +1,85 @@
+@use 'variables' as v;
+
+.booking {
+  position: relative;
+  overflow: hidden;
+  background: v.$color-terracotta-50;
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: -5rem;
+    top: -5rem;
+    width: 18rem;
+    height: 18rem;
+    border-radius: 50%;
+    background: v.$color-terracotta-100;
+    opacity: 0.5;
+    filter: blur(64px);
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: -5rem;
+    bottom: 0;
+    width: 18rem;
+    height: 18rem;
+    border-radius: 50%;
+    background: v.$color-sage-100;
+    opacity: 0.4;
+    filter: blur(64px);
+    pointer-events: none;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .btn-sage {
+    padding-block: 1.1rem;
+    padding-inline: 2.5rem;
+    box-shadow: 0 20px 40px -18px rgba(92, 118, 75, 0.4);
+  }
+}
+
+.booking-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+
+  &__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: v.$color-cream-100;
+    color: v.$color-terracotta;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+
+    &--sage {
+      color: v.$color-sage-dark;
+    }
+
+    &--nude {
+      color: v.$color-nude-500;
+    }
+  }
+
+  strong {
+    font-size: 0.95rem;
+    color: v.$color-ink-900;
+  }
+
+  p {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: v.$color-text-muted;
+    margin-bottom: 0;
+  }
+}
