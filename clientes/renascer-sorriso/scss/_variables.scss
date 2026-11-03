@@ -1,0 +1,69 @@
+// Paleta Renascer Sorriso: azul profundo, azul royal e dourado champagne.
+$color-white: oklch(1 0 0);
+$color-background: oklch(0.99 0.004 230);
+$color-foreground: oklch(0.22 0.06 258);
+
+$color-navy: #123f69;
+$color-navy-foreground: oklch(0.99 0.004 230);
+
+$color-cyan: #d7b87a;
+$color-cyan-foreground: oklch(0.2 0.06 258);
+
+$color-card: oklch(1 0 0);
+$color-secondary: #edf2f6;
+$color-muted: oklch(0.96 0.015 225);
+$color-muted-foreground: oklch(0.52 0.03 250);
+$color-border: oklch(0.9 0.015 230);
+
+$color-text: $color-foreground;
+$color-text-muted: $color-muted-foreground;
+$color-whatsapp: #25d366;
+
+// Equivalentes em sRGB hex dos tokens oklch acima — usados SOMENTE para
+// alimentar as variáveis internas do Bootstrap (_theme-bootstrap.scss).
+// O Sass legado do Bootstrap roda mix()/shade-color()/tint-color() sobre
+// essas variáveis em tempo de build, e essas funções ainda não aceitam
+// cores oklch (erro "you must provide a $method"). Todo o resto do site
+// usa as variáveis oklch acima diretamente, preservando a cor exata do v0.
+$color-navy-hex: #123f69;
+$color-navy-foreground-hex: #f9fcfe;
+$color-cyan-hex: #d7b87a;
+$color-background-hex: #f9fcfe;
+$color-foreground-hex: #071a36;
+$color-secondary-hex: #e4f5fb;
+$color-muted-foreground-hex: #5c6b7a;
+$color-border-hex: #d5e0e6;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-navy;
+$color-bg: $color-background;
+
+// Tipografia — Inter (texto) + Space Grotesk (títulos), como no v0 (next/font/google)
+$font-heading: 'Cormorant Garamond', Georgia, serif;
+$font-base: 'Montserrat', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas / sombras
+$radius-lg: 20px;
+$shadow-soft: 0 20px 45px -22px rgba(18, 63, 105, 0.15);
+$shadow-glow: 0 0 0 1px rgba(215, 184, 122, 0.3), 0 18px 50px -12px rgba(215, 184, 122, 0.45);
+
+// Glassmorphism — espelha as utility classes .glass / .glass-dark do globals.css
+$glass-bg: rgba(255, 255, 255, 0.65);
+$glass-border: rgba(18, 63, 105, 0.08);
+$glass-blur: 16px;
+
+$glass-dark-bg: rgba(20, 32, 66, 0.55);
+$glass-dark-border: rgba(255, 255, 255, 0.12);
+$glass-dark-blur: 18px;
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.3s ease;
