@@ -1,0 +1,75 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Responsável técnico único: composição editorial foto + texto, não grid de cards.
+.team {
+  background: v.$color-surface;
+  border-top: 1px solid v.$color-line;
+  border-bottom: 1px solid v.$color-line;
+}
+
+.engineer__media {
+  margin: 0;
+  max-width: 420px;
+  border: 1px solid v.$color-graphite;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.engineer__code {
+  @include m.mono-label(0.7rem);
+  color: v.$color-steel;
+  margin-bottom: 0.75rem;
+}
+
+.engineer__name {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: v.$color-graphite;
+  margin-bottom: 0.25rem;
+}
+
+.engineer__role {
+  font-size: 1rem;
+  font-weight: 500;
+  color: v.$color-graphite-soft;
+  margin-bottom: 1.5rem;
+}
+
+.engineer__text {
+  color: v.$color-graphite-soft;
+  max-width: 52ch;
+}
+
+.engineer__facts {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 2rem 0 0;
+  border-top: 1px solid v.$color-graphite;
+
+  @include m.breakpoint(sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  > div {
+    padding: 1rem 1rem 1rem 0;
+    border-bottom: 1px solid v.$color-line;
+  }
+
+  dt {
+    @include m.mono-label(0.64rem);
+    color: v.$color-graphite-soft;
+    margin-bottom: 0.3rem;
+  }
+
+  dd {
+    font-weight: 500;
+    color: v.$color-graphite;
+    margin: 0;
+  }
+}

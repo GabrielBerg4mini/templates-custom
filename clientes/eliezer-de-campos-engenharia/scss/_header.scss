@@ -1,0 +1,89 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Header escuro: o logotipo do cliente é prata sobre grafite (como na placa).
+.site-header {
+  background: v.$color-graphite;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-block: 0.6rem;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+}
+
+.site-header__brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+
+  img {
+    display: block;
+    height: 52px;
+    width: auto;
+
+    @include m.breakpoint(md) {
+      height: 62px;
+    }
+  }
+}
+
+.site-header__nav-collapse {
+  flex-grow: 0;
+}
+
+.site-header__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-top: 1rem;
+
+  @include m.breakpoint(lg) {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 0;
+  }
+
+  a {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: v.$color-silver;
+    text-decoration: none;
+    padding-block: 0.35rem;
+    border-bottom: 1px solid transparent;
+    transition: color v.$transition-base, border-color v.$transition-base;
+
+    &:hover, &:focus-visible {
+      color: v.$color-white;
+      border-color: v.$color-white;
+    }
+  }
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-bottom: 0.5rem;
+
+  @include m.breakpoint(lg) {
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.site-header .navbar-toggler {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: v.$radius-sm;
+  padding: 0.4rem 0.6rem;
+  filter: invert(1);
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(228, 230, 232, 0.4);
+  }
+}

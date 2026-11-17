@@ -1,0 +1,39 @@
+// Eliézer de Campos — Engenheiro Civil
+// Paleta extraída da placa de obra e do logotipo reais do cliente:
+// fundo grafite quase preto (#1a1b1d) + letras em prata (#e4e6e8).
+// Contraste validado:
+// - grafite sobre branco: ~16:1 (texto)
+// - aço (#5d6168) sobre branco: ~6:1 (texto pequeno, links, eyebrows)
+// - prata sobre grafite: ~13:1 (texto sobre fundo escuro)
+$color-white: #ffffff;
+$color-graphite: #1a1b1d; // fundo escuro da placa / texto principal
+$color-graphite-soft: #4b4e53; // texto secundário sobre branco
+$color-line: #d9dadc; // linhas finas estruturais / bordas
+$color-surface: #f2f2f1; // superfície neutra
+$color-silver: #e4e6e8; // prata do logotipo — texto/linha sobre grafite
+$color-silver-muted: #a9adb3; // texto secundário sobre grafite (8:1)
+$color-steel: #5d6168; // variante de texto/ícone sobre branco (6:1)
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-steel;
+$color-secondary: $color-graphite;
+$color-bg: $color-white;
+$color-text: $color-graphite;
+
+// Tipografia — display condensado (igual ao lettering da placa) + corpo neutro + mono
+$font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+$font-base: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+$font-heading: $font-display;
+$font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+$spacing-unit: 8px;
+
+$radius-sm: 2px;
+$radius-md: 4px;
+
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+$transition-base: 0.18s ease;
