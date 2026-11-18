@@ -1,0 +1,216 @@
+@use 'variables' as v;
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-block: 7rem 5rem;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      100deg,
+      v.$color-charcoal-950 0%,
+      rgba(v.$color-charcoal-950, 0.9) 45%,
+      rgba(v.$color-charcoal-950, 0.4) 100%
+    );
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      v.$color-charcoal-950 0%,
+      transparent 45%,
+      rgba(v.$color-charcoal-950, 0.6) 100%
+    );
+  }
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+// Painel "Especializado em" — eco direto do cartão do cliente
+// (título sublinhado, lista com marcadores dourados, endereço).
+.hero__panel {
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(v.$color-gold, 0.35);
+  border-radius: v.$radius-lg;
+  background: rgba(v.$color-charcoal-900, 0.7);
+  padding: 2rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease-out 0.4s forwards;
+
+  &__title {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: v.$color-gold;
+    padding-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(v.$color-gold, 0.35);
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+
+    li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
+      font-family: v.$font-heading;
+      font-size: 1.6rem;
+      font-weight: 600;
+      line-height: 1.15;
+      color: v.$color-white;
+
+      &::before {
+        content: '';
+        flex-shrink: 0;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: v.$color-gold;
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  &__foot {
+    margin: 1.75rem 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(v.$color-gold, 0.35);
+    font-size: 0.85rem;
+    color: v.$color-charcoal-200;
+  }
+}
+
+// Conteúdo do hero entra com fadeUp escalonado ao carregar a página
+// (não é scroll-reveal — o hero já está visível na primeira dobra,
+// exatamente como no design de referência).
+.hero__eyebrow-row,
+.hero h1,
+.hero__subtitle,
+.hero__cta-row,
+.hero__trust {
+  opacity: 0;
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.hero__eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  animation-delay: 0s;
+}
+
+.hero h1 {
+  font-family: v.$font-heading;
+  font-weight: 600;
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  color: v.$color-white;
+  animation-delay: 0.1s;
+}
+
+.hero__subtitle {
+  margin-top: 2rem;
+  max-width: 42rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: v.$color-charcoal-200;
+  animation-delay: 0.2s;
+}
+
+.hero__cta-row {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  animation-delay: 0.3s;
+}
+
+.hero__trust {
+  margin-top: 3.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2.5rem;
+  animation-delay: 0.4s;
+
+  &-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: v.$color-charcoal-200;
+
+    i {
+      font-size: 1.4rem;
+      color: v.$color-gold;
+    }
+  }
+}
+
+.hero__scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: v.$color-charcoal-300;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  span {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+  }
+
+  i {
+    font-size: 1.15rem;
+    animation: softBounce 1.6s infinite;
+  }
+
+  &:hover {
+    color: v.$color-gold;
+  }
+
+  @media (min-width: v.$bp-md) {
+    display: flex;
+  }
+}

@@ -1,0 +1,66 @@
+// Paleta extraída do cartão/logotipo reais do cliente: fundo grafite
+// esverdeado (#393f41) e dourado fosco do medalhão "ER" (#c6af6d).
+// Escala charcoal 50-950 (neutra, levemente fria) e gold 50-900.
+$color-charcoal-50: #f3f4f4;
+$color-charcoal-100: #dcdfe0;
+$color-charcoal-200: #bfc4c6;
+$color-charcoal-300: #9ea5a8;
+$color-charcoal-400: #7c8487;
+$color-charcoal-500: #5f676a;
+$color-charcoal-600: #4a5154;
+$color-charcoal-700: #393f41;
+$color-charcoal-800: #30353a;
+$color-charcoal-900: #272b2e;
+$color-charcoal-950: #1b1e20;
+
+$color-gold-50: #faf7ef;
+$color-gold-100: #f2ecd9;
+$color-gold-200: #e4d7b0;
+$color-gold-300: #d6c58c;
+$color-gold-400: #c6af6d;
+$color-gold-500: #b99a5b;
+$color-gold-600: #9a7f45;
+$color-gold-700: #7a6436;
+$color-gold-800: #5e4d2b;
+$color-gold-900: #463a24;
+
+// Aliases — mantêm os nomes já consumidos pelo restante do site,
+// agora apontando para os tons corretos da escala acima.
+$color-charcoal: $color-charcoal-950;
+$color-charcoal-light: $color-charcoal-900;
+$color-charcoal-lighter: $color-charcoal-800;
+$color-gold: $color-gold-400;
+$color-gold-light: $color-gold-300;
+$color-gold-dark: $color-gold-600;
+
+$color-text: $color-charcoal-100;
+$color-text-muted: $color-charcoal-300;
+$color-white: #ffffff;
+$color-whatsapp: #25d366;
+
+// Tokens padrão consumidos por _theme-bootstrap.scss
+$color-primary: $color-gold;
+$color-secondary: $color-charcoal-lighter;
+$color-bg: $color-charcoal;
+
+// Tipografia — serifada (títulos) + Inter (corpo)
+$font-heading: 'Cormorant Garamond', Georgia, serif;
+$font-base: 'Inter', system-ui, -apple-system, sans-serif;
+
+// Espaçamentos
+$spacing-unit: 8px;
+
+// Bordas / sombras
+$radius-lg: 16px;
+$shadow-soft: 0 20px 45px -20px rgba(0, 0, 0, 0.55);
+$shadow-lift: 0 30px 70px -25px rgba($color-gold-500, 0.3);
+$shadow-gold: 0 20px 40px -12px rgba($color-gold-500, 0.35);
+
+// Breakpoints (usados pelo Bootstrap container-max-widths)
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transições
+$transition-base: 0.3s ease;
